@@ -18,8 +18,9 @@ capability. Module boundaries and data flow are in `docs/architecture.md`.
   tests with that environment's `python -m pip` and `python -m pytest`.
 - Keep the `src/` layout. Add dependencies only for the current milestone.
   Use the existing environment for repository work; the README's Conda creation
-  instruction is for researchers who do not yet have it. No uv, Docker, databases, frontend, cloud infrastructure,
-  global tooling installations, or speculative module scaffolding.
+  instruction is for researchers who do not yet have it. No uv, Docker, databases,
+  cloud infrastructure, global tooling installations, or speculative scaffolding.
+  The full-scope directive authorizes a local interactive research interface.
 - Agents own repetitive coding, infrastructure, tests, and precise documentation.
   Delegate only bounded independent work when it reduces effort; avoid redundant
   agents. The lead agent integrates changes and reviews all affected files.
@@ -32,6 +33,9 @@ capability. Module boundaries and data flow are in `docs/architecture.md`.
   invoking them. Do not assume cached hooks or workflows are active.
 - Do not commit, push, create a PR, or start a subsequent milestone without
   explicit human approval.
+  The full-scope directive supplies authorization for reviewed incremental commits,
+  branch publication and PRs. Preserve prior tags, avoid force pushes, and create
+  a final release tag only after every completion criterion is satisfied.
 
 ## Scientific coding style
 
@@ -70,3 +74,7 @@ capability. Module boundaries and data flow are in `docs/architecture.md`.
   channel numbers or claim cross-session adaptation from one session.
 - Prefer interpretable baselines before complex models. Document negative
   results, uncertainty, and limitations alongside observed measurements.
+- The full-scope completion matrix in `docs/research/completion_matrix.md` must
+  distinguish software tests from authentic-data validation and incomplete work.
+  A within-session representation model is not a validated neural foundation
+  model. Channel correspondence is not longitudinal neuron identity.

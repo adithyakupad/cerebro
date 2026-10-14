@@ -16,7 +16,7 @@ def test_import_uses_source_package():
 
 def test_installed_metadata():
     metadata = importlib.metadata.metadata("cerebro")
-    assert metadata["Version"] == "0.1.0"
+    assert metadata["Version"] == "0.2.0.dev0"
     assert set(metadata["Requires-Python"].split(",")) == {">=3.11", "<3.12"}
 
 

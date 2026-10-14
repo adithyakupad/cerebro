@@ -1,0 +1,3459 @@
+{
+  "assumptions": [
+    "MC_Maze resamples 25 whole trials assuming independent curated-session trials",
+    "LINK uses moving blocks of five chronological target trials as sensitivity analysis",
+    "Seeds are averaged within each biological trial, not treated as new biological samples",
+    "Percentile bands are not calibrated population confidence intervals",
+    "No test-winner selection, p-values, significance or multiplicity-adjusted claims",
+    "Within-session m\u00b2/s\u00b2 and LINK flexion\u00b2 are distinct outcomes and are never pooled",
+    "Paired change is method minus reference; negative values mean lower observed loss"
+  ],
+  "dataset_provenance": {
+    "LINK08_source": {
+      "asset_id": "c002a9a1-664d-4a69-af02-ba810046c4fb",
+      "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200127_ecephys.nwb",
+      "dandiset_id": "001201",
+      "download_url": "https://api.dandiarchive.org/api/assets/c002a9a1-664d-4a69-af02-ba810046c4fb/download/",
+      "license": "CC-BY-4.0",
+      "local_path": "data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/c002a9a1-664d-4a69-af02-ba810046c4fb/",
+      "sha256": "1b4429c0223a7f33d33dd3ad798efa972590cd0e4ec6eae29e45199f83ec5a6b",
+      "size_bytes": 45005026,
+      "version": "0.251023.2336"
+    },
+    "LINK08_target": {
+      "asset_id": "9d1820f1-7583-4faf-bbd0-7e9fb7001ca4",
+      "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200130_ecephys.nwb",
+      "dandiset_id": "001201",
+      "download_url": "https://api.dandiarchive.org/api/assets/9d1820f1-7583-4faf-bbd0-7e9fb7001ca4/download/",
+      "license": "CC-BY-4.0",
+      "local_path": "data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/9d1820f1-7583-4faf-bbd0-7e9fb7001ca4/",
+      "sha256": "be9ac1d4aedf5e0d7226ff4e6d1e7baea7fe22aa2b834a74081821a6ff313c4f",
+      "size_bytes": 43863496,
+      "version": "0.251023.2336"
+    },
+    "LINK09_sessions": [
+      {
+        "asset_id": "c002a9a1-664d-4a69-af02-ba810046c4fb",
+        "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200127_ecephys.nwb",
+        "dandiset_id": "001201",
+        "download_url": "https://api.dandiarchive.org/api/assets/c002a9a1-664d-4a69-af02-ba810046c4fb/download/",
+        "license": "CC-BY-4.0",
+        "local_path": "data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb",
+        "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/c002a9a1-664d-4a69-af02-ba810046c4fb/",
+        "sha256": "1b4429c0223a7f33d33dd3ad798efa972590cd0e4ec6eae29e45199f83ec5a6b",
+        "size_bytes": 45005026,
+        "version": "0.251023.2336"
+      },
+      {
+        "asset_id": "9d1820f1-7583-4faf-bbd0-7e9fb7001ca4",
+        "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200130_ecephys.nwb",
+        "dandiset_id": "001201",
+        "download_url": "https://api.dandiarchive.org/api/assets/9d1820f1-7583-4faf-bbd0-7e9fb7001ca4/download/",
+        "license": "CC-BY-4.0",
+        "local_path": "data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb",
+        "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/9d1820f1-7583-4faf-bbd0-7e9fb7001ca4/",
+        "sha256": "be9ac1d4aedf5e0d7226ff4e6d1e7baea7fe22aa2b834a74081821a6ff313c4f",
+        "size_bytes": 43863496,
+        "version": "0.251023.2336"
+      },
+      {
+        "asset_id": "ea07a2e3-d5f4-4036-9b62-93d1f89cba64",
+        "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200204_ecephys.nwb",
+        "dandiset_id": "001201",
+        "download_url": "https://api.dandiarchive.org/api/assets/ea07a2e3-d5f4-4036-9b62-93d1f89cba64/download/",
+        "license": "CC-BY-4.0",
+        "local_path": "data/raw/link/sub-Monkey-N_ses-20200204_ecephys.nwb",
+        "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/ea07a2e3-d5f4-4036-9b62-93d1f89cba64/",
+        "sha256": "8a6efc3460fc5904e43db957638470ec4913f83630d83ffa2a20de0c7a63e601",
+        "size_bytes": 43052898,
+        "version": "0.251023.2336"
+      }
+    ],
+    "MC_Maze": {
+      "asset_id": "7821971e-c6a4-4568-8773-1bfa205c13f8",
+      "asset_path": "sub-Jenkins/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+      "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze_Small: macaque primary motor and dorsal premotor cortex spiking activity during delayed reaching (Version 0.220113.0408) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000140/0.220113.0408",
+      "dandiset": "000140",
+      "download_url": "https://api.dandiarchive.org/api/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/download/",
+      "license": [
+        "spdx:CC-BY-4.0"
+      ],
+      "local_path": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/000140/versions/0.220113.0408/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/",
+      "sha256": "dcaf3a524e2b2f65f163ee3b07789b8474bdfc6ca66098bc542ab93dff489884",
+      "size_bytes": 29207528,
+      "source_url": "https://dandiarchive.org/dandiset/000140/0.220113.0408",
+      "version": "0.220113.0408"
+    }
+  },
+  "evaluation_trial_ids": {
+    "LINK08": [
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374
+    ],
+    "LINK09": [
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261,
+      262,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      287,
+      288,
+      289,
+      290,
+      291,
+      292,
+      293,
+      294,
+      295,
+      296,
+      297,
+      298,
+      299,
+      300,
+      301,
+      302,
+      303,
+      304,
+      305,
+      306,
+      307,
+      308,
+      309,
+      310,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374
+    ],
+    "MC_Maze": [
+      0,
+      3,
+      5,
+      8,
+      12,
+      25,
+      26,
+      28,
+      29,
+      34,
+      37,
+      40,
+      41,
+      47,
+      52,
+      54,
+      55,
+      60,
+      68,
+      81,
+      83,
+      86,
+      95,
+      97,
+      98
+    ]
+  },
+  "input_report_sha256": {
+    "classical_05": "583ff96b62e62c239fa9df0618ab8ee7905cc105fbd60f8eaa87550a548739dd",
+    "longitudinal_08": "d285d9591db564a444eb6f1f968a38ed64ba76515e5c30a2e9a2f3cc4cbb3ab4",
+    "representation_07": "7f8bf9b4f650f526be9aafc35d674d87481e4a4f0567a5a6a18e2aec76765998",
+    "representation_09": "05bf9486416bc0514521597666d7fab91d2724f9505928c4e3261759076a6d8a",
+    "sequence_06": "eaf8334ea367b5f616cd00419263dd0c0b911b449a6f5fec2bda7dca07568847"
+  },
+  "schema_version": 1,
+  "source_sha256": "86c197749f83124ec0d4030bd889ecbd6b9f86a9ff0b5488181f6818dd8fab29",
+  "summaries": [
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03734294338331662,
+      "method": "fa_ridge",
+      "paired_mean_change": -0.0009818728733647572,
+      "paired_percentile_interval": [
+        -0.0015603817651463371,
+        -0.00039952695690786673
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.0333082267847063,
+        0.04143517912841073
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03734294338331662,
+        0.03734294338331662
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03748736283195477,
+      "method": "go_time_template",
+      "paired_mean_change": -0.0008374534247265961,
+      "paired_percentile_interval": [
+        -0.002366111733531455,
+        0.0007150088313101316
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03342279792996679,
+        0.042068112688698193
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03748736283195477,
+        0.03748736283195477
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03131414545153484,
+      "method": "kalman",
+      "paired_mean_change": -0.00701067080514653,
+      "paired_percentile_interval": [
+        -0.00989865395661187,
+        -0.004431952083729742
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.02843448815279109,
+        0.034061438629719935
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03131414545153484,
+        0.03131414545153484
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03545680554342694,
+      "method": "linear",
+      "paired_mean_change": -0.0028680107132544297,
+      "paired_percentile_interval": [
+        -0.004579995322192334,
+        -0.0010663559194008516
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.032352621438226,
+        0.038575837967272555
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03545680554342694,
+        0.03545680554342694
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03832481625668137,
+      "method": "mean",
+      "paired_mean_change": 0.0,
+      "paired_percentile_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.033941315431552765,
+        0.04276574525330387
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03832481625668137,
+        0.03832481625668137
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.036225690300699366,
+      "method": "pca_ridge",
+      "paired_mean_change": -0.0020991259559820026,
+      "paired_percentile_interval": [
+        -0.0031388043985262617,
+        -0.0010511838222368897
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03259482031520392,
+        0.04001056111606232
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.036225690300699366,
+        0.036225690300699366
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "classical_05",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03542143782686373,
+      "method": "ridge",
+      "paired_mean_change": -0.0029033784298176405,
+      "paired_percentile_interval": [
+        -0.004587016166695401,
+        -0.0011275082969242332
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.032311900972561154,
+        0.038542655805351156
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03542143782686373,
+        0.03542143782686373
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03667213335474737,
+      "method": {
+        "model": "gru"
+      },
+      "paired_mean_change": -0.0016526829019339936,
+      "paired_percentile_interval": [
+        -0.00265094460799714,
+        -0.0006094326713449411
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03294292093794852,
+        0.040680172812235266
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.0364920741929353,
+        0.0368410439359877
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03663704361856831,
+      "method": {
+        "model": "lstm"
+      },
+      "paired_mean_change": -0.0016877726381130662,
+      "paired_percentile_interval": [
+        -0.0023519728759441817,
+        -0.0009719417539426169
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03262666839227478,
+        0.040596312355528706
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03659161890422169,
+        0.036720797264590696
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03737998655157077,
+      "method": {
+        "model": "mlp"
+      },
+      "paired_mean_change": -0.0009448297051105996,
+      "paired_percentile_interval": [
+        -0.0017169936821284232,
+        -0.0002240027008921043
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.033250561682882714,
+        0.04151725470620402
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03664760321808396,
+        0.03823749709130192
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.034582282874745345,
+      "method": {
+        "model": "state_space"
+      },
+      "paired_mean_change": -0.0037425333819360303,
+      "paired_percentile_interval": [
+        -0.004787915674860449,
+        -0.002643316766499519
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.030717721411721504,
+        0.03865035098885753
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.0340823239641058,
+        0.03493961426575289
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03105193165129838,
+      "method": {
+        "model": "temporal_cnn"
+      },
+      "paired_mean_change": -0.0072728846053829906,
+      "paired_percentile_interval": [
+        -0.009432339277259005,
+        -0.005013258117667908
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.027989693927900395,
+        0.033965120296534645
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03056816721061374,
+        0.031780651698965955
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "sequence_06",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.035947378414866074,
+      "method": {
+        "model": "transformer"
+      },
+      "paired_mean_change": -0.0023774378418152946,
+      "paired_percentile_interval": [
+        -0.0036541779802781783,
+        -0.0009817998293916998
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03235621533864381,
+        0.03981043324385454
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03531600935872087,
+        0.03628865071284858
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0434975257603461,
+      "method": {
+        "control": "pretrained_finetuned",
+        "label_budget_trials": 5
+      },
+      "paired_mean_change": 0.005172709503664723,
+      "paired_percentile_interval": [
+        0.0025480794494684164,
+        0.007944918670681637
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03898152392676019,
+        0.04802192744959358
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04249945161132246,
+        0.044103243956230935
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.040874817759224254,
+      "method": {
+        "control": "pretrained_finetuned",
+        "label_budget_trials": 15
+      },
+      "paired_mean_change": 0.002550001502542881,
+      "paired_percentile_interval": [
+        0.0016570603691399759,
+        0.003462304676632529
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03651011132116009,
+        0.04539069640159483
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04076022473617695,
+        0.04094901631696244
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.040215166465724116,
+      "method": {
+        "control": "pretrained_finetuned",
+        "label_budget_trials": 75
+      },
+      "paired_mean_change": 0.0018903502090427463,
+      "paired_percentile_interval": [
+        0.0010920897146998471,
+        0.0027614417100671708
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.035950358656122075,
+        0.044656954526099406
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.040026511751072906,
+        0.040420654885798664
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0466569651104922,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "label_budget_trials": 5
+      },
+      "paired_mean_change": 0.008332148853810825,
+      "paired_percentile_interval": [
+        0.004895809922254652,
+        0.011653686491743108
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.042220053769253196,
+        0.05127296181773744
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04506670475336891,
+        0.04775562132718173
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.04007546117643001,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "label_budget_trials": 15
+      },
+      "paired_mean_change": 0.0017506449197486349,
+      "paired_percentile_interval": [
+        5.1935452062134013e-05,
+        0.0035285753326630377
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03581613306308469,
+        0.044106358430775046
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.0392050354915968,
+        0.0405793107585102
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03611927145206964,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "label_budget_trials": 75
+      },
+      "paired_mean_change": -0.002205544804611731,
+      "paired_percentile_interval": [
+        -0.0035390827195210814,
+        -0.0007486704478879843
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.032586803073335883,
+        0.039650666515485135
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03582404189094214,
+        0.03650835331204545
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.046531470589186316,
+      "method": {
+        "control": "random_frozen_ridge",
+        "label_budget_trials": 5
+      },
+      "paired_mean_change": 0.008206654332504938,
+      "paired_percentile_interval": [
+        0.00478500605382455,
+        0.011541256859486983
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.04206355676780758,
+        0.05116314495323938
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04526013860781684,
+        0.047337833454457814
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.040061283345578215,
+      "method": {
+        "control": "random_frozen_ridge",
+        "label_budget_trials": 15
+      },
+      "paired_mean_change": 0.00173646708889685,
+      "paired_percentile_interval": [
+        2.0547600740497303e-05,
+        0.003487102483674496
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.0358716479177248,
+        0.04409183511243498
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.03917148779929619,
+        0.0406367266292466
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03613481518219023,
+      "method": {
+        "control": "random_frozen_ridge",
+        "label_budget_trials": 75
+      },
+      "paired_mean_change": -0.00219000107449114,
+      "paired_percentile_interval": [
+        -0.003519041528457763,
+        -0.0007480692459007891
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.032617470492408394,
+        0.039686414210238455
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.035788546169005675,
+        0.03656277149422219
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.043612287893798056,
+      "method": {
+        "control": "supervised_only",
+        "label_budget_trials": 5
+      },
+      "paired_mean_change": 0.005287471637116685,
+      "paired_percentile_interval": [
+        0.002672361640195955,
+        0.00804142990647723
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03909610990120599,
+        0.048132902195490636
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04246139030565546,
+        0.044300056718310776
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.04099736478220306,
+      "method": {
+        "control": "supervised_only",
+        "label_budget_trials": 15
+      },
+      "paired_mean_change": 0.002672548525521687,
+      "paired_percentile_interval": [
+        0.0018092481907733416,
+        0.0035540112598610556
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03661007064192407,
+        0.045530734889640094
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.040839928022723494,
+        0.04116726333355396
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 25,
+      "experiment": "representation_07",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.04033273571613465,
+      "method": {
+        "control": "supervised_only",
+        "label_budget_trials": 75
+      },
+      "paired_mean_change": 0.002007919459453283,
+      "paired_percentile_interval": [
+        0.001220203598475927,
+        0.0028374420310812686
+      ],
+      "paired_reference": "classical training-only mean",
+      "percentile_interval": [
+        0.03606004322718373,
+        0.04478997266401378
+      ],
+      "resampling": {
+        "block_length_trials": 1,
+        "draws": 1000,
+        "seed": 5
+      },
+      "seed_mean_loss_range": [
+        0.04009713692124989,
+        0.040625042977805836
+      ],
+      "units": "m\u00b2/s\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.027087300696587283,
+      "method": "condition_anchor_alignment_50",
+      "paired_mean_change": 0.00012116464457800227,
+      "paired_percentile_interval": [
+        -0.000693684176276276,
+        0.0008346289908409363
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.024127530226758905,
+        0.029907125718024955
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.027087300696587283,
+        0.027087300696587283
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.027047473229169238,
+      "method": "condition_anchor_alignment_75",
+      "paired_mean_change": 8.133717715995428e-05,
+      "paired_percentile_interval": [
+        -0.0007144822972546382,
+        0.0007699866092689209
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.02409426833953675,
+        0.029849662077795904
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.027047473229169238,
+        0.027047473229169238
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.02878767373789668,
+      "method": "direct_recalibration_1",
+      "paired_mean_change": 0.0018215376858874007,
+      "paired_percentile_interval": [
+        0.0008100763608741816,
+        0.0028459471910866393
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.025746894851738394,
+        0.03194370444816565
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02878767373789668,
+        0.02878767373789668
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03706900035402378,
+      "method": "direct_recalibration_15",
+      "paired_mean_change": 0.010102864302014502,
+      "paired_percentile_interval": [
+        0.007972619980141675,
+        0.012173226593229843
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.03360490454362412,
+        0.040486721837593824
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03706900035402378,
+        0.03706900035402378
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.04492330601384733,
+      "method": "direct_recalibration_5",
+      "paired_mean_change": 0.017957169961838045,
+      "paired_percentile_interval": [
+        0.014987152598843758,
+        0.020484064031996436
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.04082426758214356,
+        0.04865915448931621
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.04492330601384733,
+        0.04492330601384733
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.029907357836567665,
+      "method": "direct_recalibration_50",
+      "paired_mean_change": 0.002941221784558379,
+      "paired_percentile_interval": [
+        0.0014185577328118901,
+        0.004213507674106902
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.02703014592357332,
+        0.032189499887360896
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029907357836567665,
+        0.029907357836567665
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.027763561539404645,
+      "method": "direct_recalibration_75",
+      "paired_mean_change": 0.0007974254873953639,
+      "paired_percentile_interval": [
+        -0.00030607532576265833,
+        0.0017147069001557692
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.025067106421939284,
+        0.030060668823422367
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.027763561539404645,
+        0.027763561539404645
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.026966136052009287,
+      "method": "frozen_source",
+      "paired_mean_change": 0.0,
+      "paired_percentile_interval": [
+        0.0,
+        0.0
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.024473358232927192,
+        0.029373884820811713
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.026966136052009287,
+        0.026966136052009287
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.02708378918792557,
+      "method": "source_mean",
+      "paired_mean_change": 0.00011765313591628792,
+      "paired_percentile_interval": [
+        -0.0006961318399130433,
+        0.0008301490275405655
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.02412311959759327,
+        0.029903798183430832
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02708378918792557,
+        0.02708378918792557
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.028187072905802697,
+      "method": "source_plus_residual_1",
+      "paired_mean_change": 0.0012209368537934096,
+      "paired_percentile_interval": [
+        0.00042257047059210705,
+        0.0019473624667202675
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.025598951209098195,
+        0.030865755186914704
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.028187072905802697,
+        0.028187072905802697
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03701677268630801,
+      "method": "source_plus_residual_15",
+      "paired_mean_change": 0.01005063663429872,
+      "paired_percentile_interval": [
+        0.008075431522770382,
+        0.012026944332379755
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.03369381048689487,
+        0.04014699820515972
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03701677268630801,
+        0.03701677268630801
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.043962923551828806,
+      "method": "source_plus_residual_5",
+      "paired_mean_change": 0.01699678749981952,
+      "paired_percentile_interval": [
+        0.014226860444167018,
+        0.019399921781185173
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.04016115061729468,
+        0.04733175568156925
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.043962923551828806,
+        0.043962923551828806
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.03021466803473417,
+      "method": "source_plus_residual_50",
+      "paired_mean_change": 0.003248531982724884,
+      "paired_percentile_interval": [
+        0.0016963275269542132,
+        0.004541061899755618
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.027351089944225485,
+        0.03246605948492727
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03021466803473417,
+        0.03021466803473417
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.02790930363983962,
+      "method": "source_plus_residual_75",
+      "paired_mean_change": 0.0009431675878303318,
+      "paired_percentile_interval": [
+        -0.00016679584211150996,
+        0.0018698207771688535
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.025233284170028764,
+        0.03015180164497866
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02790930363983962,
+        0.02790930363983962
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "longitudinal_08",
+      "initialization_repeats": 1,
+      "mean_trial_loss": 0.0263826854145542,
+      "method": "unlabeled_marginal_normalization",
+      "paired_mean_change": -0.0005834506374550872,
+      "paired_percentile_interval": [
+        -0.0014547512403237483,
+        9.90179339635489e-05
+      ],
+      "paired_reference": "frozen source decoder",
+      "percentile_interval": [
+        0.023757946429936307,
+        0.028773051047943338
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.0263826854145542,
+        0.0263826854145542
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.034733045423376144,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "compute_budget",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": -6.466946038271272e-06,
+      "paired_percentile_interval": [
+        -1.0570735434540019e-05,
+        -2.500412847721362e-06
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.031387573854872265,
+        0.03807627803499104
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03447000684518531,
+        0.034927937922433185
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.024477131568490556,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "compute_budget",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -1.9451247631886853e-05,
+      "paired_percentile_interval": [
+        -2.5257638817983804e-05,
+        -1.3528367391923743e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.02212426491735573,
+        0.026907598075992037
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.024396429679877124,
+        0.024633724490675087
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02206379606074305,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "compute_budget",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -2.103431244054036e-05,
+      "paired_percentile_interval": [
+        -2.6242515081555787e-05,
+        -1.5672301778693436e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.019837732282852037,
+        0.024362004854379487
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021922451217122458,
+        0.02226237394902265
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03940076241848019,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": 1.5938154363087622e-05,
+      "paired_percentile_interval": [
+        -3.05256141079876e-06,
+        3.584515271638905e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.03617415807407973,
+        0.042602792083196325
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03823599660236723,
+        0.04078584777394466
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0297064514441129,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -2.03804837403726e-05,
+      "paired_percentile_interval": [
+        -3.373091302211073e-05,
+        -7.078291679904112e-06
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.02737957050162254,
+        0.03202921307144268
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029515630238142326,
+        0.03002351114363399
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021276045351269257,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -3.1139137295227164e-06,
+      "paired_percentile_interval": [
+        -8.928887729072716e-06,
+        2.434335837540855e-06
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.019193083750689864,
+        0.0235095640313812
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021163622334619075,
+        0.0214050621583201
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021187826659193176,
+      "method": {
+        "control": "pretrained_zero_shot",
+        "setting": "compute_budget",
+        "target_label_budget": 0
+      },
+      "paired_mean_change": 7.555518205540648e-06,
+      "paired_percentile_interval": [
+        1.759643393854832e-06,
+        1.2651296419507261e-05
+      ],
+      "paired_reference": "random_zero_shot",
+      "percentile_interval": [
+        0.019075537599791016,
+        0.023448072450744626
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.020928722134600265,
+        0.021328033676355128
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.039384824264117095,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03615176968723095,
+        0.042565931130301375
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03823968435834654,
+        0.04070738290511307
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.029726831927853265,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.027402200180067404,
+        0.032048178034553364
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029475781085184855,
+        0.0301106070887023
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021279159264998782,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "compute_budget",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019197965116952865,
+        0.023515797524913843
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02118684227931138,
+        0.021397904119666238
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03473951236941441,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "compute_budget",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03139383757494783,
+        0.03808176358684205
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.0344429314556973,
+        0.03500999963933373
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02449658281612244,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "compute_budget",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.022142549546759316,
+        0.02692839859705477
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02439235060966404,
+        0.02462049147386887
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.022084830373183588,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "compute_budget",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019861079065217637,
+        0.024382320522142155
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021984463049765743,
+        0.022272857628452394
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021180271140987635,
+      "method": {
+        "control": "random_zero_shot",
+        "setting": "compute_budget",
+        "target_label_budget": 0
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019065012485078085,
+        0.02344483301665786
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02092331237774231,
+        0.021322782710591077
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.034717406592141335,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "data_budget",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": 1.1627448324893593e-05,
+      "paired_percentile_interval": [
+        2.2618797481980724e-06,
+        2.0744110724749688e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.031373514091449166,
+        0.03805836889885417
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03461528849139955,
+        0.03481217392050515
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.024449688536744212,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "data_budget",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -2.2513434269355915e-05,
+      "paired_percentile_interval": [
+        -3.68787784664703e-05,
+        -6.212274087814171e-06
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.022090866846913564,
+        0.026881441349898547
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02427867797353186,
+        0.024543525511396807
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0220460864069226,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "data_budget",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -3.5889850921723764e-05,
+      "paired_percentile_interval": [
+        -4.609670356631281e-05,
+        -2.5244515686847222e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.01981898774828065,
+        0.024351162874808856
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021843531897581158,
+        0.022278140219663765
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.039599761151750894,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": 8.496815518049996e-05,
+      "paired_percentile_interval": [
+        4.260080009667367e-05,
+        0.00012860335090256834
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.03633528288824373,
+        0.0427474498796318
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03807471941699227,
+        0.0411854349793371
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.029672370789682555,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -0.00012693005309193895,
+      "paired_percentile_interval": [
+        -0.0001600455508539616,
+        -9.204931426985248e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.027354527923699752,
+        0.032016193221533
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029461917115245716,
+        0.029995140200876763
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02128310674212966,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": 1.2142160595742173e-05,
+      "paired_percentile_interval": [
+        -5.514876114073351e-07,
+        2.4728051918680995e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.019203479863346484,
+        0.023518212648422934
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021139939552399366,
+        0.02144243518186892
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02121339575401466,
+      "method": {
+        "control": "pretrained_zero_shot",
+        "setting": "data_budget",
+        "target_label_budget": 0
+      },
+      "paired_mean_change": 1.9310848117236607e-05,
+      "paired_percentile_interval": [
+        5.709142438599845e-06,
+        3.2047178784587287e-05
+      ],
+      "paired_reference": "random_zero_shot",
+      "percentile_interval": [
+        0.01911068881342585,
+        0.023447279241580615
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.020949934582053,
+        0.02136353035915554
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.039514792996570396,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03624344398950817,
+        0.04263182156986103
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03808853638142152,
+        0.04096111495805367
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.029799300842774497,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.027486064083804232,
+        0.03213892797365389
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029517313852182005,
+        0.03023908137203365
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021270964581533918,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "data_budget",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019196305471915014,
+        0.023509490750656566
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021176685005795937,
+        0.02141346894535914
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.034705779143816444,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "data_budget",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.031364273402013886,
+        0.0380433980251119
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.0345226290593533,
+        0.03499193062026567
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02447220197101357,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "data_budget",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.02211496428376695,
+        0.026901217410257056
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.024454497139823214,
+        0.02448918099971952
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.022081976257844325,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "data_budget",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019858817420903202,
+        0.024383687232614092
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021976615959476416,
+        0.022284389807933125
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021194084905897425,
+      "method": {
+        "control": "random_zero_shot",
+        "setting": "data_budget",
+        "target_label_budget": 0
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019081755397553853,
+        0.023442561723916962
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02092030195526023,
+        0.021354703173841885
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.035334369411030374,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "model_size",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": -2.0896296509524217e-06,
+      "paired_percentile_interval": [
+        -1.1974984887881522e-05,
+        8.160528217352565e-06
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.03209120510185374,
+        0.038690119320144115
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03340835678558956,
+        0.037207084994279604
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02601859655423796,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "model_size",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -7.727185246898116e-05,
+      "paired_percentile_interval": [
+        -8.999001186430795e-05,
+        -6.411039993812254e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.02363107690479474,
+        0.028391801135929644
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.024604250118618314,
+        0.02732299799086364
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02342629548360184,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "model_size",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -8.883871091996941e-05,
+      "paired_percentile_interval": [
+        -9.833410255363981e-05,
+        -7.827007066709905e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.021183376294630955,
+        0.02578156047414549
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.023124700092561914,
+        0.02375173539876083
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03567896207366618,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": -0.00010168268618756786,
+      "paired_percentile_interval": [
+        -0.0001268463748870097,
+        -7.649741222235697e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.03256572839870224,
+        0.038789266997125815
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03399551131349972,
+        0.03735170912206927
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02729591322994537,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -2.981163378981441e-05,
+      "paired_percentile_interval": [
+        -5.109033093646289e-05,
+        -6.38630774845805e-06
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.024939806189126834,
+        0.029674449729454207
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.025606740020231732,
+        0.02849214713000298
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0214976169832725,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -1.1444350331273649e-05,
+      "paired_percentile_interval": [
+        -1.955634285800371e-05,
+        -1.938526403288173e-06
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.019318404770081968,
+        0.023845318563818683
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02138844377707107,
+        0.021670872122964764
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021423975207223684,
+      "method": {
+        "control": "pretrained_zero_shot",
+        "setting": "model_size",
+        "target_label_budget": 0
+      },
+      "paired_mean_change": 6.763775163281423e-06,
+      "paired_percentile_interval": [
+        -2.204952139560344e-06,
+        1.575779052581264e-05
+      ],
+      "paired_reference": "random_zero_shot",
+      "percentile_interval": [
+        0.01920919988989344,
+        0.02386355138512098
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021024116572438998,
+        0.021896374178843374
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03578064475985374,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.032681200055211815,
+        0.038880769393940556
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03414124977120611,
+        0.037467151233510874
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02732572486373518,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.024982505009036877,
+        0.029686882377498704
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.025552900850217254,
+        0.028426575532292518
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021509061333603776,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "model_size",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019326662907788693,
+        0.023850728493727474
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021384343661137225,
+        0.021707663199382412
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03533645904068132,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "model_size",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03210381606090715,
+        0.03869215935237342
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03327986311447403,
+        0.0372033990016699
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.026095868406706944,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "model_size",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.02370367344567409,
+        0.028472343168068695
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02464445076195558,
+        0.027359059893295654
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02351513419452181,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "model_size",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.021265661587228573,
+        0.025867875086687933
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02321883812032037,
+        0.023808328157469173
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0214172114320604,
+      "method": {
+        "control": "random_zero_shot",
+        "setting": "model_size",
+        "target_label_budget": 0
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019194945421788092,
+        0.023864425681063218
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021023335203138805,
+        0.021880981947993556
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0347162723173221,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "reference",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": -2.324005209231507e-05,
+      "paired_percentile_interval": [
+        -3.247354542564731e-05,
+        -1.434078040236735e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.03137177656834696,
+        0.038061550632112896
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03450903784135928,
+        0.03483551783897735
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.024449086026436292,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "reference",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -4.749678968614988e-05,
+      "paired_percentile_interval": [
+        -6.182956230291711e-05,
+        -3.234802743926218e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.022093598084063474,
+        0.026881755059224355
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02428537246273139,
+        0.02466037464400495
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.022033772863943993,
+      "method": {
+        "control": "pretrained_finetuned",
+        "setting": "reference",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -5.10575092395969e-05,
+      "paired_percentile_interval": [
+        -6.250298501563738e-05,
+        -3.988843791020384e-05
+      ],
+      "paired_reference": "random_supervised_only",
+      "percentile_interval": [
+        0.019809304175773583,
+        0.024337336692861852
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021837209760316244,
+        0.022245183465666195
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0394249756451535,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 5
+      },
+      "paired_mean_change": 4.015138103640167e-05,
+      "paired_percentile_interval": [
+        -4.803661162316829e-06,
+        8.650897690569853e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.03619138087813726,
+        0.04262225756342984
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03823028559668722,
+        0.04085947274699179
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02965538760793155,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 15
+      },
+      "paired_mean_change": -7.144431992171777e-05,
+      "paired_percentile_interval": [
+        -0.0001021780761354466,
+        -3.990129959549851e-05
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.027321703286599996,
+        0.03198517569095449
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02952908773520201,
+        0.029890497921472962
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.0212740605009528,
+      "method": {
+        "control": "pretrained_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 75
+      },
+      "paired_mean_change": -5.098764045977134e-06,
+      "paired_percentile_interval": [
+        -1.8604897939506103e-05,
+        7.879793499924523e-06
+      ],
+      "paired_reference": "random_frozen_ridge",
+      "percentile_interval": [
+        0.019189393730094772,
+        0.023505466419145603
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021134766493679628,
+        0.02141456707771722
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02119685410441732,
+      "method": {
+        "control": "pretrained_zero_shot",
+        "setting": "reference",
+        "target_label_budget": 0
+      },
+      "paired_mean_change": 1.65829634296862e-05,
+      "paired_percentile_interval": [
+        2.2804335023717306e-06,
+        2.9429985449518278e-05
+      ],
+      "paired_reference": "random_zero_shot",
+      "percentile_interval": [
+        0.01908673488249261,
+        0.02345118954137643
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.020940919681146572,
+        0.021333027795440287
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.039384824264117095,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03615176968723095,
+        0.042565931130301375
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.03823968435834654,
+        0.04070738290511307
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.029726831927853265,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.027402200180067404,
+        0.032048178034553364
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.029475781085184855,
+        0.0301106070887023
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021279159264998782,
+      "method": {
+        "control": "random_frozen_ridge",
+        "setting": "reference",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019197965116952865,
+        0.023515797524913843
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02118684227931138,
+        0.021397904119666238
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.03473951236941441,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "reference",
+        "target_label_budget": 5
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.03139383757494783,
+        0.03808176358684205
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.0344429314556973,
+        0.03500999963933373
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.02449658281612244,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "reference",
+        "target_label_budget": 15
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.022142549546759316,
+        0.02692839859705477
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02439235060966404,
+        0.02462049147386887
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.022084830373183588,
+      "method": {
+        "control": "random_supervised_only",
+        "setting": "reference",
+        "target_label_budget": 75
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019861079065217637,
+        0.024382320522142155
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.021984463049765743,
+        0.022272857628452394
+      ],
+      "units": "flexion\u00b2"
+    },
+    {
+      "evaluation_trials": 300,
+      "experiment": "representation_09",
+      "initialization_repeats": 3,
+      "mean_trial_loss": 0.021180271140987635,
+      "method": {
+        "control": "random_zero_shot",
+        "setting": "reference",
+        "target_label_budget": 0
+      },
+      "paired_reference": null,
+      "percentile_interval": [
+        0.019065012485078085,
+        0.02344483301665786
+      ],
+      "resampling": {
+        "block_length_trials": 5,
+        "draws": 1000,
+        "seed": 8
+      },
+      "seed_mean_loss_range": [
+        0.02092331237774231,
+        0.021322782710591077
+      ],
+      "units": "flexion\u00b2"
+    }
+  ]
+}

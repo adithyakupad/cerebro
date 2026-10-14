@@ -13,14 +13,19 @@ interpretation, and scientific conclusions.
 
 - [x] Establish conceptual scientific architecture and Python package
 - [x] Inspect a verified public neural recording
-- [ ] Establish classical population / decoder baselines
-- [ ] Study cross-session representations
-- [ ] Extend to self-supervised neural models
+- [x] Execute exploratory classical and sequence decoder baselines
+- [x] Execute disclosed channel-level cross-session calibration comparisons
+- [x] Implement masked/predictive representation controls
+- [ ] Satisfy every full-scope scientific validation and release criterion
 
 ## Status
 
-**Mission 002: SENSE recording inspection.** A verified MC_Maze Small training
-recording can be loaded, binned within trials, and visualized. No model is trained.
+**Development version 0.2.0.dev0.** Real-data workflows now cover SENSE, PCA/FA,
+classical and causal sequence decoding, latent forecasts, LINK channel transfer,
+calibration and controlled representation experiments. A local explorer reads
+stored results. These are exploratory research workflows; the full project is
+not declared complete. See the [completion matrix](docs/research/completion_matrix.md),
+[execution commands](docs/research/workflows.md) and [scientific reports](reports/benchmarks.md).
 
 This repository is part of an ongoing research-engineering project backlog. Claims, results, and benchmarks will be added only when supported by reproducible experiments.
 
@@ -30,19 +35,22 @@ Clone and enter the repository. If Conda `cerebro` does not already exist, creat
 it with Python 3.11; otherwise use the existing environment:
 
 ```sh
-git clone https://github.com/adithyakupad/cerebro.git
+git clone --branch codex/research-platform https://github.com/adithyakupad/cerebro.git
 cd cerebro
 # Only when the environment is absent:
 conda create -n cerebro python=3.11 pip
 conda activate cerebro
 python --version
-python -m pip install -e '.[dev]'
+python -m pip install -e '.[dev,classical,deep]'
 python -c "import cerebro; print(cerebro.__file__)"
 python -m pytest
 ```
 
 Runtime dependencies are NumPy, PyNWB, and Matplotlib. The development extra adds
-pytest; setuptools is the build backend. Tests verify editable installation and import outside the
+pytest; `classical` adds SciPy/scikit-learn and `deep` adds PyTorch. Setuptools is
+the build backend. `requirements-research.txt` records executed direct versions;
+it is not a transitive lock. These development workflows are on the named branch;
+published `main`/`v0.1.0` preserve the earlier foundation. Tests verify editable installation and import outside the
 repository without adding `src` to the test import path. Keep raw recordings,
 processed data, and generated figures out of Git.
 
@@ -89,7 +97,8 @@ This is one curated session of successful trials, not evidence of cross-session
 generalization. Stored electrode links conflict with 70 M1-prefix unit IDs;
 no anatomical correction is silently applied. File-time alignment does not verify
 hardware latency. Binning and the 2 ms behavior-coverage tolerance remain explicit
-scientific choices. No PCA, FA, decoding, or adaptation has been implemented.
+scientific choices. These describe the original SENSE milestone; subsequent
+population, decoding and adaptation experiments are documented below.
 
 See [repository instructions](AGENTS.md), [architecture](docs/architecture.md),
 [tooling inventory](docs/development/tooling.md), and
@@ -113,11 +122,12 @@ trial endpoints. See [scientific report](reports/signal_characterization.md),
 [machine-readable results](reports/signal_characterization.json), and
 [assumptions and learning workflow](docs/learning/signal_03.md). These are
 descriptive observations; temporal Fano factors mix task epochs and conditions.
-No dimensionality reduction or decoder is implemented.
+Mission 003 itself contains no dimensionality reduction or decoder; later
+workflows are documented in [research commands](docs/research/workflows.md).
 
 ## Local event-aligned experiment
 
-On the local Mission 004 branch, using the same pinned asset:
+The preserved Mission 004 experiment uses the same pinned asset:
 
 ```sh
 python -m cerebro.event_audit configs/mc_maze_small.json
@@ -132,6 +142,41 @@ use the human-selected go cue, −400 to +1000 ms, and 20 ms bins. All summaries
 exclude validation trials. Condition means and residuals are descriptive;
 reliable residual correlations are withheld. See [learning notes](docs/learning/event_04.md)
 and the reviewable [alignment protocol](configs/event_04.json).
+
+## Current model and longitudinal workflows
+
+```sh
+python -m cerebro.benchmark configs/mc_maze_small.json
+python -m cerebro.sequence_benchmark
+python -m cerebro.representation_benchmark
+python -m cerebro.dynamics
+python -m cerebro.benchmark_figures
+python -m cerebro.explorer --sequence data/processed/sequence_06
+```
+
+Open `data/processed/explorer.html` locally. It contains trial/model selection,
+velocity comparisons, neural activity and training-fitted PCA trajectories, with
+provenance and limitations. It needs no server, CDN or cloud account.
+
+LINK, Perich–Miller and FALCON acquisition/audit commands, chronological calibration,
+cross-session representation controls, cross-subject baselines and registries are in
+[the workflow reference](docs/research/workflows.md). Maze hand velocity and LINK
+finger flexion targets are separate experiments. Contact matching does not imply
+stable neurons. Small-budget recalibration can worsen prediction; negative
+findings and missing metadata are retained. The human requires documented neural
+coverage; Perich remains audit-only. FALCON supports a separate two-subject EMG
+baseline with recorded coverage and anonymous neural features. Frozen transfer
+failed to beat its mean baseline; target calibration improved prediction. Native
+EMG is author-normalized, despite mV labels, and original preprocessing precedes
+our splits. A held-out diagnostic classified the two recording subjects at 100%
+balanced accuracy from anonymous features; subject, session and date are
+confounded, so those features are not identity-free. No broad cross-subject
+success, biological closed-loop system or
+validated neural foundation model is claimed.
+
+Code is [MIT licensed](LICENSE); recording licenses and attribution remain
+dataset-specific CC-BY-4.0. Raw recordings and large derived arrays/checkpoints
+are never included in Git.
 
 ## Principles
 

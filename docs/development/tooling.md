@@ -134,3 +134,32 @@ for sandboxed runs. Initial font-cache warnings did not prevent figure creation.
 Remaining scientific limits and human choices are in
 `docs/datasets/mc_maze_small.md`. No model, push, PR, or subsequent milestone was
 started.
+
+## Full-scope execution update
+
+Verified the existing environment again: Python3.11.16. Installed optional
+scientific libraries only into `cerebro`: SciPy1.17.1, scikit-learn1.9.1 and
+PyTorch2.14.1, with required transitive dependencies. No global tool, environment,
+hook or service installation. Direct executed versions are recorded in
+`requirements-research.txt`; generated experiment reports record package versions.
+
+Re-read Ponytail and ECC verification instructions and existing hook declarations.
+Graphify CLI help and its local Codex reference were inspected; no graph/watcher/
+hook installation was needed. Bounded agents handled native dataset audits,
+classical/sequence primitives, representation controls, review, scientific
+rendering and evaluation in distinct files or isolated temporary directories.
+Their completed code and tests were reviewed and integrated; no two agents edited
+shared foundations concurrently. Review identified and fixed protocol labels,
+event identity joins, inference checkpoint parameters and chronology checks.
+
+Git/ripgrep, pytest, PyNWB, established NumPy/SciPy/sklearn/PyTorch libraries,
+public pinned DANDI metadata/download APIs and browser verification were actually
+used. A temporary loopback-only server inspected the self-contained explorer;
+it is not runtime infrastructure. No standalone lint/type/coverage checker or GPU
+benchmark was invoked. Compile/build, tests, artifact integrity, dependency checks,
+clean-checkout reproduction and publication evidence are tracked separately in
+`full_scope_validation.md`; do not infer unexecuted checks from tool availability.
+
+The first metadata refresh approval timed out; the permitted retry used already
+installed dependencies and successfully refreshed editable0.2.0.dev0 metadata.
+No broader filesystem or account permissions were changed.

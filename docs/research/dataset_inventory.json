@@ -1,0 +1,749 @@
+{
+  "coverage_policy": "Human requires documented neural coverage; Perich unknown coverage is not modeled.",
+  "discovered_not_acquired": [
+    {
+      "asset_count": 312,
+      "dandiset_id": "001201",
+      "license": "CC-BY-4.0",
+      "limitations": [
+        "single subject",
+        "channel threshold crossings, not sorted units",
+        "native schema and coverage not inspected"
+      ],
+      "size_bytes": 12563287466,
+      "source": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/info/",
+      "subjects": [
+        "Monkey-N"
+      ],
+      "version": "0.251023.2336"
+    },
+    {
+      "asset_count": 111,
+      "dandiset_id": "000688",
+      "license": "CC-BY-4.0",
+      "limitations": [
+        "description inconsistently says three and four subjects",
+        "no established cross-session neuron correspondence"
+      ],
+      "size_bytes": 13179483710,
+      "source": "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/",
+      "subject_asset_counts": {
+        "C": 68,
+        "J": 3,
+        "M": 28,
+        "T": 12
+      },
+      "version": "0.250122.1735"
+    },
+    {
+      "limitations": [
+        "native MATLAB/HDF5 adapter required",
+        "no source-defined CEREBRO evaluation split verified"
+      ],
+      "name": "O\u2019Doherty/Makin reaching dataset",
+      "sessions_per_subject": [
+        37,
+        10
+      ],
+      "source": "https://zenodo.org/records/583331",
+      "status": "discovered only; newer record version and license must be pinned before acquisition",
+      "subjects": [
+        "Indy",
+        "Loco"
+      ]
+    }
+  ],
+  "documented_coverage_multisubject_assets": [
+    {
+      "asset_id": "61dbe78b-58da-4089-b308-96378c5a95b9",
+      "asset_path": "sub-MonkeyL-held-in-calib/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb",
+      "attribution": [
+        "Rouse, Adam G",
+        "Schieber, Marc H"
+      ],
+      "citation": "Rouse, Adam G.; Schieber, Marc H. FALCON Benchmark M1-A: primary motor cortex recordings in primate during reach-to-grasp task [Data set]. DANDI Archive 000941 version 0.241029.1405. CC-BY-4.0.",
+      "dandiset_id": "000941",
+      "dataset_title": "FALCON Benchmark M1-A: primary motor cortex recordings in primate during reach-to-grasp task",
+      "download_url": "https://api.dandiarchive.org/api/assets/61dbe78b-58da-4089-b308-96378c5a95b9/download/",
+      "license": [
+        "spdx:CC-BY-4.0"
+      ],
+      "local_path": "data/raw/falcon/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/000941/versions/0.241029.1405/assets/61dbe78b-58da-4089-b308-96378c5a95b9/",
+      "sha256": "96e7f078c6acb89b802b6241a36b9c9e2d04df82c180a63354fd3f7e74357254",
+      "size_bytes": 68337100,
+      "source_split": "held-in-calib",
+      "source_url": "https://dandiarchive.org/dandiset/000941/0.241029.1405",
+      "version": "0.241029.1405",
+      "version_limitation": "published version"
+    },
+    {
+      "asset_id": "4c3140ea-abe6-4c3c-a2ea-1025e5bef288",
+      "asset_path": "sub-MonkeyX-held-in-calib/sub-MonkeyX-held-in-calib_ses-20121207_behavior+ecephys.nwb",
+      "attribution": [
+        "Rouse, Adam G (DataCollector)",
+        "Schieber, Marc H (DataCollector)",
+        "Karpowicz, Brianna (ContactPerson)"
+      ],
+      "citation": "Rouse, Adam G.; Schieber, Marc H. FALCON Benchmark M1-B: primary motor cortex recordings in primate during reach-to-grasp task [Data set]. DANDI Archive 001209 version draft. CC-BY-4.0.",
+      "dandiset_id": "001209",
+      "dataset_title": "FALCON Benchmark M1-B: primary motor cortex recordings in primate during reach-to-grasp task",
+      "download_url": "https://api.dandiarchive.org/api/assets/4c3140ea-abe6-4c3c-a2ea-1025e5bef288/download/",
+      "license": [
+        "spdx:CC-BY-4.0"
+      ],
+      "local_path": "data/raw/falcon/sub-MonkeyX-held-in-calib_ses-20121207_behavior+ecephys.nwb",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001209/versions/draft/assets/4c3140ea-abe6-4c3c-a2ea-1025e5bef288/",
+      "sha256": "df056afae5eafb00519ed6231d62e4e7bbce331490ab6fe31f215c0667e5bd7f",
+      "size_bytes": 52469272,
+      "source_split": "held-in-calib",
+      "source_url": "https://dandiarchive.org/dandiset/001209/draft",
+      "version": "draft",
+      "version_limitation": "mutable draft; asset UUID and checksum pinned"
+    }
+  ],
+  "falcon_native_audit": "reports/falcon_native_audit.json",
+  "native_audit": [
+    {
+      "R_complete_count": 173,
+      "electrode_locations": {
+        "Primary Motor Cortex": 96
+      },
+      "file": "sub-J_ses-CO-20160406_behavior+ecephys.nwb",
+      "finite_go_cue": 220,
+      "geometry_by_target": [
+        {
+          "target_id": 0.0,
+          "trial_count": 27,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            1.5707963267948966
+          ]
+        },
+        {
+          "target_id": 1.0,
+          "trial_count": 23,
+          "unique_corner_rows": 4,
+          "unique_target_directions": [
+            0.7853981633974483
+          ]
+        },
+        {
+          "target_id": 2.0,
+          "trial_count": 23,
+          "unique_corner_rows": 1,
+          "unique_target_directions": [
+            0.0
+          ]
+        },
+        {
+          "target_id": 3.0,
+          "trial_count": 26,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            -0.7853981633974483
+          ]
+        },
+        {
+          "target_id": 4.0,
+          "trial_count": 20,
+          "unique_corner_rows": 2,
+          "unique_target_directions": [
+            -1.5707963267948966
+          ]
+        },
+        {
+          "target_id": 5.0,
+          "trial_count": 24,
+          "unique_corner_rows": 1,
+          "unique_target_directions": [
+            -2.356194490192345
+          ]
+        },
+        {
+          "target_id": 6.0,
+          "trial_count": 26,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            3.141592653589793
+          ]
+        },
+        {
+          "target_id": 7.0,
+          "trial_count": 26,
+          "unique_corner_rows": 5,
+          "unique_target_directions": [
+            2.356194490192345
+          ]
+        }
+      ],
+      "go_minus400_plus1000_inside_trial_count": 179,
+      "identifier": "1196c64f-eb0e-4b09-b3dc-b4e2e3558c32",
+      "notes": null,
+      "results": {
+        "A": 76,
+        "F": 2,
+        "I": 23,
+        "R": 195
+      },
+      "session_description": "Monkey J performing center-out reaching task.",
+      "session_id": "sub-J_ses-CO-20160406",
+      "session_start_time": "2016-04-06T17:33:16.642000-04:00",
+      "spike_count": 152389,
+      "spike_ordered": true,
+      "subject_id": "J",
+      "successful_result_R_condition_counts": {
+        "0.0": 27,
+        "1.0": 23,
+        "2.0": 23,
+        "3.0": 26,
+        "4.0": 20,
+        "5.0": 24,
+        "6.0": 26,
+        "7.0": 26
+      },
+      "trial_columns": [
+        "start_time",
+        "stop_time",
+        "target_on_time",
+        "go_cue_time",
+        "target_id",
+        "target_corners",
+        "target_dir",
+        "result"
+      ],
+      "trial_count": 296,
+      "trial_descriptions": {
+        "go_cue_time": "time when the go cue is given",
+        "result": "trial outcome, R: reward, A: abort, F: fail, I: incomplete",
+        "start_time": "Start time of epoch, in seconds",
+        "stop_time": "Stop time of epoch, in seconds",
+        "target_corners": "target corners",
+        "target_dir": "target direction",
+        "target_id": "target id",
+        "target_on_time": "time when the target is shown"
+      },
+      "unit_columns": [
+        "spike_times",
+        "electrodes",
+        "waveforms"
+      ],
+      "unit_count": 18,
+      "unit_descriptions": {
+        "electrodes": "Index for VectorData 'electrodes'",
+        "spike_times": "Index for VectorData 'spike_times'",
+        "waveforms": "Index for VectorData 'waveforms_index'"
+      },
+      "unit_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "R_complete_count": 186,
+      "electrode_locations": {
+        "Primary Motor Cortex": 96
+      },
+      "file": "sub-J_ses-CO-20160407_behavior+ecephys.nwb",
+      "finite_go_cue": 236,
+      "geometry_by_target": [
+        {
+          "target_id": 0.0,
+          "trial_count": 29,
+          "unique_corner_rows": 5,
+          "unique_target_directions": [
+            1.5707963267948966
+          ]
+        },
+        {
+          "target_id": 1.0,
+          "trial_count": 18,
+          "unique_corner_rows": 2,
+          "unique_target_directions": [
+            0.7853981633974483
+          ]
+        },
+        {
+          "target_id": 2.0,
+          "trial_count": 29,
+          "unique_corner_rows": 4,
+          "unique_target_directions": [
+            0.0
+          ]
+        },
+        {
+          "target_id": 3.0,
+          "trial_count": 29,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            -0.7853981633974483
+          ]
+        },
+        {
+          "target_id": 4.0,
+          "trial_count": 23,
+          "unique_corner_rows": 2,
+          "unique_target_directions": [
+            -1.5707963267948966
+          ]
+        },
+        {
+          "target_id": 5.0,
+          "trial_count": 21,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            -2.356194490192345
+          ]
+        },
+        {
+          "target_id": 6.0,
+          "trial_count": 28,
+          "unique_corner_rows": 3,
+          "unique_target_directions": [
+            3.141592653589793
+          ]
+        },
+        {
+          "target_id": 7.0,
+          "trial_count": 22,
+          "unique_corner_rows": 2,
+          "unique_target_directions": [
+            2.356194490192345
+          ]
+        }
+      ],
+      "go_minus400_plus1000_inside_trial_count": 198,
+      "identifier": "485c922e-56d5-478a-98c8-f7783dc34431",
+      "notes": null,
+      "results": {
+        "A": 94,
+        "F": 11,
+        "I": 27,
+        "R": 199
+      },
+      "session_description": "Monkey J performing center-out reaching task.",
+      "session_id": "sub-J_ses-CO-20160407",
+      "session_start_time": "2016-04-07T17:10:37.240000-04:00",
+      "spike_count": 130191,
+      "spike_ordered": true,
+      "subject_id": "J",
+      "successful_result_R_condition_counts": {
+        "0.0": 29,
+        "1.0": 18,
+        "2.0": 29,
+        "3.0": 29,
+        "4.0": 23,
+        "5.0": 21,
+        "6.0": 28,
+        "7.0": 22
+      },
+      "trial_columns": [
+        "start_time",
+        "stop_time",
+        "target_on_time",
+        "go_cue_time",
+        "target_id",
+        "target_corners",
+        "target_dir",
+        "result"
+      ],
+      "trial_count": 331,
+      "trial_descriptions": {
+        "go_cue_time": "time when the go cue is given",
+        "result": "trial outcome, R: reward, A: abort, F: fail, I: incomplete",
+        "start_time": "Start time of epoch, in seconds",
+        "stop_time": "Stop time of epoch, in seconds",
+        "target_corners": "target corners",
+        "target_dir": "target direction",
+        "target_id": "target id",
+        "target_on_time": "time when the target is shown"
+      },
+      "unit_columns": [
+        "spike_times",
+        "electrodes",
+        "waveforms"
+      ],
+      "unit_count": 19,
+      "unit_descriptions": {
+        "electrodes": "Index for VectorData 'electrodes'",
+        "spike_times": "Index for VectorData 'spike_times'",
+        "waveforms": "Index for VectorData 'waveforms_index'"
+      },
+      "unit_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ],
+  "observed_acquired_assets": [
+    {
+      "manifest": {
+        "asset_id": "a8313f0e-d9fd-463e-b6f8-271f2f41f13a",
+        "asset_path": "sub-J/sub-J_ses-CO-20160406_behavior+ecephys.nwb",
+        "dandiset_id": "000688",
+        "download_url": "https://api.dandiarchive.org/api/assets/a8313f0e-d9fd-463e-b6f8-271f2f41f13a/download/",
+        "license": "CC-BY-4.0",
+        "local_path": "data/raw/perich_j/sub-J_ses-CO-20160406_behavior+ecephys.nwb",
+        "metadata_url": "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/a8313f0e-d9fd-463e-b6f8-271f2f41f13a/",
+        "sha256": "3c52a93628dc419aa01ac64d873d790ac99f25367a2af9b6a2f3d05c91d76d2d",
+        "size_bytes": 23988300,
+        "version": "0.250122.1735"
+      },
+      "published_asset_metadata": {
+        "@context": "https://raw.githubusercontent.com/dandi/schema/master/releases/0.6.4/context.json",
+        "access": [
+          {
+            "schemaKey": "AccessRequirements",
+            "status": "dandi:OpenAccess"
+          }
+        ],
+        "approach": [
+          {
+            "name": "behavioral approach",
+            "schemaKey": "ApproachType"
+          },
+          {
+            "name": "electrophysiological approach",
+            "schemaKey": "ApproachType"
+          }
+        ],
+        "blobDateModified": "2024-02-04T23:15:44.627115-05:00",
+        "contentSize": 23988300,
+        "contentUrl": [
+          "https://api.dandiarchive.org/api/assets/a8313f0e-d9fd-463e-b6f8-271f2f41f13a/download/",
+          "https://dandiarchive.s3.amazonaws.com/blobs/ea2/700/ea2700cd-a5fa-4e27-9701-ab2c212fd304"
+        ],
+        "dateModified": "2024-02-29T06:07:48.034713-05:00",
+        "datePublished": "2025-01-22T17:35:47.654037+00:00",
+        "digest": {
+          "dandi:dandi-etag": "fc22bd6ffefe46ce0a2cc30d14809c09-1",
+          "dandi:sha2-256": "3c52a93628dc419aa01ac64d873d790ac99f25367a2af9b6a2f3d05c91d76d2d"
+        },
+        "encodingFormat": "application/x-nwb",
+        "id": "dandiasset:a8313f0e-d9fd-463e-b6f8-271f2f41f13a",
+        "identifier": "a8313f0e-d9fd-463e-b6f8-271f2f41f13a",
+        "keywords": [
+          "motor cortex",
+          "reaching",
+          "neural data",
+          "spike sorting"
+        ],
+        "measurementTechnique": [
+          {
+            "name": "spike sorting technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "behavioral technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "analytical technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "surgical technique",
+            "schemaKey": "MeasurementTechniqueType"
+          }
+        ],
+        "path": "sub-J/sub-J_ses-CO-20160406_behavior+ecephys.nwb",
+        "publishedBy": {
+          "endDate": "2025-01-22T17:35:47.654037+00:00",
+          "id": "urn:uuid:eda0827f-3002-4e13-a71b-03341f2cd8f6",
+          "name": "DANDI publish",
+          "schemaKey": "PublishActivity",
+          "startDate": "2025-01-22T17:35:47.654037+00:00",
+          "wasAssociatedWith": [
+            {
+              "id": "urn:uuid:365cd44b-4f73-4871-88cc-c318fa5ba702",
+              "identifier": "RRID:SCR_017571",
+              "name": "DANDI API",
+              "schemaKey": "Software",
+              "version": "0.1.0"
+            }
+          ]
+        },
+        "schemaKey": "Asset",
+        "schemaVersion": "0.6.4",
+        "variableMeasured": [
+          {
+            "schemaKey": "PropertyValue",
+            "value": "Units"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "Position"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "ElectrodeGroup"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "SpatialSeries"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "BehavioralTimeSeries"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "ProcessingModule"
+          }
+        ],
+        "wasAttributedTo": [
+          {
+            "age": {
+              "schemaKey": "PropertyValue",
+              "unitText": "ISO-8601 duration",
+              "value": "P8Y/P15Y",
+              "valueReference": {
+                "schemaKey": "PropertyValue",
+                "value": "dandi:BirthReference"
+              }
+            },
+            "identifier": "J",
+            "schemaKey": "Participant",
+            "sex": {
+              "identifier": "http://purl.obolibrary.org/obo/PATO_0000384",
+              "name": "Male",
+              "schemaKey": "SexType"
+            },
+            "species": {
+              "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_9544",
+              "name": "Macaca mulatta - Rhesus monkey",
+              "schemaKey": "SpeciesType"
+            }
+          }
+        ],
+        "wasGeneratedBy": [
+          {
+            "description": "Monkey J performing center-out reaching task.",
+            "identifier": "sub-J_ses-CO-20160406",
+            "name": "sub-J_ses-CO-20160406",
+            "schemaKey": "Session",
+            "startDate": "2016-04-06T17:33:16.642000-04:00"
+          },
+          {
+            "description": "Metadata generated by DANDI cli",
+            "endDate": "2024-02-29T06:07:48.034698-05:00",
+            "id": "urn:uuid:a18075a2-598f-4d39-ac5f-88698da2607d",
+            "name": "Metadata generation",
+            "schemaKey": "Activity",
+            "startDate": "2024-02-29T06:07:48.030486-05:00",
+            "wasAssociatedWith": [
+              {
+                "identifier": "RRID:SCR_019009",
+                "name": "DANDI Command Line Interface",
+                "schemaKey": "Software",
+                "url": "https://github.com/dandi/dandi-cli",
+                "version": "0.56.1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "manifest": {
+        "asset_id": "fdaef189-c86d-4fd6-ac47-ad21a96040b8",
+        "asset_path": "sub-J/sub-J_ses-CO-20160407_behavior+ecephys.nwb",
+        "dandiset_id": "000688",
+        "download_url": "https://api.dandiarchive.org/api/assets/fdaef189-c86d-4fd6-ac47-ad21a96040b8/download/",
+        "license": "CC-BY-4.0",
+        "local_path": "data/raw/perich_j/sub-J_ses-CO-20160407_behavior+ecephys.nwb",
+        "metadata_url": "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/fdaef189-c86d-4fd6-ac47-ad21a96040b8/",
+        "sha256": "cd916e693ba7a69ed08a1c2bc27161697144c43dbf6add6804627f542ef8157e",
+        "size_bytes": 22119020,
+        "version": "0.250122.1735"
+      },
+      "published_asset_metadata": {
+        "@context": "https://raw.githubusercontent.com/dandi/schema/master/releases/0.6.4/context.json",
+        "access": [
+          {
+            "schemaKey": "AccessRequirements",
+            "status": "dandi:OpenAccess"
+          }
+        ],
+        "approach": [
+          {
+            "name": "behavioral approach",
+            "schemaKey": "ApproachType"
+          },
+          {
+            "name": "electrophysiological approach",
+            "schemaKey": "ApproachType"
+          }
+        ],
+        "blobDateModified": "2024-02-04T22:46:33.327888-05:00",
+        "contentSize": 22119020,
+        "contentUrl": [
+          "https://api.dandiarchive.org/api/assets/fdaef189-c86d-4fd6-ac47-ad21a96040b8/download/",
+          "https://dandiarchive.s3.amazonaws.com/blobs/56a/4ef/56a4ef98-a6f0-4377-8a23-373fba80b153"
+        ],
+        "dateModified": "2024-02-29T06:08:08.889486-05:00",
+        "datePublished": "2025-01-22T17:35:47.765133+00:00",
+        "digest": {
+          "dandi:dandi-etag": "caaea15afa891822bd3369fee14b72b4-1",
+          "dandi:sha2-256": "cd916e693ba7a69ed08a1c2bc27161697144c43dbf6add6804627f542ef8157e"
+        },
+        "encodingFormat": "application/x-nwb",
+        "id": "dandiasset:fdaef189-c86d-4fd6-ac47-ad21a96040b8",
+        "identifier": "fdaef189-c86d-4fd6-ac47-ad21a96040b8",
+        "keywords": [
+          "motor cortex",
+          "reaching",
+          "neural data",
+          "spike sorting"
+        ],
+        "measurementTechnique": [
+          {
+            "name": "spike sorting technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "behavioral technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "analytical technique",
+            "schemaKey": "MeasurementTechniqueType"
+          },
+          {
+            "name": "surgical technique",
+            "schemaKey": "MeasurementTechniqueType"
+          }
+        ],
+        "path": "sub-J/sub-J_ses-CO-20160407_behavior+ecephys.nwb",
+        "publishedBy": {
+          "endDate": "2025-01-22T17:35:47.765133+00:00",
+          "id": "urn:uuid:d96058ec-9f7e-4a06-a386-e84f73c2034b",
+          "name": "DANDI publish",
+          "schemaKey": "PublishActivity",
+          "startDate": "2025-01-22T17:35:47.765133+00:00",
+          "wasAssociatedWith": [
+            {
+              "id": "urn:uuid:4dbb0998-1f37-4958-961c-63ad2b9a56e4",
+              "identifier": "RRID:SCR_017571",
+              "name": "DANDI API",
+              "schemaKey": "Software",
+              "version": "0.1.0"
+            }
+          ]
+        },
+        "schemaKey": "Asset",
+        "schemaVersion": "0.6.4",
+        "variableMeasured": [
+          {
+            "schemaKey": "PropertyValue",
+            "value": "Units"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "Position"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "ElectrodeGroup"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "SpatialSeries"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "BehavioralTimeSeries"
+          },
+          {
+            "schemaKey": "PropertyValue",
+            "value": "ProcessingModule"
+          }
+        ],
+        "wasAttributedTo": [
+          {
+            "age": {
+              "schemaKey": "PropertyValue",
+              "unitText": "ISO-8601 duration",
+              "value": "P8Y/P15Y",
+              "valueReference": {
+                "schemaKey": "PropertyValue",
+                "value": "dandi:BirthReference"
+              }
+            },
+            "identifier": "J",
+            "schemaKey": "Participant",
+            "sex": {
+              "identifier": "http://purl.obolibrary.org/obo/PATO_0000384",
+              "name": "Male",
+              "schemaKey": "SexType"
+            },
+            "species": {
+              "identifier": "http://purl.obolibrary.org/obo/NCBITaxon_9544",
+              "name": "Macaca mulatta - Rhesus monkey",
+              "schemaKey": "SpeciesType"
+            }
+          }
+        ],
+        "wasGeneratedBy": [
+          {
+            "description": "Monkey J performing center-out reaching task.",
+            "identifier": "sub-J_ses-CO-20160407",
+            "name": "sub-J_ses-CO-20160407",
+            "schemaKey": "Session",
+            "startDate": "2016-04-07T17:10:37.240000-04:00"
+          },
+          {
+            "description": "Metadata generated by DANDI cli",
+            "endDate": "2024-02-29T06:08:08.889472-05:00",
+            "id": "urn:uuid:bb067f14-dbd0-4214-b05a-2cf2a2d6f71a",
+            "name": "Metadata generation",
+            "schemaKey": "Activity",
+            "startDate": "2024-02-29T06:08:08.887153-05:00",
+            "wasAssociatedWith": [
+              {
+                "identifier": "RRID:SCR_019009",
+                "name": "DANDI Command Line Interface",
+                "schemaKey": "Software",
+                "url": "https://github.com/dandi/dandi-cli",
+                "version": "0.56.1"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

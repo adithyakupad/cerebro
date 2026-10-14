@@ -20,3 +20,7 @@ reports/figures/*
 !reports/figures/sense_01_*.png
 !reports/figures/signal_03_*.png
 !reports/figures/event_04_*.png
+!reports/figures/benchmark_*.png
+!reports/figures/representation_*.png
+!reports/figures/longitudinal_*.png
+!reports/figures/cross_subject_*.png

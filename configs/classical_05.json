@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "event": "go_cue_time",
+  "pre_seconds": -0.4,
+  "post_seconds": 1.0,
+  "bin_width_seconds": 0.02,
+  "behavior": "hand_vel",
+  "behavior_max_gap_seconds": 0.002,
+  "neural_unit_policy": "heldin_only",
+  "inner_validation_trials": 15,
+  "seed": 5,
+  "dimensions": [2, 5, 10, 20],
+  "ridge_alphas": [1.0, 10.0, 100.0, 1000.0],
+  "bootstrap_draws": 1000
+}

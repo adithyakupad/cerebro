@@ -1,0 +1,424 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.903
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200127.json"
+      ],
+      "exit_code": 0,
+      "seconds": 4.061
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200130.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.993
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200204.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.543
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/falcon_m1_a.json"
+      ],
+      "exit_code": 0,
+      "seconds": 5.12
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/falcon_m1_b.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.223
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dataset",
+        "configs/mc_maze.json"
+      ],
+      "exit_code": 0,
+      "seconds": 43.324
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.sense_inspect",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 27.678
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.event_audit",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.099
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.event_aligned",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 6.923
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.event_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 4.171
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.nwb_audit",
+        "configs/mc_maze.json",
+        "--output",
+        "reports/mc_maze_native_audit.json"
+      ],
+      "exit_code": 0,
+      "seconds": 1.67
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.maze_feasibility",
+        "configs/mc_maze.json"
+      ],
+      "exit_code": 0,
+      "seconds": 8.547
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.benchmark",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 9.066
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.sequence_benchmark"
+      ],
+      "exit_code": 0,
+      "seconds": 19.593
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.representation_benchmark"
+      ],
+      "exit_code": 0,
+      "seconds": 6.015
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.longitudinal"
+      ],
+      "exit_code": 0,
+      "seconds": 7.902
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.representation_transfer"
+      ],
+      "exit_code": 0,
+      "seconds": 24.988
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.dynamics"
+      ],
+      "exit_code": 0,
+      "seconds": 1.839
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.benchmark_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 2.777
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.extended_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 3.629
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.evaluation"
+      ],
+      "exit_code": 0,
+      "seconds": 2.923
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.explorer",
+        "--sequence",
+        "data/processed/sequence_06",
+        "--longitudinal",
+        "data/processed/longitudinal_08",
+        "--transfer",
+        "data/processed/representation_09"
+      ],
+      "exit_code": 0,
+      "seconds": 2.454
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "cerebro.registry"
+      ],
+      "exit_code": 0,
+      "seconds": 1.184
+    }
+  ],
+  "executed_source_hashes": {
+    "src/cerebro/__init__.py": {
+      "sha256": "39454bcacb39873d7b0e0878760a9a7ddaf27d74ece1a8a5e6df6cd3c6b9db7b",
+      "workspace_matches": true
+    },
+    "src/cerebro/benchmark.py": {
+      "sha256": "bed2a1f3e09ce3927225a0c55bb7892a8473dbab19744d1cdccd34552e457b1f",
+      "workspace_matches": true
+    },
+    "src/cerebro/benchmark_figures.py": {
+      "sha256": "eb8f85084802788cd8c8b3d7186127ca99b76574b555c8feed13adc1dc1ff778",
+      "workspace_matches": true
+    },
+    "src/cerebro/characterize.py": {
+      "sha256": "51b01a0eaad250de3153eccc9f16052dd90d258e8a98ff44d967c0b6b3c3a8c1",
+      "workspace_matches": true
+    },
+    "src/cerebro/characterize_figures.py": {
+      "sha256": "f35223b37d95a299fe2496eca362674ca7a1d205cf26eba211d4c1fa7ef8dc48",
+      "workspace_matches": true
+    },
+    "src/cerebro/cross_subject.py": {
+      "sha256": "d762673870a18120b193b6be3af9f4b16aec52bfc1a32b8cc5eec3692e9a7692",
+      "workspace_matches": true
+    },
+    "src/cerebro/dataset.py": {
+      "sha256": "4451cdf7f79b303c4c8355d9177627794e24ad62ad4847d54da2067229751dde",
+      "workspace_matches": true
+    },
+    "src/cerebro/dynamics.py": {
+      "sha256": "1252a15af3c95adbcba803062114a6438ea0bf61338d524453c3df9a145ed5b7",
+      "workspace_matches": true
+    },
+    "src/cerebro/evaluation.py": {
+      "sha256": "86c197749f83124ec0d4030bd889ecbd6b9f86a9ff0b5488181f6818dd8fab29",
+      "workspace_matches": true
+    },
+    "src/cerebro/event_aligned.py": {
+      "sha256": "3f0b5745ca7f86a8380a22837e661d3e432cc1c2891afcec205eda71c617651d",
+      "workspace_matches": true
+    },
+    "src/cerebro/event_audit.py": {
+      "sha256": "a0caa70b8786081f47f91fadfde0dd8a905470d530c0f4f63e5f25053399cda6",
+      "workspace_matches": true
+    },
+    "src/cerebro/event_figures.py": {
+      "sha256": "b78ea4f13204f65614714134729c3dc29fc8ba428d0f2851b482a3c7defb1650",
+      "workspace_matches": true
+    },
+    "src/cerebro/explorer.py": {
+      "sha256": "946de24f6f1e5f30277f4e3dc6a563a6d37da0aa7a78315576c25bc48a9a2084",
+      "workspace_matches": true
+    },
+    "src/cerebro/extended_figures.py": {
+      "sha256": "8095a84a653e22dd83a3869f6e23680fd276fe1d02802b65ba6da75e6df979ee",
+      "workspace_matches": true
+    },
+    "src/cerebro/falcon.py": {
+      "sha256": "520a2f6481e454b12e0b4f1dd5f7d2544625d14ae787af4f3f1b52e6c42e68eb",
+      "workspace_matches": true
+    },
+    "src/cerebro/kalman.py": {
+      "sha256": "bb5dd081ceb52434cfa5dc5dd730d701ef8a21f03eb69da5701f4239f3e8285a",
+      "workspace_matches": true
+    },
+    "src/cerebro/link.py": {
+      "sha256": "5ccbd657b28b3dc693c7fc182815a41013e2c4006ff22fabd830c9b8d55bfc9c",
+      "workspace_matches": true
+    },
+    "src/cerebro/longitudinal.py": {
+      "sha256": "f1c25ff9fa2ff487d7d76724d753b52380e2d9f698cdca6a06dfeb003658e3ef",
+      "workspace_matches": true
+    },
+    "src/cerebro/maze_feasibility.py": {
+      "sha256": "9fbd891eac77596452e50496cadfcbd5956e78c8bdd7ff072dc1bd98f361e2f7",
+      "workspace_matches": true
+    },
+    "src/cerebro/nwb_audit.py": {
+      "sha256": "23aaebe5e8904c8ea8fd1a318a1069e7862435119adbb22e62956d5b2ed053af",
+      "workspace_matches": true
+    },
+    "src/cerebro/population.py": {
+      "sha256": "5481b9c4264864f7f375c475b10fdc77c272cc29ff8b4c3a9e51b10d065dac54",
+      "workspace_matches": true
+    },
+    "src/cerebro/registry.py": {
+      "sha256": "6ee0dfdd5300172c64c7aca04d84a47e65e513a96cc7cb9a34267ebd5f29e6ca",
+      "workspace_matches": true
+    },
+    "src/cerebro/representation_benchmark.py": {
+      "sha256": "9d885389d5b0d94a50537f11467608db3fbfa42373dd810a1cbcc56878bd1be0",
+      "workspace_matches": true
+    },
+    "src/cerebro/representation_transfer.py": {
+      "sha256": "43b1553cb2ba838fdb3b9105f469b2dbe18b5dc7557347718cdae9b41875ed68",
+      "workspace_matches": true
+    },
+    "src/cerebro/sense.py": {
+      "sha256": "8518bf6f47c0aaba178e7fa0022df0683b7da8a839ee445ed40b67e5312c5b1a",
+      "workspace_matches": true
+    },
+    "src/cerebro/sense_inspect.py": {
+      "sha256": "506d3ba732afd380b8e32cba0e2da76ca161da9cc3185787c7c840b44c1c9d52",
+      "workspace_matches": true
+    },
+    "src/cerebro/sequence_benchmark.py": {
+      "sha256": "4738769a50470830b83cac218c7689b4733c743f601e5ab60ed8342b99ed3bfb",
+      "workspace_matches": true
+    },
+    "src/cerebro/sequence_models.py": {
+      "sha256": "09190941ecf9d61596268a7adde4532f82a42bb16e432e14a291242af98fc067",
+      "workspace_matches": true
+    }
+  },
+  "final_installation": "Documented editable extras, successful; workspace installation restored.",
+  "final_tests": {
+    "PYTHONPATH": "unset",
+    "failed": 0,
+    "passed": 201,
+    "seconds": 50.08,
+    "warnings": 20
+  },
+  "fresh_assets_verified": 9,
+  "limitations": [
+    "Not a published clean clone; committed checkout verification follows separately.",
+    "Existing dependency environment reused; fresh Conda creation and cross-platform execution not claimed."
+  ],
+  "procedure": "Isolated uncommitted source snapshot, original Git baseline plus dirty source overlay; fresh public acquisitions; existing Conda cerebro reused.",
+  "resolved_verification_failures": "The initial driver and second full-test attempt retained PYTHONPATH=src. This exposed local editable egg-info ahead of installed dist-info, making direct_url unavailable; one attempt also overlapped installation. Proper sequential editable installation followed by documented pytest without PYTHONPATH passed. No tests were weakened.",
+  "schema_version": 1,
+  "scientific_numerical_comparison": {
+    "classical_05": {
+      "arrays_equal": true,
+      "geometry_equal": true,
+      "metrics_equal": true,
+      "uncertainty_equal": true
+    },
+    "cross_subject_12": {
+      "arrays_equal": true,
+      "scientific_results_equal": true,
+      "uncertainty_equal": true
+    },
+    "dynamics_10": {
+      "metrics_equal": true
+    },
+    "longitudinal_08": {
+      "arrays_equal": true,
+      "geometry_equal": true,
+      "metrics_equal": true,
+      "selected_alpha_equal": true
+    },
+    "representation_07": {
+      "arrays_equal": true,
+      "scientific_results_equal": true
+    },
+    "representation_09": {
+      "arrays_equal": true,
+      "scientific_results_equal": true,
+      "session_identity_diagnostics_equal": true
+    },
+    "sequence_06": {
+      "arrays_equal": true,
+      "scientific_results_equal": true
+    },
+    "subject_identity_13": {
+      "arrays": true,
+      "balanced_accuracy": true,
+      "confusion_true_rows_predicted_columns": true,
+      "normalization": true,
+      "per_subject_accuracy": true,
+      "raw_accuracy": true,
+      "source_sha256": true
+    }
+  },
+  "supplemental_identity_command": {
+    "balanced_accuracy": 1.0,
+    "command": [
+      "python",
+      "-m",
+      "cerebro.subject_identity"
+    ],
+    "exit_code": 0
+  }
+}
