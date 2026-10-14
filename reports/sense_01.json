@@ -1,0 +1,339 @@
+{
+  "provenance": {
+    "dandiset": "000140",
+    "version": "0.220113.0408",
+    "asset_id": "7821971e-c6a4-4568-8773-1bfa205c13f8",
+    "asset_path": "sub-Jenkins/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+    "size_bytes": 29207528,
+    "sha256": "dcaf3a524e2b2f65f163ee3b07789b8474bdfc6ca66098bc542ab93dff489884",
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "source_url": "https://dandiarchive.org/dandiset/000140/0.220113.0408",
+    "metadata_url": "https://api.dandiarchive.org/api/dandisets/000140/versions/0.220113.0408/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/",
+    "download_url": "https://api.dandiarchive.org/api/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/download/",
+    "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze_Small: macaque primary motor and dorsal premotor cortex spiking activity during delayed reaching (Version 0.220113.0408) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000140/0.220113.0408",
+    "local_path": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb"
+  },
+  "inspected_at": "2026-10-14T19:43:40.734120+00:00",
+  "recording": {
+    "identifier": "76ff7eba-0b93-11ec-a90d-3da92aaa0e59",
+    "session_id": "small",
+    "session_start_time": "2009-09-28T00:00:00-07:00",
+    "timestamps_reference_time": "2009-09-28T00:00:00-07:00",
+    "session_description": "Data from monkey Jenkins performing center-out delayed reaching task. This file contains trials from the full session on 2009-09-28 that can be used for training models for the Neural Latents Benchmark.",
+    "subject_id": "Jenkins",
+    "timestamp_unit": "seconds",
+    "trial_descriptions": {
+      "start_time": "Start time of epoch, in seconds",
+      "stop_time": "Stop time of epoch, in seconds",
+      "trial_type": "A number representing the maze configuration that was used for the trial",
+      "trial_version": "A number 0-2 indicating which variant of the maze is presented. 0 is 1-target no-barrier, 1 is 1-target with barriers, 2 is 3-target with barriers",
+      "maze_id": "A unique identifier for each maze, lumping all 3 `trial_version`s. `trial_type` is not unique across datasets, but `maze_id` is",
+      "success": "If the monkey was successful on the trial. In these benchmark files, all unsuccessful trials have been removed",
+      "target_on_time": "Time of target presentation, as detected by the photobox",
+      "go_cue_time": "Time of go cue delivery, as detected by the photobox",
+      "move_onset_time": "Time of movement onset, calculated offline using a robust algorithm",
+      "rt": "Delay between go cue and movement onset",
+      "delay": "Delay between target presentation and go cue, in ms",
+      "num_targets": "The number of targets for the trial",
+      "target_pos": "Index for VectorData 'target_pos'",
+      "num_barriers": "The number of barriers for the trial",
+      "barrier_pos": "Index for VectorData 'barrier_pos'",
+      "active_target": "Which target is reachable and was hit. Value is the index of the target in target_pos list",
+      "split": "Trial split that the trial belongs to for the Neural Latents Benchmark. Can be \"train\", \"val\", \"test\", or \"none\""
+    },
+    "unit_columns": [
+      "heldout",
+      "spike_times",
+      "obs_intervals",
+      "electrodes"
+    ]
+  },
+  "environment": {
+    "cerebro": "0.1.0",
+    "numpy": "2.4.6",
+    "pynwb": "4.2.0",
+    "hdmf": "6.2.0",
+    "h5py": "3.16.0",
+    "matplotlib": "3.11.2",
+    "pytest": "8.4.2"
+  },
+  "python_version": "3.11.16 (main, Aug 27 2026, 14:37:43) [Clang 20.1.8 ]",
+  "source_sha256": {
+    "dataset.py": "4451cdf7f79b303c4c8355d9177627794e24ad62ad4847d54da2067229751dde",
+    "sense.py": "8518bf6f47c0aaba178e7fa0022df0683b7da8a839ee445ed40b67e5312c5b1a",
+    "sense_inspect.py": "430dc3130ff352742fcc0cfa1856506e8f567cad60ee4e9e3b0064fb16cc8571"
+  },
+  "git_revision": "7bb715639ce4a0d9e2dd9be3af5d8ec9e801c7bf",
+  "git_worktree_dirty": true,
+  "raw_spikes": 131669,
+  "units": 142,
+  "trials": 100,
+  "trial_columns": [
+    "start_time",
+    "stop_time",
+    "trial_type",
+    "trial_version",
+    "maze_id",
+    "success",
+    "target_on_time",
+    "go_cue_time",
+    "move_onset_time",
+    "rt",
+    "delay",
+    "num_targets",
+    "target_pos",
+    "num_barriers",
+    "barrier_pos",
+    "active_target",
+    "split"
+  ],
+  "split_counts": {
+    "train": 75,
+    "val": 25
+  },
+  "heldout_units": 35,
+  "counts_shape": [
+    14342,
+    142
+  ],
+  "bin_width_seconds": 0.02,
+  "bin_convention": "[left, right), full bins reset at each trial start; tail dropped",
+  "derived_edge_precision_seconds": 1e-12,
+  "behavior_alignment": "mean physical samples within each bin; no interpolation",
+  "max_behavior_gap_seconds": 0.002,
+  "selected_trial_id": 1,
+  "figure_interval_seconds": [
+    3.5,
+    5.62
+  ],
+  "behavior": {
+    "hand_vel": {
+      "raw_shape": [
+        287710,
+        2
+      ],
+      "timestamp_shape": [
+        287710
+      ],
+      "unit": "m/s",
+      "conversion": 0.001,
+      "offset": 0.0,
+      "description": "Monkey hand velocity in mm/s, calculated from monkey hand position. First column x, second column y",
+      "comments": "columns=[x,y]",
+      "time_range_seconds": [
+        0.0,
+        293.665
+      ],
+      "max_sample_gap_seconds": 0.11000000000001364,
+      "nonfinite_values": 0,
+      "aligned_shape": [
+        14342,
+        2
+      ],
+      "valid_bins": 14342
+    },
+    "hand_pos": {
+      "raw_shape": [
+        287710,
+        2
+      ],
+      "timestamp_shape": [
+        287710
+      ],
+      "unit": "meters",
+      "conversion": 0.001,
+      "offset": 0.0,
+      "description": "Monkey hand position in mm. First column x, second column y",
+      "comments": "columns=[x,y]",
+      "time_range_seconds": [
+        0.0,
+        293.665
+      ],
+      "max_sample_gap_seconds": 0.11000000000001364,
+      "nonfinite_values": 0,
+      "aligned_shape": [
+        14342,
+        2
+      ],
+      "valid_bins": 14342
+    },
+    "eye_pos": {
+      "raw_shape": [
+        287710,
+        2
+      ],
+      "timestamp_shape": [
+        287710
+      ],
+      "unit": "meters",
+      "conversion": 0.001,
+      "offset": 0.0,
+      "description": "Monkey eye position in mm. First column x, second column y",
+      "comments": "columns=[x,y]",
+      "time_range_seconds": [
+        0.0,
+        293.665
+      ],
+      "max_sample_gap_seconds": 0.11000000000001364,
+      "nonfinite_values": 0,
+      "aligned_shape": [
+        14342,
+        2
+      ],
+      "valid_bins": 14342
+    },
+    "cursor_pos": {
+      "raw_shape": [
+        287710,
+        2
+      ],
+      "timestamp_shape": [
+        287710
+      ],
+      "unit": "meters",
+      "conversion": 0.001,
+      "offset": 0.0,
+      "description": "Cursor position in mm. First column x, second column y",
+      "comments": "columns=[x,y]",
+      "time_range_seconds": [
+        0.0,
+        293.665
+      ],
+      "max_sample_gap_seconds": 0.11000000000001364,
+      "nonfinite_values": 0,
+      "aligned_shape": [
+        14342,
+        2
+      ],
+      "valid_bins": 14342
+    }
+  },
+  "figures": [
+    "reports/figures/sense_01_raster.png",
+    "reports/figures/sense_01_population.png",
+    "reports/figures/sense_01_trajectory.png",
+    "reports/figures/sense_01_aligned.png"
+  ],
+  "checks": {
+    "nwb_schema_errors": [],
+    "checksum_matches": true,
+    "ordered_finite_spike_timestamps": true,
+    "ordered_behavior_timestamps": true,
+    "unique_unit_and_trial_ids": true,
+    "ordered_nonoverlapping_trials": true,
+    "empty_units": 0,
+    "duplicate_spike_timestamps": 0,
+    "all_neural_bins_observed": true,
+    "per_unit_spike_conservation_on_retained_bins": true,
+    "spikes_outside_observation_intervals": 0,
+    "all_retained_trials_successful": true,
+    "m1_prefix_units_linked_to_pmd_electrodes": 70,
+    "retained_spikes": 131262,
+    "spikes_excluded_by_full_bin_tail_policy": 407,
+    "dropped_trial_tail_seconds": [
+      0.0009999999999998899,
+      0.01100000000000012,
+      0.016000000000000014,
+      0.005999999999998451,
+      0.006000000000002004,
+      0.011000000000002785,
+      0.006000000000000227,
+      0.010999999999999233,
+      0.010999999999999233,
+      0.0009999999999976694,
+      0.015999999999998238,
+      0.006000000000000227,
+      0.015999999999998238,
+      0.015999999999998238,
+      0.0010000000000047748,
+      0.011000000000002785,
+      0.0009999999999976694,
+      0.011000000000002785,
+      0.016000000000005343,
+      0.0010000000000047748,
+      0.006000000000000227,
+      0.016000000000005343,
+      0.0010000000000047748,
+      0.015999999999991132,
+      0.016000000000005343,
+      0.01099999999999568,
+      0.01100000000000989,
+      0.01099999999999568,
+      0.01100000000000989,
+      0.006000000000000227,
+      0.000999999999990564,
+      0.0010000000000047748,
+      0.016000000000005343,
+      0.016000000000005343,
+      0.006000000000000227,
+      0.016000000000005343,
+      0.01099999999999568,
+      0.006000000000000227,
+      0.0010000000000047748,
+      0.01099999999999568,
+      0.006000000000000227,
+      0.0059999999999860165,
+      0.006000000000000227,
+      0.01099999999999568,
+      0.0009999999999763531,
+      0.005999999999971806,
+      0.0010000000000047748,
+      0.006000000000000227,
+      0.006000000000028649,
+      0.006000000000000227,
+      0.005999999999971806,
+      0.016000000000019554,
+      0.005999999999971806,
+      0.015999999999991132,
+      0.011000000000024102,
+      0.006000000000000227,
+      0.01099999999999568,
+      0.015999999999991132,
+      0.006000000000000227,
+      0.010999999999967258,
+      0.0010000000000047748,
+      0.0009999999999763531,
+      0.0010000000000047748,
+      0.0010000000000047748,
+      0.016000000000019554,
+      0.011000000000024102,
+      0.005999999999971806,
+      0.016000000000019554,
+      0.01599999999996271,
+      0.006000000000000227,
+      0.016000000000019554,
+      0.006000000000028649,
+      0.0010000000000047748,
+      0.0009999999999763531,
+      0.015999999999991132,
+      0.015999999999991132,
+      0.006000000000028649,
+      0.006000000000000227,
+      0.0010000000000047748,
+      0.010999999999967258,
+      0.005999999999971806,
+      0.01099999999999568,
+      0.0009999999999763531,
+      0.01099999999999568,
+      0.015999999999991132,
+      0.010999999999967258,
+      0.0010000000000047748,
+      0.016000000000019554,
+      0.0009999999999763531,
+      0.005999999999971806,
+      0.011000000000024102,
+      0.016000000000019554,
+      0.016000000000019554,
+      0.016000000000019554,
+      0.006000000000028649,
+      0.0010000000000331966,
+      0.006000000000028649,
+      0.01599999999996271,
+      0.01599999999996271,
+      0.005999999999971806
+    ],
+    "all_behavior_bins_valid": true
+  }
+}

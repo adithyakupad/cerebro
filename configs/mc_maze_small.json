@@ -1,0 +1,16 @@
+{
+  "dandiset": "000140",
+  "version": "0.220113.0408",
+  "asset_id": "7821971e-c6a4-4568-8773-1bfa205c13f8",
+  "asset_path": "sub-Jenkins/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+  "size_bytes": 29207528,
+  "sha256": "dcaf3a524e2b2f65f163ee3b07789b8474bdfc6ca66098bc542ab93dff489884",
+  "license": [
+    "spdx:CC-BY-4.0"
+  ],
+  "source_url": "https://dandiarchive.org/dandiset/000140/0.220113.0408",
+  "metadata_url": "https://api.dandiarchive.org/api/dandisets/000140/versions/0.220113.0408/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/",
+  "download_url": "https://api.dandiarchive.org/api/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/download/",
+  "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze_Small: macaque primary motor and dorsal premotor cortex spiking activity during delayed reaching (Version 0.220113.0408) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000140/0.220113.0408",
+  "local_path": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb"
+}
