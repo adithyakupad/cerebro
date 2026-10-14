@@ -1,0 +1,1540 @@
+{
+  "candidate_window_seconds": [
+    -0.4,
+    1.0
+  ],
+  "condition_fields": [
+    "maze_id",
+    "trial_type",
+    "trial_version",
+    "active_target"
+  ],
+  "conditions": [
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 10,
+        "trial_type": 8,
+        "trial_version": 0
+      },
+      "key": "10/8/0/0",
+      "training_trials": 2,
+      "trial_ids": [
+        11,
+        74
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 10,
+        "trial_type": 8,
+        "trial_version": 1
+      },
+      "key": "10/8/1/0",
+      "training_trials": 2,
+      "trial_ids": [
+        91,
+        93
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 1,
+        "maze_id": 10,
+        "trial_type": 8,
+        "trial_version": 2
+      },
+      "key": "10/8/2/1",
+      "training_trials": 2,
+      "trial_ids": [
+        6,
+        20
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 2,
+        "trial_type": 2,
+        "trial_version": 0
+      },
+      "key": "2/2/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        14,
+        62,
+        76
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 2,
+        "trial_type": 2,
+        "trial_version": 1
+      },
+      "key": "2/2/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        21,
+        64,
+        71
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 2,
+        "maze_id": 2,
+        "trial_type": 2,
+        "trial_version": 2
+      },
+      "key": "2/2/2/2",
+      "training_trials": 3,
+      "trial_ids": [
+        67,
+        69,
+        94
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 3,
+        "trial_type": 3,
+        "trial_version": 0
+      },
+      "key": "3/3/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        24,
+        50,
+        66
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 3,
+        "trial_type": 3,
+        "trial_version": 1
+      },
+      "key": "3/3/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        9,
+        13,
+        58
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 1,
+        "maze_id": 3,
+        "trial_type": 3,
+        "trial_version": 2
+      },
+      "key": "3/3/2/1",
+      "training_trials": 3,
+      "trial_ids": [
+        18,
+        39,
+        57
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 4,
+        "trial_type": 4,
+        "trial_version": 0
+      },
+      "key": "4/4/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        16,
+        43,
+        96
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 4,
+        "trial_type": 4,
+        "trial_version": 1
+      },
+      "key": "4/4/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        2,
+        31,
+        79
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 4,
+        "trial_type": 4,
+        "trial_version": 2
+      },
+      "key": "4/4/2/0",
+      "training_trials": 2,
+      "trial_ids": [
+        48,
+        63
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 7,
+        "trial_type": 6,
+        "trial_version": 0
+      },
+      "key": "7/6/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        22,
+        38,
+        61
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 7,
+        "trial_type": 6,
+        "trial_version": 1
+      },
+      "key": "7/6/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        32,
+        33,
+        92
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 2,
+        "maze_id": 7,
+        "trial_type": 6,
+        "trial_version": 2
+      },
+      "key": "7/6/2/2",
+      "training_trials": 3,
+      "trial_ids": [
+        35,
+        42,
+        45
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 75,
+        "trial_type": 10,
+        "trial_version": 0
+      },
+      "key": "75/10/0/0",
+      "training_trials": 2,
+      "trial_ids": [
+        49,
+        85
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 75,
+        "trial_type": 10,
+        "trial_version": 1
+      },
+      "key": "75/10/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        36,
+        46,
+        56
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 75,
+        "trial_type": 10,
+        "trial_version": 2
+      },
+      "key": "75/10/2/0",
+      "training_trials": 3,
+      "trial_ids": [
+        10,
+        15,
+        27
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 76,
+        "trial_type": 11,
+        "trial_version": 0
+      },
+      "key": "76/11/0/0",
+      "training_trials": 2,
+      "trial_ids": [
+        73,
+        99
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 76,
+        "trial_type": 11,
+        "trial_version": 1
+      },
+      "key": "76/11/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        30,
+        44,
+        59
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 1,
+        "maze_id": 76,
+        "trial_type": 11,
+        "trial_version": 2
+      },
+      "key": "76/11/2/1",
+      "training_trials": 3,
+      "trial_ids": [
+        72,
+        78,
+        88
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 77,
+        "trial_type": 12,
+        "trial_version": 0
+      },
+      "key": "77/12/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        1,
+        53,
+        90
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 77,
+        "trial_type": 12,
+        "trial_version": 1
+      },
+      "key": "77/12/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        23,
+        65,
+        87
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 2,
+        "maze_id": 77,
+        "trial_type": 12,
+        "trial_version": 2
+      },
+      "key": "77/12/2/2",
+      "training_trials": 3,
+      "trial_ids": [
+        77,
+        80,
+        89
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 8,
+        "trial_type": 7,
+        "trial_version": 0
+      },
+      "key": "8/7/0/0",
+      "training_trials": 3,
+      "trial_ids": [
+        7,
+        19,
+        82
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 8,
+        "trial_type": 7,
+        "trial_version": 1
+      },
+      "key": "8/7/1/0",
+      "training_trials": 3,
+      "trial_ids": [
+        17,
+        70,
+        84
+      ]
+    },
+    {
+      "geometry_consistent": true,
+      "identifiers": {
+        "active_target": 0,
+        "maze_id": 8,
+        "trial_type": 7,
+        "trial_version": 2
+      },
+      "key": "8/7/2/0",
+      "training_trials": 3,
+      "trial_ids": [
+        4,
+        51,
+        75
+      ]
+    }
+  ],
+  "conditions_passing_descriptive_screen": 21,
+  "conditions_passing_residual_screen": 0,
+  "descriptive_min_repetitions": 3,
+  "events": {
+    "go_cue_time": {
+      "complete_window_trials": 75,
+      "coverage_by_trial": [
+        {
+          "reason": null,
+          "trial_id": 1
+        },
+        {
+          "reason": null,
+          "trial_id": 2
+        },
+        {
+          "reason": null,
+          "trial_id": 4
+        },
+        {
+          "reason": null,
+          "trial_id": 6
+        },
+        {
+          "reason": null,
+          "trial_id": 7
+        },
+        {
+          "reason": null,
+          "trial_id": 9
+        },
+        {
+          "reason": null,
+          "trial_id": 10
+        },
+        {
+          "reason": null,
+          "trial_id": 11
+        },
+        {
+          "reason": null,
+          "trial_id": 13
+        },
+        {
+          "reason": null,
+          "trial_id": 14
+        },
+        {
+          "reason": null,
+          "trial_id": 15
+        },
+        {
+          "reason": null,
+          "trial_id": 16
+        },
+        {
+          "reason": null,
+          "trial_id": 17
+        },
+        {
+          "reason": null,
+          "trial_id": 18
+        },
+        {
+          "reason": null,
+          "trial_id": 19
+        },
+        {
+          "reason": null,
+          "trial_id": 20
+        },
+        {
+          "reason": null,
+          "trial_id": 21
+        },
+        {
+          "reason": null,
+          "trial_id": 22
+        },
+        {
+          "reason": null,
+          "trial_id": 23
+        },
+        {
+          "reason": null,
+          "trial_id": 24
+        },
+        {
+          "reason": null,
+          "trial_id": 27
+        },
+        {
+          "reason": null,
+          "trial_id": 30
+        },
+        {
+          "reason": null,
+          "trial_id": 31
+        },
+        {
+          "reason": null,
+          "trial_id": 32
+        },
+        {
+          "reason": null,
+          "trial_id": 33
+        },
+        {
+          "reason": null,
+          "trial_id": 35
+        },
+        {
+          "reason": null,
+          "trial_id": 36
+        },
+        {
+          "reason": null,
+          "trial_id": 38
+        },
+        {
+          "reason": null,
+          "trial_id": 39
+        },
+        {
+          "reason": null,
+          "trial_id": 42
+        },
+        {
+          "reason": null,
+          "trial_id": 43
+        },
+        {
+          "reason": null,
+          "trial_id": 44
+        },
+        {
+          "reason": null,
+          "trial_id": 45
+        },
+        {
+          "reason": null,
+          "trial_id": 46
+        },
+        {
+          "reason": null,
+          "trial_id": 48
+        },
+        {
+          "reason": null,
+          "trial_id": 49
+        },
+        {
+          "reason": null,
+          "trial_id": 50
+        },
+        {
+          "reason": null,
+          "trial_id": 51
+        },
+        {
+          "reason": null,
+          "trial_id": 53
+        },
+        {
+          "reason": null,
+          "trial_id": 56
+        },
+        {
+          "reason": null,
+          "trial_id": 57
+        },
+        {
+          "reason": null,
+          "trial_id": 58
+        },
+        {
+          "reason": null,
+          "trial_id": 59
+        },
+        {
+          "reason": null,
+          "trial_id": 61
+        },
+        {
+          "reason": null,
+          "trial_id": 62
+        },
+        {
+          "reason": null,
+          "trial_id": 63
+        },
+        {
+          "reason": null,
+          "trial_id": 64
+        },
+        {
+          "reason": null,
+          "trial_id": 65
+        },
+        {
+          "reason": null,
+          "trial_id": 66
+        },
+        {
+          "reason": null,
+          "trial_id": 67
+        },
+        {
+          "reason": null,
+          "trial_id": 69
+        },
+        {
+          "reason": null,
+          "trial_id": 70
+        },
+        {
+          "reason": null,
+          "trial_id": 71
+        },
+        {
+          "reason": null,
+          "trial_id": 72
+        },
+        {
+          "reason": null,
+          "trial_id": 73
+        },
+        {
+          "reason": null,
+          "trial_id": 74
+        },
+        {
+          "reason": null,
+          "trial_id": 75
+        },
+        {
+          "reason": null,
+          "trial_id": 76
+        },
+        {
+          "reason": null,
+          "trial_id": 77
+        },
+        {
+          "reason": null,
+          "trial_id": 78
+        },
+        {
+          "reason": null,
+          "trial_id": 79
+        },
+        {
+          "reason": null,
+          "trial_id": 80
+        },
+        {
+          "reason": null,
+          "trial_id": 82
+        },
+        {
+          "reason": null,
+          "trial_id": 84
+        },
+        {
+          "reason": null,
+          "trial_id": 85
+        },
+        {
+          "reason": null,
+          "trial_id": 87
+        },
+        {
+          "reason": null,
+          "trial_id": 88
+        },
+        {
+          "reason": null,
+          "trial_id": 89
+        },
+        {
+          "reason": null,
+          "trial_id": 90
+        },
+        {
+          "reason": null,
+          "trial_id": 91
+        },
+        {
+          "reason": null,
+          "trial_id": 92
+        },
+        {
+          "reason": null,
+          "trial_id": 93
+        },
+        {
+          "reason": null,
+          "trial_id": 94
+        },
+        {
+          "reason": null,
+          "trial_id": 96
+        },
+        {
+          "reason": null,
+          "trial_id": 99
+        }
+      ],
+      "event_at_or_after_trial_stop": 0,
+      "event_before_trial_start": 0,
+      "event_from_start_seconds": {
+        "max": 1.867999999999995,
+        "median": 1.4199999999999875,
+        "min": 0.7150000000000034,
+        "q25": 1.2124999999999986,
+        "q75": 1.6130000000000138
+      },
+      "exclusions": {},
+      "finite_events": 75,
+      "remaining_trial_seconds": {
+        "max": 1.9959999999999996,
+        "median": 1.468999999999994,
+        "min": 1.2620000000000005,
+        "q25": 1.3554999999999922,
+        "q75": 1.524000000000001
+      },
+      "source_description": "Time of go cue delivery, as detected by the photobox"
+    },
+    "move_onset_time": {
+      "complete_window_trials": 75,
+      "coverage_by_trial": [
+        {
+          "reason": null,
+          "trial_id": 1
+        },
+        {
+          "reason": null,
+          "trial_id": 2
+        },
+        {
+          "reason": null,
+          "trial_id": 4
+        },
+        {
+          "reason": null,
+          "trial_id": 6
+        },
+        {
+          "reason": null,
+          "trial_id": 7
+        },
+        {
+          "reason": null,
+          "trial_id": 9
+        },
+        {
+          "reason": null,
+          "trial_id": 10
+        },
+        {
+          "reason": null,
+          "trial_id": 11
+        },
+        {
+          "reason": null,
+          "trial_id": 13
+        },
+        {
+          "reason": null,
+          "trial_id": 14
+        },
+        {
+          "reason": null,
+          "trial_id": 15
+        },
+        {
+          "reason": null,
+          "trial_id": 16
+        },
+        {
+          "reason": null,
+          "trial_id": 17
+        },
+        {
+          "reason": null,
+          "trial_id": 18
+        },
+        {
+          "reason": null,
+          "trial_id": 19
+        },
+        {
+          "reason": null,
+          "trial_id": 20
+        },
+        {
+          "reason": null,
+          "trial_id": 21
+        },
+        {
+          "reason": null,
+          "trial_id": 22
+        },
+        {
+          "reason": null,
+          "trial_id": 23
+        },
+        {
+          "reason": null,
+          "trial_id": 24
+        },
+        {
+          "reason": null,
+          "trial_id": 27
+        },
+        {
+          "reason": null,
+          "trial_id": 30
+        },
+        {
+          "reason": null,
+          "trial_id": 31
+        },
+        {
+          "reason": null,
+          "trial_id": 32
+        },
+        {
+          "reason": null,
+          "trial_id": 33
+        },
+        {
+          "reason": null,
+          "trial_id": 35
+        },
+        {
+          "reason": null,
+          "trial_id": 36
+        },
+        {
+          "reason": null,
+          "trial_id": 38
+        },
+        {
+          "reason": null,
+          "trial_id": 39
+        },
+        {
+          "reason": null,
+          "trial_id": 42
+        },
+        {
+          "reason": null,
+          "trial_id": 43
+        },
+        {
+          "reason": null,
+          "trial_id": 44
+        },
+        {
+          "reason": null,
+          "trial_id": 45
+        },
+        {
+          "reason": null,
+          "trial_id": 46
+        },
+        {
+          "reason": null,
+          "trial_id": 48
+        },
+        {
+          "reason": null,
+          "trial_id": 49
+        },
+        {
+          "reason": null,
+          "trial_id": 50
+        },
+        {
+          "reason": null,
+          "trial_id": 51
+        },
+        {
+          "reason": null,
+          "trial_id": 53
+        },
+        {
+          "reason": null,
+          "trial_id": 56
+        },
+        {
+          "reason": null,
+          "trial_id": 57
+        },
+        {
+          "reason": null,
+          "trial_id": 58
+        },
+        {
+          "reason": null,
+          "trial_id": 59
+        },
+        {
+          "reason": null,
+          "trial_id": 61
+        },
+        {
+          "reason": null,
+          "trial_id": 62
+        },
+        {
+          "reason": null,
+          "trial_id": 63
+        },
+        {
+          "reason": null,
+          "trial_id": 64
+        },
+        {
+          "reason": null,
+          "trial_id": 65
+        },
+        {
+          "reason": null,
+          "trial_id": 66
+        },
+        {
+          "reason": null,
+          "trial_id": 67
+        },
+        {
+          "reason": null,
+          "trial_id": 69
+        },
+        {
+          "reason": null,
+          "trial_id": 70
+        },
+        {
+          "reason": null,
+          "trial_id": 71
+        },
+        {
+          "reason": null,
+          "trial_id": 72
+        },
+        {
+          "reason": null,
+          "trial_id": 73
+        },
+        {
+          "reason": null,
+          "trial_id": 74
+        },
+        {
+          "reason": null,
+          "trial_id": 75
+        },
+        {
+          "reason": null,
+          "trial_id": 76
+        },
+        {
+          "reason": null,
+          "trial_id": 77
+        },
+        {
+          "reason": null,
+          "trial_id": 78
+        },
+        {
+          "reason": null,
+          "trial_id": 79
+        },
+        {
+          "reason": null,
+          "trial_id": 80
+        },
+        {
+          "reason": null,
+          "trial_id": 82
+        },
+        {
+          "reason": null,
+          "trial_id": 84
+        },
+        {
+          "reason": null,
+          "trial_id": 85
+        },
+        {
+          "reason": null,
+          "trial_id": 87
+        },
+        {
+          "reason": null,
+          "trial_id": 88
+        },
+        {
+          "reason": null,
+          "trial_id": 89
+        },
+        {
+          "reason": null,
+          "trial_id": 90
+        },
+        {
+          "reason": null,
+          "trial_id": 91
+        },
+        {
+          "reason": null,
+          "trial_id": 92
+        },
+        {
+          "reason": null,
+          "trial_id": 93
+        },
+        {
+          "reason": null,
+          "trial_id": 94
+        },
+        {
+          "reason": null,
+          "trial_id": 96
+        },
+        {
+          "reason": null,
+          "trial_id": 99
+        }
+      ],
+      "event_at_or_after_trial_stop": 0,
+      "event_before_trial_start": 0,
+      "event_from_start_seconds": {
+        "max": 2.25,
+        "median": 1.7319999999999993,
+        "min": 1.031000000000006,
+        "q25": 1.5529999999999973,
+        "q75": 1.9380000000000024
+      },
+      "exclusions": {},
+      "finite_events": 75,
+      "remaining_trial_seconds": {
+        "max": 1.6259999999999994,
+        "median": 1.136000000000024,
+        "min": 1.0,
+        "q25": 1.0649999999999977,
+        "q75": 1.179000000000002
+      },
+      "source_description": "Time of movement onset, calculated offline using a robust algorithm"
+    },
+    "target_on_time": {
+      "complete_window_trials": 75,
+      "coverage_by_trial": [
+        {
+          "reason": null,
+          "trial_id": 1
+        },
+        {
+          "reason": null,
+          "trial_id": 2
+        },
+        {
+          "reason": null,
+          "trial_id": 4
+        },
+        {
+          "reason": null,
+          "trial_id": 6
+        },
+        {
+          "reason": null,
+          "trial_id": 7
+        },
+        {
+          "reason": null,
+          "trial_id": 9
+        },
+        {
+          "reason": null,
+          "trial_id": 10
+        },
+        {
+          "reason": null,
+          "trial_id": 11
+        },
+        {
+          "reason": null,
+          "trial_id": 13
+        },
+        {
+          "reason": null,
+          "trial_id": 14
+        },
+        {
+          "reason": null,
+          "trial_id": 15
+        },
+        {
+          "reason": null,
+          "trial_id": 16
+        },
+        {
+          "reason": null,
+          "trial_id": 17
+        },
+        {
+          "reason": null,
+          "trial_id": 18
+        },
+        {
+          "reason": null,
+          "trial_id": 19
+        },
+        {
+          "reason": null,
+          "trial_id": 20
+        },
+        {
+          "reason": null,
+          "trial_id": 21
+        },
+        {
+          "reason": null,
+          "trial_id": 22
+        },
+        {
+          "reason": null,
+          "trial_id": 23
+        },
+        {
+          "reason": null,
+          "trial_id": 24
+        },
+        {
+          "reason": null,
+          "trial_id": 27
+        },
+        {
+          "reason": null,
+          "trial_id": 30
+        },
+        {
+          "reason": null,
+          "trial_id": 31
+        },
+        {
+          "reason": null,
+          "trial_id": 32
+        },
+        {
+          "reason": null,
+          "trial_id": 33
+        },
+        {
+          "reason": null,
+          "trial_id": 35
+        },
+        {
+          "reason": null,
+          "trial_id": 36
+        },
+        {
+          "reason": null,
+          "trial_id": 38
+        },
+        {
+          "reason": null,
+          "trial_id": 39
+        },
+        {
+          "reason": null,
+          "trial_id": 42
+        },
+        {
+          "reason": null,
+          "trial_id": 43
+        },
+        {
+          "reason": null,
+          "trial_id": 44
+        },
+        {
+          "reason": null,
+          "trial_id": 45
+        },
+        {
+          "reason": null,
+          "trial_id": 46
+        },
+        {
+          "reason": null,
+          "trial_id": 48
+        },
+        {
+          "reason": null,
+          "trial_id": 49
+        },
+        {
+          "reason": null,
+          "trial_id": 50
+        },
+        {
+          "reason": null,
+          "trial_id": 51
+        },
+        {
+          "reason": null,
+          "trial_id": 53
+        },
+        {
+          "reason": null,
+          "trial_id": 56
+        },
+        {
+          "reason": null,
+          "trial_id": 57
+        },
+        {
+          "reason": null,
+          "trial_id": 58
+        },
+        {
+          "reason": null,
+          "trial_id": 59
+        },
+        {
+          "reason": null,
+          "trial_id": 61
+        },
+        {
+          "reason": null,
+          "trial_id": 62
+        },
+        {
+          "reason": null,
+          "trial_id": 63
+        },
+        {
+          "reason": null,
+          "trial_id": 64
+        },
+        {
+          "reason": null,
+          "trial_id": 65
+        },
+        {
+          "reason": null,
+          "trial_id": 66
+        },
+        {
+          "reason": null,
+          "trial_id": 67
+        },
+        {
+          "reason": null,
+          "trial_id": 69
+        },
+        {
+          "reason": null,
+          "trial_id": 70
+        },
+        {
+          "reason": null,
+          "trial_id": 71
+        },
+        {
+          "reason": null,
+          "trial_id": 72
+        },
+        {
+          "reason": null,
+          "trial_id": 73
+        },
+        {
+          "reason": null,
+          "trial_id": 74
+        },
+        {
+          "reason": null,
+          "trial_id": 75
+        },
+        {
+          "reason": null,
+          "trial_id": 76
+        },
+        {
+          "reason": null,
+          "trial_id": 77
+        },
+        {
+          "reason": null,
+          "trial_id": 78
+        },
+        {
+          "reason": null,
+          "trial_id": 79
+        },
+        {
+          "reason": null,
+          "trial_id": 80
+        },
+        {
+          "reason": null,
+          "trial_id": 82
+        },
+        {
+          "reason": null,
+          "trial_id": 84
+        },
+        {
+          "reason": null,
+          "trial_id": 85
+        },
+        {
+          "reason": null,
+          "trial_id": 87
+        },
+        {
+          "reason": null,
+          "trial_id": 88
+        },
+        {
+          "reason": null,
+          "trial_id": 89
+        },
+        {
+          "reason": null,
+          "trial_id": 90
+        },
+        {
+          "reason": null,
+          "trial_id": 91
+        },
+        {
+          "reason": null,
+          "trial_id": 92
+        },
+        {
+          "reason": null,
+          "trial_id": 93
+        },
+        {
+          "reason": null,
+          "trial_id": 94
+        },
+        {
+          "reason": null,
+          "trial_id": 96
+        },
+        {
+          "reason": null,
+          "trial_id": 99
+        }
+      ],
+      "event_at_or_after_trial_stop": 0,
+      "event_before_trial_start": 0,
+      "event_from_start_seconds": {
+        "max": 0.9519999999999982,
+        "median": 0.7940000000000111,
+        "min": 0.6589999999999998,
+        "q25": 0.7334999999999958,
+        "q75": 0.8635000000000019
+      },
+      "exclusions": {},
+      "finite_events": 75,
+      "remaining_trial_seconds": {
+        "max": 2.647999999999996,
+        "median": 2.126999999999981,
+        "min": 1.3669999999999902,
+        "q25": 1.906499999999994,
+        "q75": 2.2619999999999987
+      },
+      "source_description": "Time of target presentation, as detected by the photobox"
+    }
+  },
+  "go_minus_target_seconds": {
+    "max": 0.9990000000000023,
+    "median": 0.6149999999999807,
+    "min": 0.03100000000000591,
+    "q25": 0.464500000000001,
+    "q75": 0.8149999999999977
+  },
+  "movement_minus_go_seconds": {
+    "max": 0.6060000000000514,
+    "median": 0.3219999999999885,
+    "min": 0.2430000000000092,
+    "q25": 0.29350000000000165,
+    "q75": 0.3484999999999996
+  },
+  "movement_source": "Existing source annotation calculated offline; no new kinematic onset estimator",
+  "provenance": {
+    "asset_id": "7821971e-c6a4-4568-8773-1bfa205c13f8",
+    "asset_path": "sub-Jenkins/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+    "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze_Small: macaque primary motor and dorsal premotor cortex spiking activity during delayed reaching (Version 0.220113.0408) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000140/0.220113.0408",
+    "dandiset": "000140",
+    "download_url": "https://api.dandiarchive.org/api/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/download/",
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "local_path": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+    "metadata_url": "https://api.dandiarchive.org/api/dandisets/000140/versions/0.220113.0408/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/",
+    "sha256": "dcaf3a524e2b2f65f163ee3b07789b8474bdfc6ca66098bc542ab93dff489884",
+    "size_bytes": 29207528,
+    "source_url": "https://dandiarchive.org/dandiset/000140/0.220113.0408",
+    "version": "0.220113.0408"
+  },
+  "repetition_histogram": {
+    "2": 6,
+    "3": 21
+  },
+  "residual_feasibility": "unsupported: each compatible condition has only 2\u20133 training trials",
+  "residual_reliability_screen_repetitions": 20,
+  "training_trial_ids": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    27,
+    30,
+    31,
+    32,
+    33,
+    35,
+    36,
+    38,
+    39,
+    42,
+    43,
+    44,
+    45,
+    46,
+    48,
+    49,
+    50,
+    51,
+    53,
+    56,
+    57,
+    58,
+    59,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    82,
+    84,
+    85,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    96,
+    99
+  ],
+  "training_trials": 75,
+  "trial_duration_seconds": {
+    "max": 3.5509999999999877,
+    "median": 2.8810000000000002,
+    "min": 2.0509999999999877,
+    "q25": 2.6585000000000036,
+    "q75": 3.0960000000000036
+  },
+  "unused_validation_trials": 25
+}

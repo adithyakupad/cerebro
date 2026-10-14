@@ -115,6 +115,24 @@ trial endpoints. See [scientific report](reports/signal_characterization.md),
 descriptive observations; temporal Fano factors mix task epochs and conditions.
 No dimensionality reduction or decoder is implemented.
 
+## Local event-aligned experiment
+
+On the local Mission 004 branch, using the same pinned asset:
+
+```sh
+python -m cerebro.event_audit configs/mc_maze_small.json
+python -m cerebro.event_aligned configs/mc_maze_small.json
+python -m cerebro.event_figures
+python -m pytest
+```
+
+The [feasibility audit](reports/event_04_feasibility.md) establishes only two or
+three training repetitions per compatible condition. [Results](reports/event_04.md)
+use the human-selected go cue, −400 to +1000 ms, and 20 ms bins. All summaries
+exclude validation trials. Condition means and residuals are descriptive;
+reliable residual correlations are withheld. See [learning notes](docs/learning/event_04.md)
+and the reviewable [alignment protocol](configs/event_04.json).
+
 ## Principles
 
 - Start with explicit scientific or engineering questions.

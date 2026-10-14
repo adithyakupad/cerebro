@@ -33,6 +33,22 @@ capability. Module boundaries and data flow are in `docs/architecture.md`.
 - Do not commit, push, create a PR, or start a subsequent milestone without
   explicit human approval.
 
+## Scientific coding style
+
+- Use an explicit, variable-oriented style for new scientific code. Define
+  meaningful intermediate variables before calculations so data flow can be
+  traced line by line and intermediate results inspected.
+- Express algorithms as clear transformations, with one conceptual operation
+  per statement. Keep function structure simple and readable.
+- Use NumPy vectorization, broadcasting, and boolean masking where appropriate.
+  Avoid unnecessarily condensed expressions, nested comprehensions, and long
+  method chains.
+- Make array dimensions, physical units, and scientific assumptions explicit.
+  Use descriptive names without redundant verbosity; prioritize correctness,
+  reproducibility, and maintainability.
+- Apply this convention to new code. Do not refactor existing working code
+  solely for stylistic consistency.
+
 ## Scientific workflow and ownership
 
 - For each scientific feature use PREDICT → LEARN → IMPLEMENT → INTERROGATE →
