@@ -24,10 +24,10 @@
 | INTERACT: Session shifts, calibration curves, models and experiment inspection | implemented locally | Stored LINK/representation outputs; Calibration and ablation selectors checked; provenance/limitations visible | Cross-subject outputs unavailable; no simulated replacement |
 | Research engine: Versioned configs, registries, preprocessing/checkpoints/provenance | implemented | All executed workflows; Schema-versioned configs; immutable splits;283 checkpoint/array entries; restored predictions checked | Direct requirements snapshot not transitive/cross-platform lock |
 | Research engine: Statistical evaluation, causality/leakage checks and reports | implemented exploratory | Eight executed experiments; 96 common per-trial summaries; trial/block intervals and paired contrasts | Intervals depend on independence/block assumptions; no multiplicity-corrected significance |
-| Release: Tests, wheel, clean-checkout reproduction and incremental PR | verification in progress | Host existing Conda environment; 205 tests passed in workspace and committed clone; all eight experiments reproduced exactly; public branch/CI gates pending | Do not infer final release readiness |
-| Release: Final full-scope release | incomplete; no final tag | Not applicable; v0.1.0 remains at8f9ffd91e4342713cb5a571e63d9931484caa143 | Cross-subject validation and release checks remain unresolved |
+| Release: Tests, wheel, clean-checkout reproduction and incremental PR | verified research integration | Existing Conda real-data runs; fresh Linux CI; 205 local tests; 193 CI tests/12 data skips; eight experiments reproduced; public draft PR1 and commit64d4d30 verified | CI did not reproduce real-data experiments; no GPU validation or final release claim |
+| Release: Final full-scope release | incomplete; no final tag | Not applicable; v0.1.0 remains at8f9ffd91e4342713cb5a571e63d9931484caa143 | Original EMG preprocessing cannot be certified training-only; broad foundation transfer remains unvalidated; human PR review pending |
 
-Base execution revision: `3767295c5fd7abe0ca8ad295b6481982e01e6162`. Exact report digests and row-level revision fields are in [the machine-readable matrix](completion_matrix.json). Reports include current source hashes; earlier dirty runs do not imply those files existed in the base commit.
+Base execution revision: `64d4d30e7e308d673ecfbe5056bd5366b27d823e`. Exact report digests and row-level revision fields are in [the machine-readable matrix](completion_matrix.json). Reports include current source hashes; earlier dirty runs do not imply those files existed in the base commit.
 
 ## Exact continuation gates
 
@@ -35,6 +35,6 @@ Base execution revision: `3767295c5fd7abe0ca8ad295b6481982e01e6162`. Exact repor
 2. Extend beyond the two-subject FALCON descriptive baseline using independently documented raw preprocessing and additional recordings; preserve separate Maze velocity, LINK flexion and EMG targets.
 3. Use new untouched datasets/splits for further model selection; current validation reports are exploratory.
 4. Broaden session/subject and temporal/compute robustness before neural foundation-model claims; retained session identity is a measured limitation.
-5. Publish the reviewed branch/PR and verify CI; committed local reproduction passed. Final release requires scientific and publication gates, not only software tests.
+5. Review draft PR1. Public branch, committed-clone reproduction and CI passed; preserve v0.1.0. Resolve remaining scientific validation gates before a final release tag.
 
 No continuation automation is installed. Work does not continue after a session unless a new active execution occurs.

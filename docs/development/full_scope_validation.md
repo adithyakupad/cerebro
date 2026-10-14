@@ -44,5 +44,12 @@ All eight experiments matched numerical results and source hashes. Installation,
 imports, dependency checks and restoration passed. See `committed_verification.json`.
 The final wheel includes all models and MIT license, with no recordings/checkpoints.
 
-CI and public branch/PR verification remain pending. No GPU, standalone type-checker or coverage run has
+Public branch `codex/research-platform` and draft PR #1 were verified at
+`64d4d30e7e308d673ecfbe5056bd5366b27d823e`; all 157 remote blob hashes matched.
+Anonymous public cloning, documented installation, four installation tests and
+`pip check` passed. Both push/PR CI runs succeeded: fresh Linux dependencies,
+**193 tests passed, 12 data-dependent tests skipped**. CI did not download
+recordings or reproduce scientific results. See `publication_verification.json`.
+Main and v0.1.0 remain unchanged. No merge or final release tag was performed.
+The temporary verification server was stopped; the HTML explorer is offline. No GPU, standalone type-checker or coverage run has
 been claimed. Preserve v0.1.0; a final release tag requires all delivery gates.
