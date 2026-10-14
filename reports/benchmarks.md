@@ -1,7 +1,7 @@
 # Exploratory population and velocity benchmarks
 
-MC_Maze Small | DANDI 000140 v0.220113.0408  
-asset 7821971e-c6a4-4568-8773-1bfa205c13f8 | 20 ms bins, 107 held-in units  
+MC_Maze Small | DANDI 000140 v0.220113.0408
+asset 7821971e-c6a4-4568-8773-1bfa205c13f8 | 20 ms bins, 107 held-in units
 75 source training / 25 source validation trials; offline exploratory evaluation
 
 Hypothesis: neural observations may predict held-out-trial hand velocity better than training-only baselines. No architecture superiority was presumed.
