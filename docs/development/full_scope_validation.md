@@ -35,5 +35,14 @@ shadowed installed metadata, including one concurrent install/test overlap.
 Sequential installation and the documented test command without that override
 passed; no tests were weakened.
 
-CI, committed clean-clone checks and publication remain pending. No GPU, standalone type-checker or coverage run has
+Committed local clone `3767295c5fd7abe0ca8ad295b6481982e01e6162` passed
+all 38 verification commands and **205 tests** (20 warnings, 48.60 seconds).
+It began clean, with no processed data beyond `.gitkeep`. Maze Small downloaded
+fresh; eight assets from prior fresh public downloads were explicitly reused
+after checksum verification. No derived arrays/checkpoints/splits were copied.
+All eight experiments matched numerical results and source hashes. Installation,
+imports, dependency checks and restoration passed. See `committed_verification.json`.
+The final wheel includes all models and MIT license, with no recordings/checkpoints.
+
+CI and public branch/PR verification remain pending. No GPU, standalone type-checker or coverage run has
 been claimed. Preserve v0.1.0; a final release tag requires all delivery gates.

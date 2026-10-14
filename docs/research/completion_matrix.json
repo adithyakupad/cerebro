@@ -1,12 +1,12 @@
 {
   "continuation_plan": [
-    "Enforce human-selected documented-coverage policy; preserve unknown Perich coverage and validate FALCON cross-subject workflow.",
+    "Keep Perich audit-only under documented-coverage policy. Resolve upstream full-recording EMG preprocessing for stricter raw-target claims; preserve the verified exploratory FALCON experiment.",
     "Extend beyond the two-subject FALCON descriptive baseline using independently documented raw preprocessing and additional recordings; preserve separate Maze velocity, LINK flexion and EMG targets.",
     "Use new untouched datasets/splits for further model selection; current validation reports are exploratory.",
     "Broaden session/subject and temporal/compute robustness before neural foundation-model claims; retained session identity is a measured limitation.",
-    "Finish clean-checkout verification, reviewed incremental PR publication and evidence updates; final tag requires every completion criterion."
+    "Publish the reviewed branch/PR and verify CI; committed local reproduction passed. Final release requires scientific and publication gates, not only software tests."
   ],
-  "execution_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+  "execution_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
   "overall_status": "INCOMPLETE",
   "report_sha256": {
     "reports/classical_05.json": "583ff96b62e62c239fa9df0618ab8ee7905cc105fbd60f8eaa87550a548739dd",
@@ -37,7 +37,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Perich audit only: unknown neural coverage; LINK count-unit ambiguity; FALCON upstream normalized EMG",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "SENSE",
       "validation_status": "implemented"
     },
@@ -48,7 +48,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Contacts are not tracked neurons; no private or speech acquisition",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "SENSE",
       "validation_status": "implemented"
     },
@@ -59,7 +59,7 @@
       "implementation_status": "implemented",
       "known_limitations": "PCA reconstruction favors largest candidate; Gaussian FA approximates counts",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "MAP",
       "validation_status": "implemented"
     },
@@ -70,7 +70,7 @@
       "implementation_status": "implemented descriptive",
       "known_limitations": "CCA in-sample noisy anchors; no causal connectivity or reliable residual covariance",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "MAP",
       "validation_status": "implemented descriptive"
     },
@@ -81,7 +81,7 @@
       "implementation_status": "implemented exploratory",
       "known_limitations": "Teacher-forced one-step forecast; no validated physiological dynamics",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "MAP",
       "validation_status": "implemented exploratory"
     },
@@ -92,7 +92,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Offline contemporaneous evaluation; source validation is exploratory",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "DECODE",
       "validation_status": "implemented"
     },
@@ -103,7 +103,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Unequal parameter counts; small fixed compute; CPU only",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "DECODE",
       "validation_status": "implemented"
     },
@@ -114,7 +114,7 @@
       "implementation_status": "implemented within subject",
       "known_limitations": "Perich neuron mapping unestablished; no cross-subject feature correspondence",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "REMEMBER",
       "validation_status": "implemented within subject"
     },
@@ -125,7 +125,7 @@
       "implementation_status": "implemented exploratory",
       "known_limitations": "Lossy anonymous features; negative zero-shot result; one session/subject; original EMG preprocessing precedes splits; M1-B draft",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "REMEMBER",
       "validation_status": "implemented exploratory"
     },
@@ -136,7 +136,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Small-budget calibration often worsens error; no test-driven method selection",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "ADAPT",
       "validation_status": "implemented"
     },
@@ -147,7 +147,7 @@
       "implementation_status": "implemented exploratory",
       "known_limitations": "Marginal rescaling is not general identifiable alignment; extra target metadata disclosed",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "ADAPT",
       "validation_status": "implemented exploratory"
     },
@@ -158,7 +158,7 @@
       "implementation_status": "implemented descriptive",
       "known_limitations": "Two sessions do not identify drift causation; broader robustness unvalidated",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "ADAPT",
       "validation_status": "implemented descriptive"
     },
@@ -169,7 +169,7 @@
       "implementation_status": "implemented experimental",
       "known_limitations": "No broad SSL benefit demonstrated; no validated neural foundation model claim",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "FOUNDATION",
       "validation_status": "implemented experimental"
     },
@@ -180,7 +180,7 @@
       "implementation_status": "implemented same subject",
       "known_limitations": "Same contacts/subject; first40 native samples per trial only",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "FOUNDATION",
       "validation_status": "implemented same subject"
     },
@@ -191,7 +191,7 @@
       "implementation_status": "implemented finite controls",
       "known_limitations": "Data100 changes SSL observations and scaler pool; finite ablations are not scaling laws",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "FOUNDATION",
       "validation_status": "implemented finite controls"
     },
@@ -202,7 +202,7 @@
       "implementation_status": "implemented held-out diagnostics",
       "known_limitations": "Implicit date/subject information retained; FALCON one recording per animal confounds subject, session and date; post-hoc diagnostic",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "FOUNDATION",
       "validation_status": "implemented held-out diagnostics"
     },
@@ -213,7 +213,7 @@
       "implementation_status": "implemented locally",
       "known_limitations": "Self-contained offline explorer; no hardware control",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "INTERACT",
       "validation_status": "implemented locally"
     },
@@ -224,7 +224,7 @@
       "implementation_status": "implemented locally",
       "known_limitations": "Cross-subject outputs unavailable; no simulated replacement",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "INTERACT",
       "validation_status": "implemented locally"
     },
@@ -235,7 +235,7 @@
       "implementation_status": "implemented",
       "known_limitations": "Direct requirements snapshot not transitive/cross-platform lock",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "Research engine",
       "validation_status": "implemented"
     },
@@ -246,18 +246,18 @@
       "implementation_status": "implemented exploratory",
       "known_limitations": "Intervals depend on independence/block assumptions; no multiplicity-corrected significance",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "Research engine",
       "validation_status": "implemented exploratory"
     },
     {
-      "actual_measured_results": "205-test final workspace run passed; isolated fresh-asset reproduction exact; committed checkout/publication gates pending",
+      "actual_measured_results": "205 tests passed in workspace and committed clone; all eight experiments reproduced exactly; public branch/CI gates pending",
       "capability": "Tests, wheel, clean-checkout reproduction and incremental PR",
       "datasets": "Host existing Conda environment",
       "implementation_status": "verification in progress",
       "known_limitations": "Do not infer final release readiness",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "Release",
       "validation_status": "verification in progress"
     },
@@ -268,7 +268,7 @@
       "implementation_status": "incomplete; no final tag",
       "known_limitations": "Cross-subject validation and release checks remain unresolved",
       "remaining_blockers": "",
-      "repository_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "repository_revision": "3767295c5fd7abe0ca8ad295b6481982e01e6162",
       "subsystem": "Release",
       "validation_status": "incomplete; no final tag"
     }
