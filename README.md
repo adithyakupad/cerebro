@@ -98,6 +98,23 @@ See [repository instructions](AGENTS.md), [architecture](docs/architecture.md),
 [SENSE learning notes](docs/learning/sense_01.md). Dataset arrays and generated
 figures remain local; later model experiments require separate approval.
 
+## Local signal characterization experiment
+
+On the `research/signal-characterization` branch, after acquiring the same asset:
+
+```sh
+python -m cerebro.characterize configs/mc_maze_small.json
+python -m cerebro.characterize_figures
+python -m pytest
+```
+
+This compares 5/20/50 ms count statistics using both native coverage and matched
+trial endpoints. See [scientific report](reports/signal_characterization.md),
+[machine-readable results](reports/signal_characterization.json), and
+[assumptions and learning workflow](docs/learning/signal_03.md). These are
+descriptive observations; temporal Fano factors mix task epochs and conditions.
+No dimensionality reduction or decoder is implemented.
+
 ## Principles
 
 - Start with explicit scientific or engineering questions.

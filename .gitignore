@@ -18,3 +18,4 @@ data/processed/*
 reports/figures/*
 !reports/figures/.gitkeep
 !reports/figures/sense_01_*.png
+!reports/figures/signal_03_*.png
