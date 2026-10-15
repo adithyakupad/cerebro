@@ -121,7 +121,7 @@
       "category": "engineering",
       "criterion": "Static type checker and additional host platforms",
       "status": "NOT TESTED",
-      "evidence": "No standalone type checker installed/run; fresh installation was macOS arm64, not new Windows/Linux or offline validation.",
+      "evidence": "No standalone type checker installed/run; fresh installation was macOS arm64, not full-data Windows/Linux or offline validation.",
       "blocks_software_release": false
     },
     {

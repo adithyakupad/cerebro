@@ -95,3 +95,21 @@ Historical report files are preserved. Current frozen-source checks intentionall
 reject historical cross-subject inputs with an earlier whole-file preparation
 hash: use their recorded revision, or rerun cross-subject before the identity
 diagnostic. Do not edit historical hashes to make that guard pass.
+
+## Research-branch publication verification
+
+The normal non-force research-branch push published
+`8b1143d5e7a4e22a6cc5ed229f9fcdf76dc1ea39`; anonymous GitHub API access
+confirmed a public repository, that head,187 expected tracked files and no raw
+data. PR1 remained open/draft. Main and the peeled v0.1.0 tag remained
+`8f9ffd91e4342713cb5a571e63d9931484caa143`. No merge or final tag occurred.
+
+Both [push CI](https://github.com/adithyakupad/cerebro/actions/runs/38672806978)
+and [PR CI](https://github.com/adithyakupad/cerebro/actions/runs/38672811051)
+passed at that head on fresh Ubuntu/Python3.11 installations. Inspected PR logs
+reported no broken requirements,210 tests passed/12 deselected (8.20seconds),
+and12 data cases collected without execution (2.79seconds). This adds Linux
+software installation evidence, not Linux real-data scientific reproduction.
+Runner notices warned about Node20 action migration and upcoming ubuntu-latest
+image changes; neither failed these runs. This publication snapshot predates
+the subsequent documentation-only commit that records it.

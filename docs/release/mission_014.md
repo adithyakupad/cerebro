@@ -32,7 +32,7 @@ host-specific numerical agreement, not proof of scientific generalization.
 350 artifact/529 reported-array digests passed;229 raw-count prediction replays
 passed (227 exact). Six sequence architectures passed CPU and Apple MPS software
 smokes. All scientific workflows ran on CPU. CUDA, GPU real-data equivalence,
-new Windows/Linux installs and standalone type checking were not tested.
+full-data Windows/Linux reproduction and standalone type checking were not tested.
 
 The explorer was regenerated from authentic stored outputs and its controls
 checked in browser. MIT source license and dataset-specific CC-BY-4.0 attribution
