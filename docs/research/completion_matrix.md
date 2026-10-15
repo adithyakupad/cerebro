@@ -47,7 +47,9 @@ Mission 016 does not alter the historical 22 subsystem rows above. The [machine 
 
 ## Mission 017 evidence update
 
-The three Mission 015/016 commits through `fda96d87c3bc9c43a038b8b727f3519724a6ee9b` are published on draft PR #1. Both GitHub test runs at that head succeeded: **212 software tests passed, 15 data cases collected but not executed in public CI**. After Mission 017 diagnostics, the local full suite passed **230 tests**; 405 artifact/755 array digests passed and 229 historical predictions replayed, 227 exactly. These checks validate software and stored outputs, not cross-subject neuroscience claims. CI for the new Mission 017 commit is checked separately after publication.
+The three Mission 015/016 commits through `fda96d87c3bc9c43a038b8b727f3519724a6ee9b` are published on draft PR #1. Both GitHub test runs at that head succeeded: **212 software tests passed, 15 data cases collected but not executed in public CI**. After Mission 017 diagnostics, the local full suite passed **230 tests**; 405 artifact/755 array digests passed and 229 historical predictions replayed, 227 exactly. These checks validate software and stored outputs, not cross-subject neuroscience claims.
+
+Mission 017 research commit `071232c8a03fd85dc54d634d9490b025f8f3c442` also passed two GitHub runs: **215 software tests passed, 15 data tests collected/deselected** in each. The authentic-data cases passed locally, not in public CI.
 
 | Requirement | New Mission 017 evidence | Current status |
 |---|---|---|
