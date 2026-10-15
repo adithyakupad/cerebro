@@ -163,3 +163,21 @@ clean-checkout reproduction and publication evidence are tracked separately in
 The first metadata refresh approval timed out; the permitted retry used already
 installed dependencies and successfully refreshed editable0.2.0.dev0 metadata.
 No broader filesystem or account permissions were changed.
+
+## Mission 014 hardening
+
+Used independently scoped data/protocol and model/evaluation reviewers, followed
+by a narrow integrated fix review. ECC verification-loop and Ponytail-review
+instructions were read and applied. Graphify0.9.62 help was verified; indexing,
+watchers and hooks were not needed or enabled. Git/ripgrep, pytest, established
+scientific libraries, official dataset metadata/downloads and the in-app browser
+were used. Installed Ruff F checks were executed successfully. No standalone
+type checker or coverage run was performed.
+
+Mission014 explicitly authorized a temporary fresh Conda environment for release
+verification; it did not replace or modify the development environment. Real
+scientific experiments ran on CPU. A separate six-model synthetic software check
+used actual CPU and Apple MPS; CUDA was unavailable. Full evidence, executed
+commands and limitations are in `mission_014_validation.md`. No global tooling,
+new production dependency, persistent service or continuation automation was
+installed. The temporary loopback explorer server and browser tab were closed.

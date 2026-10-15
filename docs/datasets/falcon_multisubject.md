@@ -107,3 +107,14 @@ python -m pytest tests/test_falcon.py
 The native audit is `reports/falcon_native_audit.json`; it preserves the exact
 manifests, recorded intervals, target names, source preprocessing limitations,
 per-trial sample counts and adapter source hash.
+
+## Mission 014 provenance extension
+
+The [source preprocessing audit](falcon_preprocessing.md) traces the pinned
+converter and filtering helpers, including global quantile scalars across time
+and all muscles and the lack of invertible raw EMG. The
+[additional acquisition audit](mission_014_acquisition.md) records six more
+checksum-verified held-in calibration sessions and their native neural
+observation intervals. Together with the pair above these are eight sessions
+from two animals, not eight subjects. Exact asset and native metadata are retained
+in [the machine inventory](mission_014_inventory.json).

@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "evidence_source_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+  "reviewed_original_revision": "491921c436aa22f9b8b1dcd969af6f9f974542ab",
+  "status_vocabulary": [
+    "PASS",
+    "FAIL",
+    "NOT TESTED",
+    "SCIENTIFICALLY INCONCLUSIVE"
+  ],
+  "software_audit": "PASS within documented CPU/software and review scope",
+  "research_program": "INCOMPLETE; scope preserved",
+  "publication": "BLOCKED: full-scope target-provenance validation unresolved and human approval pending; no final tag",
+  "criteria": [
+    {
+      "category": "software",
+      "criterion": "Independent PR review and reproduced defects",
+      "status": "PASS",
+      "evidence": "Three P2 defects fixed in 9b66f3e; independent scoped review and regression checks: docs/development/mission_014_audit.md.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Fresh Conda creation and clean editable installation",
+      "status": "PASS",
+      "evidence": "Python3.11.17; pip dependency check and isolated import passed. Existing development environment preserved.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "All documented CPU workflows",
+      "status": "PASS",
+      "evidence": "46 commands passed from committed clone a3a2dfd; no processed artifacts copied. docs/development/mission_014_workflows.json.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Full applicable tests with acquired data",
+      "status": "PASS",
+      "evidence": "222 passed;20 upstream HDMF deprecation warnings; no skips/failures.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Public-CI test classification",
+      "status": "PASS",
+      "evidence": "210 software tests passed locally;12 data cases collected/deselected. CI does not claim real-data execution.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Fresh public acquisition",
+      "status": "PASS",
+      "evidence": "MC_Maze Small downloaded anew and verified;10 other public assets reused after checksum and official metadata verification. Additional2 selected assets separately downloaded.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Checkpoint integrity and raw-count prediction replay",
+      "status": "PASS",
+      "evidence": "350 file/529 array digests;229 CPU predictions replayed,227 exact,2 within tolerance. Remaining formats receive integrity/workflow restoration checks only.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Historical and new scientific numerical reproduction",
+      "status": "PASS",
+      "evidence": "11 experiments:526 shared arrays,44,367,047 elements,100,827 numeric values exact; additional long08 mean controls disclosed.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "CPU execution and model restoration",
+      "status": "PASS",
+      "evidence": "All real-data runs CPU; all6 sequence models forward/backward/update/restoration smoke passed.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Available Apple MPS backend",
+      "status": "PASS",
+      "evidence": "All6 architectures forward/backward/update/restoration smoke passed without CPU fallback; synthetic software check only.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "hardware",
+      "criterion": "CUDA backend",
+      "status": "NOT TESTED",
+      "evidence": "No CUDA device on inspected host; no support/performance claim.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "hardware",
+      "criterion": "GPU real-data training and CPU/GPU scientific equivalence",
+      "status": "NOT TESTED",
+      "evidence": "Real-data research workflows remain CPU; smoke checks do not establish equivalent experiments.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Interactive explorer",
+      "status": "PASS",
+      "evidence": "Fresh generated HTML: trial/model/PC/calibration/ablation controls changed and outputs observed; warning/error log empty; local screenshot retained.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Wheel, compile and lint checks",
+      "status": "PASS",
+      "evidence": "Wheel built and inspected for license/no data; compileall and installed Ruff F checks passed. Wheel was not separately installed.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "software",
+      "criterion": "Tracked-file security/size/portable config screening",
+      "status": "PASS",
+      "evidence": "Heuristic scan found no credential candidates, raw archives, environment directories or absolute config paths. Audit scope/limits explicit; no full-history or dependency vulnerability certification.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "engineering",
+      "criterion": "Static type checker and additional host platforms",
+      "status": "NOT TESTED",
+      "evidence": "No standalone type checker installed/run; fresh installation was macOS arm64, not new Windows/Linux or offline validation.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "data",
+      "criterion": "Additional independent-date protocols",
+      "status": "PASS",
+      "evidence": "Protocol committed before outcomes. LINK Feb05 full referenced trials +40-bin SSL; FALCON XDec10 author-preprocessed exploratory targets. No retuning.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "data",
+      "criterion": "Perich coverage required for modeling",
+      "status": "FAIL",
+      "evidence": "Native per-unit neural coverage not established; remains audit-only. Failure blocks Perich modeling, not release of documented audit functionality.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "data",
+      "criterion": "Raw FALCON target reconstruction",
+      "status": "FAIL",
+      "evidence": "Rectification/clipping/downsampling are many-to-one; quantile scalars absent. No public raw source located in inspected authoritative sources.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "data",
+      "criterion": "Train-only original FALCON EMG processing",
+      "status": "NOT TESTED",
+      "evidence": "Blocked by unavailable raw targets and clock/calibration provenance. Re-standardizing published targets cannot repair upstream processing.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "FALCON B exact upstream conversion parameters",
+      "status": "SCIENTIFICALLY INCONCLUSIVE",
+      "evidence": "Pinned converter explicitly lists L dates; B parameters cannot all be certified solely from that script. Native targets remain author-preprocessed.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "Frozen longitudinal decoder generalization",
+      "status": "FAIL",
+      "evidence": "New LINK date: frozen MSE0.03340539 versus source mean0.02606807 flexion\u00b2. Preserved negative hypothesis outcome, not a software failure.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "Calibration-efficient target prediction",
+      "status": "SCIENTIFICALLY INCONCLUSIVE",
+      "evidence": "LINK direct75 MSE0.02482701 versus label-matched mean0.02632579; low budgets mixed/poor. Limited dates/one animal do not validate broad adaptation.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "Cross-subject transfer advantage",
+      "status": "SCIENTIFICALLY INCONCLUSIVE",
+      "evidence": "New FALCON target frozen0.18574543 versus source mean0.19012762 normalizedEMG\u00b2; residual75 does not beat direct target ridge. Upstream targets and subject/session confounds persist.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "General self-supervised transfer improvement",
+      "status": "SCIENTIFICALLY INCONCLUSIVE",
+      "evidence": "Executed SSL with matched random/supervised controls; new-date differences tiny/mixed. No general benefit or multiplicity-corrected significance claim.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "Validated general-purpose neural foundation model",
+      "status": "SCIENTIFICALLY INCONCLUSIVE",
+      "evidence": "Not established. Implemented objectives and executed pretraining are preserved; independent animals/tasks, robust transfer and prospective evaluation remain required.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "scientific",
+      "criterion": "Longitudinal neuron identity or causal connectivity",
+      "status": "NOT TESTED",
+      "evidence": "Contact matching is not neuron tracking; population correlations are not causal connectivity; no such inference claimed.",
+      "blocks_software_release": false
+    },
+    {
+      "category": "publication",
+      "criterion": "Human approval to merge PR1 and final-tag",
+      "status": "NOT TESTED",
+      "evidence": "Pending explicit human approval after review of this matrix; neither merge nor final tag performed.",
+      "blocks_software_release": true
+    }
+  ],
+  "full_scope_release_blockers": [
+    "Leakage-free original FALCON target processing is not established; raw sources unavailable in inspected public archives. Current exploratory cross-subject workflow cannot be declared strict raw-target validation.",
+    "Human review and explicit approval for merge and final tag remain pending."
+  ]
+}

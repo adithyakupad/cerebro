@@ -1,0 +1,44 @@
+# Mission 014 release acceptance matrix
+
+Software audit: **PASS within the documented scope**. Full-scope publication: **blocked by unresolved target-provenance validation and pending human approval**. The full research program remains incomplete; none of its scientific scope has been removed. A released research platform can expose an honestly inconclusive experiment without claiming the underlying hypothesis succeeded.
+
+Statuses are exactly PASS, FAIL, NOT TESTED and SCIENTIFICALLY INCONCLUSIVE. A FAIL in a scientific hypothesis or unavailable-data prerequisite is distinct from an unresolved software defect. The final column marks blockers to publishing the documented software scope.
+
+Evidence source: `a3a2dfd04daf3d923a47d133ce4acf30b5983571`. See [independent audit](../development/mission_014_audit.md), [fresh validation](../development/mission_014_validation.md), [new results](../../reports/mission_014.md), and [machine matrix](acceptance_matrix.json).
+
+| Category / criterion | Status | Evidence / limit | Software release blocker |
+|---|---|---|---|
+| software: Independent PR review and reproduced defects | **PASS** | Three P2 defects fixed in 9b66f3e; independent scoped review and regression checks: docs/development/mission_014_audit.md. | No |
+| software: Fresh Conda creation and clean editable installation | **PASS** | Python3.11.17; pip dependency check and isolated import passed. Existing development environment preserved. | No |
+| software: All documented CPU workflows | **PASS** | 46 commands passed from committed clone a3a2dfd; no processed artifacts copied. docs/development/mission_014_workflows.json. | No |
+| software: Full applicable tests with acquired data | **PASS** | 222 passed;20 upstream HDMF deprecation warnings; no skips/failures. | No |
+| software: Public-CI test classification | **PASS** | 210 software tests passed locally;12 data cases collected/deselected. CI does not claim real-data execution. | No |
+| software: Fresh public acquisition | **PASS** | MC_Maze Small downloaded anew and verified;10 other public assets reused after checksum and official metadata verification. Additional2 selected assets separately downloaded. | No |
+| software: Checkpoint integrity and raw-count prediction replay | **PASS** | 350 file/529 array digests;229 CPU predictions replayed,227 exact,2 within tolerance. Remaining formats receive integrity/workflow restoration checks only. | No |
+| software: Historical and new scientific numerical reproduction | **PASS** | 11 experiments:526 shared arrays,44,367,047 elements,100,827 numeric values exact; additional long08 mean controls disclosed. | No |
+| software: CPU execution and model restoration | **PASS** | All real-data runs CPU; all6 sequence models forward/backward/update/restoration smoke passed. | No |
+| software: Available Apple MPS backend | **PASS** | All6 architectures forward/backward/update/restoration smoke passed without CPU fallback; synthetic software check only. | No |
+| hardware: CUDA backend | **NOT TESTED** | No CUDA device on inspected host; no support/performance claim. | No |
+| hardware: GPU real-data training and CPU/GPU scientific equivalence | **NOT TESTED** | Real-data research workflows remain CPU; smoke checks do not establish equivalent experiments. | No |
+| software: Interactive explorer | **PASS** | Fresh generated HTML: trial/model/PC/calibration/ablation controls changed and outputs observed; warning/error log empty; local screenshot retained. | No |
+| software: Wheel, compile and lint checks | **PASS** | Wheel built and inspected for license/no data; compileall and installed Ruff F checks passed. Wheel was not separately installed. | No |
+| software: Tracked-file security/size/portable config screening | **PASS** | Heuristic scan found no credential candidates, raw archives, environment directories or absolute config paths. Audit scope/limits explicit; no full-history or dependency vulnerability certification. | No |
+| engineering: Static type checker and additional host platforms | **NOT TESTED** | No standalone type checker installed/run; fresh installation was macOS arm64, not new Windows/Linux or offline validation. | No |
+| data: Additional independent-date protocols | **PASS** | Protocol committed before outcomes. LINK Feb05 full referenced trials +40-bin SSL; FALCON XDec10 author-preprocessed exploratory targets. No retuning. | No |
+| data: Perich coverage required for modeling | **FAIL** | Native per-unit neural coverage not established; remains audit-only. Failure blocks Perich modeling, not release of documented audit functionality. | No |
+| data: Raw FALCON target reconstruction | **FAIL** | Rectification/clipping/downsampling are many-to-one; quantile scalars absent. No public raw source located in inspected authoritative sources. | No |
+| data: Train-only original FALCON EMG processing | **NOT TESTED** | Blocked by unavailable raw targets and clock/calibration provenance. Re-standardizing published targets cannot repair upstream processing. | No |
+| scientific: FALCON B exact upstream conversion parameters | **SCIENTIFICALLY INCONCLUSIVE** | Pinned converter explicitly lists L dates; B parameters cannot all be certified solely from that script. Native targets remain author-preprocessed. | No |
+| scientific: Frozen longitudinal decoder generalization | **FAIL** | New LINK date: frozen MSE0.03340539 versus source mean0.02606807 flexion². Preserved negative hypothesis outcome, not a software failure. | No |
+| scientific: Calibration-efficient target prediction | **SCIENTIFICALLY INCONCLUSIVE** | LINK direct75 MSE0.02482701 versus label-matched mean0.02632579; low budgets mixed/poor. Limited dates/one animal do not validate broad adaptation. | No |
+| scientific: Cross-subject transfer advantage | **SCIENTIFICALLY INCONCLUSIVE** | New FALCON target frozen0.18574543 versus source mean0.19012762 normalizedEMG²; residual75 does not beat direct target ridge. Upstream targets and subject/session confounds persist. | No |
+| scientific: General self-supervised transfer improvement | **SCIENTIFICALLY INCONCLUSIVE** | Executed SSL with matched random/supervised controls; new-date differences tiny/mixed. No general benefit or multiplicity-corrected significance claim. | No |
+| scientific: Validated general-purpose neural foundation model | **SCIENTIFICALLY INCONCLUSIVE** | Not established. Implemented objectives and executed pretraining are preserved; independent animals/tasks, robust transfer and prospective evaluation remain required. | No |
+| scientific: Longitudinal neuron identity or causal connectivity | **NOT TESTED** | Contact matching is not neuron tracking; population correlations are not causal connectivity; no such inference claimed. | No |
+| publication: Human approval to merge PR1 and final-tag | **NOT TESTED** | Pending explicit human approval after review of this matrix; neither merge nor final tag performed. | Yes: approval pending |
+
+No P0/P1 software defect remains identified in the reviewed scope. All reproduced P2 code defects were corrected. This is neither an exhaustive security certification nor approval to publish. Preserve v0.1.0, leave PR1 unmerged, and do not create a final release tag until the researcher approves.
+
+Exact next actions: review PR1 and this evidence; resolve the strict cross-subject target-provenance gate with authoritative raw files or independently suitable data; verify all original completion criteria at the proposed head and obtain explicit human publication approval before merge/tag. Incremental research software review does not declare full-scope scientific completion. For stronger scientific claims, obtain authoritative raw EMG/coverage provenance, prescribe new untouched sessions/animals and practical superiority criteria before experiments, and preserve current negative results.
+
+The full-scope release gate remains incomplete: original leakage-free target processing has not been validated for FALCON, and exploratory normalized-target outputs do not substitute for that evidence. This does not prevent incremental research-branch publication with honest limitations. Human approval alone is not evidence that the missing scientific validation passed.

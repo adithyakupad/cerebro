@@ -129,3 +129,56 @@ loopback server used for verification is not part of the installed platform.
 See dataset documents for source licenses/attribution and metadata ambiguities.
 CEREBRO source code is MIT; recording licenses remain the authors' CC-BY-4.0 terms.
 No raw recording or large derived tensor is distributed with the source repository.
+
+## Mission 014 release validation and new dates
+
+The existing `cerebro` environment remains the development environment. For a
+separate release check only, use a disposable destination prefix:
+
+```sh
+conda env create --prefix /tmp/cerebro-release-validation --file environment.yml
+conda activate /tmp/cerebro-release-validation
+python -m pip install -e '.[dev,classical,deep]'
+python -m pip check
+```
+
+Run the acquisition and experiment commands above from the repository root.
+A new checkout must generate processed outputs; copying old checkpoints does
+not reproduce training. Data-dependent tests require the listed recordings and
+stored real-data workflows. CI deliberately separates them:
+
+```sh
+python -m pytest -m 'not data' -q
+python -m pytest --collect-only -m data -q
+# After acquisition and real-data workflows:
+python -m pytest -q
+python -m cerebro.registry
+python tools/validate_checkpoints.py
+python -m cerebro.hardware_check
+```
+
+The hardware command checks each available backend with synthetic software
+fixtures, reports unavailable hardware, and does not benchmark neural results.
+The checkpoint tool independently replays raw-count predictions for the
+classical, sequence and representation 07/09 formats, with integrity checks for
+the remaining registry entries. Regenerate cross-subject results with the
+current code before running the frozen-source identity diagnostic; earlier
+historical inputs remain reproducible with their recorded source revision.
+
+Mission 014 selected later dates before evaluation under the
+[frozen protocol](mission_014_protocol.json), retaining existing methods:
+
+```sh
+python -m cerebro.dataset configs/link_20200205.json
+python -m cerebro.dataset configs/falcon_x_20121210.json
+python -m cerebro.longitudinal --config configs/longitudinal_14.json --output data/processed/longitudinal_14
+python -m cerebro.representation_transfer --config configs/representation_14.json --output data/processed/representation_14
+python -m cerebro.cross_subject --config configs/cross_subject_14.json --output data/processed/cross_subject_14 --report reports/cross_subject_14.json --markdown reports/cross_subject_14.md --figure reports/figures/cross_subject_14_calibration.png
+```
+
+Machine results for the first two commands are written to their output directory
+as `results.json`; archived copies and the concise comparison are in
+[Mission 014 results](../../reports/mission_014.md). These additional dates are
+now inspected evaluation sets and must not be reused for method selection.
+FALCON remains author-preprocessed exploratory EMG; new dates do not repair
+upstream target leakage or add independent animals. Perich remains audit-only.

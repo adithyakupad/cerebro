@@ -101,3 +101,11 @@ mapping helper requires identical unique source contact-coordinate sets; no
 implicit column or neuron identity is assumed. Source quality masks are absent,
 so returned finite-value masks describe available numbers rather than certified
 recording quality.
+
+## Mission 014 additional native session
+
+The [additional acquisition audit](mission_014_acquisition.md#link-2020-02-05)
+records the checksum-verified 2020-02-05 CO session, its exact contact mapping,
+375 native trial references and observed sampled-count coverage. The
+[machine inventory](mission_014_inventory.json) preserves its full native audit.
+The acquisition evidence is distinct from subsequent model experiments.

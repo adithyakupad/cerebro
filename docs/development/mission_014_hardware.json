@@ -1,0 +1,142 @@
+{
+  "backends": {
+    "cpu": {
+      "available": true,
+      "models": {
+        "gru": {
+          "loss_before_step": 0.09815963357686996,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "lstm": {
+          "loss_before_step": 0.04893806204199791,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "mlp": {
+          "loss_before_step": 0.04114304855465889,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "state_space": {
+          "loss_before_step": 0.03271812945604324,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "temporal_cnn": {
+          "loss_before_step": 0.015526589937508106,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "transformer": {
+          "loss_before_step": 0.15708431601524353,
+          "output_device": "cpu",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        }
+      },
+      "status": "PASS"
+    },
+    "cuda": {
+      "available": false,
+      "models": {
+        "gru": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        },
+        "lstm": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        },
+        "mlp": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        },
+        "state_space": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        },
+        "temporal_cnn": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        },
+        "transformer": {
+          "reason": "Backend unavailable",
+          "status": "NOT_TESTED"
+        }
+      },
+      "status": "NOT_TESTED"
+    },
+    "mps": {
+      "available": true,
+      "models": {
+        "gru": {
+          "loss_before_step": 0.09815964847803116,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "lstm": {
+          "loss_before_step": 0.04893806204199791,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "mlp": {
+          "loss_before_step": 0.04114305227994919,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "state_space": {
+          "loss_before_step": 0.03271812945604324,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "temporal_cnn": {
+          "loss_before_step": 0.015526588074862957,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        },
+        "transformer": {
+          "loss_before_step": 0.15708431601524353,
+          "output_device": "mps:0",
+          "parameter_update_checked": true,
+          "status": "PASS",
+          "weights_only_restore_checked": true
+        }
+      },
+      "status": "PASS"
+    }
+  },
+  "created_utc": "2026-10-15T02:07:51.148799+00:00",
+  "cuda_build_version": null,
+  "fixture": "Dimensionless synthetic inputs (2 sequences, 7 bins, 3 features), zero targets",
+  "machine": "arm64",
+  "mps_built": true,
+  "mps_cpu_fallback_environment": null,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python_version": "3.11.17",
+  "schema_version": 1,
+  "scope": "Software forward/backward, optimizer update and same-backend weights-only restoration; no scientific benchmark, timing or neural validation",
+  "status": "PASS",
+  "torch_version": "2.14.1"
+}

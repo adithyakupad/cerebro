@@ -76,8 +76,10 @@ Outputs are `data/processed/sense_01.npz`, metadata CSVs, and
 spike raster, population counts, hand/cursor trajectory, and timestamp alignment.
 The compact reference figures are published; raw recordings and large derived
 arrays stay Git-ignored. Rerunning intentionally regenerates the SENSE outputs.
-Tests run offline; the local real-recording test skips only when the dataset has
-not been acquired. A full reproduction includes acquisition followed by all tests.
+Software tests run offline with `python -m pytest -m 'not data'`. Twelve
+data-marked cases require acquired recordings or generated real-data experiments;
+public CI collects those cases without running them. A full reproduction includes
+acquisition and the research workflows followed by `python -m pytest -q`.
 
 The initial 20 ms matrix has 14,342 bins × 142 sorted units. Behavior is averaged
 within each bin, without interpolation or extrapolation. Full bins restart per
@@ -185,3 +187,23 @@ are never included in Git.
 - Use quantitative evaluation and documented failure modes.
 - Preserve reproducibility through versioned data, configuration, and experiment outputs.
 - Separate demonstrated results from planned capabilities.
+
+## Scientific release hardening (Mission 014)
+
+The reviewed research branch has a fresh Python 3.11 Conda reproduction of all
+documented workflows: 222 tests passed with real-data artifacts available;
+software-only selection passed 210 tests and deselected 12 data cases. CPU
+research runs and six-model Apple MPS software smoke checks passed. CUDA and
+GPU scientific equivalence remain untested. This evidence does not authorize
+merge or a final release tag.
+
+See the [release acceptance matrix](docs/release/acceptance_matrix.md),
+[independent audit](docs/development/mission_014_audit.md),
+[installation and checkpoint evidence](docs/development/mission_014_validation.md),
+[new-date comparisons](reports/mission_014.md), and
+[FALCON preprocessing determination](docs/datasets/falcon_preprocessing.md).
+The published EMG cannot be inverted to raw targets; those results remain
+explicitly author-preprocessed and exploratory. Perich remains audit-only.
+Additional LINK/FALCON dates extend evaluation without adding independent
+animals. Small and mixed representation differences do not validate a general
+neural foundation model. Historical negative results are preserved.
