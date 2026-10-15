@@ -74,3 +74,34 @@ def test_native_real_link_pair():
     assert first_trial["sample_start"] == 0
     assert first_trial["sample_count"] == 63
     assert first_trial["timestamps"][-1] == pytest.approx(9.65)
+
+
+@pytest.mark.data
+@pytest.mark.parametrize("date,expected_samples", [
+    ("20200206", 26582),
+    ("20200211", 26675),
+    ("20200222", 25547),
+])
+def test_native_mission_016_link_candidate(date, expected_samples):
+    source_manifest = json.loads(Path("configs/link_20200127.json").read_text())
+    target_manifest = json.loads(Path(f"configs/link_{date}.json").read_text())
+    if not Path(target_manifest["local_path"]).exists():
+        pytest.skip("Pinned LINK candidate has not been downloaded")
+
+    source = load_link(source_manifest)
+    target = load_link(target_manifest)
+    mapping = align_channel_keys(source["channel_keys"], target["channel_keys"])
+    np.testing.assert_array_equal(mapping, np.arange(96))
+    assert target["verified_sha256"] == target_manifest["sha256"]
+    assert target["subject_id"] == source["subject_id"]
+    assert len(target["trials"]) == 375
+    assert sum(trial["sample_count"] for trial in target["trials"]) == expected_samples
+    assert {trial["target_style"] for trial in target["trials"]} == {"CO"}
+    assert {trial["run_id"] for trial in target["trials"]} == {2}
+    for trial in target["trials"]:
+        assert trial["counts"].shape == (trial["sample_count"], 96)
+        assert trial["counts"].dtype == np.int64
+        assert trial["position"].shape == (trial["sample_count"], 2)
+        assert trial["position_valid"].all()
+        assert trial["velocity_valid"].all()
+        assert (np.diff(trial["timestamps"]) > 0).all()
