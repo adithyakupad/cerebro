@@ -31,12 +31,26 @@ See [explicit release acceptance statuses](../release/acceptance_matrix.md), [in
 
 Mission014 committed validation revision: `a3a2dfd04daf3d923a47d133ce4acf30b5983571`. Unchanged scientific rows retain their historical execution revisions in JSON; the original reports are not rewritten. Cross-subject preprocessing is a data-validity limitation rather than an implementation success claim. General foundation-model validity remains unestablished, while all implemented objectives, pretraining controls and transfer experiments remain in scope.
 
+## Mission 016 prospective evidence update
+
+The [dataset screen](../datasets/mission_016_eligibility.md) and [protocol](mission_016_protocol.json) were committed at `5a7376a694825005500cd357694fa8e27e2ce31e` before new model outcomes. The three checksum-pinned LINK targets (Feb 6/11/22, 2020) passed native sampled-coverage and same-task checks; all remain one Monkey N. [Full reports and figures](../../reports/mission_016.md) preserve the fixed outcomes.
+
+| Question | New verified evidence | Completion status |
+|---|---|---|
+| Within-session decoding | Jan 27 source reserved 75-trial ridge MSE 0.03150958 flexion²; historically inspected source evaluation, not an untouched final test. | Implemented; qualified offline evidence |
+| Frozen cross-session transfer | Target MSE 0.02635430, 0.02786564 and 0.02601508 flexion² on the three future dates. Source-mean controls are 0.02387138, 0.02765507 and 0.02420724. | Executed on new dates; broad robustness unvalidated |
+| Calibration-efficient adaptation | At the prespecified 15-label budget, source-assisted minus target-only equal-trial MSE is +0.00055375, +0.00067157 and +0.00061931 flexion²; equal-date +0.00061488. Both methods trail frozen/source-mean controls on all three dates. Negative source-assistance finding; no implementation failure. | Methods complete; robust advantage not demonstrated |
+| Self-supervised transfer | Three-seed Feb 6 pretrained/random/supervised controls have tiny mixed differences under a separate first-40-bin protocol. | Executed; general foundation claim unvalidated |
+| Strict cross-subject transfer | Not run: FALCON original targets unavailable; Perich coverage undocumented; Zenodo Indy/Loco native coverage still pending. | Blocked by suitable data/provenance, not a missing decoder family |
+
+Mission 016 does not alter the historical 22 subsystem rows above. The [machine matrix](completion_matrix.json) records the addendum and exact report hashes separately. Dates are repeated observations within one animal; neither trial-level block intervals nor optimization seeds are independent-subject uncertainty.
+
 ## Exact continuation gates
 
 1. Review Mission014 release acceptance evidence and PR1; preserve v0.1.0, do not merge/tag without explicit human approval and satisfied original completion criteria.
 2. Resolve strict cross-subject original target-preprocessing validation with authoritative raw EMG/clock/calibration sources or independent suitable data; preserve published-target exploratory reports.
 3. Keep Perich audit-only until documented neural coverage is established.
-4. Prespecify new untouched sessions/animals and practical effect criteria before additional method selection; current new dates have now been inspected.
-5. Retain full foundation scope and negative/mixed SSL results;validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed.
+4. For any further model selection, prespecify a new untouched cohort and practical effect criteria. All Mission014 dates and Mission016 Feb 6/11/22 evaluation outcomes are now inspected.
+5. Retain full foundation scope and negative/mixed SSL results; validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed.
 
 No continuation automation is installed. Work does not continue after a session unless a new active execution occurs.

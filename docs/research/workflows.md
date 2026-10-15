@@ -182,3 +182,31 @@ as `results.json`; archived copies and the concise comparison are in
 now inspected evaluation sets and must not be reused for method selection.
 FALCON remains author-preprocessed exploratory EMG; new dates do not repair
 upstream target leakage or add independent animals. Perich remains audit-only.
+
+## Mission 016 prospectively selected LINK dates
+
+The [dataset eligibility screen](../datasets/mission_016_eligibility.md) and
+[frozen protocol](mission_016_protocol.json) were committed before model runs.
+Acquire the three checksum-pinned targets, then reproduce the fixed same-subject
+experiments and verified reports using the existing Python 3.11 environment:
+
+```sh
+python -m cerebro.dataset configs/link_20200127.json
+python -m cerebro.dataset configs/link_20200130.json
+python -m cerebro.dataset configs/link_20200206.json
+python -m cerebro.dataset configs/link_20200211.json
+python -m cerebro.dataset configs/link_20200222.json
+python -m cerebro.longitudinal --config configs/longitudinal_16_20200206.json --output data/processed/longitudinal_16_20200206
+python -m cerebro.longitudinal --config configs/longitudinal_16_20200211.json --output data/processed/longitudinal_16_20200211
+python -m cerebro.longitudinal --config configs/longitudinal_16_20200222.json --output data/processed/longitudinal_16_20200222
+python -m cerebro.representation_transfer --config configs/representation_16_20200206.json --output data/processed/representation_16_20200206
+python tools/report_mission_016.py
+python -m pytest
+```
+
+The report command verifies stored numeric-array digests and the committed
+protocol hash before generating [Mission 016 results](../../reports/mission_016.md)
+and three figures. Raw assets, arrays, and checkpoints remain Git-ignored. The
+trial-level full reports are versioned under `reports/longitudinal_16_*.json`
+and `reports/representation_16_20200206.json`. This is one Monkey N task and
+contact-coordinate transfer, not independent-subject or online validation.

@@ -3,8 +3,8 @@
     "Review Mission014 release acceptance evidence and PR1; preserve v0.1.0, do not merge/tag without explicit human approval and satisfied original completion criteria.",
     "Resolve strict cross-subject original target-preprocessing validation with authoritative raw EMG/clock/calibration sources or independent suitable data; preserve published-target exploratory reports.",
     "Keep Perich audit-only until documented neural coverage is established.",
-    "Prespecify new untouched sessions/animals and practical effect criteria before additional method selection; current new dates have now been inspected.",
-    "Retain full foundation scope and negative/mixed SSL results;validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed."
+    "Reserve a genuinely new untouched subject/session cohort and practical effect criteria before any further model selection; Mission014 and Mission016 evaluation dates are now inspected.",
+    "Retain full foundation scope and negative/mixed SSL results; validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed."
   ],
   "execution_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
   "mission_014_evidence": {
@@ -16,7 +16,37 @@
     "software_status": "PASS",
     "validation": "docs/development/mission_014_validation.md"
   },
-  "overall_status": "INCOMPLETE: software audit passed within scope; strict cross-subject preprocessing validation unresolved; human publication approval pending",
+  "mission_016_evidence": {
+    "dataset_inventory": "docs/research/dataset_inventory.json",
+    "eligibility": "docs/datasets/mission_016_eligibility.md",
+    "fixed_target_dates": [
+      "20200206",
+      "20200211",
+      "20200222"
+    ],
+    "machine_report": "reports/mission_016.json",
+    "new_longitudinal_experiments": 3,
+    "new_representation_experiments": 1,
+    "primary_all_three_benefit": false,
+    "primary_equal_date_difference_flexion_squared": 0.0006148764959831699,
+    "protocol_commit": "5a7376a694825005500cd357694fa8e27e2ce31e",
+    "protocol_sha256": "ad6411175ffa82e6d2064178ef62c811e2eed4e184d3b058bf50f31e9193068f",
+    "report_sha256": {
+      "reports/longitudinal_16_20200206.json": "03e56026afa236145fdc7e8837461d3b793995391cb7c2547100b489c495d793",
+      "reports/longitudinal_16_20200211.json": "5fd4b2361b4b840e24f0043444aaa9d843463eb3fca1e143225b8770cdeab5e5",
+      "reports/longitudinal_16_20200222.json": "6895e07da1043caa00e7d5775af65780660ee65f6ca6078011897a4ccc2a80be",
+      "reports/mission_016.json": "e1197b9423de1053a0962231860703a42b9c294dcb92e6149f0853ca1a1e0041",
+      "reports/mission_016.md": "cc4a5836ab6a337ace6910ef54be68d98f8eee941631b9ef14cca40085ef50e2",
+      "reports/representation_16_20200206.json": "b20208150cbfbe025c4952e4631646c477a1b6a5dcd38eaa42ebb061b5a47720"
+    },
+    "research_report": "reports/mission_016.md",
+    "scientific_interpretation": "negative fixed same-subject source-assistance result; no foundation-model or cross-subject success claim",
+    "strict_cross_subject": "BLOCKED: no eligible independent-subject raw-target source",
+    "subjects": [
+      "Monkey N"
+    ]
+  },
+  "overall_status": "INCOMPLETE: implemented offline software remains validated within scope; Mission016 prospectively replicated negative same-subject source-assistance outcome; strict cross-subject target provenance and broad foundation claims remain unresolved; human release approval pending",
   "previous_execution_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
   "release_acceptance_matrix": "docs/release/acceptance_matrix.json",
   "report_sha256": {

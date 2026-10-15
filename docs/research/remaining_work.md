@@ -35,3 +35,15 @@ Relative effort is qualitative: small = protocol/document decision, medium = bou
 - Final sequence: data and scope decisions → frozen protocol/independent assets → validation experiments and negative-result preservation → evidence/acceptance review → explicit human publication decision. No release tag is justified before the final gate.
 
 **Do not rebuild** the working PCA/FA, classical or six sequence decoders, longitudinal calibration methods, SSL objectives, registry or explorer. The highest-priority work is evidence acquisition and evaluation design, not a broad model pass.
+
+## Mission 016 evidence update (2026-10-15)
+
+This addendum preserves the Mission 015 audit above. The [frozen protocol](mission_016_protocol.json) selected three previously uninspected LINK sessions by date before model outcomes; [results](../../reports/mission_016.md) cover one Monkey N and do not create independent subjects.
+
+| Prior gap | New evidence | Remaining acceptance gate | Priority |
+|---|---|---|---|
+| `R3` independent-date calibration robustness | Feb 6/11/22 2020 each have 375 compatible CO trials and documented sampled neural/behavioral coverage. Prespecified 15-label source-assisted minus target-only MSE is positive on all three dates (equal-date +0.00061488 flexion²). Negative transfer is a valid scientific outcome. | Multiple biological subjects or independently prespecified later cohorts are needed for a broad robustness claim; do not tune against these now-inspected dates. | P1 |
+| `F2` transferable SSL features | Fixed three-seed Feb 6 reference experiment and random/supervised controls executed; differences are small and mixed. | Independent tasks/subjects and practical effect criteria selected before new outcomes; foundation-model validity remains unestablished. | P1 |
+| `D3`/`D4` strict cross-subject targets | Eligibility screen confirms FALCON native coverage but irreversible author EMG preprocessing; Zenodo Indy/Loco is promising but native coverage not certified. | Obtain raw FALCON targets plus clock/provenance, or validate a suitable independent corpus with documented neural observation coverage and split-safe targets. | P0; external data |
+| `D2` Perich | No new authoritative observation intervals. | Remains audit-only pending source-backed neural coverage. | P1; external documentation |
+| `L2` final release | Software and negative scientific results remain preserved; Mission 016 adds reproducible same-subject evidence only. | Full-scope evidence review and explicit human approval. No merge or final tag. | P0; human decision |

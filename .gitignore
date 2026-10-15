@@ -24,3 +24,4 @@ reports/figures/*
 !reports/figures/representation_*.png
 !reports/figures/longitudinal_*.png
 !reports/figures/cross_subject_*.png
+!reports/figures/mission_016_*.png

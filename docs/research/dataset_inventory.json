@@ -186,6 +186,61 @@
       }
     ]
   },
+  "mission_016": {
+    "accepted_qualified_same_subject_assets": [
+      {
+        "asset_id": "008fc384-2a95-47ec-8dbe-7acb4a18bcc7",
+        "bytes": 43884592,
+        "contact_columns": 96,
+        "manifest": "configs/link_20200206.json",
+        "native_coverage": "explicit shared neural/behavioral trial references; no raw-voltage continuity claim",
+        "referenced_neural_behavior_samples": 26582,
+        "session_date": "20200206",
+        "sha256": "9f7995315e8a554501ee55f66cebb1c3cdd22e938fe9e987b452c07288c4f05a",
+        "subject": "Monkey N",
+        "target": "two native normalized finger-flexion positions",
+        "task": "CO",
+        "trial_count": 375
+      },
+      {
+        "asset_id": "9c0ac931-d97e-464b-a134-c366b7c84727",
+        "bytes": 44035784,
+        "contact_columns": 96,
+        "manifest": "configs/link_20200211.json",
+        "native_coverage": "explicit shared neural/behavioral trial references; no raw-voltage continuity claim",
+        "referenced_neural_behavior_samples": 26675,
+        "session_date": "20200211",
+        "sha256": "f36b7c695c103f7f10155b5e954d98c7844e85c53cd546378e64699d8b73b5e3",
+        "subject": "Monkey N",
+        "target": "two native normalized finger-flexion positions",
+        "task": "CO",
+        "trial_count": 375
+      },
+      {
+        "asset_id": "19a1f617-abb2-45ed-81d5-7f09dc60890d",
+        "bytes": 42212936,
+        "contact_columns": 96,
+        "manifest": "configs/link_20200222.json",
+        "native_coverage": "explicit shared neural/behavioral trial references; no raw-voltage continuity claim",
+        "referenced_neural_behavior_samples": 25547,
+        "session_date": "20200222",
+        "sha256": "a65a5d38b65aa9103c2c9d54484b8a4cee047553279c08a55973686b1e8a94d3",
+        "subject": "Monkey N",
+        "target": "two native normalized finger-flexion positions",
+        "task": "CO",
+        "trial_count": 375
+      }
+    ],
+    "dandiset_id": "001201",
+    "eligibility_report": "docs/datasets/mission_016_eligibility.md",
+    "frozen_protocol": "docs/research/mission_016_protocol.json",
+    "license": "CC-BY-4.0",
+    "perich_status": "AUDIT_ONLY",
+    "prior_inspected_evaluation_dates": "LINK 2020-01-30, 2020-02-04 and 2020-02-05; not reused for new method selection",
+    "strict_cross_subject_status": "BLOCKED: no inspected independent-subject corpus passes both documented neural coverage and original split-safe target preprocessing",
+    "version": "0.251023.2336",
+    "zenodo_3854034_status": "CANDIDATE_PENDING native neural coverage/source asset audit"
+  },
   "native_audit": [
     {
       "R_complete_count": 173,
