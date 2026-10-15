@@ -241,6 +241,40 @@
     "version": "0.251023.2336",
     "zenodo_3854034_status": "CANDIDATE_PENDING native neural coverage/source asset audit"
   },
+  "mission_017_cross_subject_candidates": {
+    "eligibility_matrix": "docs/datasets/mission_017_eligibility.md",
+    "strictly_eligible_dataset_count": 0,
+    "ranked_sources": [
+      {
+        "rank": 1,
+        "source": "Zenodo 3854034 v2 Indy/Loco",
+        "subjects": ["Indy", "Loco"],
+        "sessions_reported": {"Indy": 37, "Loco": 10},
+        "target": "timestamped cursor and target positions in mm; fingertip in cm",
+        "coverage_blocker": "No authentic Loco neural acquisition intervals in the official spike-event release or listed broadband supplements",
+        "status": "INELIGIBLE_PENDING_SOURCE_COVERAGE"
+      },
+      {
+        "rank": 2,
+        "source": "Brochier reach-to-grasp G-Node f83565",
+        "subjects": ["L", "N"],
+        "sessions_reported": {"L": 1, "N": 1},
+        "target": "original instructed grip/force conditions and object sensors, pending native audit",
+        "coverage_blocker": "Exact assets, native timing, sensor calibration and repository data terms not directly verified",
+        "status": "CANDIDATE_PENDING_NATIVE_AUDIT"
+      },
+      {
+        "rank": 3,
+        "source": "FALCON M1-A 000941 published plus M1-B 001209 draft",
+        "subjects": ["Monkey L", "Monkey X"],
+        "sessions_reported": "8 audited across both animals",
+        "target": "author-preprocessed EMG, original synchronized EMG unavailable",
+        "coverage_blocker": "Neural coverage is explicit; original-target preprocessing is the decisive blocker",
+        "status": "INELIGIBLE_ORIGINAL_TARGETS"
+      }
+    ],
+    "new_cross_subject_model_runs": 0
+  },
   "native_audit": [
     {
       "R_complete_count": 173,

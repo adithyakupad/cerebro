@@ -45,6 +45,18 @@ The [dataset screen](../datasets/mission_016_eligibility.md) and [protocol](miss
 
 Mission 016 does not alter the historical 22 subsystem rows above. The [machine matrix](completion_matrix.json) records the addendum and exact report hashes separately. Dates are repeated observations within one animal; neither trial-level block intervals nor optimization seeds are independent-subject uncertainty.
 
+## Mission 017 evidence update
+
+The three Mission 015/016 commits through `fda96d87c3bc9c43a038b8b727f3519724a6ee9b` are published on draft PR #1. Both GitHub test runs at that head succeeded: **212 software tests passed, 15 data cases collected but not executed in public CI**. After Mission 017 diagnostics, the local full suite passed **230 tests**; 405 artifact/755 array digests passed and 229 historical predictions replayed, 227 exactly. These checks validate software and stored outputs, not cross-subject neuroscience claims. CI for the new Mission 017 commit is checked separately after publication.
+
+| Requirement | New Mission 017 evidence | Current status |
+|---|---|---|
+| Strict independent-subject transfer | [Eligibility ranking](../datasets/mission_017_eligibility.md) leaves Indy/Loco without documented Loco neural coverage; Brochier native assets, timing and data terms require direct audit; FALCON raw EMG remains unavailable. [No new model result](../../reports/mission_017_cross_subject.md). | **BLOCKED by data/provenance**, no verified strict cross-subject experiment |
+| Low-budget adaptation mechanism | [Descriptive diagnosis](../../reports/mission_017_adaptation.md) finds only 15 independent labeled trials, early calibration index-position means 0.585–0.597 versus later evaluation means 0.496–0.509, and source alpha selection nearly flat at the grid edge. Retrospective dates were not used for new model selection. | **PARTIAL**: calibration sampling bias is plausible; contribution of regularization and neural drift remains unresolved |
+| Validated subject-invariant representation or neural foundation model | No new eligible held-out-subject experiment; historical small/mixed SSL and negative transfer outcomes remain unchanged. | **UNVALIDATED** scientifically; implemented objectives and software remain present |
+
+Historical subsystem rows and Mission 016 results remain immutable. A negative transfer finding is not a software defect. The [release addendum](../release/acceptance_matrix.md) distinguishes the passing PR checks from the blocked scientific gate.
+
 ## Exact continuation gates
 
 1. Review Mission014 release acceptance evidence and PR1; preserve v0.1.0, do not merge/tag without explicit human approval and satisfied original completion criteria.

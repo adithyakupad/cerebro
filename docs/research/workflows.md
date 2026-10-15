@@ -210,3 +210,24 @@ and three figures. Raw assets, arrays, and checkpoints remain Git-ignored. The
 trial-level full reports are versioned under `reports/longitudinal_16_*.json`
 and `reports/representation_16_20200206.json`. This is one Monkey N task and
 contact-coordinate transfer, not independent-subject or online validation.
+
+## Mission 017 evidence screen and adaptation diagnosis
+
+The [cross-subject eligibility screen](../datasets/mission_017_eligibility.md)
+uses cited source metadata only and does not download or fit a new corpus. For
+the descriptive LINK diagnosis, acquire the Jan 27 source and three Mission 016
+targets above, then run:
+
+```sh
+python tools/diagnose_mission_017.py
+python -m pytest tests/test_mission_017_diagnostics.py -q
+```
+
+The command checks source/target SHA256s, historical split identities and all
+stored prediction-array digests before writing
+[machine-readable diagnostics](../../reports/mission_017_adaptation.json) and a
+[source-only figure](../../reports/figures/mission_017_source_coverage.png).
+Mission 016 target dates enter only retrospective descriptive tables; no model
+is fitted or selected. [Interpretation](../../reports/mission_017_adaptation.md)
+and the [blocked cross-subject report](../../reports/mission_017_cross_subject.md)
+remain separate from the original experiment outputs.

@@ -1,0 +1,499 @@
+{
+  "bin_width_seconds": 0.02,
+  "features": "96 contact-coordinate threshold-crossing counts; not neuron identities",
+  "generator_sha256": "580ec138c1004c71b224f9dd803c6920b70f962d64fba1d5baabbc52f3692d98",
+  "historical_report_sha256": "03e56026afa236145fdc7e8837461d3b793995391cb7c2547100b489c495d793",
+  "input_code_revision": "fda96d87c3bc9c43a038b8b727f3519724a6ee9b",
+  "limits": [
+    "Mission016 target dates were previously inspected; their distributions and saved predictions are described but not used for selection or fitting.",
+    "Adjacent 20 ms bins are correlated; bin count is not independent trial count.",
+    "These observational differences cannot identify the cause of future-session failure.",
+    "Ridge alpha was selected for source training, not optimized for 15 target trials."
+  ],
+  "retrospective_previously_inspected_targets": {
+    "20200206": {
+      "asset_id": "008fc384-2a95-47ec-8dbe-7acb4a18bcc7",
+      "asset_sha256": "9f7995315e8a554501ee55f66cebb1c3cdd22e938fe9e987b452c07288c4f05a",
+      "evaluation_300_trials": {
+        "active_contact_count": 96,
+        "bins": 21379,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.11228405600511406,
+        "median_bins_per_trial": 61.0,
+        "position_mean_flexion": [
+          0.4957936471670976,
+          0.5287078544424305
+        ],
+        "position_std_flexion": [
+          0.15542708423602544,
+          0.17537684477828816
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.10000000149011612,
+          0.10000000149011612
+        ],
+        "trials": 300,
+        "unique_commanded_targets": 23,
+        "zero_count_fraction": 0.9109499002136052
+      },
+      "experiment_report_sha256": "03e56026afa236145fdc7e8837461d3b793995391cb7c2547100b489c495d793",
+      "first_15_calibration_trials": {
+        "active_contact_count": 95,
+        "bins": 1068,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.13646028401997504,
+        "median_bins_per_trial": 58.0,
+        "position_mean_flexion": [
+          0.5877673793793394,
+          0.5200408178378134
+        ],
+        "position_std_flexion": [
+          0.20065973261556416,
+          0.18708392039635147
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.20000000298023224,
+          0.20000000298023224
+        ],
+        "trials": 15,
+        "unique_commanded_targets": 7,
+        "zero_count_fraction": 0.8931511392009988
+      },
+      "saved_prediction_distribution": {
+        "direct_recalibration_15": {
+          "mean_flexion": [
+            0.5828470438705909,
+            0.516711982591806
+          ],
+          "std_flexion": [
+            0.04958178181138586,
+            0.04431240426713386
+          ]
+        },
+        "frozen_source": {
+          "mean_flexion": [
+            0.5358456015993938,
+            0.5467630370802561
+          ],
+          "std_flexion": [
+            0.06409089938802424,
+            0.07865568282690086
+          ]
+        },
+        "source_mean": {
+          "mean_flexion": [
+            0.5130408829409161,
+            0.5139313142687567
+          ],
+          "std_flexion": [
+            4.873879078104437e-14,
+            7.194245199571014e-14
+          ]
+        },
+        "source_plus_residual_15": {
+          "mean_flexion": [
+            0.5842097990949807,
+            0.5111910348250341
+          ],
+          "std_flexion": [
+            0.06246296552038734,
+            0.05578878268591101
+          ]
+        },
+        "target_calibration_mean_15": {
+          "mean_flexion": [
+            0.587767379379646,
+            0.520040817837707
+          ],
+          "std_flexion": [
+            3.065325770990057e-13,
+            1.0647038806155251e-13
+          ]
+        }
+      }
+    },
+    "20200211": {
+      "asset_id": "9c0ac931-d97e-464b-a134-c366b7c84727",
+      "asset_sha256": "f36b7c695c103f7f10155b5e954d98c7844e85c53cd546378e64699d8b73b5e3",
+      "evaluation_300_trials": {
+        "active_contact_count": 96,
+        "bins": 21015,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.10850979459116504,
+        "median_bins_per_trial": 65.0,
+        "position_mean_flexion": [
+          0.5088331110174532,
+          0.5395840966462905
+        ],
+        "position_std_flexion": [
+          0.1677094346977637,
+          0.17700832562883786
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.10000000149011612,
+          0.10000000149011612
+        ],
+        "trials": 300,
+        "unique_commanded_targets": 23,
+        "zero_count_fraction": 0.9156678761202316
+      },
+      "experiment_report_sha256": "5fd4b2361b4b840e24f0043444aaa9d843463eb3fca1e143225b8770cdeab5e5",
+      "first_15_calibration_trials": {
+        "active_contact_count": 96,
+        "bins": 1182,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.12458580090242527,
+        "median_bins_per_trial": 69.0,
+        "position_mean_flexion": [
+          0.5852592903647931,
+          0.5355544940091027
+        ],
+        "position_std_flexion": [
+          0.2533769486689417,
+          0.2036686382997404
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.20000000298023224,
+          0.20000000298023224
+        ],
+        "trials": 15,
+        "unique_commanded_targets": 6,
+        "zero_count_fraction": 0.9058358009024252
+      },
+      "saved_prediction_distribution": {
+        "direct_recalibration_15": {
+          "mean_flexion": [
+            0.590517762252899,
+            0.5423676136153379
+          ],
+          "std_flexion": [
+            0.05311554391139048,
+            0.04716371250024192
+          ]
+        },
+        "frozen_source": {
+          "mean_flexion": [
+            0.5063094862373234,
+            0.5160769227849167
+          ],
+          "std_flexion": [
+            0.05742182132112711,
+            0.04802663412366263
+          ]
+        },
+        "source_mean": {
+          "mean_flexion": [
+            0.5130408829409161,
+            0.5139313142687677
+          ],
+          "std_flexion": [
+            4.873879078104437e-14,
+            6.09512440519211e-14
+          ]
+        },
+        "source_plus_residual_15": {
+          "mean_flexion": [
+            0.5925093775694739,
+            0.5397505468448833
+          ],
+          "std_flexion": [
+            0.0692979474781092,
+            0.058574337304846014
+          ]
+        },
+        "target_calibration_mean_15": {
+          "mean_flexion": [
+            0.5852592903647752,
+            0.535554494009001
+          ],
+          "std_flexion": [
+            1.787459069646502e-14,
+            1.0169642905566434e-13
+          ]
+        }
+      }
+    },
+    "20200222": {
+      "asset_id": "19a1f617-abb2-45ed-81d5-7f09dc60890d",
+      "asset_sha256": "a65a5d38b65aa9103c2c9d54484b8a4cee047553279c08a55973686b1e8a94d3",
+      "evaluation_300_trials": {
+        "active_contact_count": 96,
+        "bins": 20444,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.10170975184243136,
+        "median_bins_per_trial": 61.0,
+        "position_mean_flexion": [
+          0.49615019524910575,
+          0.5214902148524643
+        ],
+        "position_std_flexion": [
+          0.16446655842291624,
+          0.17651098259379397
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.10000000149011612,
+          0.10000000149011612
+        ],
+        "trials": 300,
+        "unique_commanded_targets": 23,
+        "zero_count_fraction": 0.9155676278288658
+      },
+      "experiment_report_sha256": "6895e07da1043caa00e7d5775af65780660ee65f6ca6078011897a4ccc2a80be",
+      "first_15_calibration_trials": {
+        "active_contact_count": 94,
+        "bins": 939,
+        "channels": 96,
+        "mean_count_per_contact_20ms_bin": 0.11480520056798012,
+        "median_bins_per_trial": 60.0,
+        "position_mean_flexion": [
+          0.5971589711146613,
+          0.5319619795448356
+        ],
+        "position_std_flexion": [
+          0.20983149049889163,
+          0.14960142533912513
+        ],
+        "target_max_flexion": [
+          0.8999999761581421,
+          0.8999999761581421
+        ],
+        "target_min_flexion": [
+          0.20000000298023224,
+          0.20000000298023224
+        ],
+        "trials": 15,
+        "unique_commanded_targets": 7,
+        "zero_count_fraction": 0.9052959708910188
+      },
+      "saved_prediction_distribution": {
+        "direct_recalibration_15": {
+          "mean_flexion": [
+            0.6001828526893319,
+            0.5392775888975921
+          ],
+          "std_flexion": [
+            0.05610249171511833,
+            0.0395763862982368
+          ]
+        },
+        "frozen_source": {
+          "mean_flexion": [
+            0.5186812364299811,
+            0.5318200749179801
+          ],
+          "std_flexion": [
+            0.06712654288082721,
+            0.07293905431293052
+          ]
+        },
+        "source_mean": {
+          "mean_flexion": [
+            0.5130408829409162,
+            0.5139313142687858
+          ],
+          "std_flexion": [
+            4.8627768478581856e-14,
+            4.285460875053104e-14
+          ]
+        },
+        "source_plus_residual_15": {
+          "mean_flexion": [
+            0.6023639730741858,
+            0.5339161648384646
+          ],
+          "std_flexion": [
+            0.06819539795507192,
+            0.05259961888458992
+          ]
+        },
+        "target_calibration_mean_15": {
+          "mean_flexion": [
+            0.5971589711147888,
+            0.5319619795447066
+          ],
+          "std_flexion": [
+            1.2745360322696797e-13,
+            1.290079154614432e-13
+          ]
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "selected_alpha": 1000.0,
+  "source_asset_id": "c002a9a1-664d-4a69-af02-ba810046c4fb",
+  "source_only_alpha_candidates": [
+    {
+      "alpha": 1.0,
+      "selection_trial_mse_flexion2": 0.033358606513755225
+    },
+    {
+      "alpha": 10.0,
+      "selection_trial_mse_flexion2": 0.03335823480660815
+    },
+    {
+      "alpha": 100.0,
+      "selection_trial_mse_flexion2": 0.03335463919313369
+    },
+    {
+      "alpha": 1000.0,
+      "selection_trial_mse_flexion2": 0.033329554294682075
+    }
+  ],
+  "source_sha256": "1b4429c0223a7f33d33dd3ad798efa972590cd0e4ec6eae29e45199f83ec5a6b",
+  "source_trial_groups": {
+    "first_15_development_trials": {
+      "active_contact_count": 96,
+      "bins": 1368,
+      "channels": 96,
+      "mean_count_per_contact_20ms_bin": 0.1378609283625731,
+      "median_bins_per_trial": 72.0,
+      "position_mean_flexion": [
+        0.6020080636620347,
+        0.5754854277386303
+      ],
+      "position_std_flexion": [
+        0.2180056014971035,
+        0.19303955950579424
+      ],
+      "target_max_flexion": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "target_min_flexion": [
+        0.20000000298023224,
+        0.20000000298023224
+      ],
+      "trials": 15,
+      "unique_commanded_targets": 8,
+      "zero_count_fraction": 0.8913331505847953
+    },
+    "following_60_development_trials": {
+      "active_contact_count": 96,
+      "bins": 4477,
+      "channels": 96,
+      "mean_count_per_contact_20ms_bin": 0.12236616782071327,
+      "median_bins_per_trial": 67.5,
+      "position_mean_flexion": [
+        0.5629327168597896,
+        0.5166732988523361
+      ],
+      "position_std_flexion": [
+        0.18004814423033674,
+        0.2079513439347234
+      ],
+      "target_max_flexion": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "target_min_flexion": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "trials": 60,
+      "unique_commanded_targets": 14,
+      "zero_count_fraction": 0.901766435857345
+    },
+    "historically_inspected_source_evaluation_75": {
+      "active_contact_count": 96,
+      "bins": 5573,
+      "channels": 96,
+      "mean_count_per_contact_20ms_bin": 0.1106562892517495,
+      "median_bins_per_trial": 64.0,
+      "position_mean_flexion": [
+        0.4978715825243373,
+        0.49605396185481376
+      ],
+      "position_std_flexion": [
+        0.21250066975167778,
+        0.18891056898386918
+      ],
+      "target_max_flexion": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "target_min_flexion": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "trials": 75,
+      "unique_commanded_targets": 20,
+      "zero_count_fraction": 0.9093639721275196
+    },
+    "remaining_150_inner_training_trials": {
+      "active_contact_count": 96,
+      "bins": 10278,
+      "channels": 96,
+      "mean_count_per_contact_20ms_bin": 0.11408266848284361,
+      "median_bins_per_trial": 63.0,
+      "position_mean_flexion": [
+        0.5094703521106866,
+        0.513738137159709
+      ],
+      "position_std_flexion": [
+        0.1947542458925375,
+        0.18778700481539773
+      ],
+      "target_max_flexion": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "target_min_flexion": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "trials": 150,
+      "unique_commanded_targets": 22,
+      "zero_count_fraction": 0.9070293750405397
+    },
+    "source_inner_validation_75": {
+      "active_contact_count": 96,
+      "bins": 5578,
+      "channels": 96,
+      "mean_count_per_contact_20ms_bin": 0.11242268734313374,
+      "median_bins_per_trial": 67.0,
+      "position_mean_flexion": [
+        0.4577567438575295,
+        0.4969904003427763
+      ],
+      "position_std_flexion": [
+        0.20169438498917386,
+        0.18290769545598695
+      ],
+      "target_max_flexion": [
+        0.8999999761581421,
+        0.8999999761581421
+      ],
+      "target_min_flexion": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "trials": 75,
+      "unique_commanded_targets": 19,
+      "zero_count_fraction": 0.9081940211545356
+    }
+  },
+  "source_version": "0.251023.2336",
+  "status": "observed_descriptive_diagnostic_no_new_model_fit",
+  "target": "two native finger-position coordinates, flexion units"
+}

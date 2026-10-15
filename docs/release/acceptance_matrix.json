@@ -11,6 +11,17 @@
   "software_audit": "PASS within documented CPU/software and review scope",
   "research_program": "INCOMPLETE; scope preserved",
   "publication": "BLOCKED: full-scope target-provenance validation unresolved and human approval pending; no final tag",
+  "mission_017_addendum": {
+    "published_mission_016_head": "fda96d87c3bc9c43a038b8b727f3519724a6ee9b",
+    "public_ci": "PASS: two runs, each 212 software tests passed and 15 data cases collected but not executed",
+    "local_full_tests": "PASS: 227 at published Mission016 head and 230 after Mission017 diagnostics in existing Conda cerebro",
+    "mission_017_software_subset": "PASS locally: 215 software tests, 15 authentic-data cases separately collected; public CI pending new commit",
+    "local_artifact_integrity": "PASS: 405 files, 755 arrays, 229 prediction replays with 227 exact",
+    "strict_new_cross_subject_evaluation": "NOT TESTED: no candidate passed all data and provenance gates",
+    "general_subject_invariant_representation": "SCIENTIFICALLY INCONCLUSIVE",
+    "evidence": "docs/datasets/mission_017_eligibility.md; reports/mission_017_cross_subject.md; reports/mission_017_adaptation.md",
+    "release_action": "None: PR remains draft; main and v0.1.0 preserved"
+  },
   "criteria": [
     {
       "category": "software",
