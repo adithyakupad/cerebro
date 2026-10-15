@@ -176,6 +176,7 @@ def main():
                              'Representation09 pretraining/session-identity components have integrity checks only.',
                              'No training; no independent scientific validation; physical velocity/native position outputs retain historical interpretation.']}
     output = Path('data/processed/mission_014/checkpoints.json')
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, allow_nan=False) + '\n')
     print(json.dumps({'files_verified': len(integrity), 'array_digests_verified': arrays_checked,
                       'predictions_replayed': len(replay), 'exact': sum(row['exact'] for row in replay)}))
