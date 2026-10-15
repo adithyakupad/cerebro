@@ -106,6 +106,7 @@ def test_metadata_candidates_do_not_modify_raw_links():
 
 @pytest.mark.skipif(not Path("data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb").exists(),
                     reason="Local real recording absent; no automatic dataset download")
+@pytest.mark.data
 def test_real_report_is_reproducible_and_matched_rates_equal(tmp_path):
     first, second = tmp_path / "first.json", tmp_path / "second.json"
     result = write_report("configs/mc_maze_small.json", first)

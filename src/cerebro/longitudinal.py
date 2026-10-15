@@ -140,7 +140,6 @@ def run(config_path, output):
     inner_scaler = StandardScaler().fit(inner_counts)
     inner_normalized = inner_scaler.transform(inner_counts)
     selection_counts = flatten(source_training[inner_number:], 'counts')
-    selection_position = flatten(source_training[inner_number:], 'position')
     selection_normalized = inner_scaler.transform(selection_counts)
     candidates = []
     for alpha in config['ridge_alphas']:
@@ -191,6 +190,10 @@ def run(config_path, output):
         labeled_trials = calibration_pool[:budget]
         counts = flatten(labeled_trials, 'counts', column_order)
         positions = flatten(labeled_trials, 'position')
+        calibration_mean = positions.mean(axis=0)
+        mean_name = 'target_calibration_mean_' + str(budget)
+        predictions[mean_name] = np.broadcast_to(calibration_mean, (len(evaluation_counts), 2)).copy()
+        parameter_arrays[mean_name] = calibration_mean
         normalized = source_scaler.transform(counts)
         direct = fit_decoder(normalized, positions, alpha=alpha)
         predictions['direct_recalibration_' + str(budget)] = direct.predict(evaluation_normalized)

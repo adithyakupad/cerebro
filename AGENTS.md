@@ -21,6 +21,8 @@ capability. Module boundaries and data flow are in `docs/architecture.md`.
   instruction is for researchers who do not yet have it. No uv, Docker, databases,
   cloud infrastructure, global tooling installations, or speculative scaffolding.
   The full-scope directive authorizes a local interactive research interface.
+  Mission 014 explicitly authorizes temporary fresh Conda environments for
+  release validation; these do not replace the development environment.
 - Agents own repetitive coding, infrastructure, tests, and precise documentation.
   Delegate only bounded independent work when it reduces effort; avoid redundant
   agents. The lead agent integrates changes and reviews all affected files.

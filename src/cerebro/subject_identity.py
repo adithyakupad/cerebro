@@ -68,6 +68,14 @@ def run(config_path, output):
     cross_report = json.loads(cross_report_path.read_text())
     if splits != cross_report['splits']:
         raise ValueError('Frozen cross-subject split manifest differs from recorded report')
+    frozen_config = cross_report['config']
+    config_digest = hashlib.sha256(json.dumps(frozen_config, sort_keys=True).encode()).hexdigest()
+    if splits['config_sha256'] != config_digest:
+        raise ValueError('Frozen decoder configuration differs from split provenance')
+    for name in ('cross_subject.py', 'falcon.py'):
+        source_digest = hashlib.sha256((Path(__file__).parent / name).read_bytes()).hexdigest()
+        if cross_report['source_sha256'].get(name) != source_digest:
+            raise ValueError('Frozen decoder preparation code differs from current source')
     manifests = [json.loads(Path(config[name]).read_text()) for name in ('source_manifest', 'target_manifest')]
     if manifests[0]['sha256'] != splits['source_asset_sha256'] or manifests[1]['sha256'] != splits['target_asset_sha256']:
         raise ValueError('Diagnostic assets differ from frozen decoder provenance')
@@ -85,6 +93,39 @@ def run(config_path, output):
         raise ValueError('Source diagnostic fitting and evaluation trial identities overlap')
     if set(splits['target_calibration']) & set(splits['target_evaluation']):
         raise ValueError('Target diagnostic fitting and evaluation trial identities overlap')
+    source_boundary = frozen_config['source_training_trials']
+    inner_boundary = frozen_config['source_inner_training_trials']
+    target_boundary = frozen_config['target_calibration_trials']
+    if not 1 < inner_boundary < source_boundary < len(recordings[0]['trials']):
+        raise ValueError('Frozen source chronological boundaries are invalid')
+    if not 1 <= target_boundary < len(recordings[1]['trials']):
+        raise ValueError('Frozen target chronological boundary is invalid')
+    expected_trials = {
+        'source_training': [trial for trial in trials[0] if trial['original_trial_row'] < source_boundary],
+        'source_inner_training': [trial for trial in trials[0] if trial['original_trial_row'] < inner_boundary],
+        'source_inner_selection': [trial for trial in trials[0]
+                                   if inner_boundary <= trial['original_trial_row'] < source_boundary],
+        'source_evaluation': [trial for trial in trials[0] if trial['original_trial_row'] >= source_boundary],
+        'target_calibration': [trial for trial in trials[1] if trial['original_trial_row'] < target_boundary],
+        'target_evaluation': [trial for trial in trials[1] if trial['original_trial_row'] >= target_boundary],
+    }
+    for name, selected_trials in expected_trials.items():
+        expected_ids = [trial['trial_id'] for trial in selected_trials]
+        if splits[name] != expected_ids:
+            raise ValueError('Frozen trial identities differ from original-row chronological splits')
+    expected_rows = {
+        name: [trial['original_trial_row'] for trial in expected_trials[name]]
+        for name in ('source_training', 'source_evaluation', 'target_calibration', 'target_evaluation')
+    }
+    expected_budgets = {}
+    for budget in frozen_config['label_budgets']:
+        if budget < 1 or budget > target_boundary:
+            raise ValueError('Frozen label budget exceeds chronological calibration pool')
+        budget_trials = [trial for trial in expected_trials['target_calibration']
+                         if trial['original_trial_row'] < budget]
+        expected_budgets[str(budget)] = [trial['trial_id'] for trial in budget_trials]
+    if splits['original_trial_rows'] != expected_rows or splits['target_label_budgets'] != expected_budgets:
+        raise ValueError('Frozen original rows or label budgets differ from chronological splits')
     training_rows = np.concatenate([source_training, target_calibration], axis=0)
     training_labels = np.concatenate([np.zeros(len(source_training), dtype=int), np.ones(len(target_calibration), dtype=int)])
     evaluation_rows = np.concatenate([source_evaluation, target_evaluation], axis=0)

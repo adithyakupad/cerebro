@@ -19,6 +19,7 @@ def test_array_integrity_rejects_tampering(tmp_path):
         verified_results(tmp_path, "arrays.npz")
 
 
+@pytest.mark.data
 def test_real_stored_render(tmp_path):
     paths = [Path("data/processed/representation_07"), Path("data/processed/longitudinal_08")]
     if not all((path / "results.json").exists() for path in paths):
@@ -36,6 +37,7 @@ def test_real_stored_render(tmp_path):
         assert (tmp_path / "figures" / f"{name}.png").stat().st_size > 1000
 
 
+@pytest.mark.data
 def test_real_transfer_render(tmp_path):
     path = Path("data/processed/representation_09")
     if not (path / "results.json").exists():

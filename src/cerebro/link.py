@@ -25,9 +25,10 @@ def validate_crossing_counts(values):
     finite_values = np.isfinite(values)
     nonnegative_values = values >= 0
     integer_values = values == np.floor(values)
-    valid_values = finite_values & nonnegative_values & integer_values
+    representable_values = values < 2**63
+    valid_values = finite_values & nonnegative_values & integer_values & representable_values
     if not valid_values.all():
-        raise ValueError("Threshold-crossing data must contain nonnegative integers")
+        raise ValueError("Threshold-crossing data must contain nonnegative integers representable as int64")
     return values.astype(np.int64)
 
 

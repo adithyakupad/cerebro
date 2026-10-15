@@ -1,0 +1,24 @@
+{
+  "dandiset_id": "001209",
+  "version": "draft",
+  "asset_id": "12b6eb45-0ade-4781-b812-85d46f63bd90",
+  "asset_path": "sub-MonkeyX-held-in-calib/sub-MonkeyX-held-in-calib_ses-20121210_behavior+ecephys.nwb",
+  "size_bytes": 55430880,
+  "sha256": "abecbc8c9bdcaa73b957ef4cfb67d84d02ede3df242877a6d6c1d12f6f0c3ffe",
+  "license": [
+    "spdx:CC-BY-4.0"
+  ],
+  "metadata_url": "https://api.dandiarchive.org/api/dandisets/001209/versions/draft/assets/12b6eb45-0ade-4781-b812-85d46f63bd90/",
+  "download_url": "https://api.dandiarchive.org/api/assets/12b6eb45-0ade-4781-b812-85d46f63bd90/download/",
+  "local_path": "data/raw/falcon/sub-MonkeyX-held-in-calib_ses-20121210_behavior+ecephys.nwb",
+  "dataset_title": "FALCON Benchmark M1-B: primary motor cortex recordings in primate during reach-to-grasp task",
+  "attribution": [
+    "Rouse, Adam G (DataCollector)",
+    "Schieber, Marc H (DataCollector)",
+    "Karpowicz, Brianna (ContactPerson)"
+  ],
+  "source_split": "held-in-calib",
+  "version_limitation": "mutable draft; asset UUID and checksum pinned",
+  "citation": "Rouse, Adam G.; Schieber, Marc H. FALCON Benchmark M1-B: primary motor cortex recordings in primate during reach-to-grasp task [Data set]. DANDI Archive 001209 version draft. CC-BY-4.0.",
+  "source_url": "https://dandiarchive.org/dandiset/001209/draft"
+}

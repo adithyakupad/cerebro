@@ -60,3 +60,47 @@ def test_chronology_rejects_duplicate_overlap_and_reordered_trials():
     recording['trials'][1]['timestamps'] = np.array([1.02, 1.04])
     with pytest.raises(ValueError, match='nonoverlapping'):
         validate_chronology(recording)
+
+
+def test_calibration_mean_uses_only_the_named_label_prefix(monkeypatch, tmp_path):
+    import json
+    from cerebro import longitudinal
+
+    generator = np.random.default_rng(14)
+    recordings = {}
+    for domain, date in [('source', '2020-01-01'), ('target', '2020-01-02')]:
+        trials = []
+        for row in range(10):
+            position = np.full((3, 2), row / 10.)
+            trials.append({'trial_id': row, 'counts': generator.poisson(3, (3, 3)),
+                           'position': position, 'timestamps': row + np.arange(3) * .02,
+                           'target': np.array([.5, .5])})
+        recordings[domain] = {'trials': trials, 'subject_id': 'fixture',
+                              'timestamps_reference_time': date + 'T00:00:00+00:00',
+                              'metadata': {'position_units': ['flexion units'] * 2},
+                              'channel_keys': [('a', 'b', index, index, index, index) for index in range(3)]}
+    manifest_paths = {}
+    for domain in recordings:
+        path = tmp_path / (domain + '.json')
+        path.write_text(json.dumps({'fixture': domain, 'sha256': domain}))
+        manifest_paths[domain] = str(path)
+    config = {'source_manifest': manifest_paths['source'], 'target_manifest': manifest_paths['target'],
+              'source_training_trials': 6, 'source_inner_training_trials': 4,
+              'target_calibration_pool_trials': 4, 'calibration_budgets': [1, 2, 4],
+              'ridge_alphas': [1.], 'latent_dimensions': 1, 'anchor_min_repetitions': 10,
+              'bootstrap_draws': 10, 'bootstrap_trial_block': 2, 'seed': 14}
+    config_path = tmp_path / 'experiment.json'
+    config_path.write_text(json.dumps(config))
+    monkeypatch.setattr(longitudinal, 'load_link', lambda manifest: recordings[manifest['fixture']])
+    longitudinal.run(config_path, tmp_path / 'first')
+    for trial in recordings['target']['trials'][4:]:
+        trial['position'] += 100
+    longitudinal.run(config_path, tmp_path / 'changed')
+    with np.load(tmp_path / 'first' / 'arrays.npz') as first:
+        with np.load(tmp_path / 'changed' / 'arrays.npz') as changed:
+            for budget, expected in [(1, 0.), (2, .05), (4, .15)]:
+                key = 'target_calibration_mean_' + str(budget)
+                np.testing.assert_allclose(first[key], [expected, expected])
+                np.testing.assert_array_equal(first[key], changed[key])
+                np.testing.assert_array_equal(first[key + '_prediction_flexion'],
+                                              changed[key + '_prediction_flexion'])

@@ -69,7 +69,6 @@ def test_missing_manifest_trial_and_overlap_are_rejected(monkeypatch, tmp_path):
     _, path = setup_diagnostic(monkeypatch, tmp_path)
     with pytest.raises(ValueError):
         subject_identity.select_trial_rows([], [100])
-    config = json.loads(path.read_text())
     root = tmp_path / 'cross'
     splits = json.loads((root / 'split_manifest.json').read_text())
     splits['target_calibration'].append(splits['target_evaluation'][0])
@@ -78,4 +77,35 @@ def test_missing_manifest_trial_and_overlap_are_rejected(monkeypatch, tmp_path):
     (root / 'split_manifest.json').write_text(json.dumps(splits))
     (root / 'results.json').write_text(json.dumps(report))
     with pytest.raises(ValueError, match='overlap'):
+        subject_identity.run(path, tmp_path / 'run')
+
+
+@pytest.mark.parametrize('tampering, message', [
+    ('identities', 'original-row chronological splits'),
+    ('original_rows', 'original rows or label budgets'),
+    ('budgets', 'original rows or label budgets'),
+    ('config', 'configuration differs'),
+    ('cross_subject.py', 'preparation code differs'),
+    ('falcon.py', 'preparation code differs'),
+])
+def test_consistent_report_and_split_tampering_rejected(monkeypatch, tmp_path, tampering, message):
+    _, path = setup_diagnostic(monkeypatch, tmp_path)
+    root = tmp_path / 'cross'
+    report = json.loads((root / 'results.json').read_text())
+    splits = report['splits']
+    if tampering == 'identities':
+        for fitting, evaluation in (('source_training', 'source_evaluation'),
+                                    ('target_calibration', 'target_evaluation')):
+            splits[fitting][0], splits[evaluation][-1] = splits[evaluation][-1], splits[fitting][0]
+    elif tampering == 'original_rows':
+        splits['original_trial_rows']['target_calibration'][0] = 17
+    elif tampering == 'budgets':
+        splits['target_label_budgets']['2'] = splits['target_calibration'][2:4]
+    elif tampering == 'config':
+        report['config']['source_training_trials'] = 13
+    else:
+        report['source_sha256'][tampering] = 'stale-preprocessing-hash'
+    (root / 'split_manifest.json').write_text(json.dumps(splits))
+    (root / 'results.json').write_text(json.dumps(report))
+    with pytest.raises(ValueError, match=message):
         subject_identity.run(path, tmp_path / 'run')

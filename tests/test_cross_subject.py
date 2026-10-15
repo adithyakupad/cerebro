@@ -172,8 +172,12 @@ def test_public_artifacts_render_actual_report_values(monkeypatch, tmp_path):
     report_path = tmp_path / 'public.json'
     markdown_path = tmp_path / 'public.md'
     figure_path = tmp_path / 'figures' / 'calibration.png'
-    cross_subject.write_artifacts(report, report_path, markdown_path, figure_path)
+    cross_subject.write_artifacts(report, report_path, markdown_path, figure_path,
+                                  config_path='configs/independent.json', output_path='data/processed/independent')
     assert json.loads(report_path.read_text()) == report
     assert 'target_calibration_mean' in markdown_path.read_text()
     assert 'not an official FALCON score' in markdown_path.read_text()
+    assert '--config configs/independent.json' in markdown_path.read_text()
+    assert '--output data/processed/independent' in markdown_path.read_text()
+    assert 'configs/cross_subject_12.json' not in markdown_path.read_text()
     assert figure_path.read_bytes().startswith(b'\x89PNG')

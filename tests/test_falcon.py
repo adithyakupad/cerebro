@@ -13,6 +13,7 @@ from cerebro.falcon import load_falcon
 @pytest.mark.parametrize("label,trial_count,sample_count,unordered", [
     ("a", 412, 54633, 33), ("b", 429, 58552, 15),
 ])
+@pytest.mark.data
 def test_real_calibration_coverage(label, trial_count, sample_count, unordered):
     manifest = json.loads(Path(f"configs/falcon_m1_{label}.json").read_text())
     if not Path(manifest["local_path"]).exists():

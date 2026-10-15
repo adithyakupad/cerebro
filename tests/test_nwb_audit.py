@@ -12,6 +12,7 @@ from cerebro.nwb_audit import audit_recording
     ("20160406", 18, 152389, 296),
     ("20160407", 19, 130191, 331),
 ])
+@pytest.mark.data
 def test_pinned_real_recording_audit(date, units, spikes, trials):
     manifest_path = Path("configs") / f"perich_j_{date}.json"
     manifest = json.loads(manifest_path.read_text())

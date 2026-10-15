@@ -35,6 +35,8 @@ def normalized_tensors(counts, velocity, fitting_trials):
 
 
 def train_epoch(model, optimizer, features, targets, gradient_clip):
+    if not np.isfinite(gradient_clip) or gradient_clip <= 0:
+        raise ValueError('Gradient clipping must be finite and positive')
     model.train()
     optimizer.zero_grad()
     prediction = model(features)

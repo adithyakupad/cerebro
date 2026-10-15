@@ -7,6 +7,7 @@ import importlib.metadata
 import json
 from pathlib import Path
 import subprocess
+import shlex
 
 import numpy as np
 from sklearn.linear_model import Ridge
@@ -347,7 +348,8 @@ def run(config_path, output):
     return report
 
 
-def write_artifacts(report, report_path, markdown_path, figure_path):
+def write_artifacts(report, report_path, markdown_path, figure_path,
+                    config_path='configs/cross_subject_12.json', output_path='data/processed/cross_subject_12'):
     """Render measured trial-error comparisons with disclosed temporal blocks."""
     import matplotlib
     matplotlib.use('Agg')
@@ -426,9 +428,12 @@ def write_artifacts(report, report_path, markdown_path, figure_path):
     lines.append('')
     for limitation in report['limitations']:
         lines.append('- ' + limitation)
+    command = shlex.join(['python', '-m', 'cerebro.cross_subject', '--config', str(config_path),
+                          '--output', str(output_path), '--report', str(report_path),
+                          '--markdown', str(markdown_path), '--figure', str(figure_path)])
     lines.extend(['', 'Published native targets are author quantile-normalized EMG. Full-recording author filters/scaling predate CEREBRO splits, so original preprocessing is not certified leakage-free. The stored mV label does not establish absolute EMG amplitude.', '',
-                  'Checkpoints and prediction/mask archives remain in Git-ignored `data/processed/cross_subject_12/`. Every checkpoint was restored and predictions verified; JSON binds code/environment, splits, checkpoints, and array hashes.', '',
-                  'Reproduce: `python -m cerebro.cross_subject --config configs/cross_subject_12.json --output data/processed/cross_subject_12`.', '',
+                  'Checkpoints and prediction/mask archives remain in Git-ignored `' + str(output_path) + '`. Every checkpoint was restored and predictions verified; JSON binds code/environment, splits, checkpoints, and array hashes.', '',
+                  'Reproduce: `' + command + '`.', '',
                   '![Calibration comparison](figures/' + figure_path.name + ')', ''])
     markdown_path.write_text('\n'.join(lines))
 
@@ -442,7 +447,8 @@ def main():
     parser.add_argument('--figure', default='reports/figures/cross_subject_12_calibration.png')
     arguments = parser.parse_args()
     report = run(arguments.config, arguments.output)
-    write_artifacts(report, arguments.report, arguments.markdown, arguments.figure)
+    write_artifacts(report, arguments.report, arguments.markdown, arguments.figure,
+                    arguments.config, arguments.output)
     print(json.dumps({'subjects': [report['splits']['source_subject'], report['splits']['target_subject']],
                       'selected_alpha': report['selected_ridge_alpha'], 'controls': len(report['results'])}))
 

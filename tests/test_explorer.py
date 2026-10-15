@@ -83,6 +83,7 @@ def test_verified_sequence_predictions_and_trial_identity(tmp_path):
         generate(tmp_path, sequence, tmp_path / "explorer.html")
 
 
+@pytest.mark.data
 def test_real_local_explorer_generation(tmp_path):
     classical = Path("data/processed/classical_05")
     if not (classical / "results.json").exists():

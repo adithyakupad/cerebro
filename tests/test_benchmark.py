@@ -46,6 +46,7 @@ def test_trial_metrics_and_degenerate_target():
         trial_metrics(target, prediction)
 
 
+@pytest.mark.data
 def test_real_preparation_preserves_source_split_and_heldin_units():
     manifest_path = Path('configs/mc_maze_small.json')
     asset = json.loads(manifest_path.read_text())

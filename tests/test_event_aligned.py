@@ -179,6 +179,7 @@ def test_whole_trial_stratified_bootstrap_reproducible():
 
 @pytest.mark.skipif(not Path("data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb").exists(),
                     reason="Real recording is not local; no implicit network download")
+@pytest.mark.data
 def test_real_event_report_and_tensor_reproducibility(tmp_path):
     output = tmp_path / "events.json"
     tensors = tmp_path / "events.npz"
