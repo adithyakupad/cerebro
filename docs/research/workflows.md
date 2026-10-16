@@ -231,3 +231,16 @@ Mission 016 target dates enter only retrospective descriptive tables; no model
 is fitted or selected. [Interpretation](../../reports/mission_017_adaptation.md)
 and the [blocked cross-subject report](../../reports/mission_017_cross_subject.md)
 remain separate from the original experiment outputs.
+
+## Mission 020 Brochier population variability
+
+The [Mission 020 protocol](mission_020_protocol.md) was committed before outcome inspection. In the Python 3.11 `cerebro` Conda environment, install the already-declared research extras and obtain the six original, checksum-pinned native files with the [publisher-range fetcher](../datasets/mission_019_brochier.md) into Git-ignored `data/raw/brochier/`:
+
+```sh
+python -m pip install -e '.[dev,classical,brochier]'
+python -m tools.fetch_brochier l101210-001-02.nev l101210-001.ns5 l101210-001.odml i140703-001-03.nev i140703-001.ns6 i140703-001.odml
+python -m tools.brochier_population
+python -m pytest -q
+```
+
+The analysis verifies every asset SHA-256, native event and sampled coverage, trial boundaries, source SUA counts and binned spike conservation. It writes the [machine report](../../reports/mission_020_brochier_population.json), [scientific interpretation](../../reports/mission_020_brochier_population.md), three PNG/PDF figure pairs, and ignored `data/processed/brochier_population_20.npz`. The report includes config, protocol, code, tensor and asset hashes; a repeat run should reproduce its JSON and tensor hashes. The source license-text conflict in the [native audit](../datasets/mission_019_brochier.md) remains unresolved; do not redistribute raw assets.

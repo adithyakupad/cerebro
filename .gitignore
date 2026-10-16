@@ -26,3 +26,5 @@ reports/figures/*
 !reports/figures/cross_subject_*.png
 !reports/figures/mission_016_*.png
 !reports/figures/mission_017_*.png
+!reports/figures/mission_020_*.png
+!reports/figures/mission_020_*.pdf

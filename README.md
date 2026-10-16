@@ -207,3 +207,7 @@ explicitly author-preprocessed and exploratory. Perich remains audit-only.
 Additional LINK/FALCON dates extend evaluation without adding independent
 animals. Small and mixed representation differences do not validate a general
 neural foundation model. Historical negative results are preserved.
+
+## Integrated research evidence (Mission 020)
+
+The [technical report](docs/research/mission_020_technical_report.md) consolidates the scientific thesis, recorded datasets, model comparisons, population findings, negative results and limitations. The [33-requirement traceability matrix](docs/research/mission_020_traceability.md) preserves the original scope. The new [Brochier population report](reports/mission_020_brochier_population.md) analyzes authentic, fully sampled native neural windows around a recorded task event; its rank limits prevent a reliable full residual-covariance claim. Follow the [reproduction commands](docs/research/workflows.md) to acquire the pinned assets and regenerate the report and figures. Full scientific completion and the final release remain pending.

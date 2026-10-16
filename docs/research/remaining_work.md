@@ -67,3 +67,13 @@ Brochier publisher documents establish two named sessions and nominal condition 
 4. **P2, data terms:** Publisher root text says CC-BY-4.0 while bundled `datasets/LICENSE.txt` is CC-BY-SA-4.0. Ask the publisher to clarify which governs raw asset redistribution; keep original files local meanwhile.
 
 The [Mission 019 audit](../datasets/mission_019_brochier.md), [protocol](mission_019_protocol.md) and [negative-result report](../../reports/mission_019_brochier_transfer.md) supersede Mission 018's access blocker without rewriting historical records. Human release approval remains pending; no merge or final tag is authorized.
+
+## Mission 020 updated remaining gates
+
+The [frozen Brochier population analysis](../../reports/mission_020_brochier_population.md) closes Mission 019's **descriptive** event-aligned variability task. Its source-matched trial residuals, 300 whole-trial bootstrap draws and 200 shuffles do not overcome the per-condition covariance rank ceiling (L 29–40; N 34–35, versus 93/156 units) or one-session-per-animal biological replication. The [33-requirement traceability matrix](mission_020_traceability.md) advances M2 to PARTIAL and leaves the original broader criterion intact.
+
+1. **P0, external target evidence:** Resolve comparable, synchronized raw continuous behavior in independent animals; FALCON upstream EMG cannot be inverted, Brochier sensor calibration is unresolved, and Perich/Loco neural coverage remains uncertified. Do not treat classification as continuous decoding.
+2. **P1, independent biological replication:** A prospective cohort with multiple animals/sessions and adequately repeated conditions is needed for general subject-transfer, residual variability, stable-manifold and foundation claims. Set practical effects and splits before outcomes. More trials of L/N do not create more biological subjects.
+3. **P1, population precision:** For reliable high-dimensional residual covariance, gather enough independent condition-matched trials relative to recorded units or predeclare a lower-dimensional/shrinkage estimand and validate its uncertainty. Current pairwise distributions and participation ratios are descriptive.
+4. **P2, release evidence:** Review the integrated report, clarify the Brochier root-versus-bundled license-text conflict before redistributing raw assets, and assess packaging/platform scope. Preserve the historical negative experiments.
+5. **Human decision:** The researcher decides scientific claims and whether the software platform can be publicly released with explicitly incomplete hypotheses. Draft PR #1 remains unmerged and no final tag is justified by this mission alone.
