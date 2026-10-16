@@ -7,8 +7,6 @@ import json
 from pathlib import Path
 from xml.etree import ElementTree
 
-from neo.rawio import BlackrockRawIO
-
 from cerebro.dataset import verify_asset
 
 
@@ -92,6 +90,8 @@ def covered(intervals, start_seconds, stop_seconds):
 
 
 def audit_session(session, assets):
+    from neo.rawio import BlackrockRawIO
+
     prefix = session["id"]
     sorted_prefix = session["sorted_nev"].removesuffix(".nev")
     required_names = [

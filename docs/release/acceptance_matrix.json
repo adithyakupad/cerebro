@@ -248,7 +248,8 @@
     "software_only_tests": "PASS: 223; 16 data cases deselected",
     "package_and_dependency_install": "PASS: editable Conda cerebro install and pip check",
     "independent_review": "PASS with documentation correction: cue-independent motor claim narrowed",
-    "public_ci": "NOT TESTED at Mission019 commit until branch publication",
-    "numeric_reproducibility": "PASS: rerun transfer report SHA-256 a8d11b7627758a2a058c55118b222d3c86462c27769523b8e7724adf025d32fb identical"
+    "public_ci": "Initial PR runs FAILED during collection because optional neo was imported eagerly; post-fix CI pending",
+    "numeric_reproducibility": "PASS: post-fix rerun transfer report SHA-256 83a9716f15f6622dcf337d1aeddb12b93580757a7c61c8c0601d8153d4b2e75e identical",
+    "software_without_optional_neo": "PASS: 223 software tests with neo import deliberately blocked; 16 data cases deselected"
   }
 }

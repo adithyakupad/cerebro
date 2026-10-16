@@ -8,7 +8,6 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 import numpy as np
-from neo.rawio import BlackrockRawIO
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_matrix, f1_score
 from sklearn.pipeline import make_pipeline
@@ -84,6 +83,8 @@ def count_trial_spikes(unit_spikes, go_tick):
 
 
 def trial_rows(session, assets):
+    from neo.rawio import BlackrockRawIO
+
     prefix = session["id"]
     required_names = (session["sorted_nev"], session["neural_nsx"], f"{prefix}.odml")
     for name in required_names:
