@@ -248,7 +248,13 @@
     "software_only_tests": "PASS: 223; 16 data cases deselected",
     "package_and_dependency_install": "PASS: editable Conda cerebro install and pip check",
     "independent_review": "PASS with documentation correction: cue-independent motor claim narrowed",
-    "public_ci": "Initial PR runs FAILED during collection because optional neo was imported eagerly; post-fix CI pending",
+    "public_ci": {
+      "status": "PASS at e53bd45199d5a56bb866a91bd4e9fc42dd102926",
+      "push_run": "https://github.com/adithyakupad/cerebro/actions/runs/38838104061",
+      "pr_run": "https://github.com/adithyakupad/cerebro/actions/runs/38838108177",
+      "counts": "Each run: 223 software tests passed; 16 data tests collected but not executed",
+      "initial_failure": "Two first runs failed because optional neo was imported during collection; fixed by lazy import"
+    },
     "numeric_reproducibility": "PASS: post-fix rerun transfer report SHA-256 83a9716f15f6622dcf337d1aeddb12b93580757a7c61c8c0601d8153d4b2e75e identical",
     "software_without_optional_neo": "PASS: 223 software tests with neo import deliberately blocked; 16 data cases deselected"
   }
