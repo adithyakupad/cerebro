@@ -16,6 +16,7 @@ dependencies = ["numpy>=1.26,<3", "pynwb>=3,<5", "matplotlib>=3.8,<4"]
 dev = ["pytest>=8,<9"]
 classical = ["scipy>=1.13,<2", "scikit-learn>=1.5,<2"]
 deep = ["torch>=2.5,<3"]
+brochier = ["neo==0.14.5"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

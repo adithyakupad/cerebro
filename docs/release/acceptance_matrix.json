@@ -17,7 +17,10 @@
     "local_full_tests": "PASS: 227 at published Mission016 head and 230 after Mission017 diagnostics in existing Conda cerebro",
     "mission_017_research_head": "071232c8a03fd85dc54d634d9490b025f8f3c442",
     "mission_017_software_subset": "PASS locally and in two GitHub runs at research head: 215 software tests, 15 authentic-data cases separately collected/deselected",
-    "mission_017_ci_runs": [38825397853, 38825392767],
+    "mission_017_ci_runs": [
+      38825397853,
+      38825392767
+    ],
     "local_artifact_integrity": "PASS: 405 files, 755 arrays, 229 prediction replays with 227 exact",
     "strict_new_cross_subject_evaluation": "NOT TESTED: no candidate passed all data and provenance gates",
     "general_subject_invariant_representation": "SCIENTIFICALLY INCONCLUSIVE",
@@ -183,7 +186,7 @@
       "category": "scientific",
       "criterion": "Frozen longitudinal decoder generalization",
       "status": "FAIL",
-      "evidence": "New LINK date: frozen MSE0.03340539 versus source mean0.02606807 flexion\u00b2. Preserved negative hypothesis outcome, not a software failure.",
+      "evidence": "New LINK date: frozen MSE0.03340539 versus source mean0.02606807 flexion². Preserved negative hypothesis outcome, not a software failure.",
       "blocks_software_release": false
     },
     {
@@ -197,7 +200,7 @@
       "category": "scientific",
       "criterion": "Cross-subject transfer advantage",
       "status": "SCIENTIFICALLY INCONCLUSIVE",
-      "evidence": "New FALCON target frozen0.18574543 versus source mean0.19012762 normalizedEMG\u00b2; residual75 does not beat direct target ridge. Upstream targets and subject/session confounds persist.",
+      "evidence": "New FALCON target frozen0.18574543 versus source mean0.19012762 normalizedEMG²; residual75 does not beat direct target ridge. Upstream targets and subject/session confounds persist.",
       "blocks_software_release": false
     },
     {
@@ -232,5 +235,20 @@
   "full_scope_release_blockers": [
     "Leakage-free original FALCON target processing is not established; raw sources unavailable in inspected public archives. Current exploratory cross-subject workflow cannot be declared strict raw-target validation.",
     "Human review and explicit approval for merge and final tag remain pending."
-  ]
+  ],
+  "mission_019_addendum": {
+    "native_brochier_acquisition": "PASS: exact source assets, hashes, sampled coverage and clocks verified",
+    "frozen_four_condition_case_study": "PASS: protocol committed before results and both directions executed",
+    "source_assisted_transfer_benefit": "SCIENTIFICALLY INCONCLUSIVE: both trial-bootstrap intervals span zero",
+    "strict_continuous_target_transfer": "NOT TESTED: common physical sensor calibration and FALCON raw EMG unavailable",
+    "general_subject_invariance": "SCIENTIFICALLY INCONCLUSIVE: two animals, one session each",
+    "raw_redistribution": "INCONCLUSIVE: conflicting archive license texts",
+    "evidence": "docs/datasets/mission_019_brochier.md; docs/research/mission_019_protocol.md; reports/mission_019_brochier_transfer.md",
+    "local_full_tests": "PASS: 239 including 16 real-data-marked cases",
+    "software_only_tests": "PASS: 223; 16 data cases deselected",
+    "package_and_dependency_install": "PASS: editable Conda cerebro install and pip check",
+    "independent_review": "PASS with documentation correction: cue-independent motor claim narrowed",
+    "public_ci": "NOT TESTED at Mission019 commit until branch publication",
+    "numeric_reproducibility": "PASS: rerun transfer report SHA-256 a8d11b7627758a2a058c55118b222d3c86462c27769523b8e7724adf025d32fb identical"
+  }
 }

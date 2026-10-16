@@ -2,17 +2,6 @@
   "coverage_policy": "Human requires documented neural coverage; Perich unknown coverage is not modeled.",
   "discovered_not_acquired": [
     {
-      "name": "Brochier reach-to-grasp native G-Node corpus",
-      "doi": "10.12751/g-node.f83565",
-      "source": "https://doi.gin.g-node.org/10.12751/g-node.f83565/",
-      "license": "CC-BY-4.0 stated by dataset DOI page",
-      "subjects": ["L", "N"],
-      "sessions": ["l101210-001", "i140703-001"],
-      "status": "source-documented; native files unavailable in Mission018 environment",
-      "limitations": ["per-file hashes and recording coverage unverified", "object-sensor physical comparability unverified", "one session per subject confounds subject and session"],
-      "audit": "docs/datasets/mission_018_brochier.md"
-    },
-    {
       "asset_count": 312,
       "dandiset_id": "001201",
       "license": "CC-BY-4.0",
@@ -51,7 +40,7 @@
         "native MATLAB/HDF5 adapter required",
         "no source-defined CEREBRO evaluation split verified"
       ],
-      "name": "O\u2019Doherty/Makin reaching dataset",
+      "name": "O’Doherty/Makin reaching dataset",
       "sessions_per_subject": [
         37,
         10
@@ -111,6 +100,26 @@
       "source_url": "https://dandiarchive.org/dandiset/001209/draft",
       "version": "draft",
       "version_limitation": "mutable draft; asset UUID and checksum pinned"
+    },
+    {
+      "dataset_doi": "10.12751/g-node.f83565",
+      "source": "Brochier publisher-authorized native ZIP",
+      "subjects": [
+        "L",
+        "N"
+      ],
+      "sessions": [
+        "l101210-001",
+        "i140703-001"
+      ],
+      "asset_manifest": "docs/datasets/mission_019_brochier_assets.json",
+      "native_sampled_coverage": "PASS: full NS5/NS6 sample blocks verified",
+      "correct_trial_go_windows": {
+        "L": 135,
+        "N": 142
+      },
+      "target_scope": "four-class instructed grip-by-load labels only; common physical sensor calibration unresolved",
+      "reuse_terms": "root CC-BY-4.0 and bundled CC-BY-SA-4.0 texts conflict; raw redistribution held"
     }
   ],
   "falcon_native_audit": "reports/falcon_native_audit.json",
@@ -259,8 +268,14 @@
       {
         "rank": 1,
         "source": "Zenodo 3854034 v2 Indy/Loco",
-        "subjects": ["Indy", "Loco"],
-        "sessions_reported": {"Indy": 37, "Loco": 10},
+        "subjects": [
+          "Indy",
+          "Loco"
+        ],
+        "sessions_reported": {
+          "Indy": 37,
+          "Loco": 10
+        },
         "target": "timestamped cursor and target positions in mm; fingertip in cm",
         "coverage_blocker": "No authentic Loco neural acquisition intervals in the official spike-event release or listed broadband supplements",
         "status": "INELIGIBLE_PENDING_SOURCE_COVERAGE"
@@ -268,8 +283,14 @@
       {
         "rank": 2,
         "source": "Brochier reach-to-grasp G-Node f83565",
-        "subjects": ["L", "N"],
-        "sessions_reported": {"L": 1, "N": 1},
+        "subjects": [
+          "L",
+          "N"
+        ],
+        "sessions_reported": {
+          "L": 1,
+          "N": 1
+        },
         "target": "original instructed grip/force conditions and object sensors, pending native audit",
         "coverage_blocker": "Exact assets, native timing, sensor calibration and repository data terms not directly verified",
         "status": "CANDIDATE_PENDING_NATIVE_AUDIT"
@@ -277,7 +298,10 @@
       {
         "rank": 3,
         "source": "FALCON M1-A 000941 published plus M1-B 001209 draft",
-        "subjects": ["Monkey L", "Monkey X"],
+        "subjects": [
+          "Monkey L",
+          "Monkey X"
+        ],
         "sessions_reported": "8 audited across both animals",
         "target": "author-preprocessed EMG, original synchronized EMG unavailable",
         "coverage_blocker": "Neural coverage is explicit; original-target preprocessing is the decisive blocker",
@@ -928,5 +952,27 @@
         ]
       }
     }
-  ]
+  ],
+  "mission_019_brochier_native": {
+    "dataset_doi": "10.12751/g-node.f83565",
+    "source_manifest": "docs/datasets/mission_019_brochier_assets.json",
+    "local_raw_path_ignored": "data/raw/brochier",
+    "subjects": [
+      "L",
+      "N"
+    ],
+    "sessions": [
+      "l101210-001",
+      "i140703-001"
+    ],
+    "raw_sampled_neural_coverage_verified": true,
+    "correct_four_condition_trials": {
+      "L": 135,
+      "N": 142
+    },
+    "condition_task_eligible": true,
+    "continuous_physical_target_eligible": false,
+    "license_conflict": "Root/README CC-BY-4.0; datasets/LICENSE.txt CC-BY-SA-4.0; no raw redistribution",
+    "native_audit": "docs/datasets/mission_019_brochier.md"
+  }
 }
