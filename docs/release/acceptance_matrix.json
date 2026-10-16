@@ -24,6 +24,13 @@
     "evidence": "docs/datasets/mission_017_eligibility.md; reports/mission_017_cross_subject.md; reports/mission_017_adaptation.md",
     "release_action": "None: PR remains draft; main and v0.1.0 preserved"
   },
+  "mission_018_addendum": {
+    "brochier_native_assets": "NOT TESTED: publisher host inaccessible from execution environment",
+    "strict_cross_subject_evaluation": "NOT TESTED: neural coverage and common sensor target unverified",
+    "scientific_claim": "SCIENTIFICALLY INCONCLUSIVE",
+    "evidence": "docs/datasets/mission_018_brochier.md; reports/mission_018_eligibility.md",
+    "release_action": "None: PR remains draft; main and v0.1.0 preserved"
+  },
   "criteria": [
     {
       "category": "software",

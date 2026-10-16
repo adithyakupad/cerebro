@@ -68,3 +68,7 @@ Historical subsystem rows and Mission 016 results remain immutable. A negative t
 5. Retain full foundation scope and negative/mixed SSL results; validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed.
 
 No continuation automation is installed. Work does not continue after a session unless a new active execution occurs.
+
+## Mission 018 native-data gate
+
+The [Brochier native-asset audit](../datasets/mission_018_brochier.md) confirms two named animals and sessions, published sensor/event streams, and dataset-level CC-BY-4.0 from authoritative documents. Native files were not reachable in this execution environment; individual checksums, sampled coverage and common physical target calibration remain unverified. The [eligibility matrix](../../reports/mission_018_eligibility.md) therefore keeps strict cross-subject transfer **BLOCKED by data/provenance**, with **no new model experiment**. [Condition counts](../../reports/mission_018_variability.md) support only a prospective variability feasibility judgment, not an empirical covariance result. Historical software and scientific statuses above are unchanged.

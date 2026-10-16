@@ -63,6 +63,15 @@
     "adaptation_figure_sha256": "c82c6da31d52c7236ab4540b505a37236531ee07086e65004fb18af8e91f5f60",
     "interpretation": "Descriptive early-label distribution shift and limited independent calibration trials; no causal mechanism or subject-invariant transfer established"
   },
+  "mission_018_evidence": {
+    "asset_manifest": "docs/datasets/mission_018_brochier_assets.json",
+    "eligibility": "reports/mission_018_eligibility.md",
+    "native_assets_downloaded": 0,
+    "new_cross_subject_experiments": 0,
+    "scientific_status": "BLOCKED: native acquisition coverage, per-file integrity and comparable sensor calibration unverified",
+    "source_audit": "docs/datasets/mission_018_brochier.md",
+    "variability_feasibility": "reports/mission_018_variability.md"
+  },
   "overall_status": "INCOMPLETE: implemented offline software remains validated within scope; Mission016 prospectively replicated negative same-subject source-assistance outcome; strict cross-subject target provenance and broad foundation claims remain unresolved; human release approval pending",
   "previous_execution_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
   "release_acceptance_matrix": "docs/release/acceptance_matrix.json",

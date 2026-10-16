@@ -1,0 +1,22 @@
+{
+  "dataset_doi": "10.12751/g-node.f83565",
+  "publisher_url": "https://doi.gin.g-node.org/10.12751/g-node.f83565/",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5892370/",
+  "publication_date": "2017-12-28",
+  "license": "CC-BY-4.0 stated by dataset DOI page",
+  "archive_size": "14 GiB stated by dataset DOI page",
+  "native_bytes_inspected": false,
+  "files": {
+    "l101210-001": ["l101210-001.ccf", "l101210-001.nev", "l101210-001.ns2", "l101210-001.ns5", "l101210-001.odml", "l101210-001-02.nev"],
+    "i140703-001": ["i140703-001.ccf", "i140703-001.nev", "i140703-001.ns2", "i140703-001.ns6", "i140703-001.odml", "i140703-001-03.nev"]
+  },
+  "per_file_sha256": null,
+  "per_file_byte_sizes": null,
+  "native_recording_start_stop_and_gaps": null,
+  "access_attempts_2026_10_15": [
+    "GIN browser and archive: HTTP 403 through web tool",
+    "local curl HEAD to publisher raw ODML: connection timeout after 20 seconds",
+    "read-only git ls-remote to publisher repository: no response within 30 seconds"
+  ],
+  "decision": "No native file admitted to modeling"
+}

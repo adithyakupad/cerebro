@@ -2,6 +2,17 @@
   "coverage_policy": "Human requires documented neural coverage; Perich unknown coverage is not modeled.",
   "discovered_not_acquired": [
     {
+      "name": "Brochier reach-to-grasp native G-Node corpus",
+      "doi": "10.12751/g-node.f83565",
+      "source": "https://doi.gin.g-node.org/10.12751/g-node.f83565/",
+      "license": "CC-BY-4.0 stated by dataset DOI page",
+      "subjects": ["L", "N"],
+      "sessions": ["l101210-001", "i140703-001"],
+      "status": "source-documented; native files unavailable in Mission018 environment",
+      "limitations": ["per-file hashes and recording coverage unverified", "object-sensor physical comparability unverified", "one session per subject confounds subject and session"],
+      "audit": "docs/datasets/mission_018_brochier.md"
+    },
+    {
       "asset_count": 312,
       "dandiset_id": "001201",
       "license": "CC-BY-4.0",
