@@ -364,5 +364,11 @@
       "N_to_L": 0.00206959706959714
     },
     "scientific_status": "Two-animal case study executed; no clear source-assisted advantage; general subject invariance and calibrated continuous-target transfer unvalidated"
+  },
+  "mission_021_evidence": {
+    "current_software_release_decision": "docs/release/qualification_021.json",
+    "original_scientific_scope_and_statuses_preserved": true,
+    "historical_scientific_release_gates_retained_as_history": true,
+    "interpretation": "Valid negative/inconclusive experiments and disclosed unavailable data are nonblocking under the explicit Mission021 release definition. Merge/tag/publication require separate owner approval."
   }
 }

@@ -1,0 +1,109 @@
+{
+  "starting_revision": "de18d68c2a6304fa02b40b3d477806f5891b2cda",
+  "validated_code_revision": "f14a4396af2eff4bb40e73809e227be9c806326c",
+  "public_clone": "https://github.com/adithyakupad/cerebro.git branch codex/research-platform",
+  "fresh_environment": "New temporary Conda prefix; Python3.11.17; pip declared extras dev,classical,deep,brochier; historical016 separately installed then candidate reinstalled",
+  "packages": [
+    "attrs==26.1.0",
+    "-e git+https://github.com/adithyakupad/cerebro.git@f14a4396af2eff4bb40e73809e227be9c806326c#egg=cerebro",
+    "cloudpickle==3.1.2",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "filelock==4.2.0",
+    "fonttools==4.67.0",
+    "fsspec==2026.9.0",
+    "h5py==3.16.0",
+    "hdmf==6.2.0",
+    "iniconfig==2.3.1",
+    "Jinja2==3.1.6",
+    "joblib==1.6.0",
+    "jsonschema==4.26.0",
+    "jsonschema-specifications==2025.9.1",
+    "kiwisolver==1.5.1",
+    "MarkupSafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mpmath==1.3.0",
+    "narwhals==2.27.1",
+    "neo==0.14.5",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pandas==3.0.6",
+    "pillow==12.3.0",
+    "platformdirs==4.13.3",
+    "pluggy==1.7.0",
+    "Pygments==2.21.0",
+    "pynwb==4.2.0",
+    "pyparsing==3.3.3",
+    "pytest==8.4.2",
+    "python-dateutil==2.9.0.post0",
+    "quantities==0.16.4",
+    "referencing==0.37.0",
+    "rpds-py==2026.9.1",
+    "ruamel.yaml==0.19.1",
+    "scikit-learn==1.9.1",
+    "scipy==1.17.1",
+    "six==1.17.0",
+    "sympy==1.14.0",
+    "threadpoolctl==3.7.0",
+    "torch==2.14.1",
+    "typing_extensions==4.16.0"
+  ],
+  "full_suite": {
+    "passed": 245,
+    "warnings": 20,
+    "failures": 0
+  },
+  "software_suite": {
+    "passed": 229,
+    "deselected_data": 16
+  },
+  "data_collection": 16,
+  "wheel": {
+    "name": "cerebro-1.0.0-py3-none-any.whl",
+    "bytes": 118995,
+    "sha256": "2d19f6adbe2650a41b0ee62371fc08a13f698b6e233a3e497f3135ccc7298134",
+    "entries": 35,
+    "mit_license_present": true,
+    "no_data_or_checkpoints": true,
+    "separate_target_import": "PASS"
+  },
+  "hardware": "CPU and MPS smoke PASS; CUDA NOT TESTED; detailed command output in mission_021_commands.json",
+  "explorer": {
+    "controls_changed": [
+      "trial",
+      "model",
+      "pcx",
+      "adaptation-method",
+      "transfer-setting"
+    ],
+    "velocity_latent_calibration_table_updated": true,
+    "console_warning_errors": [],
+    "screenshot_local": "data/processed/mission_021/explorer_verified.png",
+    "chrome_devtools": "unavailable: Chrome stable executable absent; verified with in-app browser instead",
+    "temporary_server_closed": true
+  },
+  "limitations": [
+    "No new scientific hypotheses or model families",
+    "Raw public recordings except fresh MC_Maze Small reused through explicit ignored symlinks after checksum/metadata checks",
+    "No trained checkpoint or processed artifact copied into the clean clones",
+    "No standalone type checker, coverage or dependency-vulnerability certification",
+    "No GPU scientific equivalence, CUDA, live BCI or full-data Windows verification",
+    "Final GitHub merge commit cannot be assigned until approved merge; approval binds exact PR head/base and tested merge tree"
+  ],
+  "candidate_ci": {
+    "head": "f14a4396af2eff4bb40e73809e227be9c806326c",
+    "runs": [
+      38846838007,
+      38846834578
+    ],
+    "conclusion": "SUCCESS",
+    "software_tests_passed_each": 229,
+    "data_tests_collected_not_run_each": 16
+  },
+  "setup_commands": [
+    "git clone --branch codex/research-platform https://github.com/adithyakupad/cerebro.git /private/tmp/cerebro021-src",
+    "conda create --prefix /private/tmp/cerebro021-env python=3.11 pip -y",
+    "python -m pip install -e '.[dev,classical,deep,brochier]'"
+  ]
+}

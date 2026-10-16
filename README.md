@@ -1,6 +1,6 @@
 # CEREBRO
 
-**Adaptive Neural Intelligence Research Platform — v1.0.0 release candidate.**
+**Adaptive Neural Intelligence Research Platform — version 1.0.0.**
 
 CEREBRO studies representations of real neural population activity for behavioral
 prediction, population analysis, cross-session comparison and calibration-efficient
@@ -42,8 +42,9 @@ python -c "import cerebro; print(cerebro.__file__)"
 python -m pytest -m 'not data' -q
 ```
 
-This candidate is on `codex/research-platform`. Once the owner approves and
-publishes the release, `git checkout v1.0.0` selects the approved revision.
+Research development is on `codex/research-platform`. After the owner approves
+publication, `git checkout v1.0.0` selects the approved release revision; the
+[GitHub releases page](https://github.com/adithyakupad/cerebro/releases) is the publication record.
 [Installation details](docs/installation.md) explain optional extras, CPU/GPU scope,
 wheel installation and tests. `requirements-research.txt` records historical direct
 versions; it is not a transitive lockfile.
