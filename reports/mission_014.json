@@ -1,0 +1,640 @@
+{
+  "experiments": {
+    "cross_subject_14": {
+      "contrasts": [
+        {
+          "difference": -0.004382185757896401,
+          "label_budget": 0,
+          "method": "source_frozen",
+          "paired_five_trial_block_band": [
+            -0.006617918030572845,
+            -0.002347464917061455
+          ],
+          "reference": "source_mean"
+        },
+        {
+          "difference": -0.048732246859814296,
+          "label_budget": 5,
+          "method": "target_direct",
+          "paired_five_trial_block_band": [
+            -0.05112393151322956,
+            -0.04666097889067073
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": -0.04923044872982417,
+          "label_budget": 5,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -0.05166936700477526,
+            -0.04715216682519254
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": -0.0004982018700098659,
+          "label_budget": 5,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -0.0006652428969679145,
+            -0.0003282201203590461
+          ],
+          "reference": "target_direct"
+        },
+        {
+          "difference": -0.05021986889992096,
+          "label_budget": 15,
+          "method": "target_direct",
+          "paired_five_trial_block_band": [
+            -0.05267047024545503,
+            -0.04810541310497348
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": -0.05028782311588122,
+          "label_budget": 15,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -0.05274004474421383,
+            -0.048190524500951605
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": -6.795421596025022e-05,
+          "label_budget": 15,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -0.0001660801739777742,
+            2.6433625921668475e-05
+          ],
+          "reference": "target_direct"
+        },
+        {
+          "difference": -0.05096731736894647,
+          "label_budget": 75,
+          "method": "target_direct",
+          "paired_five_trial_block_band": [
+            -0.0533371126303819,
+            -0.04898398375933174
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": -0.05093838058856056,
+          "label_budget": 75,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -0.053297052913186184,
+            -0.048937039225003566
+          ],
+          "reference": "target_calibration_mean"
+        },
+        {
+          "difference": 2.8936780385905506e-05,
+          "label_budget": 75,
+          "method": "source_plus_residual",
+          "paired_five_trial_block_band": [
+            -2.8543963727180094e-05,
+            7.885154367011172e-05
+          ],
+          "reference": "target_direct"
+        }
+      ],
+      "metrics": [
+        {
+          "control": "source_frozen",
+          "domain": "source",
+          "label_budget": 0,
+          "mean_trial_mse_normalized_emg_squared": 0.09134008476730877
+        },
+        {
+          "control": "source_frozen",
+          "domain": "target",
+          "label_budget": 0,
+          "mean_trial_mse_normalized_emg_squared": 0.18574543283816913
+        },
+        {
+          "control": "source_mean",
+          "domain": "source",
+          "label_budget": 0,
+          "mean_trial_mse_normalized_emg_squared": 0.13414140862713864
+        },
+        {
+          "control": "source_mean",
+          "domain": "target",
+          "label_budget": 0,
+          "mean_trial_mse_normalized_emg_squared": 0.19012761859606553
+        },
+        {
+          "control": "target_calibration_mean",
+          "domain": "target",
+          "label_budget": 5,
+          "mean_trial_mse_normalized_emg_squared": 0.1291701826608485
+        },
+        {
+          "control": "target_direct",
+          "domain": "target",
+          "label_budget": 5,
+          "mean_trial_mse_normalized_emg_squared": 0.0804379358010342
+        },
+        {
+          "control": "source_plus_residual",
+          "domain": "target",
+          "label_budget": 5,
+          "mean_trial_mse_normalized_emg_squared": 0.07993973393102434
+        },
+        {
+          "control": "target_calibration_mean",
+          "domain": "target",
+          "label_budget": 15,
+          "mean_trial_mse_normalized_emg_squared": 0.12860984184549493
+        },
+        {
+          "control": "target_direct",
+          "domain": "target",
+          "label_budget": 15,
+          "mean_trial_mse_normalized_emg_squared": 0.07838997294557395
+        },
+        {
+          "control": "source_plus_residual",
+          "domain": "target",
+          "label_budget": 15,
+          "mean_trial_mse_normalized_emg_squared": 0.0783220187296137
+        },
+        {
+          "control": "target_calibration_mean",
+          "domain": "target",
+          "label_budget": 75,
+          "mean_trial_mse_normalized_emg_squared": 0.12855570345810383
+        },
+        {
+          "control": "target_direct",
+          "domain": "target",
+          "label_budget": 75,
+          "mean_trial_mse_normalized_emg_squared": 0.07758838608915736
+        },
+        {
+          "control": "source_plus_residual",
+          "domain": "target",
+          "label_budget": 75,
+          "mean_trial_mse_normalized_emg_squared": 0.07761732286954326
+        }
+      ],
+      "neural_features": 7,
+      "shared_muscle_outputs": 16,
+      "source_evaluation_trials": 112,
+      "source_fit_trials": 300,
+      "source_subject": "MonkeyL_held_in_calib",
+      "target_calibration_pool_trials": 75,
+      "target_evaluation_trials": 371,
+      "target_subject": "MonkeyX_held_in_calib",
+      "units": "author normalized EMG squared"
+    },
+    "longitudinal_14": {
+      "contrasts": [
+        {
+          "difference": 0.0073373189170836415,
+          "method": "frozen_source",
+          "paired_five_trial_block_band": [
+            0.005595234529513423,
+            0.009026223817387567
+          ],
+          "reference": "source_mean"
+        },
+        {
+          "difference": -0.0006363318771405126,
+          "method": "direct_recalibration_1",
+          "paired_five_trial_block_band": [
+            -0.00073093648101073,
+            -0.0004940018171969155
+          ],
+          "reference": "target_calibration_mean_1"
+        },
+        {
+          "difference": -1.0299428713902876e-06,
+          "method": "source_plus_residual_1",
+          "paired_five_trial_block_band": [
+            -0.0006846327955162728,
+            0.0006016288632591384
+          ],
+          "reference": "target_calibration_mean_1"
+        },
+        {
+          "difference": 0.0006353019342691225,
+          "method": "source_plus_residual_1",
+          "paired_five_trial_block_band": [
+            -5.0656282730570365e-05,
+            0.0012386308117535217
+          ],
+          "reference": "direct_recalibration_1"
+        },
+        {
+          "difference": 0.00035371940977977295,
+          "method": "direct_recalibration_5",
+          "paired_five_trial_block_band": [
+            1.4947666259206439e-05,
+            0.000643359926471352
+          ],
+          "reference": "target_calibration_mean_5"
+        },
+        {
+          "difference": -0.001713787208344069,
+          "method": "source_plus_residual_5",
+          "paired_five_trial_block_band": [
+            -0.0024246668609269042,
+            -0.0010906047268691168
+          ],
+          "reference": "target_calibration_mean_5"
+        },
+        {
+          "difference": -0.0020675066181238422,
+          "method": "source_plus_residual_5",
+          "paired_five_trial_block_band": [
+            -0.0025240613908267704,
+            -0.0016372500411860524
+          ],
+          "reference": "direct_recalibration_5"
+        },
+        {
+          "difference": 0.0003327613379114526,
+          "method": "direct_recalibration_15",
+          "paired_five_trial_block_band": [
+            -0.00025678293598899925,
+            0.0008637292276636306
+          ],
+          "reference": "target_calibration_mean_15"
+        },
+        {
+          "difference": 0.00042873830194197426,
+          "method": "source_plus_residual_15",
+          "paired_five_trial_block_band": [
+            -0.00031447037537893,
+            0.0011131907767742803
+          ],
+          "reference": "target_calibration_mean_15"
+        },
+        {
+          "difference": 9.597696403052169e-05,
+          "method": "source_plus_residual_15",
+          "paired_five_trial_block_band": [
+            -9.203219596881174e-05,
+            0.0002871104030314715
+          ],
+          "reference": "direct_recalibration_15"
+        },
+        {
+          "difference": -0.001405290587101894,
+          "method": "direct_recalibration_50",
+          "paired_five_trial_block_band": [
+            -0.0018530984381933614,
+            -0.0009834494822372035
+          ],
+          "reference": "target_calibration_mean_50"
+        },
+        {
+          "difference": -0.00127162623886289,
+          "method": "source_plus_residual_50",
+          "paired_five_trial_block_band": [
+            -0.0017738040104573276,
+            -0.0007896553600473669
+          ],
+          "reference": "target_calibration_mean_50"
+        },
+        {
+          "difference": 0.0001336643482390042,
+          "method": "source_plus_residual_50",
+          "paired_five_trial_block_band": [
+            5.068241676633753e-05,
+            0.0002115558276788435
+          ],
+          "reference": "direct_recalibration_50"
+        },
+        {
+          "difference": -0.0014987812011028822,
+          "method": "direct_recalibration_75",
+          "paired_five_trial_block_band": [
+            -0.002010502311511049,
+            -0.0010471317849455504
+          ],
+          "reference": "target_calibration_mean_75"
+        },
+        {
+          "difference": -0.001383235112921331,
+          "method": "source_plus_residual_75",
+          "paired_five_trial_block_band": [
+            -0.0019394310950542769,
+            -0.0008905342549840493
+          ],
+          "reference": "target_calibration_mean_75"
+        },
+        {
+          "difference": 0.00011554608818155149,
+          "method": "source_plus_residual_75",
+          "paired_five_trial_block_band": [
+            5.431242115325245e-05,
+            0.00017555337143376746
+          ],
+          "reference": "direct_recalibration_75"
+        }
+      ],
+      "metrics": {
+        "condition_anchor_alignment_50": 0.02608476467597539,
+        "condition_anchor_alignment_75": 0.026028878598487896,
+        "direct_recalibration_1": 0.02954400054769404,
+        "direct_recalibration_15": 0.02758294291588849,
+        "direct_recalibration_5": 0.04500851045380396,
+        "direct_recalibration_50": 0.0257653692036376,
+        "direct_recalibration_75": 0.024827013361847203,
+        "frozen_source": 0.03340539361132238,
+        "source_mean": 0.026068074694238733,
+        "source_plus_residual_1": 0.03017930248196316,
+        "source_plus_residual_15": 0.02767891987991901,
+        "source_plus_residual_5": 0.042941003835680114,
+        "source_plus_residual_50": 0.025899033551876605,
+        "source_plus_residual_75": 0.024942559450028757,
+        "target_calibration_mean_1": 0.030180332424834557,
+        "target_calibration_mean_15": 0.027250181577977043,
+        "target_calibration_mean_5": 0.04465479104402418,
+        "target_calibration_mean_50": 0.027170659790739494,
+        "target_calibration_mean_75": 0.026325794562950085,
+        "unlabeled_marginal_normalization": 0.025665408672356407
+      },
+      "source": "LINK Jan27",
+      "source_evaluation_trials": 75,
+      "source_fit_trials": 300,
+      "target": "LINK Feb05",
+      "target_calibration_trials": 75,
+      "target_evaluation_trials": 300,
+      "units": "flexion squared"
+    },
+    "representation_14": {
+      "contrasts": [
+        {
+          "difference": -2.767724555841312e-05,
+          "label_budget": 0,
+          "method": "pretrained_zero_shot",
+          "paired_five_trial_block_band": [
+            -4.637388564274126e-05,
+            -1.3776303701236787e-05
+          ],
+          "reference": "random_zero_shot"
+        },
+        {
+          "difference": 0.0002028725736066194,
+          "label_budget": 5,
+          "method": "pretrained_frozen_ridge",
+          "paired_five_trial_block_band": [
+            0.0001403313950824087,
+            0.0002670846311808146
+          ],
+          "reference": "random_frozen_ridge"
+        },
+        {
+          "difference": 5.2091638272821355e-05,
+          "label_budget": 15,
+          "method": "pretrained_frozen_ridge",
+          "paired_five_trial_block_band": [
+            1.2987471784204485e-05,
+            8.705287696544138e-05
+          ],
+          "reference": "random_frozen_ridge"
+        },
+        {
+          "difference": -7.412682238463975e-06,
+          "label_budget": 75,
+          "method": "pretrained_frozen_ridge",
+          "paired_five_trial_block_band": [
+            -2.4065478062608903e-05,
+            4.92056571403059e-06
+          ],
+          "reference": "random_frozen_ridge"
+        },
+        {
+          "difference": -3.406521249940603e-07,
+          "label_budget": 5,
+          "method": "pretrained_finetuned",
+          "paired_five_trial_block_band": [
+            -1.3050857437629008e-05,
+            1.3229628235655626e-05
+          ],
+          "reference": "random_supervised_only"
+        },
+        {
+          "difference": -7.260184542841179e-05,
+          "label_budget": 15,
+          "method": "pretrained_finetuned",
+          "paired_five_trial_block_band": [
+            -8.332597170981242e-05,
+            -6.10576557631966e-05
+          ],
+          "reference": "random_supervised_only"
+        },
+        {
+          "difference": -6.968979443061113e-05,
+          "label_budget": 75,
+          "method": "pretrained_finetuned",
+          "paired_five_trial_block_band": [
+            -8.001631170528576e-05,
+            -5.735395988115798e-05
+          ],
+          "reference": "random_supervised_only"
+        }
+      ],
+      "decoder_fits": 42,
+      "identity_diagnostics": 6,
+      "metrics": [
+        {
+          "control": "pretrained_finetuned",
+          "label_budget": 5,
+          "mean_seed_trial_mse_flexion2": 0.03800501496465527,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_finetuned",
+          "label_budget": 15,
+          "mean_seed_trial_mse_flexion2": 0.02597134513023311,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_finetuned",
+          "label_budget": 75,
+          "mean_seed_trial_mse_flexion2": 0.024315163571521425,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_frozen_ridge",
+          "label_budget": 5,
+          "mean_seed_trial_mse_flexion2": 0.04467982501898481,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_frozen_ridge",
+          "label_budget": 15,
+          "mean_seed_trial_mse_flexion2": 0.028223933639608886,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_frozen_ridge",
+          "label_budget": 75,
+          "mean_seed_trial_mse_flexion2": 0.023144094581501073,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "pretrained_zero_shot",
+          "label_budget": 0,
+          "mean_seed_trial_mse_flexion2": 0.024394019781965922,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_frozen_ridge",
+          "label_budget": 5,
+          "mean_seed_trial_mse_flexion2": 0.04447695244537819,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_frozen_ridge",
+          "label_budget": 15,
+          "mean_seed_trial_mse_flexion2": 0.02817184200133607,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_frozen_ridge",
+          "label_budget": 75,
+          "mean_seed_trial_mse_flexion2": 0.023151507263739535,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_supervised_only",
+          "label_budget": 5,
+          "mean_seed_trial_mse_flexion2": 0.03800535561678026,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_supervised_only",
+          "label_budget": 15,
+          "mean_seed_trial_mse_flexion2": 0.02604394697566152,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_supervised_only",
+          "label_budget": 75,
+          "mean_seed_trial_mse_flexion2": 0.02438485336595204,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "control": "random_zero_shot",
+          "label_budget": 0,
+          "mean_seed_trial_mse_flexion2": 0.024421697027524336,
+          "seeds": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "native_samples_per_trial": 40,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "source": "LINK Jan27+Jan30",
+      "source_reserved_identity_trials": 150,
+      "source_ssl_trials": 600,
+      "ssl_fits": 3,
+      "target": "LINK Feb05",
+      "target_calibration_trials": 75,
+      "target_evaluation_trials": 300,
+      "units": "flexion squared"
+    }
+  },
+  "input_report_sha256": {
+    "cross_subject_14": "c829da98d134fa3c0c18010419486b49482b7229828fa240871171b351c1ad58",
+    "longitudinal_14": "212dab5c91478a313f7bb0df93e9f2dcf1570de16384964da4b5d5e029401e9f",
+    "representation_14": "dfaf1633780693864218d06c5201571cc844454096858ce3373ca8b1e5acb767"
+  },
+  "limitations": [
+    "LINK same subject and exact contacts do not establish longitudinal neuron identity or cross-subject transfer.",
+    "LINK fixed40-bin representation and full referenced-trial classical outcomes differ and must not be ranked as identical tasks.",
+    "LINK native sampled crossing counts conflict with NWB volts label; original clocks have1ms jitter and source reference endpoints are excluded.",
+    "FALCON anonymous moments are deliberately lossy; exact output muscle labels do not establish equivalent physiology.",
+    "FALCON author full-recording filters and quantile normalization precede our splits; raw preprocessing leakage freedom and calibrated mV amplitude are not certified.",
+    "FALCON target is pinned from mutable draft; one session per animal confounds animal/session/date.",
+    "Repeated biological trials and three initialization seeds are not independent subject or session replication.",
+    "New dates and calibration controls extend empirical coverage without establishing broad SSL benefit or foundation-model capability."
+  ],
+  "reproduction": {
+    "evidence": "docs/development/mission_014_reproduction.json",
+    "experiments": 11,
+    "fresh_driver_all_exit_zero": true,
+    "fresh_driver_commands": 46,
+    "max_array_absolute_difference": 0.0,
+    "max_report_numeric_absolute_difference": 0.0,
+    "scientific_numeric_scalars": 100827,
+    "shared_array_elements": 44367047,
+    "shared_arrays": 526,
+    "status": "PASS",
+    "tolerances": {
+      "atol": 1e-10,
+      "rtol": 1e-08
+    }
+  },
+  "schema_version": 1,
+  "scope": "Observed authentic-data extension and stored-output reproduction, not a validated neural foundation model",
+  "uncertainty_policy": "Paired differences are first method minus named reference; negative favors first. Seeds averaged within trial. Five-trial moving-block bands are descriptive sensitivity analyses, not calibrated confidence/significance or biological replication. No test selection or tuning performed in this report."
+}

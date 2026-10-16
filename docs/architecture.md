@@ -1,36 +1,62 @@
 # Scientific architecture
 
-CEREBRO's thesis is that learned neural population representations can support
-behavioral decoding, generalization across recording sessions, and adaptation
-with limited calibration. These are research objectives requiring evaluation.
-Mission 001 established packaging; Mission 002 implements a minimal SENSE reader,
-trial-local spike counts, alignment, and inspection figures. Other modules remain
-conceptual boundaries, not empty Python frameworks.
+CEREBRO studies adaptive neural intelligence: representations supporting neural
+population analysis, behavioral decoding, longitudinal comparison and calibration.
+These capabilities require separate empirical validation; model implementation
+alone does not establish scientific success. The authoritative delivery status is
+[the completion matrix](research/completion_matrix.md).
 
-| Module | Responsibility | Intended output |
+| Boundary | Current implementation | Inputs and outputs |
 | --- | --- | --- |
-| SENSE | Load real recordings; validate timestamps, units, signals, and provenance; apply documented signal processing | Validated neural observations, behavior, events, quality masks |
-| MAP | Estimate population geometry, representations, and temporal dynamics | Representations and fitted transforms with training provenance |
-| DECODE | Predict behavioral variables from neural observations or representations | Predictions and evaluation against held-out behavior |
-| REMEMBER | Compare representations longitudinally, retaining session identity and uncertainty | Session comparisons and drift measurements |
-| ADAPT | Calibrate decoders across sessions under an explicit calibration budget | Adapted predictions evaluated on untouched target-session data |
-| INTERACT | Expose scientific plots and diagnostics; future closed-loop interfaces require separate design | Auditable visualizations; no hardware control in this milestone |
+| SENSE | `sense`, `dataset`, `nwb_audit`, `link` | Verified NWB assets → original clocks, trials, session/subject/contact or unit IDs, observations, masks and explicit metadata ambiguities |
+| MAP | `population`, `event_aligned`, `dynamics` | Training observations → PCA/FA, covariance, principal angles, latent coordinates and trial-local one-step dynamics |
+| DECODE | `benchmark`, `kalman`, `sequence_models`, `sequence_benchmark` | Training neural features → mean/event-time/linear/ridge/Kalman/MLP/GRU/LSTM/CNN/Transformer/diagonal state-space predictions |
+| REMEMBER | `nwb_audit`, LINK contact mapping, `longitudinal` | Session-scoped identities → explicit contact correspondence, covariance/subspace/condition-anchor comparisons; no persistent-neuron inference |
+| ADAPT | `longitudinal` | Frozen source predictions and disclosed target calibration → direct recalibration, residual correction, marginal normalization and condition-anchor latent alignment |
+| FOUNDATION | `representation_benchmark`, `representation_transfer` | Masked/predictive pretraining → random/supervised controls, frozen probes and fine-tuning; foundation-model validity is not assumed |
+| INTERACT | `explorer` | Hash-verified stored results → local trial/model/trajectory exploration; unavailable outputs are identified |
+| Research engine | configurations, immutable split manifests, `registry` | Source and configuration identities → checkpoint/array lineage, versions, seeds, metrics and reproducible commands |
 
-Intended data flow: immutable raw recordings → SENSE → validated observations
-and synchronized behavior → MAP → DECODE → held-out evaluation. DECODE may also
-use observations directly for baselines. REMEMBER compares session-specific
-observations and MAP outputs; ADAPT uses these with an explicitly bounded
-target-session calibration split. INTERACT visualizes inputs, diagnostics, and
-evaluations across modules.
+Raw recordings remain immutable and Git-ignored. Source releases, asset IDs,
+published checksums, license and reference clocks precede preprocessing. Splitting
+precedes any fitted normalization, representation, decoder, alignment or model
+selection. Training and calibration identity lists are written to immutable local
+manifests; changing a split requires a new experiment output directory.
 
-Every boundary must preserve session/trial/unit identity, timestamp conventions,
-physical units, missing-data masks, processing configuration, and source lineage.
-Neural timestamps and behavior share an explicit time reference; conversion,
-binning, interpolation, and prediction lags require documented choices. Split
-assignment precedes fitted preprocessing. Representation fitting, decoder
-selection, and calibration must not inspect evaluation targets.
+Within-session Maze uses source `train` and `val` labels, preserving the separate
+published test asset. Inner training/validation selects dimensions, ridge penalty
+and sequence epoch counts; refitting uses source training only. Source validation
+has now been examined for exploratory reporting and is no longer an untouched
+final test. No eventual final model should be selected from those results.
 
-The human researcher owns representation/model choice, comparison hypotheses,
-calibration budgets, and conclusions. No assumption of stable unit identity,
-beneficial adaptation, or a neural foundation model is made. MC_Maze inspection
-alone cannot demonstrate longitudinal generalization.
+LINK stores sampled threshold-crossing features, not sorted units. Its explicit
+trial references govern retention, including excluded endpoint samples. Native
+contact coordinates can be matched within the same monkey and acquisition setup;
+this does not assert stable neurons. Native threshold-crossing `volts` metadata
+conflicts with the count description and integer values; interpretation and source
+labels are retained separately. Finger flexion targets are not pooled with Maze
+hand velocities. Perich–Miller lacks neural observation intervals in the inspected
+pair, so unobserved coverage is kept unknown rather than synthesized.
+The human requires documented neural coverage. FALCON calibration recordings
+provide explicit observation intervals for two monkeys; their separate EMG
+experiment uses anonymous population summaries without cross-subject neuron
+mapping. Published EMG is author-normalized despite native mV labels and remains
+separate from Maze velocity and LINK finger flexion.
+
+Chronological source fitting/selection and target calibration/evaluation partitions
+remain distinct. Unsupervised target marginal normalization receives only disclosed
+calibration neural features. Direct recalibration receives labeled calibration
+trials. Condition-anchor alignment additionally uses commanded-target metadata;
+it does not imply paired cross-day trials. These access policies must accompany
+comparisons. Covariance, CCA and principal angles never imply causal connectivity.
+
+Sequence models preserve trial boundaries and reset hidden states per trial.
+Causal neural access means past/current bins available at their right edge;
+contemporaneous behavior prediction is offline replay. The explorer controls no
+hardware. Neither simulated perturbation nor offline decoding is biological
+closed-loop operation.
+
+Human researchers own model selection, evaluation design, interpretation and
+conclusions. Automated agents implement and critique explicit comparisons and
+retain negative findings. Cross-subject transfer, validated foundation-model
+claims and final release status require their own acceptance evidence.

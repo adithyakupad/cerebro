@@ -1,0 +1,252 @@
+{
+  "cross_subject": "not executed: no eligible independent-subject recording with certified coverage and split-safe original targets",
+  "experiment_git_revision": "5a7376a694825005500cd357694fa8e27e2ce31e",
+  "limits": [
+    "same-bin offline position prediction, not closed-loop behavior",
+    "source and targets are different dates and run IDs within one animal",
+    "contact coordinates do not identify stable neurons",
+    "LINK upstream thresholding and sensor calibration predate CEREBRO splits",
+    "block intervals are sensitivity analyses, not population confidence intervals",
+    "latent alignment uses different calibration information and is secondary",
+    "representation first-40-bin MSE is not pooled with full-trial ridge MSE"
+  ],
+  "primary": {
+    "all_three_dates_benefit": false,
+    "date_effect_range_flexion_squared": [
+      0.0005537516110619393,
+      0.0006715666421879934
+    ],
+    "equal_date_mean_residual_minus_direct_15_flexion_squared": 0.0006148764959831699,
+    "per_date": [
+      {
+        "alignment_status": {
+          "1": {
+            "anchors": 0,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "15": {
+            "anchors": 3,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "5": {
+            "anchors": 1,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "50": {
+            "anchors": 8,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          },
+          "75": {
+            "anchors": 15,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          }
+        },
+        "asset_id": "008fc384-2a95-47ec-8dbe-7acb4a18bcc7",
+        "asset_sha256": "9f7995315e8a554501ee55f66cebb1c3cdd22e938fe9e987b452c07288c4f05a",
+        "date": "20200206",
+        "direct_15_mse_flexion_squared": 0.027875487719276275,
+        "five_trial_block_sensitivity_interval": [
+          0.0003919025694339876,
+          0.0007138808954656519
+        ],
+        "frozen_mse_flexion_squared": 0.02635429943785196,
+        "residual_15_mse_flexion_squared": 0.02842923933033821,
+        "residual_minus_direct_15_flexion_squared": 0.0005537516110619393,
+        "residual_minus_direct_15_percent": 1.9865181073729257,
+        "source_mean_mse_flexion_squared": 0.023871376511488927,
+        "source_mse_flexion_squared": 0.0315095789820551,
+        "target_evaluation_samples": 21379,
+        "target_evaluation_trials": 300
+      },
+      {
+        "alignment_status": {
+          "1": {
+            "anchors": 0,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "15": {
+            "anchors": 3,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "5": {
+            "anchors": 1,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "50": {
+            "anchors": 9,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          },
+          "75": {
+            "anchors": 15,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          }
+        },
+        "asset_id": "9c0ac931-d97e-464b-a134-c366b7c84727",
+        "asset_sha256": "f36b7c695c103f7f10155b5e954d98c7844e85c53cd546378e64699d8b73b5e3",
+        "date": "20200211",
+        "direct_15_mse_flexion_squared": 0.03089451604313197,
+        "five_trial_block_sensitivity_interval": [
+          0.0005146130261025435,
+          0.0008124901201290375
+        ],
+        "frozen_mse_flexion_squared": 0.027865641826874454,
+        "residual_15_mse_flexion_squared": 0.031566082685319956,
+        "residual_minus_direct_15_flexion_squared": 0.0006715666421879934,
+        "residual_minus_direct_15_percent": 2.173740612251107,
+        "source_mean_mse_flexion_squared": 0.02765507151963746,
+        "source_mse_flexion_squared": 0.0315095789820551,
+        "target_evaluation_samples": 21015,
+        "target_evaluation_trials": 300
+      },
+      {
+        "alignment_status": {
+          "1": {
+            "anchors": 0,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "15": {
+            "anchors": 2,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "5": {
+            "anchors": 1,
+            "status": "insufficient repeated shared target anchors"
+          },
+          "50": {
+            "anchors": 8,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          },
+          "75": {
+            "anchors": 15,
+            "label_access": "Calibration commanded-target metadata, not paired neurons or cross-day trial matching. Target PCA uses all75 unlabeled calibration trials.",
+            "minimum_repetitions": 2,
+            "status": "exploratory fitted alignment"
+          }
+        },
+        "asset_id": "19a1f617-abb2-45ed-81d5-7f09dc60890d",
+        "asset_sha256": "a65a5d38b65aa9103c2c9d54484b8a4cee047553279c08a55973686b1e8a94d3",
+        "date": "20200222",
+        "direct_15_mse_flexion_squared": 0.029738355739916098,
+        "five_trial_block_sensitivity_interval": [
+          0.00041608905821848723,
+          0.0007917648633643192
+        ],
+        "frozen_mse_flexion_squared": 0.02601508212641558,
+        "residual_15_mse_flexion_squared": 0.03035766697461568,
+        "residual_minus_direct_15_flexion_squared": 0.0006193112346995769,
+        "residual_minus_direct_15_percent": 2.0825335473013755,
+        "source_mean_mse_flexion_squared": 0.024207237099450215,
+        "source_mse_flexion_squared": 0.0315095789820551,
+        "target_evaluation_samples": 20444,
+        "target_evaluation_trials": 300
+      }
+    ],
+    "population_inference": "unsupported: three sessions of one monkey"
+  },
+  "protocol_sha256": "ad6411175ffa82e6d2064178ef62c811e2eed4e184d3b058bf50f31e9193068f",
+  "representation_earliest_target_only": {
+    "pretrained_finetuned": {
+      "15": {
+        "mean_mse_flexion_squared": 0.02408935536618582,
+        "seed_max": 0.024612779977561457,
+        "seed_min": 0.023662701956684445
+      },
+      "5": {
+        "mean_mse_flexion_squared": 0.03577011649861093,
+        "seed_max": 0.03722309066106075,
+        "seed_min": 0.03421476677101719
+      },
+      "75": {
+        "mean_mse_flexion_squared": 0.022146847608926722,
+        "seed_max": 0.02242888564654335,
+        "seed_min": 0.021856133104827074
+      }
+    },
+    "pretrained_frozen_ridge": {
+      "15": {
+        "mean_mse_flexion_squared": 0.026137687912777253,
+        "seed_max": 0.026333234615499072,
+        "seed_min": 0.025941551717816366
+      },
+      "5": {
+        "mean_mse_flexion_squared": 0.04159727648189071,
+        "seed_max": 0.0443837804633045,
+        "seed_min": 0.03749997080216412
+      },
+      "75": {
+        "mean_mse_flexion_squared": 0.021389846727565262,
+        "seed_max": 0.02197988505325303,
+        "seed_min": 0.020776159636795438
+      }
+    },
+    "pretrained_zero_shot": {
+      "0": {
+        "mean_mse_flexion_squared": 0.021429791305614555,
+        "seed_max": 0.022138577344651154,
+        "seed_min": 0.02087008596147461
+      }
+    },
+    "random_frozen_ridge": {
+      "15": {
+        "mean_mse_flexion_squared": 0.026106297237141238,
+        "seed_max": 0.026304137643668995,
+        "seed_min": 0.025956536850432654
+      },
+      "5": {
+        "mean_mse_flexion_squared": 0.041380212125690714,
+        "seed_max": 0.04432744850841789,
+        "seed_min": 0.03693981999655858
+      },
+      "75": {
+        "mean_mse_flexion_squared": 0.021374584087324507,
+        "seed_max": 0.021972747027014784,
+        "seed_min": 0.020761731524503488
+      }
+    },
+    "random_supervised_only": {
+      "15": {
+        "mean_mse_flexion_squared": 0.024130646353633368,
+        "seed_max": 0.024528498261383248,
+        "seed_min": 0.023899237128314866
+      },
+      "5": {
+        "mean_mse_flexion_squared": 0.03577374795243141,
+        "seed_max": 0.037045266881233004,
+        "seed_min": 0.034467467469804995
+      },
+      "75": {
+        "mean_mse_flexion_squared": 0.02219618709088748,
+        "seed_max": 0.022436764921649244,
+        "seed_min": 0.02183155151819288
+      }
+    },
+    "random_zero_shot": {
+      "0": {
+        "mean_mse_flexion_squared": 0.021411785181735938,
+        "seed_max": 0.022031599736749997,
+        "seed_min": 0.020862685471357712
+      }
+    }
+  },
+  "representation_report_sha256": "b20208150cbfbe025c4952e4631646c477a1b6a5dcd38eaa42ebb061b5a47720",
+  "schema_version": 1,
+  "source_report_sha256": {
+    "20200206": "03e56026afa236145fdc7e8837461d3b793995391cb7c2547100b489c495d793",
+    "20200211": "5fd4b2361b4b840e24f0043444aaa9d843463eb3fca1e143225b8770cdeab5e5",
+    "20200222": "6895e07da1043caa00e7d5775af65780660ee65f6ca6078011897a4ccc2a80be"
+  },
+  "source_subjects": [
+    "Monkey N"
+  ],
+  "status": "observed_authentic_neural_recordings"
+}

@@ -195,6 +195,7 @@ def test_reader_rejects_missing_data(tmp_path, kwargs, message):
 
 @pytest.mark.skipif(not Path("data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb").exists(),
                     reason="Pinned real recording not downloaded; unit tests remain offline")
+@pytest.mark.data
 def test_local_real_recording():
     manifest = json.loads(Path("configs/mc_maze_small.json").read_text())
     verify_asset(manifest["local_path"], manifest)

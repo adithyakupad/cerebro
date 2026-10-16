@@ -1,0 +1,652 @@
+{
+  "array_comparisons": [
+    {
+      "experiment": "classical_05",
+      "archive": "arrays.npz",
+      "shared_arrays": 39,
+      "elements": 854081,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "sequence_06",
+      "archive": "predictions.npz",
+      "shared_arrays": 19,
+      "elements": 63025,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "predictions.npz",
+      "shared_arrays": 38,
+      "elements": 127775,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_0_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_0_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_0_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_1_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_1_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_1_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_2_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_2_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "pretrained_frozen_ridge_seed_2_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_0_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_0_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_0_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_1_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_1_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_1_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_2_budget_15.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_2_budget_5.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_07",
+      "archive": "random_frozen_ridge_seed_2_budget_75.npz",
+      "shared_arrays": 2,
+      "elements": 66,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "longitudinal_08",
+      "archive": "arrays.npz",
+      "shared_arrays": 53,
+      "elements": 699448,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": [
+        "target_calibration_mean_1",
+        "target_calibration_mean_15",
+        "target_calibration_mean_15_prediction_flexion",
+        "target_calibration_mean_1_prediction_flexion",
+        "target_calibration_mean_5",
+        "target_calibration_mean_50",
+        "target_calibration_mean_50_prediction_flexion",
+        "target_calibration_mean_5_prediction_flexion",
+        "target_calibration_mean_75",
+        "target_calibration_mean_75_prediction_flexion"
+      ]
+    },
+    {
+      "experiment": "representation_09",
+      "archive": "predictions.npz",
+      "shared_arrays": 173,
+      "elements": 4071375,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "dynamics_10",
+      "archive": "parameters.npz",
+      "shared_arrays": 2,
+      "elements": 420,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "predictions.npz",
+      "shared_arrays": 41,
+      "elements": 17898110,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "source_plus_residual_budget_15.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "source_plus_residual_budget_5.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "source_plus_residual_budget_75.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "source_source_frozen.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "source_source_mean.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_calibration_mean_budget_15.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_calibration_mean_budget_5.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_calibration_mean_budget_75.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_direct_budget_15.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_direct_budget_5.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_direct_budget_75.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_source_frozen.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_12",
+      "archive": "target_source_mean.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "subject_identity_13",
+      "archive": "parameters.npz",
+      "shared_arrays": 5,
+      "elements": 24,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "subject_identity_13",
+      "archive": "predictions.npz",
+      "shared_arrays": 5,
+      "elements": 4660,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "longitudinal_14",
+      "archive": "arrays.npz",
+      "shared_arrays": 63,
+      "elements": 911783,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_14",
+      "archive": "predictions.npz",
+      "shared_arrays": 47,
+      "elements": 1047375,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "predictions.npz",
+      "shared_arrays": 41,
+      "elements": 18688971,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "source_plus_residual_budget_15.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "source_plus_residual_budget_5.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "source_plus_residual_budget_75.npz",
+      "shared_arrays": 6,
+      "elements": 270,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "source_source_frozen.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "source_source_mean.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_calibration_mean_budget_15.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_calibration_mean_budget_5.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_calibration_mean_budget_75.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_direct_budget_15.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_direct_budget_5.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_direct_budget_75.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_source_frozen.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "cross_subject_14",
+      "archive": "target_source_mean.npz",
+      "shared_arrays": 4,
+      "elements": 142,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "longitudinal_16_20200206",
+      "archive": "arrays.npz",
+      "shared_arrays": 63,
+      "elements": 923049,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "longitudinal_16_20200211",
+      "archive": "arrays.npz",
+      "shared_arrays": 63,
+      "elements": 907397,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "longitudinal_16_20200222",
+      "archive": "arrays.npz",
+      "shared_arrays": 63,
+      "elements": 882844,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    },
+    {
+      "experiment": "representation_16_20200206",
+      "archive": "predictions.npz",
+      "shared_arrays": 47,
+      "elements": 1047375,
+      "different_arrays": [],
+      "tolerated_arrays": [],
+      "only_historical": [],
+      "only_reproduced": []
+    }
+  ],
+  "json_comparisons": [
+    {
+      "report": "mission_019_brochier_transfer.json",
+      "compared_numeric_values": 594,
+      "nonexact_numeric_values": 0,
+      "changed": []
+    },
+    {
+      "report": "mission_020_brochier_population.json",
+      "compared_numeric_values": 3307,
+      "nonexact_numeric_values": 0,
+      "changed": []
+    },
+    {
+      "report": "mission_016.json",
+      "compared_numeric_values": 100,
+      "nonexact_numeric_values": 0,
+      "changed": []
+    },
+    {
+      "report": "signal_characterization.json",
+      "compared_numeric_values": 139874,
+      "nonexact_numeric_values": 0,
+      "changed": []
+    },
+    {
+      "report": "event_04_results.json",
+      "compared_numeric_values": 262,
+      "nonexact_numeric_values": 0,
+      "changed": []
+    }
+  ],
+  "shared_arrays": 914,
+  "elements": 48133360,
+  "different_arrays": 0,
+  "tolerated_arrays": 0,
+  "changed_json_numeric_values": 0
+}

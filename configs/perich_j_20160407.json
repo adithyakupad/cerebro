@@ -1,0 +1,12 @@
+{
+  "dandiset_id": "000688",
+  "version": "0.250122.1735",
+  "asset_id": "fdaef189-c86d-4fd6-ac47-ad21a96040b8",
+  "asset_path": "sub-J/sub-J_ses-CO-20160407_behavior+ecephys.nwb",
+  "size_bytes": 22119020,
+  "sha256": "cd916e693ba7a69ed08a1c2bc27161697144c43dbf6add6804627f542ef8157e",
+  "license": "CC-BY-4.0",
+  "metadata_url": "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/fdaef189-c86d-4fd6-ac47-ad21a96040b8/",
+  "download_url": "https://api.dandiarchive.org/api/assets/fdaef189-c86d-4fd6-ac47-ad21a96040b8/download/",
+  "local_path": "data/raw/perich_j/sub-J_ses-CO-20160407_behavior+ecephys.nwb"
+}

@@ -1,0 +1,775 @@
+{
+  "comparison_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+  "comparison_root": "/Users/adithyaupad/Developer/cerebro",
+  "experiments": [
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "arrays.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 39,
+          "shared_elements": 854081
+        }
+      ],
+      "experiment": "classical_05",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "ffbd0d9b3e12498c912f1cb378683bfc5525522beec4dd3a90c05fed42880ff5",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 7,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 267,
+      "root_report_sha256": "583ff96b62e62c239fa9df0618ab8ee7905cc105fbd60f8eaa87550a548739dd",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "metrics",
+        "geometry",
+        "ridge_selection",
+        "kalman_selection",
+        "selected_ridge_alpha",
+        "selected_kalman_alpha"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 41,
+          "shared_elements": 17898110
+        }
+      ],
+      "experiment": "cross_subject_12",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "22521efea587e178476b5aacbac56669c94f18ba5cdb8bc5fe9b5c025ce9703f",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 52,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 4168,
+      "root_report_sha256": "2079f45115a7fd535cb06ab0623a82ebaf4a5b9a59bfab0588eb422b261f8ec0",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "results",
+        "selected_ridge_alpha",
+        "normalization"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 41,
+          "shared_elements": 18688971
+        }
+      ],
+      "experiment": "cross_subject_14",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "3cc51c661fe65533dc228a7b9cafc6675268c6f53eaf695430f7a5e960837487",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 52,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 4355,
+      "root_report_sha256": "c829da98d134fa3c0c18010419486b49482b7229828fa240871171b351c1ad58",
+      "root_run_revision": "9b66f3ef15674bed14f977ce373c777d01fd0c19",
+      "scientific_report_fields_compared": [
+        "results",
+        "selected_ridge_alpha",
+        "normalization"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "parameters.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 2,
+          "shared_elements": 420
+        }
+      ],
+      "experiment": "dynamics_10",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "984918ef41d84ac6a2c843a5ef4ae8ecf87e6ed5cc09780a4b27667183013d17",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 0,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 104,
+      "root_report_sha256": "cd3bbc0842ad3fd3d76e15dc54e56cce795e8ec606a3287fb010e9a0253f704a",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "metrics"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [
+            "target_calibration_mean_1",
+            "target_calibration_mean_15",
+            "target_calibration_mean_15_prediction_flexion",
+            "target_calibration_mean_1_prediction_flexion",
+            "target_calibration_mean_5",
+            "target_calibration_mean_50",
+            "target_calibration_mean_50_prediction_flexion",
+            "target_calibration_mean_5_prediction_flexion",
+            "target_calibration_mean_75",
+            "target_calibration_mean_75_prediction_flexion"
+          ],
+          "file": "arrays.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 53,
+          "shared_elements": 699448
+        }
+      ],
+      "experiment": "longitudinal_08",
+      "extra_fresh_report_fields": [
+        "metrics/target_calibration_mean_1",
+        "metrics/target_calibration_mean_75",
+        "metrics/target_calibration_mean_5",
+        "metrics/target_calibration_mean_15",
+        "metrics/target_calibration_mean_50"
+      ],
+      "fresh_report_sha256": "e2bb72e45c3ebd49aced82424f51246b4acfb1a2fd0aa016aec9d559c7bbbcd1",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 2,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 4641,
+      "root_report_sha256": "d285d9591db564a444eb6f1f968a38ed64ba76515e5c30a2e9a2f3cc4cbb3ab4",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "metrics",
+        "geometry",
+        "selection",
+        "selected_alpha",
+        "source_evaluation_mse_flexion2"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "arrays.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 63,
+          "shared_elements": 911783
+        }
+      ],
+      "experiment": "longitudinal_14",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "d47765afe6de9da80ba2a93f7fbb475740bb7f22f2e388c48af2d6b34a038245",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 2,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 6181,
+      "root_report_sha256": "212dab5c91478a313f7bb0df93e9f2dcf1570de16384964da4b5d5e029401e9f",
+      "root_run_revision": "9b66f3ef15674bed14f977ce373c777d01fd0c19",
+      "scientific_report_fields_compared": [
+        "metrics",
+        "geometry",
+        "selection",
+        "selected_alpha",
+        "source_evaluation_mse_flexion2"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 38,
+          "shared_elements": 127775
+        }
+      ],
+      "experiment": "representation_07",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "728f91d97161e1531b8b07a5b116d51ddbd0fd59977b888fb7abe8a948371172",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 75,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 1777,
+      "root_report_sha256": "7f8bf9b4f650f526be9aafc35d674d87481e4a4f0567a5a6a18e2aec76765998",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "results",
+        "pretraining",
+        "normalization"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 173,
+          "shared_elements": 4071375
+        }
+      ],
+      "experiment": "representation_09",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "15a05ad8cf24d4a6a3bb424b7717acdcbc11bcd704403018768e727640dabbe7",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 600,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 62127,
+      "root_report_sha256": "05bf9486416bc0514521597666d7fab91d2724f9505928c4e3261759076a6d8a",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "results",
+        "pretraining",
+        "session_identity_diagnostics"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 47,
+          "shared_elements": 1047375
+        }
+      ],
+      "experiment": "representation_14",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "325f830c996fb97596bc42416b72e80d00053e235cbfaba58c243e8ddfff6c18",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 150,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 15543,
+      "root_report_sha256": "dfaf1633780693864218d06c5201571cc844454096858ce3373ca8b1e5acb767",
+      "root_run_revision": "9b66f3ef15674bed14f977ce373c777d01fd0c19",
+      "scientific_report_fields_compared": [
+        "results",
+        "pretraining",
+        "session_identity_diagnostics"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 19,
+          "shared_elements": 63025
+        }
+      ],
+      "experiment": "sequence_06",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "14f8cf0999af17cd7669aff63140ee66693a36392d65ac3f591cfa5a1d3c348a",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 36,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 1638,
+      "root_report_sha256": "eaf8334ea367b5f616cd00419263dd0c0b911b449a6f5fec2bda7dca07568847",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "results"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    },
+    {
+      "archives": [
+        {
+          "extra_fresh_arrays": [],
+          "file": "predictions.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 5,
+          "shared_elements": 4660
+        },
+        {
+          "extra_fresh_arrays": [],
+          "file": "parameters.npz",
+          "max_absolute_difference": 0.0,
+          "mismatches": [],
+          "missing_in_fresh": [],
+          "shared_arrays": 5,
+          "shared_elements": 24
+        }
+      ],
+      "experiment": "subject_identity_13",
+      "extra_fresh_report_fields": [],
+      "fresh_report_sha256": "cc528cf2e2c74c2a8763bc38918ee477fd192bdb98af9ca611910fb6a2ad93c3",
+      "fresh_run_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "identical_other_scalars": 0,
+      "max_report_numeric_absolute_difference": 0.0,
+      "mismatches": [],
+      "numeric_scalars": 26,
+      "root_report_sha256": "4da289460fd222b06c488afe15968e3aef91f025635f9a7eeccc341afe5d5f1e",
+      "root_run_revision": "1250ee328abf3d8eaf3d040d7dea03a0a3a13456",
+      "scientific_report_fields_compared": [
+        "normalization",
+        "balanced_accuracy",
+        "raw_accuracy",
+        "per_subject_accuracy",
+        "confusion_true_rows_predicted_columns",
+        "training_trial_counts",
+        "evaluation_trial_counts"
+      ],
+      "split_manifest_exact_match": true,
+      "status": "PASS"
+    }
+  ],
+  "fresh_clone": "/private/tmp/cerebro014-verification",
+  "fresh_clone_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+  "fresh_workflow_driver": {
+    "all_exit_zero": true,
+    "commands": [
+      {
+        "command": [
+          "--version"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-I",
+          "-c",
+          "import cerebro; print(cerebro.__file__)"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "pip",
+          "check"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/falcon_m1_a.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/falcon_m1_b.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/falcon_x_20121210.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/link_20200127.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/link_20200130.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/link_20200204.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/link_20200205.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/mc_maze.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/perich_j_20160406.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dataset",
+          "configs/perich_j_20160407.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.sense_inspect",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.characterize",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.characterize_figures"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.event_audit",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.event_aligned",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.event_figures"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.nwb_audit",
+          "configs/mc_maze.json",
+          "--output",
+          "reports/mc_maze_native_audit.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.maze_feasibility",
+          "configs/mc_maze.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.nwb_audit",
+          "configs/perich_j_20160406.json",
+          "--output",
+          "data/processed/perich_06_audit.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.nwb_audit",
+          "configs/perich_j_20160407.json",
+          "--output",
+          "data/processed/perich_07_audit.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.benchmark",
+          "configs/mc_maze_small.json"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.sequence_benchmark"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.representation_benchmark"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.longitudinal"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.representation_transfer"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.dynamics"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.benchmark_figures"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.extended_figures"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.evaluation"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.cross_subject"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.subject_identity"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.longitudinal",
+          "--config",
+          "configs/longitudinal_14.json",
+          "--output",
+          "data/processed/longitudinal_14"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.representation_transfer",
+          "--config",
+          "configs/representation_14.json",
+          "--output",
+          "data/processed/representation_14"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.cross_subject",
+          "--config",
+          "configs/cross_subject_14.json",
+          "--output",
+          "data/processed/cross_subject_14",
+          "--report",
+          "reports/cross_subject_14.json",
+          "--markdown",
+          "reports/cross_subject_14.md",
+          "--figure",
+          "reports/figures/cross_subject_14_calibration.png"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.registry"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "tools/validate_checkpoints.py"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.hardware_check"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "cerebro.explorer",
+          "--sequence",
+          "data/processed/sequence_06",
+          "--longitudinal",
+          "data/processed/longitudinal_08",
+          "--transfer",
+          "data/processed/representation_09"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "tests",
+          "tools"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "pytest",
+          "-q"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "pytest",
+          "-m",
+          "not data",
+          "-q"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "-m",
+          "pytest",
+          "--collect-only",
+          "-m",
+          "data",
+          "-q"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "log_sha256": "943dd8ab84eecb6a94881dbb6530c6d233034a151a08c5a340b1de393c82a800"
+  },
+  "policy": "Compare shared scientific report fields and every array in core prediction/parameter archives; allow extra fresh calibration-mean outputs. Report/checkpoint byte hashes and provenance revisions are not numerical equality requirements. Numeric tolerance does not establish scientific validity.",
+  "schema_version": 1,
+  "status": "PASS",
+  "tolerances": {
+    "atol": 1e-10,
+    "rtol": 1e-08
+  },
+  "totals": {
+    "experiments": 11,
+    "scientific_numeric_scalars": 100827,
+    "shared_array_elements": 44367047,
+    "shared_arrays": 526
+  },
+  "uncompared": "Raw asset bytes (separate checksum verification), checkpoint serialization bytes, report provenance metadata, timing and cross-platform behavior are not compared here."
+}

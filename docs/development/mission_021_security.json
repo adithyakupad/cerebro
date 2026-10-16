@@ -1,0 +1,31 @@
+{
+  "tracked_files": 259,
+  "largest_files": [
+    [
+      3642568,
+      "reports/signal_characterization.json"
+    ],
+    [
+      1940280,
+      "reports/representation_09.json"
+    ],
+    [
+      783703,
+      "reports/figures/event_04_correlations.png"
+    ],
+    [
+      703580,
+      "reports/figures/mission_020_brochier_trajectories.png"
+    ],
+    [
+      513383,
+      "reports/figures/mission_020_brochier_rates.png"
+    ]
+  ],
+  "forbidden_tracked_assets": [],
+  "credential_signature_files": [],
+  "executable_absolute_paths": [],
+  "introduced_history_blobs_scanned": 339,
+  "history_credential_signature_hits": [],
+  "scope": "Heuristic known-signature and asset/path screen, not dependency-vulnerability or exhaustive secret certification."
+}

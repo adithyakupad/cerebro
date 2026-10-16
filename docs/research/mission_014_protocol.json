@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "registered_utc": "2026-10-15T01:59:05.785250+00:00",
+  "outcomes_examined_before_registration": false,
+  "selection": "Earliest metadata-compatible unseen LINK session after Feb04, and earliest unseen FALCON X session after Dec07; chosen before model fitting or prediction error inspection.",
+  "configs": [
+    "configs/longitudinal_14.json",
+    "configs/representation_14.json",
+    "configs/cross_subject_14.json"
+  ],
+  "models": "Reuse existing algorithms and source-only tuning. SSL reference setting only, original three seeds; no new architectures or target-driven choices.",
+  "calibration": "First75 original target trials, remaining target trials evaluation. Same prior label budgets; target calibration mean added to longitudinal controls.",
+  "hypotheses": [
+    "Frozen source transfer need not outperform source means.",
+    "Target neural calibration may improve over label-matched calibration means.",
+    "Pretrained features need not improve over matched random/supervised controls."
+  ],
+  "endpoints": "Equal-trial MSE in separately named native target units; paired contrasts and five-trial block sensitivity. No practical-superiority threshold or multiplicity-corrected inference.",
+  "limitations": [
+    "FALCON is author-preprocessed exploratory EMG; cannot certify train-only original target processing.",
+    "One new session per existing animal adds session replication, not a new biological subject.",
+    "All resulting evaluation sets become inspected; no later model tuning against them."
+  ]
+}

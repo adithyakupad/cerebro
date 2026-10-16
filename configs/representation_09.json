@@ -1,0 +1,23 @@
+{
+  "source_manifests": ["configs/link_20200127.json", "configs/link_20200130.json"],
+  "target_manifest": "configs/link_20200204.json",
+  "seeds": [0, 1, 2],
+  "native_bins_per_trial": 40,
+  "native_clock_step_tolerance_seconds": 0.0011,
+  "source_reserved_trials": 75,
+  "source_probe_trials_each": 300,
+  "target_calibration_trials": 75,
+  "target_evaluation_trials": 300,
+  "label_budgets": [5, 15, 75],
+  "supervised_epochs": 5,
+  "learning_rate": 0.001,
+  "gradient_clip": 1.0,
+  "mask_probability": 0.2,
+  "ridge_alpha": 1.0,
+  "settings": [
+    {"name": "reference", "hidden": 32, "source_trials_each": 300, "epochs": 5},
+    {"name": "model_size", "hidden": 16, "source_trials_each": 300, "epochs": 5},
+    {"name": "data_budget", "hidden": 32, "source_trials_each": 100, "epochs": 5},
+    {"name": "compute_budget", "hidden": 32, "source_trials_each": 300, "epochs": 2}
+  ]
+}

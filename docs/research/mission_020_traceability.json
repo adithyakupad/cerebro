@@ -1,0 +1,972 @@
+{
+  "audit_basis": "Original Mission 015 33-requirement audit, updated for Missions 016\u2013020 without narrowing scope",
+  "protocol_commit": "d792f182b3f9d3f1dab0cf9ff5a5f41f1f1c547d",
+  "requirement_count": 33,
+  "requirements": [
+    {
+      "acceptance_criteria": "Independent prespecified recordings and controls support a claim at researcher-chosen practical threshold, or the hypothesis is explicitly rejected without changing software status.",
+      "codex_can_resolve_independently": "No; researcher chooses scientific claim, effect threshold and interpretation.",
+      "consequence": "The thesis cannot be reported as a demonstrated platform property.",
+      "dependencies": [
+        "Q2",
+        "X3",
+        "F3"
+      ],
+      "domain": "Scientific questions and hypotheses",
+      "evidence": [
+        "AGENTS.md",
+        "docs/architecture.md",
+        "docs/research/mission_014_protocol.json",
+        "reports/mission_014.md"
+      ],
+      "existing": "Specific decoding, calibration and SSL hypotheses were executed; negative and mixed outcomes retained.",
+      "id": "Q1",
+      "missing_evidence_or_capability": "No replicated evidence that learned representations generalize broadly across sessions, subjects or tasks.",
+      "mission020_evidence": [],
+      "mission020_status": "UNVALIDATED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P1",
+      "relative_effort": "high",
+      "requirement": "Adaptive neural intelligence thesis and empirical success",
+      "scope": "original",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Before new analysis, publish dataset IDs, primary contrast, independent unit, budget, effect threshold, uncertainty rule and stop rule; freeze before outcomes.",
+      "codex_can_resolve_independently": "Conditional; Codex can draft, researcher must select and approve.",
+      "consequence": "Post hoc selection can overstate generality even with valid software.",
+      "dependencies": [
+        "E3",
+        "human research design"
+      ],
+      "domain": "Scientific questions and hypotheses",
+      "evidence": [
+        "docs/research/decisions.md",
+        "docs/research/mission_014_protocol.json",
+        "configs/representation_14.json",
+        "reports/mission_014.md"
+      ],
+      "existing": "Experiments record hypotheses, splits, targets, comparisons and limits. Mission014 protocol preceded outcome inspection.",
+      "id": "Q2",
+      "missing_evidence_or_capability": "No single prospective broad-transfer estimand or practical superiority threshold is fixed for future release-level claims.",
+      "mission020_evidence": [],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P0",
+      "relative_effort": "small",
+      "requirement": "Prespecified hypotheses, estimands and falsification rules",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Existing module boundaries and executed workflows remain available without new scaffolding.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Product architecture and reusable interfaces",
+      "evidence": [
+        "docs/architecture.md",
+        "src/cerebro/sense.py",
+        "src/cerebro/population.py",
+        "src/cerebro/benchmark.py",
+        "src/cerebro/longitudinal.py",
+        "src/cerebro/representation_transfer.py",
+        "src/cerebro/explorer.py",
+        "docs/development/mission_014_workflows.json"
+      ],
+      "existing": "Documented boundaries map to working Python modules, CLIs and reports.",
+      "id": "A1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "SENSE/MAP/DECODE/REMEMBER/ADAPT/FOUNDATION/INTERACT boundaries",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "A new supported recording passes shared clock, coverage, trial identity and unit assertions using a documented adapter contract without changing existing results.",
+      "codex_can_resolve_independently": "Conditional; Codex can implement when a new dataset is actually selected.",
+      "consequence": "Extending to another dataset is manual and risks inconsistent units or masks.",
+      "dependencies": [
+        "D1",
+        "a chosen additional dataset"
+      ],
+      "domain": "Product architecture and reusable interfaces",
+      "evidence": [
+        "src/cerebro/sense.py",
+        "src/cerebro/link.py",
+        "src/cerebro/falcon.py",
+        "tests/test_sense.py",
+        "tests/test_link.py",
+        "tests/test_falcon.py"
+      ],
+      "existing": "Maze uses a Recording dataclass; LINK/FALCON expose separate adapter dictionaries and proven workflows.",
+      "id": "A2",
+      "missing_evidence_or_capability": "A new modality still needs bespoke trial/coverage/target translation; no common validated adapter contract across all three.",
+      "mission020_evidence": [],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P2",
+      "relative_effort": "medium",
+      "requirement": "Reusable cross-dataset scientific data contract",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Pinned manifest, checksum, license, clocks and coverage policy remain reproducible for currently supported data.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Public neural datasets",
+      "evidence": [
+        "src/cerebro/dataset.py",
+        "src/cerebro/nwb_audit.py",
+        "configs/mc_maze_small.json",
+        "configs/link_20200205.json",
+        "configs/falcon_x_20121210.json",
+        "docs/datasets/mission_014_inventory.json",
+        "docs/development/mission_014_workflows.json"
+      ],
+      "existing": "Maze Small/standard, four native LINK sessions and FALCON calibration assets are pinned and audited; 11 manifests verified in Mission014.",
+      "id": "D1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Versioned authentic acquisition, QC and provenance",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Authoritative per-unit or continuous-recording coverage, clock relation and file identity are documented, checked against native files, then model eligibility is reconsidered.",
+      "codex_can_resolve_independently": "No; Codex can inspect supplied evidence, not create missing acquisition provenance.",
+      "consequence": "Silent bins cannot be certified as recorded silence; modeling would violate the human coverage requirement.",
+      "dependencies": [
+        "dataset-owner or authoritative acquisition record"
+      ],
+      "domain": "Public neural datasets",
+      "evidence": [
+        "src/cerebro/nwb_audit.py",
+        "configs/perich_j_20160406.json",
+        "configs/perich_j_20160407.json",
+        "docs/datasets/longitudinal_feasibility.md",
+        "docs/datasets/mission_014_acquisition.md"
+      ],
+      "existing": "Two Perich recordings were natively audited; model exclusion policy is enforced.",
+      "id": "D2",
+      "missing_evidence_or_capability": "No authoritative neural observation intervals were established.",
+      "mission020_evidence": [],
+      "mission020_status": "BLOCKED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "BLOCKED",
+      "priority": "P1",
+      "relative_effort": "medium",
+      "requirement": "Perich longitudinal neural coverage",
+      "scope": "original",
+      "status": "BLOCKED"
+    },
+    {
+      "acceptance_criteria": "Obtain verifiable raw targets/clock metadata and researcher-approved split-safe processing, or adopt independently suitable data; repeat fixed controls on untouched evaluation, preserving old exploratory results.",
+      "codex_can_resolve_independently": "No; Codex cannot reconstruct erased source values.",
+      "consequence": "Original target processing precedes CEREBRO splits; strict leakage-free raw-target cross-subject inference is not established.",
+      "dependencies": [
+        "authoritative raw EMG, clocks, calibration provenance and use terms; or suitable alternative data"
+      ],
+      "domain": "Public neural datasets",
+      "evidence": [
+        "src/cerebro/falcon.py",
+        "src/cerebro/cross_subject.py",
+        "docs/datasets/falcon_preprocessing.md",
+        "reports/cross_subject_14.md"
+      ],
+      "existing": "Eight authentic calibration sessions have neural coverage and published normalized EMG; converter provenance was traced.",
+      "id": "D3",
+      "missing_evidence_or_capability": "Raw unrectified EMG and scaling constants are absent from inspected public NWBs; rectification/clipping/resampling cannot be inverted. Exact B conversion details are incomplete.",
+      "mission020_evidence": [],
+      "mission020_status": "BLOCKED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "BLOCKED",
+      "priority": "P0",
+      "relative_effort": "high",
+      "requirement": "Original FALCON EMG target access and split-safe processing",
+      "scope": "original",
+      "status": "BLOCKED"
+    },
+    {
+      "acceptance_criteria": "At least one independent subject-level evaluation with documented neural coverage, compatible target units, prespecified preprocessing and held-out subjects/dates; report failed as well as successful contrasts.",
+      "codex_can_resolve_independently": "No; Codex can audit/run accessible suitable data only after selection and access.",
+      "consequence": "Subject, date, session and preprocessing effects remain confounded.",
+      "dependencies": [
+        "D3",
+        "researcher-selected suitable cohort and target definition"
+      ],
+      "domain": "Public neural datasets",
+      "evidence": [
+        "src/cerebro/cross_subject.py",
+        "configs/cross_subject_14.json",
+        "docs/datasets/mission_014_acquisition.md",
+        "reports/cross_subject_14.json"
+      ],
+      "existing": "FALCON has eight audited dates but only two animals; anonymous count features and 16 muscle names support exploratory comparison.",
+      "id": "D4",
+      "missing_evidence_or_capability": "No independent subject cohort with certified train-only original target processing was validated.",
+      "mission020_evidence": [
+        "reports/mission_019_brochier_transfer.md",
+        "docs/datasets/mission_019_task_eligibility.md"
+      ],
+      "mission020_status": "BLOCKED",
+      "mission020_update": "Mission 019 two-animal task-condition classification remains exploratory; it does not resolve strict continuous-target correspondence or general subject invariance.",
+      "original_audit_status": "BLOCKED",
+      "priority": "P1",
+      "relative_effort": "high",
+      "requirement": "Cross-subject independent recordings and compatible targets",
+      "scope": "original",
+      "status": "BLOCKED"
+    },
+    {
+      "acceptance_criteria": "If included in approved scope, pin a legally usable corpus and implement coverage/clock/target validation plus an honest held-out experiment; otherwise record explicit deferral.",
+      "codex_can_resolve_independently": "Conditional; Codex can implement only after access and design approval.",
+      "consequence": "Speech-related generality cannot be assessed; the original directive made this a conditional later extension, not an existing release claim.",
+      "dependencies": [
+        "legal access",
+        "researcher dataset and target selection"
+      ],
+      "domain": "Public neural datasets",
+      "evidence": [
+        "docs/research/dataset_inventory.json",
+        "docs/architecture.md"
+      ],
+      "existing": "No speech adapter, manifest, target or experiment.",
+      "id": "D5",
+      "missing_evidence_or_capability": "Appropriate public speech neural dataset, permissions and scientific target not selected.",
+      "mission020_evidence": [],
+      "mission020_status": "MISSING",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "MISSING",
+      "priority": "P2",
+      "relative_effort": "high",
+      "requirement": "Speech recording extension, where legal and compatible",
+      "scope": "conditional original",
+      "status": "MISSING"
+    },
+    {
+      "acceptance_criteria": "Retain distinct PCA reconstruction and Gaussian FA likelihood interpretations; no intrinsic-dimension claim.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Classical population-analysis baselines",
+      "evidence": [
+        "src/cerebro/population.py",
+        "src/cerebro/benchmark.py",
+        "tests/test_population.py",
+        "tests/test_benchmark.py",
+        "reports/classical_05.json"
+      ],
+      "existing": "PCA/FA run on real Maze data with inner selection, reconstruction/likelihood tests and reported dimensions.",
+      "id": "C1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "PCA, FA, train-only selection and interpretation",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Use descriptive labels, explicit condition keys, units, coverage masks and no neuron-identity/causal inference.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Neural manifolds and population dynamics",
+      "evidence": [
+        "src/cerebro/event_aligned.py",
+        "src/cerebro/population.py",
+        "tests/test_event_aligned.py",
+        "reports/event_04.md",
+        "reports/longitudinal_08.md"
+      ],
+      "existing": "Go-cue alignment, training-trial condition summaries, covariance cosine, CCA and principal angles were computed and documented descriptively.",
+      "id": "M1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [
+        "reports/mission_020_brochier_population.md",
+        "docs/research/mission_020_technical_report.md"
+      ],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "Mission 020 adds descriptive real-data population results and explicit uncertainty/interpretation limits; no broader dynamics or high-dimensional covariance claim.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Event responses and descriptive population geometry",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Prospective condition/time keys and adequate independent trial repetitions established by feasibility audit; uncertainty and negative results reported without pooling incompatible conditions.",
+      "codex_can_resolve_independently": "Conditional; Codex can audit/analyze suitable real data after protocol approval.",
+      "consequence": "Trial variability cannot be separated confidently from estimation noise or condition tuning.",
+      "dependencies": [
+        "independently replicated compatible conditions; researcher covariance estimand"
+      ],
+      "domain": "Neural manifolds and population dynamics",
+      "evidence": [
+        "src/cerebro/event_aligned.py",
+        "tests/test_event_aligned.py",
+        "reports/event_04_feasibility.md",
+        "reports/event_04.md",
+        "reports/mc_maze_event_feasibility.json"
+      ],
+      "existing": "Condition/time-specific residual code and plots exist.",
+      "id": "M2",
+      "missing_evidence_or_capability": "Maze Small compatible conditions have only two or three training repetitions; no reliable residual correlation inference.",
+      "mission020_evidence": [
+        "docs/research/mission_020_feasibility.md",
+        "docs/research/mission_020_protocol.md",
+        "configs/brochier_population_20.json",
+        "tools/brochier_population.py",
+        "tests/test_brochier_population.py",
+        "reports/mission_020_brochier_population.json",
+        "reports/mission_020_brochier_population.md"
+      ],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "Real Brochier condition/time-matched trial residuals, aggregate shared-variance ratio, trial bootstrap and within-condition shuffles executed. Single-stratum rank ceilings 29\u201340 L and 34\u201335 N remain below 93/156 units; reliable full covariance and biological replication remain unvalidated.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P1",
+      "relative_effort": "medium",
+      "requirement": "Reliable trial-residual population covariance",
+      "scope": "original",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Prespecified held-out sessions/trials and multi-step or geometry controls quantify performance and uncertainty; report limits of causal/mechanistic inference.",
+      "codex_can_resolve_independently": "Conditional; Codex can execute fixed analyses, not choose interpretation.",
+      "consequence": "Cannot infer physiological dynamical mechanism or robust shared manifold.",
+      "dependencies": [
+        "Q2",
+        "suitable sessions and held-out forecast protocol"
+      ],
+      "domain": "Neural manifolds and population dynamics",
+      "evidence": [
+        "src/cerebro/dynamics.py",
+        "src/cerebro/population.py",
+        "tests/test_dynamics.py",
+        "reports/dynamics_10.json",
+        "reports/longitudinal_08.md"
+      ],
+      "existing": "Trial-local AR(1), persistence, mean and time-permuted controls ran; geometry metrics reported.",
+      "id": "M3",
+      "missing_evidence_or_capability": "Only teacher-forced one-step forecasts in one session and in-sample/noisy anchors; no multi-step or replicated stability test.",
+      "mission020_evidence": [
+        "reports/mission_020_brochier_population.md",
+        "docs/research/mission_020_technical_report.md"
+      ],
+      "mission020_status": "UNVALIDATED",
+      "mission020_update": "Mission 020 adds descriptive real-data population results and explicit uncertainty/interpretation limits; no broader dynamics or high-dimensional covariance claim.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P1",
+      "relative_effort": "medium",
+      "requirement": "Generalizable neural dynamics or manifold stability",
+      "scope": "original",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Preserve the shared source-validation protocol and offline same-bin interpretation.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Neural decoding",
+      "evidence": [
+        "src/cerebro/benchmark.py",
+        "src/cerebro/kalman.py",
+        "tests/test_benchmark.py",
+        "tests/test_kalman.py",
+        "reports/benchmarks.md",
+        "reports/classical_05.json"
+      ],
+      "existing": "Mean, go-time, linear/ridge, PCA/FA ridge and Kalman run on aligned real Maze units with common observations.",
+      "id": "N1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Classical neural-to-behavior prediction",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "If claimed, fix timing budget and protocol; test timestamped online replay, dropped data, causal latency and restoration on representative hardware, then keep biological claims separate.",
+      "codex_can_resolve_independently": "Conditional; Codex can build a local replay test, not validate an implanted/live system independently.",
+      "consequence": "Claims of real-time or biological closed-loop decoding are unsupported.",
+      "dependencies": [
+        "researcher application specification",
+        "hardware/runtime if claim sought"
+      ],
+      "domain": "Neural decoding",
+      "evidence": [
+        "src/cerebro/sequence_models.py",
+        "src/cerebro/sequence_benchmark.py",
+        "docs/architecture.md",
+        "reports/sequence_06.json"
+      ],
+      "existing": "Causal architectures constrain neural input to current/past bins; recorded behavior is predicted offline.",
+      "id": "N2",
+      "missing_evidence_or_capability": "No prospective online replay latency/throughput/feedback experiment or untouched deployment set.",
+      "mission020_evidence": [],
+      "mission020_status": "UNVALIDATED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P2",
+      "relative_effort": "high",
+      "requirement": "Causal prospective or online decoding claim",
+      "scope": "optional Neuralink competency",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Continue to label contact mapping as feature correspondence only.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Cross-session robustness",
+      "evidence": [
+        "src/cerebro/link.py",
+        "src/cerebro/longitudinal.py",
+        "tests/test_link.py",
+        "docs/datasets/mission_014_acquisition.md"
+      ],
+      "existing": "LINK native contact keys align across four inspected dates; session IDs/clocks retained and unit identity not inferred.",
+      "id": "R1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Session indexing and contact correspondence",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Retain method-specific information access and negative/unstable small-budget outcomes.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Cross-session robustness",
+      "evidence": [
+        "src/cerebro/longitudinal.py",
+        "configs/longitudinal_08.json",
+        "configs/longitudinal_14.json",
+        "tests/test_longitudinal.py",
+        "reports/longitudinal_08.md",
+        "reports/mission_014.md"
+      ],
+      "existing": "Source-only selection, target calibration prefixes, direct ridge, residual correction, marginal normalization, condition anchors and curves ran on real LINK.",
+      "id": "R2",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Frozen transfer and calibration methods with budget curves",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Evaluate fixed models and budgets on newly reserved sessions with independent session units and source-only decisions; compare source and label-matched means and report negative results.",
+      "codex_can_resolve_independently": "Conditional; Codex can run locked protocol, human selects claim/threshold.",
+      "consequence": "No general calibration efficiency or drift-robustness claim follows.",
+      "dependencies": [
+        "Q2",
+        "new untouched session/animal; no reuse for selection"
+      ],
+      "domain": "Cross-session robustness",
+      "evidence": [
+        "src/cerebro/longitudinal.py",
+        "reports/longitudinal_08.md",
+        "reports/mission_014.md",
+        "docs/research/mission_014_protocol.json"
+      ],
+      "existing": "Jan30 and Feb05 target experiments were run; later date selected before outcomes.",
+      "id": "R3",
+      "missing_evidence_or_capability": "One animal and a few inspected dates; Feb05 frozen MSE 0.03340539 exceeds source mean 0.02606807, low-budget calibration is mixed.",
+      "mission020_evidence": [],
+      "mission020_status": "UNVALIDATED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P1",
+      "relative_effort": "medium",
+      "requirement": "Robust cross-session adaptation across independent dates",
+      "scope": "original",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Keep the result labeled executed SSL/transfer experiments; no validated foundation label.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Neural foundation models",
+      "evidence": [
+        "src/cerebro/representation_benchmark.py",
+        "src/cerebro/representation_transfer.py",
+        "tests/test_representation_benchmark.py",
+        "tests/test_representation_transfer.py",
+        "reports/representation_07.md",
+        "reports/representation_09.md"
+      ],
+      "existing": "Masked reconstruction and next-bin objective, multi-recording pretraining, frozen probes, fine-tuning and matched random/supervised controls executed.",
+      "id": "F1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Masked and predictive SSL, controlled transfer software",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Prespecified independent-session/subject/task tests with matched random and supervised controls, leakage diagnostics and practical effect rule; validated claim only if evidence supports it.",
+      "codex_can_resolve_independently": "No; Codex can run locked study but human owns model/claim and data access.",
+      "consequence": "Foundation-model terminology would overstate empirical evidence.",
+      "dependencies": [
+        "Q2",
+        "D4",
+        "new untouched subjects/tasks and controls"
+      ],
+      "domain": "Neural foundation models",
+      "evidence": [
+        "src/cerebro/representation_transfer.py",
+        "src/cerebro/subject_identity.py",
+        "reports/representation_09.md",
+        "reports/mission_014.md",
+        "docs/release/mission_014.md"
+      ],
+      "existing": "Three-session LINK SSL transfer and Feb05 reference evaluation ran; date identity probes retain information.",
+      "id": "F2",
+      "missing_evidence_or_capability": "One animal/task, near-identical or mixed SSL-versus-random outcomes, no cross-subject/general-task validation; source date identity ~98% decodable.",
+      "mission020_evidence": [],
+      "mission020_status": "UNVALIDATED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "UNVALIDATED",
+      "priority": "P1",
+      "relative_effort": "high",
+      "requirement": "General transferable representation and foundation claim",
+      "scope": "original",
+      "status": "UNVALIDATED"
+    },
+    {
+      "acceptance_criteria": "Prespecified across-subject held-out experiment with documented coverage, split-safe compatible target processing, no false unit matching and matched controls.",
+      "codex_can_resolve_independently": "No; depends on suitable original targets and independent subjects.",
+      "consequence": "Exploratory comparison cannot establish learned cross-subject representation transfer.",
+      "dependencies": [
+        "D3",
+        "D4"
+      ],
+      "domain": "Neural foundation models",
+      "evidence": [
+        "src/cerebro/cross_subject.py",
+        "src/cerebro/subject_identity.py",
+        "tests/test_cross_subject.py",
+        "reports/cross_subject_14.md",
+        "docs/datasets/falcon_preprocessing.md"
+      ],
+      "existing": "FALCON anonymous population moments and subject diagnostic run on authentic neural units.",
+      "id": "F3",
+      "missing_evidence_or_capability": "Targets are author-preprocessed before splits; only two animals, one original date per subject for initial analysis, no stable unit mapping, date/subject confounds.",
+      "mission020_evidence": [
+        "reports/mission_019_brochier_transfer.md",
+        "docs/datasets/mission_019_task_eligibility.md"
+      ],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "Mission 019 two-animal task-condition classification remains exploratory; it does not resolve strict continuous-target correspondence or general subject invariance.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P1",
+      "relative_effort": "high",
+      "requirement": "Subject-aware transfer with compatible targets",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Maintain causal masks/resets and describe the state-space model as diagonal linear recurrence, not Mamba.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Modern sequence architectures",
+      "evidence": [
+        "src/cerebro/sequence_models.py",
+        "src/cerebro/sequence_benchmark.py",
+        "tests/test_sequence_models.py",
+        "tests/test_sequence_benchmark.py",
+        "reports/sequence_06.json",
+        "docs/development/mission_014_hardware.json"
+      ],
+      "existing": "All six families trained/evaluated on real Maze; prefix/trial causality tests and CPU/MPS software smokes passed.",
+      "id": "S1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "MLP, GRU/LSTM, causal CNN/Transformer and state-space implementation",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Retain guards and state that upstream FALCON processing is a separate unresolved issue.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Scientific evaluation and statistical validity",
+      "evidence": [
+        "src/cerebro/benchmark.py",
+        "src/cerebro/subject_identity.py",
+        "tests/test_subject_identity.py",
+        "docs/development/mission_014_audit.md"
+      ],
+      "existing": "Train-only normalizers and immutable splits, original-row chronology, trial resets, saved hashes and mutation tests are implemented.",
+      "id": "E1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Leakage guards and provenance for CEREBRO fitting",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Reserve new dataset/session/subject before method choices; train/select without its outcomes; execute once and report all primary contrasts regardless of direction.",
+      "codex_can_resolve_independently": "Conditional; Codex can freeze/run protocol after human design.",
+      "consequence": "Additional tuning against them would invalidate independent performance inference.",
+      "dependencies": [
+        "Q2",
+        "new reserved public assets and split identities"
+      ],
+      "domain": "Scientific evaluation and statistical validity",
+      "evidence": [
+        "docs/research/decisions.md",
+        "docs/research/mission_014_protocol.json",
+        "src/cerebro/evaluation.py",
+        "reports/mission_014.md"
+      ],
+      "existing": "Chronological target evaluation and source validation splits exist; Mission014 new dates were selected before outcomes.",
+      "id": "E2",
+      "missing_evidence_or_capability": "Maze source validation and all current LINK/FALCON new-date evaluation sets are now inspected; no fresh untouched final model-selection holdout remains for broader claims.",
+      "mission020_evidence": [],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P0",
+      "relative_effort": "medium",
+      "requirement": "Independent final evaluation after exploratory model inspection",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Researcher-approved independent unit, dependence/multiplicity plan and practical effect criterion fixed before new evaluation; uncertainty reported for all named contrasts.",
+      "codex_can_resolve_independently": "Conditional; Codex can implement tests after researcher chooses inference target.",
+      "consequence": "Intervals cannot be sold as significance or generalization evidence.",
+      "dependencies": [
+        "Q2",
+        "independent trial/session estimand"
+      ],
+      "domain": "Scientific evaluation and statistical validity",
+      "evidence": [
+        "src/cerebro/evaluation.py",
+        "tests/test_evaluation.py",
+        "reports/evaluation_11.md",
+        "reports/mission_014.md"
+      ],
+      "existing": "Trial-weighted MSE, paired trial and moving-block sensitivity intervals, seed ranges and negative contrasts are available.",
+      "id": "E3",
+      "missing_evidence_or_capability": "Block length/dependence assumptions and multiple comparisons are not calibrated for population claims; seeds are not biological replicates.",
+      "mission020_evidence": [
+        "reports/mission_020_brochier_population.md",
+        "docs/research/mission_020_technical_report.md"
+      ],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "Mission 020 adds descriptive real-data population results and explicit uncertainty/interpretation limits; no broader dynamics or high-dimensional covariance claim.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P1",
+      "relative_effort": "medium",
+      "requirement": "Uncertainty and multiple-comparison interpretation",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Document the distinction: public CI collects but does not execute 12 real-data cases.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Product engineering and reproducibility",
+      "evidence": [
+        "pyproject.toml",
+        "environment.yml",
+        "docs/research/workflows.md",
+        ".github/workflows/tests.yml",
+        "docs/development/mission_014_validation.md"
+      ],
+      "existing": "Python3.11 package, pinned direct dependencies, fresh Conda run of 46 commands, 222 full local tests and 210 software CI tests passed.",
+      "id": "P1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Package, documented workflows, clean install and CI",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "For any advertised standalone model, ship self-contained architecture/scaler/weights metadata and verify fresh-process raw-count-to-output restoration; preserve historical archives.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "Some exported models are not independently portable inference artifacts.",
+      "dependencies": [
+        "only if standalone model exchange is in release scope"
+      ],
+      "domain": "Product engineering and reproducibility",
+      "evidence": [
+        "src/cerebro/registry.py",
+        "tools/validate_checkpoints.py",
+        "docs/development/mission_014_checkpoints.json",
+        "docs/development/mission_014_validation.md"
+      ],
+      "existing": "350 registry digests/529 array digests checked; 229 CPU predictions replayed, 227 exact.",
+      "id": "P2",
+      "missing_evidence_or_capability": "Unsupported checkpoint formats get integrity/workflow restoration only; representation07 random probes need seeded encoder/architecture/Torch recreation.",
+      "mission020_evidence": [],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P2",
+      "relative_effort": "medium",
+      "requirement": "Artifact registry and checkpoint restoration portability",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Keep offline data labeling and provenance visible; no device-control claim.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Product engineering and reproducibility",
+      "evidence": [
+        "src/cerebro/explorer.py",
+        "tests/test_explorer.py",
+        "docs/development/mission_014_validation.md"
+      ],
+      "existing": "Self-contained HTML with real trial, decoder, PCA, calibration and ablation controls; verified in browser.",
+      "id": "P3",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Local interactive research explorer",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "For each platform claimed in release, run clean install plus documented applicable workflows and checks; perform defined security review before claiming certification.",
+      "codex_can_resolve_independently": "Conditional; Codex can run on available hosts only.",
+      "consequence": "Portability and security claims must stay bounded to performed checks.",
+      "dependencies": [
+        "supported platform commitment",
+        "appropriate GPU hardware if claimed"
+      ],
+      "domain": "Product engineering and reproducibility",
+      "evidence": [
+        ".github/workflows/tests.yml",
+        "docs/development/mission_014_validation.md",
+        "docs/development/mission_014_audit.md"
+      ],
+      "existing": "Fresh macOS/CPU+MPS and Linux software CI pass; tracked credential/data heuristic scan clean.",
+      "id": "P4",
+      "missing_evidence_or_capability": "No full-data Linux/Windows reproduction, CUDA test, standalone typecheck or exhaustive secret/history/dependency audit.",
+      "mission020_evidence": [],
+      "mission020_status": "PARTIAL",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "PARTIAL",
+      "priority": "P2",
+      "relative_effort": "medium",
+      "requirement": "Cross-platform and security assurance beyond tested scope",
+      "scope": "original",
+      "status": "PARTIAL"
+    },
+    {
+      "acceptance_criteria": "Describe only demonstrated offline research skills, with no clinical, implant or employment claim.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Neuralink-relevant technical competencies",
+      "evidence": [
+        "src/cerebro/sense.py",
+        "src/cerebro/sequence_models.py",
+        "src/cerebro/longitudinal.py",
+        "reports/benchmarks.md",
+        "reports/mission_014.md"
+      ],
+      "existing": "The repository demonstrates offline engineering competencies through authentic NWB recordings, masks, causal model tests, decoding and adaptation experiments.",
+      "id": "K1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Real intracortical data, timing, causality, decoding and calibration",
+      "scope": "competency mapping, not original release gate",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "If explicitly added to scope, require a human-approved safety/use specification, timestamped streaming/latency/failure tests and separately authorized real-system study.",
+      "codex_can_resolve_independently": "No; Codex could build simulated replay only after requirements, not validate implanted operation.",
+      "consequence": "Cannot claim real-time implant/closed-loop readiness.",
+      "dependencies": [
+        "human product scope and hardware access"
+      ],
+      "domain": "Neuralink-relevant technical competencies",
+      "evidence": [
+        "docs/architecture.md",
+        "src/cerebro/explorer.py",
+        "reports/representation_09.md"
+      ],
+      "existing": "No live acquisition adapter, timing budget, closed-loop controller, device integration or biological feedback study.",
+      "id": "K2",
+      "missing_evidence_or_capability": "A safe online interface and representative hardware/clinical access are outside current repository capabilities.",
+      "mission020_evidence": [],
+      "mission020_status": "MISSING",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "MISSING",
+      "priority": "P2",
+      "relative_effort": "very high",
+      "requirement": "Streaming, latency, failure handling and actual closed-loop validation",
+      "scope": "adjacent competency, not original release gate",
+      "status": "MISSING"
+    },
+    {
+      "acceptance_criteria": "Preserve provenance, historical results and corrected terminology.",
+      "codex_can_resolve_independently": "yes",
+      "consequence": "",
+      "dependencies": [
+        "none"
+      ],
+      "domain": "Final research artifacts and public release",
+      "evidence": [
+        "reports/mission_014.md",
+        "reports/figures/cross_subject_14_calibration.png",
+        "docs/datasets/mission_014_inventory.json",
+        "docs/release/mission_014.md"
+      ],
+      "existing": "Versioned reports/figures, source citations, CC-BY-4.0 attribution, negative findings and explicit limitations exist.",
+      "id": "L1",
+      "missing_evidence_or_capability": "",
+      "mission020_evidence": [
+        "reports/mission_020_brochier_population.md",
+        "docs/research/mission_020_technical_report.md"
+      ],
+      "mission020_status": "COMPLETE",
+      "mission020_update": "Mission 020 adds descriptive real-data population results and explicit uncertainty/interpretation limits; no broader dynamics or high-dimensional covariance claim.",
+      "original_audit_status": "COMPLETE",
+      "priority": null,
+      "relative_effort": "none",
+      "requirement": "Scientific reports, figures, attribution and limitations",
+      "scope": "original",
+      "status": "COMPLETE"
+    },
+    {
+      "acceptance_criteria": "Original completion criteria are checked against independently valid evidence; researcher approves exact head/version; merge normally and tag only then.",
+      "codex_can_resolve_independently": "No; researcher owns publication approval and conclusions.",
+      "consequence": "A final full-scope release claim or tag would overstate validation.",
+      "dependencies": [
+        "D3",
+        "D4",
+        "F2",
+        "E2",
+        "human approval"
+      ],
+      "domain": "Final research artifacts and public release",
+      "evidence": [
+        "docs/release/acceptance_matrix.md",
+        "docs/research/completion_matrix.md",
+        "docs/development/mission_014_validation.md"
+      ],
+      "existing": "Draft PR1 is public at dd335c2; software audit and CI pass; v0.1.0 preserved.",
+      "id": "L2",
+      "missing_evidence_or_capability": "Scientific gates D3/D4/F2/E2 are unresolved, and explicit human review/publication approval has not occurred.",
+      "mission020_evidence": [],
+      "mission020_status": "BLOCKED",
+      "mission020_update": "No status change; see existing evidence and blocker.",
+      "original_audit_status": "BLOCKED",
+      "priority": "P0",
+      "relative_effort": "small after science gates",
+      "requirement": "Full-scope release decision, PR merge and final tag",
+      "scope": "original",
+      "status": "BLOCKED"
+    }
+  ],
+  "schema_version": 1,
+  "starting_revision": "e6632f05b6eeac7171a704b9cae09ff4d3503482",
+  "status_counts": {
+    "BLOCKED": 4,
+    "COMPLETE": 14,
+    "MISSING": 2,
+    "PARTIAL": 8,
+    "UNVALIDATED": 5
+  }
+}

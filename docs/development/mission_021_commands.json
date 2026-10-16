@@ -1,0 +1,803 @@
+{
+  "commands": [
+    {
+      "root": "tmp",
+      "command": [
+        "git",
+        "clone",
+        "--no-hardlinks",
+        "/private/tmp/cerebro021-src",
+        "/private/tmp/cerebro021-016"
+      ],
+      "exit_code": 0,
+      "seconds": 0.083,
+      "output": "Cloning into '/private/tmp/cerebro021-016'...\ndone.\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "git",
+        "checkout",
+        "--detach",
+        "5a7376a694825005500cd357694fa8e27e2ce31e"
+      ],
+      "exit_code": 0,
+      "seconds": 0.046,
+      "output": "HEAD is now at 5a7376a research: freeze prospective LINK transfer protocol\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-build-isolation",
+        "-e",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 1.04,
+      "output": "Obtaining file:///private/tmp/cerebro021-016\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: cerebro\n  Building editable for cerebro (pyproject.toml): started\n  Building editable for cerebro (pyproject.toml): finished with status 'done'\n  Created wheel for cerebro: filename=cerebro-0.2.0.dev0-0.editable-py3-none-any.whl size=6817 sha256=91e2b29dd4f992ca2f0d92a3993b30c01fdd4079d7ee60ee6c24a479cf5ac1d4\n  Stored in directory: /private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pip-ephem-wheel-cache-eqorscfh/wheels/3b/54/14/10cbe250ef3a45f39fd2cb43f7ea65df7e3a429a6561e7fb8b\nSuccessfully built cerebro\nInstalling collected packages: cerebro\n  Attempting uninstall: cerebro\n    Found existing installation: cerebro 0.2.0.dev0\n    Uninstalling cerebro-0.2.0.dev0:\n      Successfully uninstalled cerebro-0.2.0.dev0\nSuccessfully installed cerebro-0.2.0.dev0\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200127.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.586,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200130.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.162,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200206.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.164,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200206_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200211.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200211_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200222.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.165,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200222_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.longitudinal",
+        "--config",
+        "configs/longitudinal_16_20200206.json",
+        "--output",
+        "data/processed/longitudinal_16_20200206"
+      ],
+      "exit_code": 0,
+      "seconds": 24.504,
+      "output": "{\n  \"frozen_source\": 0.02635429943785196,\n  \"source_mean\": 0.023871376511488927,\n  \"unlabeled_marginal_normalization\": 0.024403152977784944,\n  \"target_calibration_mean_1\": 0.05153324434993367,\n  \"direct_recalibration_1\": 0.05102214417583015,\n  \"source_plus_residual_1\": 0.05212295867777273,\n  \"target_calibration_mean_5\": 0.04287810974018622,\n  \"direct_recalibration_5\": 0.04387773497449122,\n  \"source_plus_residual_5\": 0.043267656635555776,\n  \"target_calibration_mean_15\": 0.027933758358324148,\n  \"direct_recalibration_15\": 0.027875487719276275,\n  \"source_plus_residual_15\": 0.02842923933033821,\n  \"target_calibration_mean_50\": 0.024654740401492847,\n  \"direct_recalibration_50\": 0.024728107826402817,\n  \"source_plus_residual_50\": 0.024874955309007338,\n  \"condition_anchor_alignment_50\": 0.02388620007004189,\n  \"target_calibration_mean_75\": 0.024068367178571252,\n  \"direct_recalibration_75\": 0.02376312660204529,\n  \"source_plus_residual_75\": 0.023818951364295776,\n  \"condition_anchor_alignment_75\": 0.023834595514523493\n}\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.longitudinal",
+        "--config",
+        "configs/longitudinal_16_20200211.json",
+        "--output",
+        "data/processed/longitudinal_16_20200211"
+      ],
+      "exit_code": 0,
+      "seconds": 4.168,
+      "output": "{\n  \"frozen_source\": 0.027865641826874454,\n  \"source_mean\": 0.02765507151963746,\n  \"unlabeled_marginal_normalization\": 0.028124885460983483,\n  \"target_calibration_mean_1\": 0.027894754908521342,\n  \"direct_recalibration_1\": 0.02785577526366043,\n  \"source_plus_residual_1\": 0.02796861586313994,\n  \"target_calibration_mean_5\": 0.05712727505455954,\n  \"direct_recalibration_5\": 0.057602526127857004,\n  \"source_plus_residual_5\": 0.057707614095463974,\n  \"target_calibration_mean_15\": 0.029963170054884938,\n  \"direct_recalibration_15\": 0.03089451604313197,\n  \"source_plus_residual_15\": 0.031566082685319956,\n  \"target_calibration_mean_50\": 0.02852755882300998,\n  \"direct_recalibration_50\": 0.02846237313494958,\n  \"source_plus_residual_50\": 0.028692098824630974,\n  \"condition_anchor_alignment_50\": 0.02768539150662108,\n  \"target_calibration_mean_75\": 0.027940021212194854,\n  \"direct_recalibration_75\": 0.02762171617454943,\n  \"source_plus_residual_75\": 0.02775588194991104,\n  \"condition_anchor_alignment_75\": 0.02761624078182748\n}\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.longitudinal",
+        "--config",
+        "configs/longitudinal_16_20200222.json",
+        "--output",
+        "data/processed/longitudinal_16_20200222"
+      ],
+      "exit_code": 0,
+      "seconds": 3.918,
+      "output": "{\n  \"frozen_source\": 0.02601508212641558,\n  \"source_mean\": 0.024207237099450215,\n  \"unlabeled_marginal_normalization\": 0.02500020036290875,\n  \"target_calibration_mean_1\": 0.02450201052770642,\n  \"direct_recalibration_1\": 0.024576227308872343,\n  \"source_plus_residual_1\": 0.026004134136165917,\n  \"target_calibration_mean_5\": 0.03561283835773447,\n  \"direct_recalibration_5\": 0.03471180280262382,\n  \"source_plus_residual_5\": 0.03576306622589722,\n  \"target_calibration_mean_15\": 0.028830315656990808,\n  \"direct_recalibration_15\": 0.029738355739916098,\n  \"source_plus_residual_15\": 0.03035766697461568,\n  \"target_calibration_mean_50\": 0.025627654874841546,\n  \"direct_recalibration_50\": 0.025246860556867794,\n  \"source_plus_residual_50\": 0.025505289171401158,\n  \"condition_anchor_alignment_50\": 0.024211431025437467,\n  \"target_calibration_mean_75\": 0.024875075981922994,\n  \"direct_recalibration_75\": 0.02434690143091142,\n  \"source_plus_residual_75\": 0.0244965202280203,\n  \"condition_anchor_alignment_75\": 0.024161431817806094\n}\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.representation_transfer",
+        "--config",
+        "configs/representation_16_20200206.json",
+        "--output",
+        "data/processed/representation_16_20200206"
+      ],
+      "exit_code": 0,
+      "seconds": 12.37,
+      "output": "{\"results\": 42, \"pretraining\": 3}\n"
+    },
+    {
+      "root": "cerebro021-016",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "/private/tmp/cerebro-report-mission016.py"
+      ],
+      "exit_code": 0,
+      "seconds": 10.182,
+      "output": "Matplotlib is building the font cache; this may take a moment.\n{\n  \"dates\": 3,\n  \"primary_effect\": 0.0006148764959831699,\n  \"all_dates_benefit\": false,\n  \"representation_rows\": 42\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-build-isolation",
+        "-e",
+        "."
+      ],
+      "exit_code": 0,
+      "seconds": 0.546,
+      "output": "Obtaining file:///private/tmp/cerebro021-src\n  Checking if build backend supports build_editable: started\n  Checking if build backend supports build_editable: finished with status 'done'\n  Preparing editable metadata (pyproject.toml): started\n  Preparing editable metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: cerebro\n  Building editable for cerebro (pyproject.toml): started\n  Building editable for cerebro (pyproject.toml): finished with status 'done'\n  Created wheel for cerebro: filename=cerebro-1.0.0-0.editable-py3-none-any.whl size=5851 sha256=bcfd3560d179d28498e45a7bb73cc965da8ad3ea2729ae1ecb9334cb5981f12a\n  Stored in directory: /private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pip-ephem-wheel-cache-hn19soy0/wheels/f8/96/53/d6a3648a8f21b4b6cb06ca66dd9b91676a7cbe52bbead2708a\nSuccessfully built cerebro\nInstalling collected packages: cerebro\n  Attempting uninstall: cerebro\n    Found existing installation: cerebro 0.2.0.dev0\n    Uninstalling cerebro-0.2.0.dev0:\n      Successfully uninstalled cerebro-0.2.0.dev0\nSuccessfully installed cerebro-1.0.0\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "--version"
+      ],
+      "exit_code": 0,
+      "seconds": 0.003,
+      "output": "Python 3.11.17\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-I",
+        "-c",
+        "import cerebro; print(cerebro.__file__)"
+      ],
+      "exit_code": 0,
+      "seconds": 0.008,
+      "output": "/private/tmp/cerebro021-src/src/cerebro/__init__.py\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.121,
+      "output": "No broken requirements found.\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/falcon_m1_a.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.185,
+      "output": "data/raw/falcon/sub-MonkeyL-held-in-calib_ses-20120928_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/falcon_m1_b.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.152,
+      "output": "data/raw/falcon/sub-MonkeyX-held-in-calib_ses-20121207_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/falcon_x_20121210.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.146,
+      "output": "data/raw/falcon/sub-MonkeyX-held-in-calib_ses-20121210_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200127.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.167,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200130.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.252,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200204.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.185,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200204_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/link_20200205.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.172,
+      "output": "data/raw/link/sub-Monkey-N_ses-20200205_ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/mc_maze.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.45,
+      "output": "data/raw/mc_maze/sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.0,
+      "output": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/perich_j_20160406.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.163,
+      "output": "data/raw/perich_j/sub-J_ses-CO-20160406_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dataset",
+        "configs/perich_j_20160407.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.147,
+      "output": "data/raw/perich_j/sub-J_ses-CO-20160407_behavior+ecephys.nwb\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.sense_inspect",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 6.367,
+      "output": "{\n  \"counts_shape\": [\n    14342,\n    142\n  ],\n  \"behavior\": {\n    \"hand_vel\": {\n      \"raw_shape\": [\n        287710,\n        2\n      ],\n      \"timestamp_shape\": [\n        287710\n      ],\n      \"unit\": \"m/s\",\n      \"conversion\": 0.001,\n      \"offset\": 0.0,\n      \"description\": \"Monkey hand velocity in mm/s, calculated from monkey hand position. First column x, second column y\",\n      \"comments\": \"columns=[x,y]\",\n      \"time_range_seconds\": [\n        0.0,\n        293.665\n      ],\n      \"max_sample_gap_seconds\": 0.11000000000001364,\n      \"nonfinite_values\": 0,\n      \"aligned_shape\": [\n        14342,\n        2\n      ],\n      \"valid_bins\": 14342\n    },\n    \"hand_pos\": {\n      \"raw_shape\": [\n        287710,\n        2\n      ],\n      \"timestamp_shape\": [\n        287710\n      ],\n      \"unit\": \"meters\",\n      \"conversion\": 0.001,\n      \"offset\": 0.0,\n      \"description\": \"Monkey hand position in mm. First column x, second column y\",\n      \"comments\": \"columns=[x,y]\",\n      \"time_range_seconds\": [\n        0.0,\n        293.665\n      ],\n      \"max_sample_gap_seconds\": 0.11000000000001364,\n      \"nonfinite_values\": 0,\n      \"aligned_shape\": [\n        14342,\n        2\n      ],\n      \"valid_bins\": 14342\n    },\n    \"eye_pos\": {\n      \"raw_shape\": [\n        287710,\n        2\n      ],\n      \"timestamp_shape\": [\n        287710\n      ],\n      \"unit\": \"meters\",\n      \"conversion\": 0.001,\n      \"offset\": 0.0,\n      \"description\": \"Monkey eye position in mm. First column x, second column y\",\n      \"comments\": \"columns=[x,y]\",\n      \"time_range_seconds\": [\n        0.0,\n        293.665\n      ],\n      \"max_sample_gap_seconds\": 0.11000000000001364,\n      \"nonfinite_values\": 0,\n      \"aligned_shape\": [\n        14342,\n        2\n      ],\n      \"valid_bins\": 14342\n    },\n    \"cursor_pos\": {\n      \"raw_shape\": [\n        287710,\n        2\n      ],\n      \"timestamp_shape\": [\n        287710\n      ],\n      \"unit\": \"meters\",\n      \"conversion\": 0.001,\n      \"offset\": 0.0,\n      \"description\": \"Cursor position in mm. First column x, second column y\",\n      \"comments\": \"columns=[x,y]\",\n      \"time_range_seconds\": [\n        0.0,\n        293.665\n      ],\n      \"max_sample_gap_seconds\": 0.11000000000001364,\n      \"nonfinite_values\": 0,\n      \"aligned_shape\": [\n        14342,\n        2\n      ],\n      \"valid_bins\": 14342\n    }\n  },\n  \"checks\": {\n    \"nwb_schema_errors\": [],\n    \"checksum_matches\": true,\n    \"ordered_finite_spike_timestamps\": true,\n    \"ordered_behavior_timestamps\": true,\n    \"unique_unit_and_trial_ids\": true,\n    \"ordered_nonoverlapping_trials\": true,\n    \"empty_units\": 0,\n    \"duplicate_spike_timestamps\": 0,\n    \"all_neural_bins_observed\": true,\n    \"per_unit_spike_conservation_on_retained_bins\": true,\n    \"spikes_outside_observation_intervals\": 0,\n    \"all_retained_trials_successful\": true,\n    \"m1_prefix_units_linked_to_pmd_electrodes\": 70,\n    \"retained_spikes\": 131262,\n    \"spikes_excluded_by_full_bin_tail_policy\": 407,\n    \"dropped_trial_tail_seconds\": [\n      0.0009999999999998899,\n      0.01100000000000012,\n      0.016000000000000014,\n      0.005999999999998451,\n      0.006000000000002004,\n      0.011000000000002785,\n      0.006000000000000227,\n      0.010999999999999233,\n      0.010999999999999233,\n      0.0009999999999976694,\n      0.015999999999998238,\n      0.006000000000000227,\n      0.015999999999998238,\n      0.015999999999998238,\n      0.0010000000000047748,\n      0.011000000000002785,\n      0.0009999999999976694,\n      0.011000000000002785,\n      0.016000000000005343,\n      0.0010000000000047748,\n      0.006000000000000227,\n      0.016000000000005343,\n      0.0010000000000047748,\n      0.015999999999991132,\n      0.016000000000005343,\n      0.01099999999999568,\n      0.01100000000000989,\n      0.01099999999999568,\n      0.01100000000000989,\n      0.006000000000000227,\n      0.000999999999990564,\n      0.0010000000000047748,\n      0.016000000000005343,\n      0.016000000000005343,\n      0.006000000000000227,\n      0.016000000000005343,\n      0.01099999999999568,\n      0.006000000000000227,\n      0.0010000000000047748,\n      0.01099999999999568,\n      0.006000000000000227,\n      0.0059999999999860165,\n      0.006000000000000227,\n      0.01099999999999568,\n      0.0009999999999763531,\n      0.005999999999971806,\n      0.0010000000000047748,\n      0.006000000000000227,\n      0.006000000000028649,\n      0.006000000000000227,\n      0.005999999999971806,\n      0.016000000000019554,\n      0.005999999999971806,\n      0.015999999999991132,\n      0.011000000000024102,\n      0.006000000000000227,\n      0.01099999999999568,\n      0.015999999999991132,\n      0.006000000000000227,\n      0.010999999999967258,\n      0.0010000000000047748,\n      0.0009999999999763531,\n      0.0010000000000047748,\n      0.0010000000000047748,\n      0.016000000000019554,\n      0.011000000000024102,\n      0.005999999999971806,\n      0.016000000000019554,\n      0.01599999999996271,\n      0.006000000000000227,\n      0.016000000000019554,\n      0.006000000000028649,\n      0.0010000000000047748,\n      0.0009999999999763531,\n      0.015999999999991132,\n      0.015999999999991132,\n      0.006000000000028649,\n      0.006000000000000227,\n      0.0010000000000047748,\n      0.010999999999967258,\n      0.005999999999971806,\n      0.01099999999999568,\n      0.0009999999999763531,\n      0.01099999999999568,\n      0.015999999999991132,\n      0.010999999999967258,\n      0.0010000000000047748,\n      0.016000000000019554,\n      0.0009999999999763531,\n      0.005999999999971806,\n      0.011000000000024102,\n      0.016000000000019554,\n      0.016000000000019554,\n      0.016000000000019554,\n      0.006000000000028649,\n      0.0010000000000331966,\n      0.006000000000028649,\n      0.01599999999996271,\n      0.01599999999996271,\n      0.005999999999971806\n    ],\n    \"all_behavior_bins_valid\": true\n  },\n  \"figures\": [\n    \"reports/figures/sense_01_raster.png\",\n    \"reports/figures/sense_01_population.png\",\n    \"reports/figures/sense_01_trajectory.png\",\n    \"reports/figures/sense_01_aligned.png\"\n  ]\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.characterize",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 4.181,
+      "output": "{\n  \"5ms\": {\n    \"bins\": 57522,\n    \"zero_fraction\": 0.9840002428954311,\n    \"excluded_spikes\": 45\n  },\n  \"20ms\": {\n    \"bins\": 14342,\n    \"zero_fraction\": 0.9391642000938836,\n    \"excluded_spikes\": 407\n  },\n  \"50ms\": {\n    \"bins\": 5710,\n    \"zero_fraction\": 0.8639106090130978,\n    \"excluded_spikes\": 952\n  }\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.characterize_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 0.968,
+      "output": "reports/figures/signal_03_statistics.png\nreports/figures/signal_03_rates.png\nreports/figures/signal_03_sensitivity.png\nreports/figures/signal_03_exclusions.png\nreports/figures/signal_03_metadata.png\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.event_audit",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.452,
+      "output": "{\n  \"repetition_histogram\": {\n    \"2\": 6,\n    \"3\": 21\n  },\n  \"conditions_passing_descriptive_screen\": 21,\n  \"residual_feasibility\": \"unsupported: each compatible condition has only 2\\u20133 training trials\"\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.event_aligned",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.318,
+      "output": "{\n  \"primary_retained_spikes\": 53670,\n  \"paired_mean_unit_change_hz\": 1.2300469483568075,\n  \"residual_correlations\": {\n    \"status\": \"not estimated: inadequate compatible-condition repetitions\",\n    \"qualifying_conditions\": 0,\n    \"per_condition_time_covariance_rank_ceiling\": 2,\n    \"units\": 142\n  },\n  \"primary_exclusions\": []\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.event_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 1.713,
+      "output": "reports/figures/event_04_units.png\nreports/figures/event_04_population.png\nreports/figures/event_04_conditions.png\nreports/figures/event_04_residuals.png\nreports/figures/event_04_correlations.png\nreports/figures/event_04_timing.png\nreports/figures/event_04_coverage.png\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.nwb_audit",
+        "configs/mc_maze.json",
+        "--output",
+        "reports/mc_maze_native_audit.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.809,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.maze_feasibility",
+        "configs/mc_maze.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.706,
+      "output": "{\n  \"training_trials\": 1721,\n  \"unused_validation_trials\": 574,\n  \"repetition_histogram\": {\n    \"13\": 6,\n    \"14\": 19,\n    \"15\": 15,\n    \"16\": 30,\n    \"17\": 22,\n    \"18\": 9,\n    \"19\": 4,\n    \"20\": 3\n  },\n  \"residual_feasibility\": \"3 conditions pass the declared 20-trial screening threshold; screening is not evidence of reliable high-dimensional covariance. No residual correlation inference performed in this feasibility audit.\"\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.nwb_audit",
+        "configs/perich_j_20160406.json",
+        "--output",
+        "data/processed/perich_06_audit.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.357,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.nwb_audit",
+        "configs/perich_j_20160407.json",
+        "--output",
+        "data/processed/perich_07_audit.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.355,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.benchmark",
+        "configs/mc_maze_small.json"
+      ],
+      "exit_code": 0,
+      "seconds": 4.533,
+      "output": "{\n  \"counts_shape\": [\n    100,\n    70,\n    107\n  ],\n  \"metrics\": {\n    \"mean\": {\n      \"mse_m2_s2\": 0.03832481625668137,\n      \"trial_mse_m2_s2\": [\n        0.04957136176309927,\n        0.02769012046924707,\n        0.05257528922357017,\n        0.051007570551376946,\n        0.024849967278494808,\n        0.035567881532214324,\n        0.04193429517960745,\n        0.06737985483014315,\n        0.04892742384948567,\n        0.034517581139480016,\n        0.016876012980210943,\n        0.025375114593095705,\n        0.03085138355985263,\n        0.025839013296293824,\n        0.021771680044701525,\n        0.04522125200566294,\n        0.03620177150854401,\n        0.039453683891621384,\n        0.04286861864369197,\n        0.043802847068990916,\n        0.03161622190891475,\n        0.03525679622164362,\n        0.030636416009588795,\n        0.05518651207309157,\n        0.04314173679441083\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.033941315431552765,\n        0.04276574525330387\n      ],\n      \"pooled_r2_by_coordinate\": [\n        -0.0006899063378389414,\n        -0.00015511900125675382\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"go_time_template\": {\n      \"mse_m2_s2\": 0.03748736283195477,\n      \"trial_mse_m2_s2\": [\n        0.04943723784920713,\n        0.03311331372778969,\n        0.057458289458773085,\n        0.04666682620009348,\n        0.027991259406864304,\n        0.033132038443471554,\n        0.03519397119609085,\n        0.06693881716890081,\n        0.04186330734435455,\n        0.036319611908213034,\n        0.021896476389757686,\n        0.01991520816877688,\n        0.0362232836582006,\n        0.02072077405153597,\n        0.025420502226427773,\n        0.04634788041460544,\n        0.031150409097725984,\n        0.03926307724012193,\n        0.038972316207055525,\n        0.03737378093950261,\n        0.026519608018733494,\n        0.035436292076994544,\n        0.03258521764989441,\n        0.05555616751959923,\n        0.04168840443617883\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.03342279792996679,\n        0.042068112688698193\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.034696767242539894,\n        0.00657994600968792\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"linear\": {\n      \"mse_m2_s2\": 0.03545680554342694,\n      \"trial_mse_m2_s2\": [\n        0.04484424520711597,\n        0.030951873502658208,\n        0.04268688313594584,\n        0.042188444253057525,\n        0.025080255252577916,\n        0.03271229824270586,\n        0.03361288850783046,\n        0.05682440551116889,\n        0.0401509929727612,\n        0.03534311141325795,\n        0.019722895393518212,\n        0.02645370643539548,\n        0.03540390573513585,\n        0.029490706808203523,\n        0.020994795855918336,\n        0.03735601727598988,\n        0.037175559378014617,\n        0.0355881913312152,\n        0.037696041488401826,\n        0.034418087414066934,\n        0.03022062282491695,\n        0.03642565292566799,\n        0.02821127469409463,\n        0.051593605976075416,\n        0.04127367704997887\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.032352621438226,\n        0.038575837967272555\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.06467812235503079,\n        0.08533481199547976\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"ridge\": {\n      \"mse_m2_s2\": 0.03542143782686373,\n      \"trial_mse_m2_s2\": [\n        0.04485416848225725,\n        0.030834198892830265,\n        0.04277316668295151,\n        0.042246710576185384,\n        0.025004242105105295,\n        0.03267347565173889,\n        0.03362533974316543,\n        0.05688625028461375,\n        0.04020539391137762,\n        0.035199627653307426,\n        0.019619356434906025,\n        0.02634967800783959,\n        0.03526907034023391,\n        0.029342781081289036,\n        0.020915978639836432,\n        0.03740018469379799,\n        0.037109920579661546,\n        0.035573149101102736,\n        0.03770643262438563,\n        0.034489549580444506,\n        0.030182597959981156,\n        0.03629814212900227,\n        0.028186302980540725,\n        0.05158507972379461,\n        0.04120514781124428\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.032311900972561154,\n        0.038542655805351156\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.06573654760849845,\n        0.08610688226611507\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"kalman\": {\n      \"mse_m2_s2\": 0.03131414545153484,\n      \"trial_mse_m2_s2\": [\n        0.03767588609559815,\n        0.022602475138040316,\n        0.041984194210741156,\n        0.033648077614178075,\n        0.01834590534168393,\n        0.027917475552841395,\n        0.029783976759828856,\n        0.036886762033603485,\n        0.034034764348458764,\n        0.031171007891880098,\n        0.016332935018001874,\n        0.027560638929910362,\n        0.03371391149427701,\n        0.029791833343497397,\n        0.022585763582542863,\n        0.03693530542302016,\n        0.035862425813944755,\n        0.031178589713136303,\n        0.032708454516428516,\n        0.040129176142662586,\n        0.0245289161508654,\n        0.034559722428311,\n        0.022285550140068087,\n        0.04697670262671619,\n        0.03365318597813429\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.02843448815279109,\n        0.034061438629719935\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.2352106546260484,\n        0.1237016685807707\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"pca_ridge\": {\n      \"mse_m2_s2\": 0.036225690300699366,\n      \"trial_mse_m2_s2\": [\n        0.04646818501351719,\n        0.030034864085597173,\n        0.04702780049804937,\n        0.04723680669450253,\n        0.024789164920048536,\n        0.03236535532366095,\n        0.034783054227033504,\n        0.0624047898632161,\n        0.04345624452940604,\n        0.03282725381735181,\n        0.019822920320885302,\n        0.024759556077498007,\n        0.03276006086385863,\n        0.026627252143127476,\n        0.020077908953840776,\n        0.04020683057017972,\n        0.037713564744408276,\n        0.03623497327727155,\n        0.040480706276793066,\n        0.03696739072657328,\n        0.031043731295307037,\n        0.03450103266439109,\n        0.02897335127173148,\n        0.054035583124444196,\n        0.04004387623479113\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.03259482031520392,\n        0.04001056111606232\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.05351765417071974,\n        0.05529880913065233\n      ],\n      \"checkpoint_restoration_passed\": true\n    },\n    \"fa_ridge\": {\n      \"mse_m2_s2\": 0.03734294338331662,\n      \"trial_mse_m2_s2\": [\n        0.04900763576559584,\n        0.028907750157872985,\n        0.04944088456682826,\n        0.04785874755554449,\n        0.025140451930547418,\n        0.033833757185366145,\n        0.039629321073347545,\n        0.06534641257237862,\n        0.0451687907807364,\n        0.03320054894168545,\n        0.017995005358686766,\n        0.024791765042346196,\n        0.031930486308849315,\n        0.026372946716545952,\n        0.019995313406233197,\n        0.04321473372721385,\n        0.03635749496037353,\n        0.03875367467387295,\n        0.041719094118850567,\n        0.03955970471280433,\n        0.03143005758288044,\n        0.0349760249643898,\n        0.03164939150942884,\n        0.05483912623780478,\n        0.042454464732731685\n      ],\n      \"trial_bootstrap_mse_interval\": [\n        0.0333082267847063,\n        0.04143517912841073\n      ],\n      \"pooled_r2_by_coordinate\": [\n        0.033540821497650586,\n        0.0158586070592579\n      ],\n      \"checkpoint_restoration_passed\": true\n    }\n  }\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.sequence_benchmark"
+      ],
+      "exit_code": 0,
+      "seconds": 10.564,
+      "output": "[\n  {\n    \"model\": \"mlp\",\n    \"seed\": 0,\n    \"mse\": 0.03725485934532644\n  },\n  {\n    \"model\": \"mlp\",\n    \"seed\": 1,\n    \"mse\": 0.03823749709130192\n  },\n  {\n    \"model\": \"mlp\",\n    \"seed\": 2,\n    \"mse\": 0.03664760321808396\n  },\n  {\n    \"model\": \"gru\",\n    \"seed\": 0,\n    \"mse\": 0.0364920741929353\n  },\n  {\n    \"model\": \"gru\",\n    \"seed\": 1,\n    \"mse\": 0.03668328193531913\n  },\n  {\n    \"model\": \"gru\",\n    \"seed\": 2,\n    \"mse\": 0.0368410439359877\n  },\n  {\n    \"model\": \"lstm\",\n    \"seed\": 0,\n    \"mse\": 0.036720797264590696\n  },\n  {\n    \"model\": \"lstm\",\n    \"seed\": 1,\n    \"mse\": 0.03659871468689253\n  },\n  {\n    \"model\": \"lstm\",\n    \"seed\": 2,\n    \"mse\": 0.03659161890422169\n  },\n  {\n    \"model\": \"temporal_cnn\",\n    \"seed\": 0,\n    \"mse\": 0.030806976044315454\n  },\n  {\n    \"model\": \"temporal_cnn\",\n    \"seed\": 1,\n    \"mse\": 0.03056816721061374\n  },\n  {\n    \"model\": \"temporal_cnn\",\n    \"seed\": 2,\n    \"mse\": 0.031780651698965955\n  },\n  {\n    \"model\": \"transformer\",\n    \"seed\": 0,\n    \"mse\": 0.03623747517302877\n  },\n  {\n    \"model\": \"transformer\",\n    \"seed\": 1,\n    \"mse\": 0.03628865071284858\n  },\n  {\n    \"model\": \"transformer\",\n    \"seed\": 2,\n    \"mse\": 0.03531600935872087\n  },\n  {\n    \"model\": \"state_space\",\n    \"seed\": 0,\n    \"mse\": 0.03493961426575289\n  },\n  {\n    \"model\": \"state_space\",\n    \"seed\": 1,\n    \"mse\": 0.03472491039437732\n  },\n  {\n    \"model\": \"state_space\",\n    \"seed\": 2,\n    \"mse\": 0.0340823239641058\n  }\n]\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.representation_benchmark"
+      ],
+      "exit_code": 0,
+      "seconds": 3.145,
+      "output": "[\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04506670475336891,\n    \"trial_mse_m2_s2\": [\n      0.071039160836966,\n      0.058303108352860775,\n      0.05712329845746227,\n      0.05483261758846857,\n      0.0409919867032128,\n      0.04968418729233763,\n      0.03157743182153471,\n      0.07069564079939139,\n      0.055460159640525475,\n      0.04310495994659727,\n      0.02248128047779828,\n      0.02104435215413974,\n      0.04271688220659785,\n      0.03216402561260556,\n      0.027269641523408602,\n      0.05342092618556753,\n      0.030735525758116104,\n      0.04739400479696852,\n      0.05700419698691006,\n      0.03962103669528342,\n      0.043266919940335345,\n      0.05215102213449646,\n      0.04716645869031896,\n      0.04507117909200228,\n      0.03234761514031698\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.21080402465527737,\n      -0.13798649070055014\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"65b676b2f2a7f91dd3e400184b4aadba2baf624095c554688e52d6739a82dd72\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04526013860781684,\n    \"trial_mse_m2_s2\": [\n      0.07093582760086178,\n      0.057346999135445276,\n      0.0579381040240442,\n      0.054508772412529986,\n      0.041651473089557634,\n      0.049134023053599214,\n      0.03234800665915187,\n      0.07118776389265796,\n      0.056503621576197954,\n      0.04329895045419266,\n      0.022641586308755107,\n      0.0211815937795868,\n      0.04253492438289911,\n      0.03179046139966404,\n      0.02792111678034355,\n      0.05405678637750566,\n      0.03054691802668268,\n      0.047790696002892756,\n      0.05619823917959813,\n      0.04017499507862469,\n      0.043745476717563396,\n      0.05281407630305361,\n      0.04764258233264932,\n      0.04520136966976898,\n      0.03240910095759432\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.21378269734407573,\n      -0.1453516830939221\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"184ea0f34ff4260cb4ce131ebebce08a560c415ce8ea2b9849dd4f57426d4bd4\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 0,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04246139030565546,\n    \"trial_mse_m2_s2\": [\n      0.05587785781749774,\n      0.03481713489841124,\n      0.05979304114833588,\n      0.052202294004953374,\n      0.029675314611696084,\n      0.03657923330138982,\n      0.04733062877940547,\n      0.07195806357918137,\n      0.04939436124870805,\n      0.03990983463816418,\n      0.02505460177659772,\n      0.030152266333066315,\n      0.04081756055245121,\n      0.027173847829384035,\n      0.02619843731345547,\n      0.04655016458400157,\n      0.0366631758984799,\n      0.0441298145437516,\n      0.04910149057644423,\n      0.04708580424506176,\n      0.03275120778869021,\n      0.0422510451929357,\n      0.03435768142784433,\n      0.06029187941954273,\n      0.041418016131936373\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.1592070726458299,\n      -0.05162242188850574\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.052724003791809\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.02578604221344\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 0.9996505379676819\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.9742836952209473\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9496390223503113\n      }\n    ],\n    \"checkpoint_sha256\": \"78c99a41b5231abdfabe5aa9f5c93ed4b91f33d62cdfd590007eab24234801ed\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 0,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04249945161132246,\n    \"trial_mse_m2_s2\": [\n      0.056165800835503245,\n      0.03506095182959721,\n      0.0601207828109667,\n      0.05186403851487162,\n      0.02989165150843797,\n      0.037219189387786684,\n      0.04690141003668076,\n      0.07138435881953414,\n      0.04890739066734457,\n      0.03972307873881156,\n      0.02531234882502371,\n      0.029919084541777663,\n      0.04117314585164945,\n      0.026898224301991215,\n      0.02638417966138134,\n      0.04724402603653399,\n      0.036240467470431886,\n      0.04418736335021526,\n      0.04939093928243648,\n      0.04705760357079818,\n      0.03286180332135648,\n      0.04280790852394062,\n      0.03486621357234129,\n      0.05987969676400081,\n      0.04102463205964847\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.16297969559793368,\n      -0.04950810640013015\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0481328964233398\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0211830139160156\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 0.9950463175773621\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.9696756601333618\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9450258016586304\n      }\n    ],\n    \"checkpoint_sha256\": \"d0caf997c77bba141f1cdbbf596dc519d66f9e38d1e8b96c386fb6d0d3004d69\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.0405793107585102,\n    \"trial_mse_m2_s2\": [\n      0.05889427841489007,\n      0.03992665790579707,\n      0.054629036669293814,\n      0.05908004090113391,\n      0.02579094906975255,\n      0.036125853177432894,\n      0.034630436767076375,\n      0.07171747351510843,\n      0.04721635084910846,\n      0.04198780218230395,\n      0.017519365481952563,\n      0.02261411718534691,\n      0.03435364178042596,\n      0.034189284377256844,\n      0.01695621599748628,\n      0.0413162461586096,\n      0.03659817600815346,\n      0.03702814755147489,\n      0.046218085615903536,\n      0.04283915619795626,\n      0.03897545182322598,\n      0.036991479449414943,\n      0.03469664479764746,\n      0.05656477432882801,\n      0.047623102757174775\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.09229450447420495,\n      -0.022378710357717546\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"d40ce91b238aa13a70070014402d36325abe95e616b434e3c08c569e1861d193\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.0406367266292466,\n    \"trial_mse_m2_s2\": [\n      0.0584710315032211,\n      0.03953683373727656,\n      0.05516691200438457,\n      0.05881321499752264,\n      0.026155528848074865,\n      0.035498087593397044,\n      0.03500647213218233,\n      0.07183517525726098,\n      0.04764805973273339,\n      0.04244762523493138,\n      0.017842923849290062,\n      0.022666372933825545,\n      0.034566376451853974,\n      0.03379188877874577,\n      0.017214573981610266,\n      0.04173558245234775,\n      0.03665697387153805,\n      0.037200479358240494,\n      0.04617066102011974,\n      0.04236501103762319,\n      0.039042909787681615,\n      0.03724303840300042,\n      0.03488323739859674,\n      0.05635456502038579,\n      0.04760463034532065\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.09297635409206562,\n      -0.024791106017561182\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"112af40b48f7c0497ae6421918022926ed189fa23c96f2b141813219970d82a0\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 0,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.040839928022723494,\n    \"trial_mse_m2_s2\": [\n      0.050318133625201246,\n      0.02955945226020687,\n      0.05437913443464778,\n      0.05563161426990509,\n      0.023882232757938705,\n      0.03194552605169902,\n      0.050596707217975934,\n      0.07396235832253661,\n      0.052380670579734626,\n      0.04167993178072952,\n      0.01877365589766668,\n      0.03223346354232326,\n      0.03384979540328204,\n      0.029229807936476077,\n      0.020681581549321412,\n      0.04119120466983953,\n      0.040534760875043416,\n      0.039364579848277376,\n      0.04411966244815158,\n      0.04868493017580892,\n      0.03333744034685894,\n      0.036011834835461616,\n      0.028187661347365257,\n      0.06415595898142167,\n      0.046306101410214004\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.08378149150151049,\n      -0.04631028201848908\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0452550649642944\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0278300046920776\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0109033584594727\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.9944452047348022\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9784221649169922\n      }\n    ],\n    \"checkpoint_sha256\": \"a368f9b0c5bd1580b3f55e619e96eda5e7337abfec3ee400c8ecc22cdee88920\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 0,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04076022473617695,\n    \"trial_mse_m2_s2\": [\n      0.05047902751539779,\n      0.029606270504601812,\n      0.05447519253677518,\n      0.05505948301623877,\n      0.023951383917949133,\n      0.032310293075227835,\n      0.050185670339673416,\n      0.07336088967759044,\n      0.05181430879916586,\n      0.041302771470858944,\n      0.018953896631627037,\n      0.03209104809207439,\n      0.03402244590443416,\n      0.028931845234475156,\n      0.020799113341463855,\n      0.04162544886276601,\n      0.04002033641740068,\n      0.039366873784393144,\n      0.0443518080939746,\n      0.04857266889463681,\n      0.03335359424241352,\n      0.03636679740413168,\n      0.02852174601839764,\n      0.06366766829223798,\n      0.04581503633651792\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.08127302036655926,\n      -0.04470820292925537\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0438401699066162\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0263721942901611\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0094060897827148\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.9929097890853882\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9768484830856323\n      }\n    ],\n    \"checkpoint_sha256\": \"57ed6dee8d6e4c64784cd34a4ffa669f2439e22d68d4afc320411d7ee3d18530\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.03650835331204545,\n    \"trial_mse_m2_s2\": [\n      0.052324892366461234,\n      0.0306426098947164,\n      0.05119353459512745,\n      0.05094618588622479,\n      0.025534387298755724,\n      0.030492582603536322,\n      0.03283930190032672,\n      0.06270127431357239,\n      0.042550392225967015,\n      0.03485584290701091,\n      0.01876230195365671,\n      0.022095243415288218,\n      0.034930285785580946,\n      0.0296603483001163,\n      0.0193725381690125,\n      0.03807723568030308,\n      0.037242880723308794,\n      0.03112802538720312,\n      0.04255775684055774,\n      0.03905422060258235,\n      0.029594474786893123,\n      0.0318356597030084,\n      0.03052342711788654,\n      0.0502803157222931,\n      0.0435131146217463\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.008880018550798119,\n      0.08958743921042878\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"0b2ed97c034f6c1675de61576d0d0a953cf343ba41aaae9055eb0d51dcfe5ded\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 0,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.03656277149422219,\n    \"trial_mse_m2_s2\": [\n      0.052192547889210274,\n      0.030409155037787818,\n      0.05133245757596899,\n      0.05106136121790051,\n      0.025830452463787172,\n      0.029993795707704215,\n      0.03324190558231732,\n      0.06280184770420408,\n      0.043076942581370924,\n      0.03519982545015389,\n      0.018811308778220178,\n      0.022148412361398293,\n      0.03478625613300767,\n      0.029638475319030702,\n      0.019482334522129767,\n      0.03811498883244179,\n      0.03720653891651154,\n      0.031148533672705998,\n      0.042697521507223356,\n      0.03879731167113868,\n      0.029656893621063787,\n      0.03214615899811337,\n      0.03031614905006057,\n      0.05026502697787424,\n      0.04371308578422974\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.007775188779068132,\n      0.08781383224026063\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"61147059ead9036472b65f574251ddc5e6b94ffdeac9381640bd3aceae8a6776\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 0,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.04009713692124989,\n    \"trial_mse_m2_s2\": [\n      0.05092472757760114,\n      0.028708766407222714,\n      0.052968587312679755,\n      0.053775866261976064,\n      0.023828993735278782,\n      0.03103523713369114,\n      0.04972543909556693,\n      0.07279681104125084,\n      0.05094028848547101,\n      0.04063085066980839,\n      0.018614496205063218,\n      0.03132642964707001,\n      0.033953857657684966,\n      0.02883048135818856,\n      0.02044007886766988,\n      0.04064765696502825,\n      0.04025623065148471,\n      0.03833738737555181,\n      0.04288708869121312,\n      0.047806781153817306,\n      0.033017342766306655,\n      0.03537894758645685,\n      0.027939673788815633,\n      0.06245888173550906,\n      0.04519752086084034\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.06096788226964289,\n      -0.030749080761982572\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0667500495910645\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.054532527923584\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.042722225189209\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0313026905059814\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0202561616897583\n      }\n    ],\n    \"checkpoint_sha256\": \"e8c332eeaef7fa87d914bae920984a762fd9203e7cbf4dd747831ec1a2b83e07\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 0,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.040026511751072906,\n    \"trial_mse_m2_s2\": [\n      0.0511803720078429,\n      0.028697584884387263,\n      0.053069090953864945,\n      0.053380342329902374,\n      0.023997048890204795,\n      0.03138090861667252,\n      0.04930339654163816,\n      0.07234534523060268,\n      0.050493848575343156,\n      0.04031307377522274,\n      0.01874246005551357,\n      0.03106820465713961,\n      0.03407389528554231,\n      0.0285444226462588,\n      0.020474651722239594,\n      0.04110068216252461,\n      0.03983060253680464,\n      0.0383107390275504,\n      0.042985575365515616,\n      0.04768618357348269,\n      0.03298457433036775,\n      0.035679644377961346,\n      0.02823815028608244,\n      0.06201251033753713,\n      0.04476948560662073\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.05862754379628088,\n      -0.02946096776687024\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0650626420974731\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0527929067611694\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0409388542175293\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0294815301895142\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0184028148651123\n      }\n    ],\n    \"checkpoint_sha256\": \"6b817b9797908568a0d4d9fd5242d0d29ad351e6743ee9eadcc36a3b5d54a4a9\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04775562132718173,\n    \"trial_mse_m2_s2\": [\n      0.06709760118877976,\n      0.05404172786636393,\n      0.06021500186840072,\n      0.03892532242088735,\n      0.029172579584554825,\n      0.06006864239777389,\n      0.03605980691726727,\n      0.06757819873986279,\n      0.04670720994787473,\n      0.04333611196072113,\n      0.02763616086888446,\n      0.040228974371467476,\n      0.05334704630352909,\n      0.043575083449967134,\n      0.02509171311365238,\n      0.05352349103406689,\n      0.048339948940623385,\n      0.05258037018206599,\n      0.0477425090323607,\n      0.04474435566479821,\n      0.036771263862690216,\n      0.05235604011917964,\n      0.052302601626069624,\n      0.07502437950127851,\n      0.03742439221642298\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.2003411159571078,\n      -0.29837608248078595\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"bf7c316bd28331d4b26991fee9be31b77f47c795e8dc766d1692086ddc2336dd\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.047337833454457814,\n    \"trial_mse_m2_s2\": [\n      0.06708127089770892,\n      0.054121320923950465,\n      0.05957745030145296,\n      0.038070170479857196,\n      0.029084755249920807,\n      0.05969482714174168,\n      0.03574319878331708,\n      0.06678660098083249,\n      0.04526068830720322,\n      0.04248715024054215,\n      0.02719005532159204,\n      0.038383919668410864,\n      0.053254964355122225,\n      0.04346572910538019,\n      0.024333383816772726,\n      0.05369802208840907,\n      0.04805476533394112,\n      0.05170350486424027,\n      0.04843629104629757,\n      0.0441207862364315,\n      0.03610496752243991,\n      0.05248719888947866,\n      0.05209864307057643,\n      0.07431923248797723,\n      0.03788693924784846\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.18552186894471623,\n      -0.2918463220162777\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"aecb6dcdd54427f65cd4ae5bfbd02cfcddf34821121d7056eec8d7c053df48c7\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 1,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04407541665742794,\n    \"trial_mse_m2_s2\": [\n      0.05417149135509914,\n      0.03979667138657792,\n      0.06935299006574795,\n      0.04476276207687612,\n      0.03484059113201332,\n      0.05348065400607446,\n      0.04008758103060719,\n      0.0673256512568787,\n      0.0466644965993774,\n      0.0296953439814354,\n      0.032804036284193455,\n      0.01695088006910896,\n      0.04692065399300135,\n      0.025632482598060967,\n      0.035582378819802675,\n      0.06556835168910384,\n      0.027624438843819005,\n      0.04984031220091226,\n      0.05670630478033945,\n      0.04004816482678095,\n      0.03310522078758275,\n      0.05030785674953089,\n      0.0489710277655124,\n      0.050431619054743,\n      0.041213455082518946\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.22845736704375974,\n      -0.0634293047360901\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.040635108947754\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.015284776687622\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 0.9907038807868958\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.9668603539466858\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9437195658683777\n      }\n    ],\n    \"checkpoint_sha256\": \"fcf3c49e450e146ad047ca44c03fa80dc1b45ea5ae93dd490d43653f823c0733\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 1,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.044103243956230935,\n    \"trial_mse_m2_s2\": [\n      0.054310877056272515,\n      0.039637227539041496,\n      0.06958797379538494,\n      0.04474599243463967,\n      0.03519700939669103,\n      0.0533984493485647,\n      0.039773525360957,\n      0.06738929766964263,\n      0.04639943140798416,\n      0.029612372101492677,\n      0.0328071735386558,\n      0.016996306323132596,\n      0.047037738952155815,\n      0.025626807802655003,\n      0.03579803105509956,\n      0.06553896703639703,\n      0.02746394139399799,\n      0.049787947843269606,\n      0.056729349570574315,\n      0.040099754696016544,\n      0.033189839631699726,\n      0.0505753390482762,\n      0.04884240739557373,\n      0.05069221700418708,\n      0.04134312150341143\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.22965002262774337,\n      -0.06363430126230352\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.040428876876831\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0149738788604736\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 0.9902924299240112\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 0.966350257396698\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9431116580963135\n      }\n    ],\n    \"checkpoint_sha256\": \"a08e27a0cf7f448176c4cef8da23893ff3fb476e039b4069f93b01ba803808d3\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.0392050354915968,\n    \"trial_mse_m2_s2\": [\n      0.04144839430804407,\n      0.0405299426707141,\n      0.047005327272536576,\n      0.04503364384427551,\n      0.022599138511300576,\n      0.038200441007231446,\n      0.03615011069783182,\n      0.06437833119934323,\n      0.047018540886865134,\n      0.03937339383783263,\n      0.016635059355059555,\n      0.03478039066035423,\n      0.03919224863961769,\n      0.036652578475908235,\n      0.021825421973527596,\n      0.042050728125631924,\n      0.04512280308521778,\n      0.03691986433525596,\n      0.044626882752718804,\n      0.041554666131063685,\n      0.028011909379006158,\n      0.03910147514009769,\n      0.03310198579014857,\n      0.06389877154347677,\n      0.03491383766686017\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.05842109662261974,\n      0.015733247731900546\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"f2882eea4de7b8dd063dc7e84b64db044bf2be7d2dbd2640b4304afceffa671f\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.03917148779929619,\n    \"trial_mse_m2_s2\": [\n      0.04167693070973867,\n      0.04072996781147827,\n      0.046906563248676605,\n      0.04456081636160547,\n      0.022433694280428334,\n      0.038046054141674,\n      0.035833666780056186,\n      0.06404310587046964,\n      0.04633396917969869,\n      0.03909731700977186,\n      0.01688630461637563,\n      0.034534030033827226,\n      0.03916185112143765,\n      0.036748779537659884,\n      0.021751584015881884,\n      0.04230546146361011,\n      0.04519605052685912,\n      0.03703708693244729,\n      0.04485891627759765,\n      0.041547646047025065,\n      0.028013534961550984,\n      0.03924221792537002,\n      0.03346125964956684,\n      0.06356938244039204,\n      0.03531100403920564\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.05791343475849975,\n      0.0170206042569927\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"bf6e3276f81c9dc0a0be4d8d8ef9c73c197a476b201c5c597645b8cc04790731\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 1,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04098490299033173,\n    \"trial_mse_m2_s2\": [\n      0.04774225091148902,\n      0.031803784371310914,\n      0.05977162567427558,\n      0.04971018018093353,\n      0.02758245968604282,\n      0.047030991902852176,\n      0.04240846729979273,\n      0.06937794393564384,\n      0.05004652422225602,\n      0.03100670001240323,\n      0.02366008545344395,\n      0.018524206169437837,\n      0.03800065468020275,\n      0.027319587349101025,\n      0.02777003138117854,\n      0.05698109363371655,\n      0.03093311617728632,\n      0.04207021531173145,\n      0.04990143739600533,\n      0.04143269335741324,\n      0.0337503815735237,\n      0.042170058002368845,\n      0.03877380713713018,\n      0.051725221584229576,\n      0.04512905735452415\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.08495612618594706,\n      -0.05301333429960997\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0722562074661255\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.054293155670166\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0368213653564453\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.019818663597107\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0032663345336914\n      }\n    ],\n    \"checkpoint_sha256\": \"94e4e0cbf17643880fe28fc941871b20123c303496aee5ec0ece8c258e9b635d\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 1,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04091521222453337,\n    \"trial_mse_m2_s2\": [\n      0.04773289289089744,\n      0.03165820179134666,\n      0.05987918860903918,\n      0.04956454661603473,\n      0.027796175096158015,\n      0.0469368612264978,\n      0.04195863808231023,\n      0.06935234361745465,\n      0.04965941877657026,\n      0.030829956551595872,\n      0.023569652155088137,\n      0.018382726679382528,\n      0.03802522670425426,\n      0.027239936861194254,\n      0.027851428751567795,\n      0.05687676536297429,\n      0.030694044888807948,\n      0.04197874879853693,\n      0.04986717807782906,\n      0.041353915355448335,\n      0.033797745473905426,\n      0.04225484951644196,\n      0.03862694861539138,\n      0.05181157181162925,\n      0.04518134330297784\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.08170791516792875,\n      -0.05279218008553954\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0704578161239624\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0524439811706543\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0349329710006714\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0179049968719482\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.001336932182312\n      }\n    ],\n    \"checkpoint_sha256\": \"e0ef2590e2c4b6d786d926c1938a010a7c817645cf6ca53fe78019d72aaa9c4e\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.03582404189094214,\n    \"trial_mse_m2_s2\": [\n      0.045017316403254744,\n      0.03245402786852213,\n      0.04869082945909681,\n      0.03892302062778016,\n      0.02244542316780675,\n      0.03115884875570995,\n      0.03544763109404694,\n      0.05800253838918675,\n      0.04443822917681475,\n      0.03594367715020127,\n      0.016736532077468256,\n      0.028342545841818455,\n      0.0365905285650877,\n      0.030364125957708207,\n      0.019439693983886803,\n      0.03935321918217481,\n      0.03700072935591999,\n      0.032986549523287015,\n      0.039243474024378236,\n      0.036185782353261926,\n      0.029356649722252097,\n      0.03469571465800895,\n      0.032260442887128885,\n      0.05566501734498093,\n      0.03485849970377101\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.05070596159142826,\n      0.08065308327698584\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"0eefe817bdc5b1487db42876b33301f6b4c8871b8d60718bdc0823d5dbf7f70d\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 1,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.035788546169005675,\n    \"trial_mse_m2_s2\": [\n      0.045244483581901807,\n      0.032460180895203736,\n      0.0487374489838418,\n      0.03876336803937034,\n      0.022268274984212223,\n      0.03107539650725939,\n      0.03514947269070842,\n      0.05783198397723271,\n      0.04423253875937116,\n      0.0357860838656575,\n      0.01680495555413208,\n      0.028218247704105436,\n      0.036571838450861906,\n      0.03034340285382107,\n      0.019449975244942384,\n      0.03950603248092729,\n      0.03680836297742671,\n      0.032762308407883294,\n      0.03925216058074219,\n      0.036207880601915564,\n      0.029294804849683574,\n      0.03485766146416483,\n      0.032458088238907085,\n      0.05560569477932845,\n      0.03502300775154099\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.0521422813766651,\n      0.08100962604476447\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"7f01e2c1915d591cdedac075a25cdf7c88f8682456e4b7a7267cb0d2be93d556\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 1,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.04027602724934824,\n    \"trial_mse_m2_s2\": [\n      0.04864246345842641,\n      0.031081365003197994,\n      0.058051764784636625,\n      0.04863449384731449,\n      0.027213780168608075,\n      0.04474026595735354,\n      0.042275421110767576,\n      0.06846298113888474,\n      0.04935492859790254,\n      0.03085508646112213,\n      0.02343669987889942,\n      0.018640247325578507,\n      0.037854671615629526,\n      0.02657346504484312,\n      0.026985247128871116,\n      0.05567012501987163,\n      0.031407386576155605,\n      0.04101029353149019,\n      0.04869144232687899,\n      0.04014814428010778,\n      0.03312233510085832,\n      0.04084574367631877,\n      0.03840800035959461,\n      0.05019743399916469,\n      0.04459689484122966\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.05801710421983208,\n      -0.04394106563028011\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0808223485946655\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0684735774993896\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0565667152404785\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0450876951217651\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0340182781219482\n      }\n    ],\n    \"checkpoint_sha256\": \"b082da74a09e4bf057c56d2cb582c2b1388c8aacb6e233b1d6cdf31da0e3eaea\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 1,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.040198332760300784,\n    \"trial_mse_m2_s2\": [\n      0.048615069167840225,\n      0.03090364621651832,\n      0.05800543097595398,\n      0.048565003804698297,\n      0.027452838968532175,\n      0.04472866106442618,\n      0.041904654794789234,\n      0.06831842772965567,\n      0.04897124120995143,\n      0.03067884666072701,\n      0.023356896635812828,\n      0.018546332682430833,\n      0.03788226698518729,\n      0.026496214138726947,\n      0.02710887878971807,\n      0.05551431971151143,\n      0.03112666328520434,\n      0.04100242092351989,\n      0.048761236925426936,\n      0.040163987970052134,\n      0.03308651956052523,\n      0.040815070838586646,\n      0.0381752337914747,\n      0.05020559855627679,\n      0.04457285761997281\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.05464335114388086,\n      -0.043417726141236956\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.078778862953186\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0663694143295288\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0544148683547974\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0429004430770874\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0318052768707275\n      }\n    ],\n    \"checkpoint_sha256\": \"abf8683bddf7d19167577bd004a51a74cea198e3e4e5378582df04eaba27b182\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.047148569250925976,\n    \"trial_mse_m2_s2\": [\n      0.062340209400129395,\n      0.045973720157827934,\n      0.06123878829548813,\n      0.05070898994007698,\n      0.03851440904334445,\n      0.05063617475024703,\n      0.030253486213216066,\n      0.06909219462923676,\n      0.0481207707346407,\n      0.04705704740541427,\n      0.032900287996220454,\n      0.03231980438040009,\n      0.04474183384781666,\n      0.03684366748344836,\n      0.030443654220311638,\n      0.04902911166749981,\n      0.03997505914766043,\n      0.051520381327367144,\n      0.04422819202127951,\n      0.04201489176373065,\n      0.0428463149187506,\n      0.07037107007983087,\n      0.058011115404200404,\n      0.06456418520502304,\n      0.034968871239987834\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.25700425978022046,\n      -0.2014406402154798\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"4303d471f4d67a3ab9556d1cb11f17242fbed4cd7690f987d3376553b6a64c4d\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.04699643970528428,\n    \"trial_mse_m2_s2\": [\n      0.0620018356307381,\n      0.04657509415089941,\n      0.061465600526690076,\n      0.050075027733943865,\n      0.03879558813573949,\n      0.050429574526965296,\n      0.03108513199779914,\n      0.0688073063699272,\n      0.047787980928309985,\n      0.047046804523235425,\n      0.03210603120738473,\n      0.032086287561430095,\n      0.044074260677054666,\n      0.036346852529554406,\n      0.029813415377682846,\n      0.049687484499204994,\n      0.03979104860656479,\n      0.0512379563258295,\n      0.04449041311322438,\n      0.041710911864643894,\n      0.0426437649348578,\n      0.0698421494902036,\n      0.05728892570168214,\n      0.06492534008235755,\n      0.03479620613618376\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.2549938305839339,\n      -0.19527664500602038\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"1ae5ca6e777384d0d89aabc1e29cb91caee709022d0d8996c3cd98b09534fc35\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 2,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.044300056718310776,\n    \"trial_mse_m2_s2\": [\n      0.06181352316460631,\n      0.04040291957221251,\n      0.06314491680020695,\n      0.04722757848673726,\n      0.03597582333545137,\n      0.05566973031360498,\n      0.0451474139887959,\n      0.06722203486940533,\n      0.04872900038741326,\n      0.03098738052593976,\n      0.027301006232820002,\n      0.019549750521661798,\n      0.04374861115519176,\n      0.025940380521020153,\n      0.03382950550008874,\n      0.06612079035453364,\n      0.03192731745479673,\n      0.04942784667721419,\n      0.06017831981791449,\n      0.040847561625604996,\n      0.03324922095136096,\n      0.05137135704856518,\n      0.04898663495517577,\n      0.04545323044411008,\n      0.033249563253337264\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.23725176191701425,\n      -0.06601628372640356\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.103691816329956\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0757273435592651\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.048580288887024\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.02223801612854\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9966773986816406\n      }\n    ],\n    \"checkpoint_sha256\": \"6b0f1778d3dff4e00905803dc8f85a95707c60377bdf73a24c305b4f5f4c2b25\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 2,\n    \"label_budget_trials\": 5,\n    \"mse_m2_s2\": 0.043889881713484895,\n    \"trial_mse_m2_s2\": [\n      0.061183653631176615,\n      0.03995651261948356,\n      0.06251188622896098,\n      0.046705230090138314,\n      0.03557506188443915,\n      0.054870664124632915,\n      0.0448133386480713,\n      0.06675126914181041,\n      0.048328305656685215,\n      0.030924356306725617,\n      0.02678914982896464,\n      0.019395378308079136,\n      0.04328182223969909,\n      0.0257475850321918,\n      0.033245362673945004,\n      0.0654812351115993,\n      0.03185123534636329,\n      0.049241110101933404,\n      0.05929200412478984,\n      0.040531906661822624,\n      0.03315963623606661,\n      0.050857788598301736,\n      0.04832312168236857,\n      0.04536914653070353,\n      0.03306028202816982\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.21985310349963894,\n      -0.06279209034498079\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0952129364013672\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0674688816070557\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.040528655052185\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.01438307762146\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 0.9890007376670837\n      }\n    ],\n    \"checkpoint_sha256\": \"0ab69439730e44744a264402b010b28ed4f5f12416ff02f856681a0406f19468\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.040442037279183024,\n    \"trial_mse_m2_s2\": [\n      0.04899405967050475,\n      0.032580731173542,\n      0.045228304335882256,\n      0.050061195439330755,\n      0.027321314273260594,\n      0.044496495201132684,\n      0.03010622211744722,\n      0.0675133988168593,\n      0.04823342704244412,\n      0.0440734995318538,\n      0.016973202366588825,\n      0.02938922867245142,\n      0.03299706951364941,\n      0.03491293447913957,\n      0.026412901084523238,\n      0.04410570828062115,\n      0.04026135643127841,\n      0.03942555453207152,\n      0.05109727389894576,\n      0.042630097554949266,\n      0.032701607547074914,\n      0.04628482792316036,\n      0.036717584539160686,\n      0.06033099030948401,\n      0.03820194724421951\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.040719474358285934,\n      -0.07246513534635635\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"044c9243801c8b27907fbf4a6ad1a27decfa57cb53b953e955238410a1d0a563\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04037563560819188,\n    \"trial_mse_m2_s2\": [\n      0.04885326962664501,\n      0.03247944021184517,\n      0.045291521293776296,\n      0.04969436699550444,\n      0.027185612870694514,\n      0.04434105853423442,\n      0.030714335089007103,\n      0.06740198106859145,\n      0.0478520430555022,\n      0.04403147548360506,\n      0.01655612757833072,\n      0.029568674502322968,\n      0.032440847096961885,\n      0.034294266429720215,\n      0.02649513435393998,\n      0.04497016755744768,\n      0.040282579188277635,\n      0.03904833890495357,\n      0.050957076424494756,\n      0.042544691998916,\n      0.032275970904811616,\n      0.0468788604696916,\n      0.03680831660069271,\n      0.06025190055567614,\n      0.038172833409153756\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.03970088277740902,\n      -0.06993243700133145\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"71ee4e43d399616121485415c426f5c5e278b23f1cd9c6ddaca104cba299ef07\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 2,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04116726333355396,\n    \"trial_mse_m2_s2\": [\n      0.05502948543808371,\n      0.032768973289618995,\n      0.05475623284499246,\n      0.049956366731151815,\n      0.02908766974456321,\n      0.046823269848212334,\n      0.04846022847089621,\n      0.06951238349319215,\n      0.05111468671344445,\n      0.030476969635615195,\n      0.01972823761430103,\n      0.021825608449851208,\n      0.03468803346667789,\n      0.027827532724654696,\n      0.02643866274294052,\n      0.05593267005480197,\n      0.035973621430661816,\n      0.04313604045210978,\n      0.05253559656752509,\n      0.041448982698020144,\n      0.033902097807027826,\n      0.0428193788422423,\n      0.039451588838902596,\n      0.048991048120176316,\n      0.036496217319185224\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.09041171002056791,\n      -0.05699622453083131\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.127331256866455\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.107264757156372\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0878840684890747\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0691531896591187\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0510321855545044\n      }\n    ],\n    \"checkpoint_sha256\": \"92e7b0e34d1e04bd73c16686da4f1518150536d7f002e442f2f219be6eff59a8\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 2,\n    \"label_budget_trials\": 15,\n    \"mse_m2_s2\": 0.04094901631696244,\n    \"trial_mse_m2_s2\": [\n      0.05463151414257175,\n      0.03251469347619792,\n      0.05438685992724923,\n      0.049691598482785385,\n      0.028837026052048933,\n      0.04634358421770461,\n      0.04821588822379971,\n      0.06921262582480092,\n      0.050770129897101876,\n      0.03050978346517299,\n      0.019445083247626886,\n      0.02171672556394512,\n      0.03451427002636105,\n      0.0277455412528097,\n      0.026134964701229016,\n      0.055607994575661235,\n      0.03597409426588532,\n      0.04306661603099035,\n      0.05206857876874695,\n      0.04127301962613466,\n      0.033944372510919404,\n      0.04256080282536792,\n      0.039111001858052066,\n      0.049042582186763,\n      0.03640605677413484\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.0821008709736668,\n      -0.05422199245432302\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.1197795867919922\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0999916791915894\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0808621644973755\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0623600482940674\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0444514751434326\n      }\n    ],\n    \"checkpoint_sha256\": \"2d48be06d24b1f26a44683a1814ce653d8b22f38d0a9c919b90b212ac89cb7fd\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.036025419153221334,\n    \"trial_mse_m2_s2\": [\n      0.04635662485038156,\n      0.031083619046345077,\n      0.042047065491063934,\n      0.04415312773625028,\n      0.02406878062111525,\n      0.03667917555973974,\n      0.035176285868663684,\n      0.05699765174859248,\n      0.03966999072401105,\n      0.034759366713663975,\n      0.018180493347310138,\n      0.023230632495633452,\n      0.03312519179293558,\n      0.028854802607679534,\n      0.023839588879195028,\n      0.04263156449602309,\n      0.035620805160912865,\n      0.037484486869905326,\n      0.04110616153328249,\n      0.036551166634698096,\n      0.03112497458192836,\n      0.037412682447237736,\n      0.03185061871697263,\n      0.051742219119728844,\n      0.03688840178726319\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.05962137162844161,\n      0.059547292557630804\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"d68de2967ad84b38e2b5151afbd9da4eec30c5e412a2972613605e389cf7390e\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"random_frozen_ridge\",\n    \"seed\": 2,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.03605312788334283,\n    \"trial_mse_m2_s2\": [\n      0.04636897766287228,\n      0.031172118769210198,\n      0.042002819394665,\n      0.04426423765612578,\n      0.024040117183590917,\n      0.03669919162345568,\n      0.035284869955752904,\n      0.05705210619510781,\n      0.039910661364871015,\n      0.03498933596150417,\n      0.017922253441187978,\n      0.023541790374399525,\n      0.0327825465446465,\n      0.028729496861118375,\n      0.02377893817831428,\n      0.042842539168457594,\n      0.035548131345857194,\n      0.03737824702998384,\n      0.041043422447681485,\n      0.0364495539746552,\n      0.03098994267947586,\n      0.0376144838656795,\n      0.032010391597107946,\n      0.05198018939440241,\n      0.03693183441344713\n    ],\n    \"pooled_r2_by_coordinate\": [\n      0.057795851156820954,\n      0.060056595946679114\n    ],\n    \"history\": [],\n    \"checkpoint_sha256\": \"d034332feac1ca9707a475ae4b235b8e443c146b8227a3a85dddba80a79bbc3f\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"supervised_only\",\n    \"seed\": 2,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.040625042977805836,\n    \"trial_mse_m2_s2\": [\n      0.05533975995518979,\n      0.031978497073422846,\n      0.05458675597701722,\n      0.04871558624210402,\n      0.028326289944506235,\n      0.04514262843754299,\n      0.04814611521863961,\n      0.06831877304550996,\n      0.05030713218752642,\n      0.02991577496249939,\n      0.019836297758107142,\n      0.02218121614019639,\n      0.03518158644725144,\n      0.02749190315220806,\n      0.025710321888415905,\n      0.05442159990343065,\n      0.03621301060122571,\n      0.04253168665437564,\n      0.051041418155140295,\n      0.041000324054085865,\n      0.033542411617950574,\n      0.04188893195453095,\n      0.03918199238695396,\n      0.04814325286532203,\n      0.036482807821992834\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.07084250885329535,\n      -0.048897687281251656\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.1057932376861572\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0924491882324219\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0796831846237183\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0674692392349243\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0557793378829956\n      }\n    ],\n    \"checkpoint_sha256\": \"02010211ba85125a4eb6651511f9c5a33b1225bf11315241ceacda511abe1fd1\",\n    \"checkpoint_restored_predictions_identical\": true\n  },\n  {\n    \"control\": \"pretrained_finetuned\",\n    \"seed\": 2,\n    \"label_budget_trials\": 75,\n    \"mse_m2_s2\": 0.040420654885798664,\n    \"trial_mse_m2_s2\": [\n      0.05498345130227441,\n      0.03164459270833945,\n      0.05419326044519627,\n      0.04844667422553077,\n      0.028081146842612408,\n      0.04460624203628848,\n      0.047879488832899116,\n      0.06810230736268784,\n      0.05000238352872217,\n      0.03003424183835947,\n      0.01961537292847537,\n      0.02212175026510952,\n      0.03505481053528209,\n      0.0274433821039833,\n      0.02545619661525667,\n      0.05412785029692694,\n      0.03621464490925366,\n      0.04238729426619562,\n      0.050670878689159746,\n      0.04088268572041924,\n      0.03349937357393112,\n      0.04165074250445992,\n      0.038766610809905365,\n      0.04820333360999141,\n      0.036447656193706296\n    ],\n    \"pooled_r2_by_coordinate\": [\n      -0.06346055431255326,\n      -0.045851023595341545\n    ],\n    \"history\": [\n      {\n        \"epoch\": 1,\n        \"normalized_velocity_loss\": 1.0992095470428467\n      },\n      {\n        \"epoch\": 2,\n        \"normalized_velocity_loss\": 1.0861221551895142\n      },\n      {\n        \"epoch\": 3,\n        \"normalized_velocity_loss\": 1.0735957622528076\n      },\n      {\n        \"epoch\": 4,\n        \"normalized_velocity_loss\": 1.0616058111190796\n      },\n      {\n        \"epoch\": 5,\n        \"normalized_velocity_loss\": 1.0501227378845215\n      }\n    ],\n    \"checkpoint_sha256\": \"63b36b83736bbf92212b435adff7314a1ad07d98b9838a16f28e7cff45dcd013\",\n    \"checkpoint_restored_predictions_identical\": true\n  }\n]\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.longitudinal"
+      ],
+      "exit_code": 0,
+      "seconds": 4.292,
+      "output": "{\n  \"frozen_source\": 0.026966136052009287,\n  \"source_mean\": 0.02708378918792557,\n  \"unlabeled_marginal_normalization\": 0.0263826854145542,\n  \"target_calibration_mean_1\": 0.028854282888488677,\n  \"direct_recalibration_1\": 0.02878767373789668,\n  \"source_plus_residual_1\": 0.028187072905802697,\n  \"target_calibration_mean_5\": 0.04262717861221244,\n  \"direct_recalibration_5\": 0.04492330601384733,\n  \"source_plus_residual_5\": 0.043962923551828806,\n  \"target_calibration_mean_15\": 0.0388305302571219,\n  \"direct_recalibration_15\": 0.03706900035402378,\n  \"source_plus_residual_15\": 0.03701677268630801,\n  \"target_calibration_mean_50\": 0.030294124513316506,\n  \"direct_recalibration_50\": 0.029907357836567665,\n  \"source_plus_residual_50\": 0.03021466803473417,\n  \"condition_anchor_alignment_50\": 0.027087300696587283,\n  \"target_calibration_mean_75\": 0.02888385204002861,\n  \"direct_recalibration_75\": 0.027763561539404645,\n  \"source_plus_residual_75\": 0.02790930363983962,\n  \"condition_anchor_alignment_75\": 0.027047473229169238\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.representation_transfer"
+      ],
+      "exit_code": 0,
+      "seconds": 12.271,
+      "output": "{\"results\": 168, \"pretraining\": 12}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.dynamics"
+      ],
+      "exit_code": 0,
+      "seconds": 1.113,
+      "output": "{\n  \"ar1\": {\n    \"mean_trial_mse_latent2\": 1.1817606843907922,\n    \"per_trial_mse_latent2\": [\n      1.0607191595328123,\n      1.3585960263936812,\n      1.6046697401897507,\n      1.0566166913542683,\n      0.9148455475063336,\n      1.0964625820041751,\n      1.1167124512440716,\n      0.8874528407369695,\n      0.957996609848043,\n      1.6262591145103562,\n      0.8723465277815957,\n      1.5630475628701237,\n      0.7882032645137665,\n      1.006210076325118,\n      1.1533253907101926,\n      1.072656816181831,\n      1.058546918461916,\n      1.4323485458919691,\n      1.080226143336828,\n      1.1012568203114992,\n      1.2994100433011782,\n      1.357816517766377,\n      1.5178125466675652,\n      1.317261799967336,\n      1.2432173723620474\n    ]\n  },\n  \"persistence\": {\n    \"mean_trial_mse_latent2\": 2.129266638015595,\n    \"per_trial_mse_latent2\": [\n      1.8597004338384766,\n      2.4105560851083077,\n      2.7759015280219295,\n      1.9243267259012327,\n      1.5939094976926425,\n      1.8537535820666915,\n      2.006993462462319,\n      1.5876541253682948,\n      1.6134260085317007,\n      2.9124332683480363,\n      1.6429031792670257,\n      2.803473409967284,\n      1.4508978759933548,\n      1.7861100787723125,\n      2.1575399047014963,\n      1.892356531005833,\n      1.9520028557251612,\n      2.547451765010695,\n      1.9202273807503105,\n      1.8754007187707462,\n      2.519068930196137,\n      2.604702364833798,\n      2.8236899156346484,\n      2.4394561836655053,\n      2.2777301387559254\n    ]\n  },\n  \"training_mean\": {\n    \"mean_trial_mse_latent2\": 1.2265012124835895,\n    \"per_trial_mse_latent2\": [\n      1.1377366527496426,\n      1.411357190116061,\n      1.7435007627855792,\n      1.1006268268741775,\n      0.9245228755755401,\n      1.1416899547020773,\n      1.1523144266070013,\n      0.9301771200178349,\n      0.9855980435654897,\n      1.6722346661226766,\n      0.8800198402503525,\n      1.6100370059580025,\n      0.8158258548448346,\n      1.0240680238181463,\n      1.195020083926267,\n      1.137883486802605,\n      1.0799819393460615,\n      1.4484391535768522,\n      1.1630263322144712,\n      1.1505615179935191,\n      1.284779434882859,\n      1.3767496871584142,\n      1.67736966786329,\n      1.3269869895655007,\n      1.292022774772475\n    ]\n  },\n  \"within_trial_permutation_training_control\": {\n    \"mean_trial_mse_latent2\": 1.2213116355774398,\n    \"per_trial_mse_latent2\": [\n      1.119050574700391,\n      1.401944286514895,\n      1.719368757470369,\n      1.0979477185543522,\n      0.926913574613727,\n      1.1441295943210326,\n      1.139577502964218,\n      0.9302280019427229,\n      0.9864675335674381,\n      1.6772414576785557,\n      0.868389396680712,\n      1.596995325856073,\n      0.8125000603104661,\n      1.020240189528247,\n      1.1925656335226502,\n      1.1359887705514042,\n      1.07683539244889,\n      1.45527428621077,\n      1.1636703398262855,\n      1.1388950814819516,\n      1.2848129021668415,\n      1.3802074579455978,\n      1.641951310587529,\n      1.3298045700610128,\n      1.2917911699298654\n    ]\n  }\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.benchmark_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 1.43,
+      "output": "reports/figures/benchmark_errors.png\nreports/figures/benchmark_dimensions.png\nreports/figures/benchmark_geometry.png\nreports/figures/benchmark_predictions.png\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.extended_figures"
+      ],
+      "exit_code": 0,
+      "seconds": 1.631,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.evaluation"
+      ],
+      "exit_code": 0,
+      "seconds": 1.063,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.cross_subject"
+      ],
+      "exit_code": 0,
+      "seconds": 2.598,
+      "output": "{\"subjects\": [\"MonkeyL_held_in_calib\", \"MonkeyX_held_in_calib\"], \"selected_alpha\": 100.0, \"controls\": 13}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.subject_identity"
+      ],
+      "exit_code": 0,
+      "seconds": 1.598,
+      "output": "{\"balanced_accuracy\": 1.0, \"per_subject_accuracy\": [1.0, 1.0]}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.longitudinal",
+        "--config",
+        "configs/longitudinal_14.json",
+        "--output",
+        "data/processed/longitudinal_14"
+      ],
+      "exit_code": 0,
+      "seconds": 3.919,
+      "output": "{\n  \"frozen_source\": 0.03340539361132238,\n  \"source_mean\": 0.026068074694238733,\n  \"unlabeled_marginal_normalization\": 0.025665408672356407,\n  \"target_calibration_mean_1\": 0.030180332424834557,\n  \"direct_recalibration_1\": 0.02954400054769404,\n  \"source_plus_residual_1\": 0.03017930248196316,\n  \"target_calibration_mean_5\": 0.04465479104402418,\n  \"direct_recalibration_5\": 0.04500851045380396,\n  \"source_plus_residual_5\": 0.042941003835680114,\n  \"target_calibration_mean_15\": 0.027250181577977043,\n  \"direct_recalibration_15\": 0.02758294291588849,\n  \"source_plus_residual_15\": 0.02767891987991901,\n  \"target_calibration_mean_50\": 0.027170659790739494,\n  \"direct_recalibration_50\": 0.0257653692036376,\n  \"source_plus_residual_50\": 0.025899033551876605,\n  \"condition_anchor_alignment_50\": 0.02608476467597539,\n  \"target_calibration_mean_75\": 0.026325794562950085,\n  \"direct_recalibration_75\": 0.024827013361847203,\n  \"source_plus_residual_75\": 0.024942559450028757,\n  \"condition_anchor_alignment_75\": 0.026028878598487896\n}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.representation_transfer",
+        "--config",
+        "configs/representation_14.json",
+        "--output",
+        "data/processed/representation_14"
+      ],
+      "exit_code": 0,
+      "seconds": 7.939,
+      "output": "{\"results\": 42, \"pretraining\": 3}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.cross_subject",
+        "--config",
+        "configs/cross_subject_14.json",
+        "--output",
+        "data/processed/cross_subject_14",
+        "--report",
+        "reports/cross_subject_14.json",
+        "--markdown",
+        "reports/cross_subject_14.md",
+        "--figure",
+        "reports/figures/cross_subject_14_calibration.png"
+      ],
+      "exit_code": 0,
+      "seconds": 3.062,
+      "output": "{\"subjects\": [\"MonkeyL_held_in_calib\", \"MonkeyX_held_in_calib\"], \"selected_alpha\": 100.0, \"controls\": 13}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.registry"
+      ],
+      "exit_code": 0,
+      "seconds": 1.009,
+      "output": "{\"datasets\": 14, \"experiments\": 11, \"checkpoints_and_arrays\": 350}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "tools/validate_checkpoints.py"
+      ],
+      "exit_code": 0,
+      "seconds": 8.622,
+      "output": "{\"files_verified\": 350, \"array_digests_verified\": 529, \"predictions_replayed\": 229, \"exact\": 227}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.hardware_check"
+      ],
+      "exit_code": 0,
+      "seconds": 1.701,
+      "output": "{\"cpu\": \"PASS\", \"mps\": \"PASS\", \"cuda\": \"NOT_TESTED\"}\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "cerebro.explorer",
+        "--sequence",
+        "data/processed/sequence_06",
+        "--longitudinal",
+        "data/processed/longitudinal_08",
+        "--transfer",
+        "data/processed/representation_09"
+      ],
+      "exit_code": 0,
+      "seconds": 1.077,
+      "output": "data/processed/explorer.html\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "tests",
+        "tools"
+      ],
+      "exit_code": 0,
+      "seconds": 0.047,
+      "output": ""
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "tools.audit_brochier"
+      ],
+      "exit_code": 0,
+      "seconds": 8.688,
+      "output": "reports/mission_019_brochier_native.json\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "tools.run_brochier_transfer"
+      ],
+      "exit_code": 0,
+      "seconds": 12.211,
+      "output": "reports/mission_019_brochier_transfer.json\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "tools.brochier_population"
+      ],
+      "exit_code": 0,
+      "seconds": 17.4,
+      "output": "Analyzed animal L: (135, 30, 93)\nAnalyzed animal N: (142, 30, 156)\nWrote reports/mission_020_brochier_population.json\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 57.876,
+      "output": "........................................................................ [ 29%]\n........................................................................ [ 58%]\n........................................................................ [ 88%]\n.............................                                            [100%]\n=============================== warnings summary ===============================\ntests/test_benchmark.py: 2 warnings\ntests/test_characterize.py: 4 warnings\ntests/test_event_aligned.py: 4 warnings\ntests/test_falcon.py: 4 warnings\ntests/test_nwb_audit.py: 4 warnings\ntests/test_sense.py: 2 warnings\n  /private/tmp/cerebro021-env/lib/python3.11/site-packages/hdmf/utils.py:641: DeprecationWarning: The 'manufacturer' field is deprecated. Instead, use DeviceModel.manufacturer and link to that DeviceModel from this Device.\n    return func(args[0], **pargs)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n245 passed, 20 warnings in 56.58s\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pytest",
+        "-m",
+        "not data",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 4.989,
+      "output": "........................................................................ [ 31%]\n........................................................................ [ 62%]\n........................................................................ [ 94%]\n.............                                                            [100%]\n229 passed, 16 deselected in 4.29s\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "-m",
+        "pytest",
+        "--collect-only",
+        "-m",
+        "data",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 1.976,
+      "output": "tests/test_benchmark.py::test_real_preparation_preserves_source_split_and_heldin_units\ntests/test_brochier_native_data.py::test_brochier_source_counts_clocks_and_report_reproduce\ntests/test_characterize.py::test_real_report_is_reproducible_and_matched_rates_equal\ntests/test_event_aligned.py::test_real_event_report_and_tensor_reproducibility\ntests/test_explorer.py::test_real_local_explorer_generation\ntests/test_extended_figures.py::test_real_stored_render\ntests/test_extended_figures.py::test_real_transfer_render\ntests/test_falcon.py::test_real_calibration_coverage[a-412-54633-33]\ntests/test_falcon.py::test_real_calibration_coverage[b-429-58552-15]\ntests/test_link.py::test_native_real_link_pair\ntests/test_link.py::test_native_mission_016_link_candidate[20200206-26582]\ntests/test_link.py::test_native_mission_016_link_candidate[20200211-26675]\ntests/test_link.py::test_native_mission_016_link_candidate[20200222-25547]\ntests/test_nwb_audit.py::test_pinned_real_recording_audit[20160406-18-152389-296]\ntests/test_nwb_audit.py::test_pinned_real_recording_audit[20160407-19-130191-331]\ntests/test_sense.py::test_local_real_recording\n\n16/245 tests collected (229 deselected) in 1.54s\n"
+    },
+    {
+      "root": "cerebro021-src",
+      "command": [
+        "/private/tmp/cerebro021-env/bin/python",
+        "tools/diagnose_mission_017.py"
+      ],
+      "exit_code": 0,
+      "seconds": 7.018,
+      "output": "{\"source_trials\": 375, \"groups\": 5, \"selected_alpha\": 1000.0}\n"
+    }
+  ],
+  "raw_reuse": "Only checksum-pinned public raw recordings reused by explicit directory symlinks. No processed arrays or checkpoints copied. MC_Maze Small acquired afresh."
+}

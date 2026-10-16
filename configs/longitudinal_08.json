@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source_manifest": "configs/link_20200127.json",
+  "target_manifest": "configs/link_20200130.json",
+  "source_training_trials": 300,
+  "source_inner_training_trials": 225,
+  "target_calibration_pool_trials": 75,
+  "calibration_budgets": [1, 5, 15, 50, 75],
+  "ridge_alphas": [1.0, 10.0, 100.0, 1000.0],
+  "latent_dimensions": 5,
+  "anchor_min_repetitions": 2,
+  "bootstrap_draws": 1000,
+  "bootstrap_trial_block": 5,
+  "seed": 8
+}

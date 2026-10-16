@@ -1,17 +1,22 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "cerebro"
-version = "0.1.0"
+version = "1.0.0"
 description = "Adaptive neural intelligence research platform"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.11,<3.12"
 dependencies = ["numpy>=1.26,<3", "pynwb>=3,<5", "matplotlib>=3.8,<4"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9"]
+classical = ["scipy>=1.13,<2", "scikit-learn>=1.5,<2"]
+deep = ["torch>=2.5,<3"]
+brochier = ["neo==0.14.5"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -19,3 +24,4 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--strict-config --strict-markers"
+markers = ["data: requires explicitly acquired recordings or stored real-data experiments"]

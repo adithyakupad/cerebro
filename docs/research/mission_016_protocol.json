@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_mission_016_model_outcomes",
+  "recorded_utc": "2026-10-15T21:26:57Z",
+  "mission_016_target_outcomes_examined_before_registration": false,
+  "historical_outcomes_already_inspected": "Maze, LINK January 27/30 and February 4/5, and FALCON historical results were inspected before this protocol; no new target-session model outcomes were inspected.",
+  "question": "Within one monkey, does source-assisted calibration improve independent future-session, same-bin offline finger-flexion decoding over target-only calibration at the same target-label budget?",
+  "independent_units": "Three recording sessions from one biological subject; trials are dependent within sessions and are not independent subjects.",
+  "source_recordings": [
+    "configs/link_20200127.json"
+  ],
+  "target_recordings": [
+    "configs/link_20200206.json",
+    "configs/link_20200211.json",
+    "configs/link_20200222.json"
+  ],
+  "selection_rule": "First three published LINK assets chronologically after the previously inspected 2020-02-05 asset, selected using date and public metadata before Mission 016 model outcomes. No replacement after performance inspection.",
+  "eligibility": "Exact checksum, one Monkey N subject, CO task, native trial-linked 96 contact-coordinate neural samples and same-clock two-finger position/velocity, finite observations and complete referenced rows. Fail closed on missing or incompatible evidence.",
+  "partitions": {
+    "source_training_original_trial_rows": "0:300; inner fit 0:225, source-only selection 225:300",
+    "source_descriptive_evaluation_rows": "300:375; historically inspected and not used for Mission 016 method selection",
+    "target_calibration_original_trial_rows": "0:75, with nested label prefixes 1, 5, 15, 50, 75",
+    "target_final_evaluation_original_trial_rows": "75:375 on each target date, never used for fitting, normalization, selection, or revision"
+  },
+  "inputs": "Native 20 ms nominal threshold-crossing counts on 96 matched electrode contacts, using only explicit source trial references and original jittered timestamps; contacts are not neuron identities.",
+  "targets": "Native index and middle-ring-pinky position in normalized flexion units, 0 extension to 1 flexion; same-bin offline decoding, not prospective causal control.",
+  "access_policy": "All target methods are permitted the same 75 unlabeled neural calibration trials, first B position-labeled trials and corresponding commanded-target metadata at each named B; no target evaluation rows are accessible. Actual use differs: frozen uses none; target-only and source-plus-residual ridge use B labeled trials and source-fitted scaling/alpha; marginal normalization and target PCA use all 75 unlabeled trials; condition-anchor alignment also uses commanded-target metadata for the B labeled trials. The primary direct-versus-residual comparison has exactly matched target labels and the same source-fitted scaling/alpha, but residual alone transfers fitted source weights by design. Alignment is secondary and not evidence of equal algorithmic information use.",
+  "models_and_controls": [
+    "frozen source ridge; source mean",
+    "target-only ridge and target calibration mean at each label budget",
+    "source-plus-residual ridge at each label budget",
+    "unlabeled marginal normalization and condition-anchor latent alignment where the existing rank/repetition gates pass"
+  ],
+  "hyperparameters": "Exactly those in configs/longitudinal_16_*.json, copied from historical longitudinal_14 apart from the target manifest; no target evaluation selection.",
+  "primary_metric": "Equal-trial mean squared position error, averaged over both flexion coordinates, in flexion units squared. Report the paired source-assisted minus target-only difference at 15 labels for every date and their equal-date average.",
+  "secondary_metrics": "Full prespecified 1/5/15/50/75-label curves, frozen versus source/target means, latent-alignment eligibility/outcome, per-date target and source MSE, chronological trial segments and out-of-range predictions. No best-budget headline.",
+  "uncertainty": "Report all three date-level paired effects, their equal-date mean and range; show five-trial moving-block intervals within each date as sensitivity only. Three dates in one subject cannot support population-level confidence or subject generalization. No significance or multiplicity-adjusted test is claimed.",
+  "self_supervised_secondary": "Use fixed reference setting and seeds 0/1/2 from configs/representation_16_20200206.json on the earliest unseen target only; compare pretrained versus matched random/supervised controls at 0/5/15/75 labels. This uses first 40 native samples per trial and is not directly pooled with full-trial ridge MSE.",
+  "cross_subject": "No dataset currently passes both documented neural coverage and train-only original target preprocessing with independent subjects. Do not run new strict cross-subject experiments on FALCON, Perich or the unaudited Zenodo source.",
+  "failure_criteria": "Exclude and report an asset if published checksum, native coverage, exact contact keys, target units, finite clocks or chronological split fail. A consistent directional benefit requires all three date-level primary effects < 0; any nonnegative date or mixed signs fails that narrow descriptive criterion. Report absolute flexion-squared and percentage effects; no practical-superiority threshold or population hypothesis success is claimed from three dates. Preserve every prespecified result and never substitute dates or tune after target evaluation.",
+  "interpretation_boundary": "This protocol can establish only qualified same-subject, channel-level offline transfer for Monkey N. It cannot identify neurons, infer causal connectivity, prove cross-subject generalization or validate a general neural foundation model.",
+  "source_code_revision_before_protocol": "07094ac381a1926527da68c469b55a7943d46bc5",
+  "human_primary_comparison_selection": "Researcher selected the fixed February 6/11/22 cohort and 15-label source-assisted versus target-only equal-trial MSE comparison on 2026-10-15 before Mission 016 model outcomes.",
+  "primary_estimand": "For each of the three fixed unseen LINK dates, mean across target evaluation trials of (source_plus_residual_15 trial MSE minus direct_recalibration_15 trial MSE), then equal-weight average across dates. Negative favors source assistance.",
+  "frozen_utc": "2026-10-15T21:29:25Z",
+  "cross_subject_future_eligibility": "Requires at least two biological subjects, multiple sessions per subject where possible, source-backed neural observation intervals, compatible raw or split-safe target preprocessing, immutable subject/session partitions and equal target-label access. Use anonymous population features unless anatomical contact correspondence is independently documented; never infer neuron identity. Subject and date must not be identical aliases. None of the currently accepted recordings satisfies these conditions, so no cross-subject model will run in Mission 016."
+}

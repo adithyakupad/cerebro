@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "decision": "PASS within stated software scope; explicit owner publication approval pending",
+  "starting_research_revision": "de18d68c2a6304fa02b40b3d477806f5891b2cda",
+  "validated_code_revision": "f14a4396af2eff4bb40e73809e227be9c806326c",
+  "scientific_implementation_changed": false,
+  "checks": {
+    "public_clone": "PASS",
+    "fresh_python_311_conda": "PASS",
+    "editable_install": "PASS",
+    "declared_dependencies": "PASS",
+    "isolated_import": "PASS",
+    "full_tests": "PASS",
+    "fresh_public_neural_acquisition": "PASS",
+    "dataset_checksums_metadata": "PASS",
+    "population_workflows": "PASS",
+    "classical_decoders": "PASS",
+    "deep_sequence_workflows": "PASS",
+    "cross_session_adaptation": "PASS",
+    "cross_animal_condition_classification": "PASS",
+    "self_supervised_experiments": "PASS",
+    "interactive_explorer": "PASS",
+    "checkpoint_integrity_and_supported_restoration": "PASS",
+    "report_figure_regeneration": "PASS",
+    "numeric_provenance": "PASS",
+    "local_documentation_references": "PASS",
+    "wheel_contents_and_separate_import": "PASS"
+  },
+  "classification": {
+    "RELEASE BLOCKER": [],
+    "NONBLOCKING SCIENTIFIC LIMITATION": [
+      "Negative low-budget LINK source assistance",
+      "Inconclusive two-animal condition transfer and confounded subject/session",
+      "Author-preprocessed FALCON targets; unavailable raw EMG",
+      "Rank-limited residual covariance and biased nonlinear bootstrap ranges",
+      "Perich neural coverage unavailable; modeling disabled",
+      "Brochier raw license-text conflict; no native redistribution",
+      "General subject-invariant and foundation-transfer claims unvalidated"
+    ],
+    "FUTURE RESEARCH": [
+      "Independent biological replication and comparable synchronized raw continuous targets",
+      "Prospective untouched generalization cohorts and population precision",
+      "Conditional speech, streaming and biological online control"
+    ],
+    "NOT TESTED": [
+      "CUDA and real-data CPU/GPU equivalence",
+      "Full-data Windows reproduction",
+      "Exhaustive security/dependency vulnerability certification",
+      "Standalone static typing and coverage measurement"
+    ]
+  },
+  "original_33_requirements": {
+    "scope_preserved": true,
+    "COMPLETE": 14,
+    "PARTIAL": 8,
+    "UNVALIDATED": 5,
+    "BLOCKED": 4,
+    "MISSING": 2
+  },
+  "tests": {
+    "passed": 245,
+    "warnings": 20,
+    "failures": 0
+  },
+  "software_selection": {
+    "passed": 229,
+    "deselected_data": 16
+  },
+  "candidate_ci": {
+    "head": "f14a4396af2eff4bb40e73809e227be9c806326c",
+    "runs": [
+      38846838007,
+      38846834578
+    ],
+    "conclusion": "SUCCESS",
+    "software_tests_passed_each": 229,
+    "data_tests_collected_not_run_each": 16
+  },
+  "numerical_reproduction": {
+    "shared_arrays": 914,
+    "elements": 48133360,
+    "different_arrays": 0,
+    "tolerated_arrays": 0,
+    "changed_json_numeric_values": 0
+  },
+  "json_numeric_values": 144137,
+  "wheel": {
+    "name": "cerebro-1.0.0-py3-none-any.whl",
+    "bytes": 118995,
+    "sha256": "2d19f6adbe2650a41b0ee62371fc08a13f698b6e233a3e497f3135ccc7298134",
+    "entries": 35,
+    "mit_license_present": true,
+    "no_data_or_checkpoints": true,
+    "separate_target_import": "PASS"
+  },
+  "proposed_publication": {
+    "pr": 1,
+    "base_commit": "8f9ffd91e4342713cb5a571e63d9931484caa143",
+    "merge_policy": "history-preserving GitHub merge commit, after explicit approval",
+    "final_merge_sha": "assigned only when the approved merge executes; exact final head/base/test-merge are bound in the approval request",
+    "tag": "v1.0.0",
+    "tag_type": "annotated",
+    "release_notes": "docs/release/v1.0.0.md",
+    "release_notes_sha256": "939b6138abd5b36a6cecfeefd9bf4b2d7ebad71a7483a44085e0002b064dbf5b",
+    "raw_or_checkpoint_attachments": [],
+    "approved": false
+  },
+  "evidence": [
+    "docs/development/mission_021_commands.json",
+    "docs/development/mission_021_validation.json",
+    "docs/development/mission_021_reproduction.json",
+    "docs/development/mission_021_security.json",
+    "docs/release/qualification_021.md"
+  ]
+}

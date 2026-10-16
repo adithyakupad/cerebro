@@ -1,0 +1,149 @@
+{
+  "archive_etag": "\"39ba87a14-561626b95e163\"",
+  "dataset_doi": "10.12751/g-node.f83565",
+  "neo_version": "0.14.5",
+  "sessions": [
+    {
+      "analog_channel_rows": 6,
+      "analog_recorded_intervals": [
+        {
+          "sample_count": 709247,
+          "start_seconds": 0.0,
+          "stop_seconds": 709.247
+        }
+      ],
+      "analog_sampling_hz": 1000.0,
+      "correct_condition_counts": {
+        "PGHF": 33,
+        "PGLF": 31,
+        "SGHF": 30,
+        "SGLF": 41
+      },
+      "correct_go_windows_neural_covered_280ms": 135,
+      "neural_recorded_intervals": [
+        {
+          "sample_count": 21277439,
+          "start_seconds": 0.0,
+          "stop_seconds": 709.2479666666667
+        }
+      ],
+      "neural_sampling_hz": 30000.0,
+      "nev_timestamp_ticks_per_second": 30000,
+      "performance_codes": {
+        "161": 37,
+        "163": 4,
+        "167": 9,
+        "175": 5,
+        "191": 14,
+        "255": 135
+      },
+      "session": "l101210-001",
+      "sorted_nev": "l101210-001-02.nev",
+      "source_event_matches": {
+        "CUE-ON": {
+          "matched_sorted_nev": 163,
+          "odml_count": 163
+        },
+        "GO-ON": {
+          "matched_sorted_nev": 149,
+          "odml_count": 149
+        },
+        "SR": {
+          "matched_sorted_nev": 149,
+          "odml_count": 149
+        },
+        "STOP": {
+          "matched_sorted_nev": 202,
+          "odml_count": 202
+        },
+        "TS-ON": {
+          "matched_sorted_nev": 204,
+          "odml_count": 204
+        }
+      },
+      "source_odml_sorted_unit_counts": {
+        "multi_units": 49,
+        "single_units": 93
+      },
+      "spike_channel_rows_including_noise": 336,
+      "trial_count": 204,
+      "verified_sha256": {
+        "l101210-001-02.nev": "b617695399004bba70231a66709d30a2dfdc8c0e50291f630303e6a5481bcf43",
+        "l101210-001.ns2": "e48ce4af07ef6af7bfcdc1f43e04538a05708f6128af6907526c946a997f701a",
+        "l101210-001.ns5": "62666156bfa74ea6c9c58eb206bfd8c622a8a61c1d485a150b01f3c5e2b2046c",
+        "l101210-001.odml": "285e224731aebaacc2681707d55309067a17bc3e431ebf152a150ebfdb87358f"
+      }
+    },
+    {
+      "analog_channel_rows": 102,
+      "analog_recorded_intervals": [
+        {
+          "sample_count": 1003210,
+          "start_seconds": 0.0,
+          "stop_seconds": 1003.21
+        }
+      ],
+      "analog_sampling_hz": 1000.0,
+      "correct_condition_counts": {
+        "PGHF": 36,
+        "PGLF": 35,
+        "SGHF": 36,
+        "SGLF": 35
+      },
+      "correct_go_windows_neural_covered_280ms": 142,
+      "neural_recorded_intervals": [
+        {
+          "sample_count": 30096285,
+          "start_seconds": 0.0027333333333333333,
+          "stop_seconds": 1003.2122333333334
+        }
+      ],
+      "neural_sampling_hz": 30000.0,
+      "nev_timestamp_ticks_per_second": 30000,
+      "performance_codes": {
+        "129": 1,
+        "143": 1,
+        "159": 6,
+        "167": 1,
+        "191": 10,
+        "255": 142
+      },
+      "session": "i140703-001",
+      "sorted_nev": "i140703-001-03.nev",
+      "source_event_matches": {
+        "CUE-ON": {
+          "matched_sorted_nev": 160,
+          "odml_count": 160
+        },
+        "GO-ON": {
+          "matched_sorted_nev": 158,
+          "odml_count": 158
+        },
+        "SR": {
+          "matched_sorted_nev": 153,
+          "odml_count": 153
+        },
+        "STOP": {
+          "matched_sorted_nev": 161,
+          "odml_count": 161
+        },
+        "TS-ON": {
+          "matched_sorted_nev": 161,
+          "odml_count": 161
+        }
+      },
+      "source_odml_sorted_unit_counts": {
+        "multi_units": 19,
+        "single_units": 156
+      },
+      "spike_channel_rows_including_noise": 271,
+      "trial_count": 161,
+      "verified_sha256": {
+        "i140703-001-03.nev": "624ff677ea548b9840436d58ed1815a119db793630ff01d76378a25a1504efe0",
+        "i140703-001.ns2": "67cd0f878ec8a64c8ffa4092a39c7a8bb33fc1410182178042d1ffcf23201abb",
+        "i140703-001.ns6": "242d614da6112be903c827c16cde740795a42008a9375055c5e75c05d369fb9b",
+        "i140703-001.odml": "3aa08ac3b47eb90481193d7731c5bb46453ffa1f0445a0b14e2976b244a21562"
+      }
+    }
+  ]
+}

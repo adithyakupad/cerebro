@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "classical_run": "data/processed/classical_05",
+  "models": ["mlp", "gru", "lstm", "temporal_cnn", "transformer", "state_space"],
+  "seeds": [0, 1, 2],
+  "hidden": 32,
+  "maximum_epochs": 20,
+  "learning_rate": 0.001,
+  "gradient_clip": 1.0,
+  "bin_width_seconds": 0.02
+}

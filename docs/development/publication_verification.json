@@ -1,0 +1,33 @@
+{
+  "all_published_blob_hashes_match": true,
+  "anonymous_public_clone_and_editable_install": true,
+  "branch": "codex/research-platform",
+  "ci": {
+    "both_conclusions": "success",
+    "platform": "fresh Ubuntu runner, Python 3.11, CPU PyTorch",
+    "pull_request_run": "https://github.com/adithyakupad/cerebro/actions/runs/38649895816",
+    "push_run": "https://github.com/adithyakupad/cerebro/actions/runs/38649835848",
+    "skip_reason": "Data-dependent checks; recordings and stored runs were not acquired in CI.",
+    "tests_passed": 193,
+    "tests_skipped": 12
+  },
+  "limitations": [
+    "Real-data numerical reproduction was on the existing macOS Conda environment; CI did not reproduce scientific experiments.",
+    "The branch remains unmerged; full-scope scientific release is not claimed."
+  ],
+  "main_commit_unchanged": "8f9ffd91e4342713cb5a571e63d9931484caa143",
+  "new_release_tag_created": false,
+  "public": true,
+  "public_install_dependency_check_passed": true,
+  "public_installation_tests_passed": 4,
+  "published_blob_count": 157,
+  "pull_request_draft": true,
+  "pull_request_url": "https://github.com/adithyakupad/cerebro/pull/1",
+  "recordings_and_checkpoints_published": false,
+  "repository_url": "https://github.com/adithyakupad/cerebro",
+  "schema_version": 1,
+  "v0_1_0_tag_object_unchanged": "de736b0ba035617ded816085d93784190b65f1d1",
+  "verified_at_utc": "2026-10-14T22:50:18.466677+00:00",
+  "verified_commit": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+  "workspace_editable_restored": true
+}

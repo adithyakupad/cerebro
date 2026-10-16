@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "classical_run": "data/processed/classical_05",
+  "seeds": [0, 1, 2],
+  "hidden": 32,
+  "epochs": 5,
+  "learning_rate": 0.001,
+  "gradient_clip": 1.0,
+  "mask_probability": 0.2,
+  "label_budgets": [5, 15, 75],
+  "budget_seed": 7,
+  "ridge_alpha": 1.0,
+  "bin_width_seconds": 0.02
+}

@@ -1,0 +1,374 @@
+{
+  "continuation_plan": [
+    "Review Mission014 release acceptance evidence and PR1; preserve v0.1.0, do not merge/tag without explicit human approval and satisfied original completion criteria.",
+    "Resolve strict cross-subject original target-preprocessing validation with authoritative raw EMG/clock/calibration sources or independent suitable data; preserve published-target exploratory reports.",
+    "Keep Perich audit-only until documented neural coverage is established.",
+    "Reserve a genuinely new untouched subject/session cohort and practical effect criteria before any further model selection; Mission014 and Mission016 evaluation dates are now inspected.",
+    "Retain full foundation scope and negative/mixed SSL results; validate broader transfer before general-purpose foundation claims. CUDA and GPU real-data equivalence need appropriate hardware if claimed."
+  ],
+  "execution_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+  "mission_014_evidence": {
+    "full_scope_scientific_completion": "SCIENTIFICALLY INCONCLUSIVE",
+    "human_publication_approval": "NOT TESTED",
+    "independent_audit": "docs/development/mission_014_audit.md",
+    "numerical_reproduction": "docs/development/mission_014_reproduction.json",
+    "scientific_results": "reports/mission_014.json",
+    "software_status": "PASS",
+    "validation": "docs/development/mission_014_validation.md"
+  },
+  "mission_016_evidence": {
+    "dataset_inventory": "docs/research/dataset_inventory.json",
+    "eligibility": "docs/datasets/mission_016_eligibility.md",
+    "fixed_target_dates": [
+      "20200206",
+      "20200211",
+      "20200222"
+    ],
+    "machine_report": "reports/mission_016.json",
+    "new_longitudinal_experiments": 3,
+    "new_representation_experiments": 1,
+    "primary_all_three_benefit": false,
+    "primary_equal_date_difference_flexion_squared": 0.0006148764959831699,
+    "protocol_commit": "5a7376a694825005500cd357694fa8e27e2ce31e",
+    "protocol_sha256": "ad6411175ffa82e6d2064178ef62c811e2eed4e184d3b058bf50f31e9193068f",
+    "report_sha256": {
+      "reports/longitudinal_16_20200206.json": "03e56026afa236145fdc7e8837461d3b793995391cb7c2547100b489c495d793",
+      "reports/longitudinal_16_20200211.json": "5fd4b2361b4b840e24f0043444aaa9d843463eb3fca1e143225b8770cdeab5e5",
+      "reports/longitudinal_16_20200222.json": "6895e07da1043caa00e7d5775af65780660ee65f6ca6078011897a4ccc2a80be",
+      "reports/mission_016.json": "e1197b9423de1053a0962231860703a42b9c294dcb92e6149f0853ca1a1e0041",
+      "reports/mission_016.md": "cc4a5836ab6a337ace6910ef54be68d98f8eee941631b9ef14cca40085ef50e2",
+      "reports/representation_16_20200206.json": "b20208150cbfbe025c4952e4631646c477a1b6a5dcd38eaa42ebb061b5a47720"
+    },
+    "research_report": "reports/mission_016.md",
+    "scientific_interpretation": "negative fixed same-subject source-assistance result; no foundation-model or cross-subject success claim",
+    "strict_cross_subject": "BLOCKED: no eligible independent-subject raw-target source",
+    "subjects": [
+      "Monkey N"
+    ]
+  },
+  "mission_017_evidence": {
+    "published_mission_016_head": "fda96d87c3bc9c43a038b8b727f3519724a6ee9b",
+    "published_mission_017_research_head": "071232c8a03fd85dc54d634d9490b025f8f3c442",
+    "public_ci": "PASS: two runs at the published head; each 212 software tests passed and 15 data tests collected/deselected",
+    "mission_017_public_ci": "PASS: runs 38825397853 and 38825392767 at research head; each 215 software tests passed and 15 data cases collected/deselected",
+    "local_validation": "230 full tests passed after Mission017 changes; 405 file and 755 array digests checked; 229 predictions replayed, 227 exact",
+    "cross_subject_eligibility": "BLOCKED: no candidate yet has both verified neural coverage and original compatible targets across biological subjects",
+    "eligibility_matrix": "docs/datasets/mission_017_eligibility.md",
+    "cross_subject_report": "reports/mission_017_cross_subject.md",
+    "new_cross_subject_experiments": 0,
+    "new_model_families": 0,
+    "adaptation_report": "reports/mission_017_adaptation.md",
+    "adaptation_machine_report": "reports/mission_017_adaptation.json",
+    "adaptation_machine_report_sha256": "81454ddb107b6f84df6c1a7610fea7f021d2637cc3c36d63f6195826f3d52873",
+    "adaptation_figure_sha256": "c82c6da31d52c7236ab4540b505a37236531ee07086e65004fb18af8e91f5f60",
+    "interpretation": "Descriptive early-label distribution shift and limited independent calibration trials; no causal mechanism or subject-invariant transfer established"
+  },
+  "mission_018_evidence": {
+    "asset_manifest": "docs/datasets/mission_018_brochier_assets.json",
+    "eligibility": "reports/mission_018_eligibility.md",
+    "native_assets_downloaded": 0,
+    "new_cross_subject_experiments": 0,
+    "scientific_status": "BLOCKED: native acquisition coverage, per-file integrity and comparable sensor calibration unverified",
+    "source_audit": "docs/datasets/mission_018_brochier.md",
+    "variability_feasibility": "reports/mission_018_variability.md"
+  },
+  "overall_status": "INCOMPLETE: implemented offline software remains validated within scope; Mission016 prospectively replicated negative same-subject source-assistance outcome; strict cross-subject target provenance and broad foundation claims remain unresolved; human release approval pending",
+  "previous_execution_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+  "release_acceptance_matrix": "docs/release/acceptance_matrix.json",
+  "report_sha256": {
+    "reports/classical_05.json": "583ff96b62e62c239fa9df0618ab8ee7905cc105fbd60f8eaa87550a548739dd",
+    "reports/cross_subject_12.json": "2079f45115a7fd535cb06ab0623a82ebaf4a5b9a59bfab0588eb422b261f8ec0",
+    "reports/cross_subject_14.json": "c829da98d134fa3c0c18010419486b49482b7229828fa240871171b351c1ad58",
+    "reports/dynamics_10.json": "cd3bbc0842ad3fd3d76e15dc54e56cce795e8ec606a3287fb010e9a0253f704a",
+    "reports/evaluation_11.json": "38baa1361f007305fe7caccf02a2c430079e3559ffabddc2f3aa822096f2affd",
+    "reports/event_04_feasibility.json": "a6987e32af40ab262ae9b16d042353691bb7dd0664b86c58768e2563eac1a166",
+    "reports/event_04_results.json": "c2751dd8ee3a8418bc0f9a5097c93831592a710a7817220f7edafce08b01a167",
+    "reports/falcon_native_audit.json": "024761c7632cd5b71110174cc5b36dea1f4f03388206b4d7231a6edfdf9e8a16",
+    "reports/link_native_audit.json": "2f58e5e54a61a399724360a41fa79cc22d4b5cb0c2b2b39ba75b926c3704cc70",
+    "reports/longitudinal_08.json": "73785f4964262c5cd9285f4c902eabcef7a70807cebf7cdb34051d13128eb79b",
+    "reports/longitudinal_14.json": "212dab5c91478a313f7bb0df93e9f2dcf1570de16384964da4b5d5e029401e9f",
+    "reports/mc_maze_event_feasibility.json": "f8de552dc57b14a2baf5770c67e9b186daa33bf55af2a1c27e004430e2cc87f1",
+    "reports/mc_maze_native_audit.json": "69cdb72e09a2f3ec11472a86681cd3d31827501747bee0f3aa25e119c91116e3",
+    "reports/mission_014.json": "ddb580541358b26505afeb9098c74dba87fd811089b0ae0130d7f416bfe50e0a",
+    "reports/representation_07.json": "f150f907308ae500a777cc21831bb1889cfab5475531b35d57050164f95d0134",
+    "reports/representation_09.json": "3f2965c889b3d1ae7b7c23c9fc1d577837fc612f323f5011cc1da03415ae7fe3",
+    "reports/representation_14.json": "dfaf1633780693864218d06c5201571cc844454096858ce3373ca8b1e5acb767",
+    "reports/sense_01.json": "8045ed553d8c9ab1b434f16f1e4171ec03752d039e6ddc34c06181af8e539355",
+    "reports/sequence_06.json": "eaf8334ea367b5f616cd00419263dd0c0b911b449a6f5fec2bda7dca07568847",
+    "reports/signal_characterization.json": "7f0214bf69504bdbcdf8b373e2e1e9f8ffb1668e03fc8bcb6ad5b4bab34c12e6",
+    "reports/subject_identity_13.json": "4da289460fd222b06c488afe15968e3aef91f025635f9a7eeccc341afe5d5f1e"
+  },
+  "schema_version": 1,
+  "source_state": "Mission014 reproducibility uses committed source a3a2dfd; historical report artifacts and recorded revisions preserved. No final release tag.",
+  "subsystems": [
+    {
+      "actual_measured_results": "9 pinned assets checksum-verified; Maze100×70×107; LINK375 trials/session; FALCON54633/58552 complete bins; Mission014:11 repository manifests verified, additional6 FALCON dates and LINK Feb05 audited",
+      "capability": "NWB acquisition, timestamp/unit validation, trial binning and behavior masks",
+      "datasets": "Maze Small; standard Maze; LINK; FALCON native coverage",
+      "implementation_status": "implemented",
+      "known_limitations": "Perich audit only: unknown neural coverage; LINK count-unit ambiguity; FALCON upstream normalized EMG",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "SENSE",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "Original IDs/clocks retained; contact coordinates checked; split mutation rejected",
+      "capability": "Trials, sessions, subjects, units/contact policies and immutable split manifests",
+      "datasets": "Maze and three LINK sessions",
+      "implementation_status": "implemented",
+      "known_limitations": "Contacts are not tracked neurons; no private or speech acquisition",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "SENSE",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "PCA20; FA5 selected on inner60/15; outer25 untouched by fitting",
+      "capability": "PCA/FA and training-only dimension selection",
+      "datasets": "Maze Small",
+      "implementation_status": "implemented",
+      "known_limitations": "PCA reconstruction favors largest candidate; Gaussian FA approximates counts",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "MAP",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "Covariance cosine0.718375; CCA/angles reported without independent inference",
+      "capability": "Population covariance, similarity, CCA and principal angles",
+      "datasets": "LINK Jan27/Jan30 calibration only",
+      "implementation_status": "implemented descriptive",
+      "known_limitations": "CCA in-sample noisy anchors; no causal connectivity or reliable residual covariance",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "MAP",
+      "validation_status": "implemented descriptive"
+    },
+    {
+      "actual_measured_results": "Trial-local AR1, persistence/mean/permuted-time fitting controls executed",
+      "capability": "Neural latent dynamics and geometric controls",
+      "datasets": "Maze Small",
+      "implementation_status": "implemented exploratory",
+      "known_limitations": "Teacher-forced one-step forecast; no validated physiological dynamics",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "MAP",
+      "validation_status": "implemented exploratory"
+    },
+    {
+      "actual_measured_results": "Mean MSE0.0383248; ridge0.0354214; Kalman0.0313141 m²/s²",
+      "capability": "Mean, event-time, linear, ridge and Kalman",
+      "datasets": "Maze Small",
+      "implementation_status": "implemented",
+      "known_limitations": "Offline contemporaneous evaluation; source validation is exploratory",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "DECODE",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "Six architectures ×3 seeds executed; temporalCNN mean MSE0.0310519",
+      "capability": "MLP, GRU/LSTM, temporal CNN, Transformer, state-space sequence",
+      "datasets": "Maze Small",
+      "implementation_status": "implemented",
+      "known_limitations": "Unequal parameter counts; small fixed compute; Scientific runs CPU;6-model MPS software smoke passed; CUDA unavailable",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "DECODE",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "Session-scoped IDs; exact contact-key mapping; source/session representations compared",
+      "capability": "Session indexing, feature mapping and shared/session representations",
+      "datasets": "Perich native audit; three LINK sessions",
+      "implementation_status": "implemented within subject",
+      "known_limitations": "Perich neuron mapping unestablished; no cross-subject feature correspondence",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "REMEMBER",
+      "validation_status": "implemented within subject"
+    },
+    {
+      "actual_measured_results": "Source300 fit/112 eval; target75 calibration/354 eval; zero-shot MSE0.180151 vs source mean0.178826 normalized EMG²",
+      "capability": "Subject-aware generalization",
+      "datasets": "FALCON MonkeyL→MonkeyX; native recorded coverage",
+      "implementation_status": "implemented exploratory",
+      "known_limitations": "Lossy anonymous features; negative zero-shot result; one session/subject; original EMG preprocessing precedes splits; M1-B draft",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "REMEMBER",
+      "validation_status": "implemented exploratory"
+    },
+    {
+      "actual_measured_results": "Source300 fit/source75 eval; target75 calibration/300 eval; budgets1/5/15/50/75",
+      "capability": "Frozen transfer, recalibration, few-shot/residual correction and budget curves",
+      "datasets": "LINK Jan27→Jan30",
+      "implementation_status": "implemented",
+      "known_limitations": "Small-budget calibration often worsens error; no test-driven method selection",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "ADAPT",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "Unlabeled normalization MSE0.0263827 versus frozen0.0269661 flexion²",
+      "capability": "Unsupervised marginal and supervised condition-anchor alignment",
+      "datasets": "LINK first75 target calibration only",
+      "implementation_status": "implemented exploratory",
+      "known_limitations": "Marginal rescaling is not general identifiable alignment; extra target metadata disclosed",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "ADAPT",
+      "validation_status": "implemented exploratory"
+    },
+    {
+      "actual_measured_results": "Geometry, chronological error segments, extrapolated prediction fractions and block sensitivity reported",
+      "capability": "Shift and failure analysis",
+      "datasets": "LINK Jan27/Jan30",
+      "implementation_status": "implemented descriptive",
+      "known_limitations": "Two sessions do not identify drift causation; broader robustness unvalidated",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "ADAPT",
+      "validation_status": "implemented descriptive"
+    },
+    {
+      "actual_measured_results": "Within-session36 runs; cross-session168 controls/12 SSL runs; Mission014:3 source-only SSL fits and42 controls on later date",
+      "capability": "Masked/predictive SSL, frozen probing and fine-tuning",
+      "datasets": "Maze Small and LINK",
+      "implementation_status": "implemented experimental",
+      "known_limitations": "No broad SSL benefit demonstrated; no validated neural foundation model claim",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "FOUNDATION",
+      "validation_status": "implemented experimental"
+    },
+    {
+      "actual_measured_results": "Reference pretrained/random zero-shot MSE0.0211969/0.0211803 flexion²; New Feb05 reference pretrained/random zero-shot0.02439402/0.02442170, tiny mixed probe differences",
+      "capability": "Multi-recording pretraining and held-out-session transfer",
+      "datasets": "LINK Jan27+Jan30→Feb04",
+      "implementation_status": "implemented same subject",
+      "known_limitations": "Same contacts/subject; first40 native samples per trial only",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "FOUNDATION",
+      "validation_status": "implemented same subject"
+    },
+    {
+      "actual_measured_results": "Four prespecified settings ×3 seeds; nested5/15/75 label budgets",
+      "capability": "Random/supervised controls and model/data/compute ablations",
+      "datasets": "Three LINK sessions",
+      "implementation_status": "implemented finite controls",
+      "known_limitations": "Data100 changes SSL observations and scaler pool; finite ablations are not scaling laws",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "FOUNDATION",
+      "validation_status": "implemented finite controls"
+    },
+    {
+      "actual_measured_results": "24 date diagnostics: SSL98.0%, random97.78%; FALCON balanced subject accuracy100% vs chance50%",
+      "capability": "Session/subject identity leakage controls",
+      "datasets": "LINK held-out150 trials; FALCON source112/target354",
+      "implementation_status": "implemented held-out diagnostics",
+      "known_limitations": "Implicit date/subject information retained; FALCON one recording per animal confounds subject, session and date; post-hoc diagnostic",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "FOUNDATION",
+      "validation_status": "implemented held-out diagnostics"
+    },
+    {
+      "actual_measured_results": "Trial/model/PCA controls checked in browser; no JS errors",
+      "capability": "Activity, behavioral alignment, trajectories and decoder predictions",
+      "datasets": "Stored Maze real-data outputs",
+      "implementation_status": "implemented locally",
+      "known_limitations": "Self-contained offline explorer; no hardware control",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "INTERACT",
+      "validation_status": "implemented locally"
+    },
+    {
+      "actual_measured_results": "Calibration and ablation selectors checked; provenance/limitations visible",
+      "capability": "Session shifts, calibration curves, models and experiment inspection",
+      "datasets": "Stored LINK/representation outputs",
+      "implementation_status": "implemented locally",
+      "known_limitations": "Cross-subject outputs unavailable; no simulated replacement",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "INTERACT",
+      "validation_status": "implemented locally"
+    },
+    {
+      "actual_measured_results": "Fresh11 experiments;350 registry artifact digests;529 reported-array digests;229 raw-count prediction replays,227 exact; unsupported formats integrity/workflow restoration only",
+      "capability": "Versioned configs, registries, preprocessing/checkpoints/provenance",
+      "datasets": "All executed workflows",
+      "implementation_status": "implemented",
+      "known_limitations": "Direct requirements snapshot not transitive/cross-platform lock",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "Research engine",
+      "validation_status": "implemented"
+    },
+    {
+      "actual_measured_results": "96 common per-trial summaries; trial/block intervals and paired contrasts",
+      "capability": "Statistical evaluation, causality/leakage checks and reports",
+      "datasets": "Eight executed experiments",
+      "implementation_status": "implemented exploratory",
+      "known_limitations": "Intervals depend on independence/block assumptions; no multiplicity-corrected significance",
+      "remaining_blockers": "",
+      "repository_revision": "64d4d30e7e308d673ecfbe5056bd5366b27d823e",
+      "subsystem": "Research engine",
+      "validation_status": "implemented exploratory"
+    },
+    {
+      "actual_measured_results": "Fresh Conda Python3.11.17;46 commands pass;222 full tests;210 software tests plus12 data cases separately collected;11 experiments526 arrays numerically exact;wheel built;CPU/MPS6-model smokes",
+      "capability": "Tests, wheel, clean-checkout reproduction and incremental PR",
+      "datasets": "11 pinned manifests;fresh Small download,10 verified raw reuses;macOS arm64 fresh environment",
+      "implementation_status": "verified software within documented scope",
+      "known_limitations": "CI does not execute authentic-data workflows;MPS is synthetic smoke only;CUDA/GPU science/type checker untested",
+      "remaining_blockers": "",
+      "repository_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "subsystem": "Release",
+      "validation_status": "PASS"
+    },
+    {
+      "actual_measured_results": "v0.1.0 remains at8f9ffd91e4342713cb5a571e63d9931484caa143",
+      "capability": "Final full-scope release",
+      "datasets": "Not applicable",
+      "implementation_status": "incomplete;no final tag",
+      "known_limitations": "General-purpose foundation-model validity unestablished;negative results preserved;not a prerequisite that every hypothesis be positive",
+      "remaining_blockers": "Strict FALCON original target-processing validation unresolved;obtain raw provenance or independently suitable data. Human approval for merge/final tag pending.",
+      "repository_revision": "a3a2dfd04daf3d923a47d133ce4acf30b5983571",
+      "subsystem": "Release",
+      "validation_status": "SCIENTIFICALLY INCONCLUSIVE"
+    }
+  ],
+  "mission_019_evidence": {
+    "native_asset_manifest": "docs/datasets/mission_019_brochier_assets.json",
+    "native_audit": "reports/mission_019_brochier_native.json",
+    "frozen_protocol": "docs/research/mission_019_protocol.md",
+    "frozen_protocol_commit": "d5fbe7f7d717d37b762d83a4f512476895adf61b",
+    "transfer_results": "reports/mission_019_brochier_transfer.json",
+    "task": "four-class instructed grip-by-load classification; not continuous movement decoding",
+    "source_designated_single_units": {
+      "L": 93,
+      "N": 156
+    },
+    "sampled_go_windows": {
+      "L": 135,
+      "N": 142
+    },
+    "source_assisted_minus_target_only_balanced_accuracy": {
+      "L_to_N": 0.01263440860215051,
+      "N_to_L": 0.00206959706959714
+    },
+    "scientific_status": "Two-animal case study executed; no clear source-assisted advantage; general subject invariance and calibrated continuous-target transfer unvalidated"
+  },
+  "mission_021_evidence": {
+    "current_software_release_decision": "docs/release/qualification_021.json",
+    "original_scientific_scope_and_statuses_preserved": true,
+    "historical_scientific_release_gates_retained_as_history": true,
+    "interpretation": "Valid negative/inconclusive experiments and disclosed unavailable data are nonblocking under the explicit Mission021 release definition. Merge/tag/publication require separate owner approval."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "source_manifest": "configs/falcon_m1_a.json",
+  "target_manifest": "configs/falcon_x_20121210.json",
+  "source_training_trials": 300,
+  "source_inner_training_trials": 225,
+  "target_calibration_trials": 75,
+  "label_budgets": [
+    5,
+    15,
+    75
+  ],
+  "ridge_alphas": [
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "uncertainty_block_lengths": [
+    1,
+    5
+  ],
+  "bootstrap_draws": 1000,
+  "seed": 12
+}

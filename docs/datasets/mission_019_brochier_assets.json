@@ -1,0 +1,138 @@
+{
+  "archive": {
+    "etag": "\"39ba87a14-561626b95e163\"",
+    "size_bytes": 15496411668,
+    "url": "https://doi.gin.g-node.org/10.12751/g-node.f83565/10.12751_g-node.f83565.zip"
+  },
+  "assets": {
+    "LICENSE.txt": {
+      "archive_path": "datasets/LICENSE.txt",
+      "compressed_bytes": 4212,
+      "local_header_offset": 6829961724,
+      "sha256": "4fb9ea6c63f9a441416ba4110e111be34b4b0e3fcda5b39387e1f288705f31d0",
+      "size_bytes": 14442,
+      "zip_crc32": "66cb4e58"
+    },
+    "README.md": {
+      "archive_path": "datasets/README.md",
+      "compressed_bytes": 460,
+      "local_header_offset": 6829961188,
+      "sha256": "becc31ca08f14539d615b58fe196c671b35f2dd0f24759e9c1a7208e3dda23f2",
+      "size_bytes": 826,
+      "zip_crc32": "b8f35727"
+    },
+    "i140703-001-03.nev": {
+      "archive_path": "datasets/i140703-001-03.nev",
+      "compressed_bytes": 118028064,
+      "local_header_offset": 7289566898,
+      "sha256": "624ff677ea548b9840436d58ed1815a119db793630ff01d76378a25a1504efe0",
+      "size_bytes": 168323228,
+      "zip_crc32": "e0cf8b47"
+    },
+    "i140703-001.ccf": {
+      "archive_path": "datasets/i140703-001.ccf",
+      "compressed_bytes": 8394,
+      "local_header_offset": 4066601,
+      "sha256": "763210336703e2610b523436dd26838e808c3141ea980118d4cd25eee4412306",
+      "size_bytes": 187076,
+      "zip_crc32": "7029fe18"
+    },
+    "i140703-001.ns2": {
+      "archive_path": "datasets/i140703-001.ns2",
+      "compressed_bytes": 155073301,
+      "local_header_offset": 6830030532,
+      "sha256": "67cd0f878ec8a64c8ffa4092a39c7a8bb33fc1410182178042d1ffcf23201abb",
+      "size_bytes": 204661895,
+      "zip_crc32": "6106a5ae"
+    },
+    "i140703-001.ns6": {
+      "archive_path": "datasets/i140703-001.ns6",
+      "compressed_bytes": 4306420841,
+      "local_header_offset": 2518762459,
+      "sha256": "242d614da6112be903c827c16cde740795a42008a9375055c5e75c05d369fb9b",
+      "size_bytes": 5778493379,
+      "zip_crc32": "a8866f16"
+    },
+    "i140703-001.odml": {
+      "archive_path": "datasets/i140703-001.odml",
+      "compressed_bytes": 64435,
+      "local_header_offset": 6829966014,
+      "sha256": "3aa08ac3b47eb90481193d7731c5bb46453ffa1f0445a0b14e2976b244a21562",
+      "size_bytes": 2433387,
+      "zip_crc32": "6fee0c29"
+    },
+    "l101210-001-02.nev": {
+      "archive_path": "datasets/l101210-001-02.nev",
+      "compressed_bytes": 152218101,
+      "local_header_offset": 6985103915,
+      "sha256": "b617695399004bba70231a66709d30a2dfdc8c0e50291f630303e6a5481bcf43",
+      "size_bytes": 287712104,
+      "zip_crc32": "d77d0fc6"
+    },
+    "l101210-001.ccf": {
+      "archive_path": "datasets/l101210-001.ccf",
+      "compressed_bytes": 5628,
+      "local_header_offset": 4075077,
+      "sha256": "f50c6ff5f9c85b513dd7664a4944990f17fbab2a024fe6e0bb4602dc99e5fe8a",
+      "size_bytes": 108204,
+      "zip_crc32": "7c3dc8e9"
+    },
+    "l101210-001.ns2": {
+      "archive_path": "datasets/l101210-001.ns2",
+      "compressed_bytes": 4777704,
+      "local_header_offset": 6825183402,
+      "sha256": "e48ce4af07ef6af7bfcdc1f43e04538a05708f6128af6907526c946a997f701a",
+      "size_bytes": 8511032,
+      "zip_crc32": "e3ca834f"
+    },
+    "l101210-001.ns5": {
+      "archive_path": "datasets/l101210-001.ns5",
+      "compressed_bytes": 2396503186,
+      "local_header_offset": 122259191,
+      "sha256": "62666156bfa74ea6c9c58eb206bfd8c622a8a61c1d485a150b01f3c5e2b2046c",
+      "size_bytes": 4085268896,
+      "zip_crc32": "0ab1851a"
+    },
+    "l101210-001.odml": {
+      "archive_path": "datasets/l101210-001.odml",
+      "compressed_bytes": 73534,
+      "local_header_offset": 7289493281,
+      "sha256": "285e224731aebaacc2681707d55309067a17bc3e431ebf152a150ebfdb87358f",
+      "size_bytes": 2782094,
+      "zip_crc32": "127ad160"
+    },
+    "source_bundle/LICENSE.txt": {
+      "archive_path": "LICENSE.txt",
+      "compressed_bytes": 446,
+      "local_header_offset": 15496340828,
+      "sha256": "7c1a4fb0504389c47e2e8b4eb85b24341f0cf980d58689e27f46899fe132d600",
+      "size_bytes": 736,
+      "zip_crc32": "2e12cac9"
+    },
+    "source_bundle/README.md": {
+      "archive_path": "README.md",
+      "compressed_bytes": 3829,
+      "local_header_offset": 15496341343,
+      "sha256": "552564262b2b16d2afe6ab04b17dda5ef51a3e8bab799c553d7c3ea28feb5617",
+      "size_bytes": 9951,
+      "zip_crc32": "687be1bb"
+    }
+  },
+  "dataset_doi": "10.12751/g-node.f83565",
+  "sessions": [
+    {
+      "id": "l101210-001",
+      "neural_nsx": "l101210-001.ns5",
+      "neural_stream": 5,
+      "sorted_nev": "l101210-001-02.nev",
+      "subject": "L"
+    },
+    {
+      "id": "i140703-001",
+      "neural_nsx": "i140703-001.ns6",
+      "neural_stream": 6,
+      "sorted_nev": "i140703-001-03.nev",
+      "subject": "N"
+    }
+  ]
+}

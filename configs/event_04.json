@@ -1,0 +1,15 @@
+{
+  "primary_event": "go_cue_time",
+  "secondary_event": "move_onset_time",
+  "pre_seconds": -0.4,
+  "post_seconds": 1.0,
+  "bin_width_seconds": 0.02,
+  "behavior_max_gap_seconds": 0.002,
+  "condition_min_repetitions": 3,
+  "residual_reliability_screen_repetitions": 20,
+  "baseline_seconds": [-0.4, -0.2],
+  "response_seconds": [0.2, 0.6],
+  "total_covariance_bin_start_seconds": 0.3,
+  "bootstrap_draws": 1000,
+  "bootstrap_seed": 4
+}
