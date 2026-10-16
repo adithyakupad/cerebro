@@ -1,0 +1,15 @@
+{
+  "dataset_manifest": "docs/datasets/mission_019_brochier_assets.json",
+  "event": "SR",
+  "conditions": ["SGLF", "SGHF", "PGLF", "PGHF"],
+  "performance_code": 255,
+  "pre_ticks": 6000,
+  "post_ticks": 12000,
+  "bin_ticks": 600,
+  "tick_rate_hz": 30000,
+  "condition_min_trials": 20,
+  "fano_min_mean_post_count": 1.0,
+  "bootstrap_draws": 300,
+  "permutation_draws": 200,
+  "random_seed": 20020
+}
