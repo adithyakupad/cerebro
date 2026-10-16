@@ -4,7 +4,7 @@ Use the existing Python 3.11 Conda environment:
 
 ```sh
 conda activate cerebro
-python -m pip install -e '.[dev,classical,deep]'
+python -m pip install -e '.[dev,classical,deep,brochier]'
 ```
 
 For matching executed direct versions, install `requirements-research.txt` first.
@@ -127,7 +127,7 @@ in a browser. It requires no service or network access. The optional temporary
 loopback server used for verification is not part of the installed platform.
 
 See dataset documents for source licenses/attribution and metadata ambiguities.
-CEREBRO source code is MIT; recording licenses remain the authors' CC-BY-4.0 terms.
+CEREBRO source code is MIT; recording terms remain dataset-specific. DANDI sources here use CC-BY-4.0; the Brochier ZIP root and bundled dataset license texts conflict (CC-BY-4.0 versus CC-BY-SA-4.0), so raw-data redistribution remains withheld pending clarification.
 No raw recording or large derived tensor is distributed with the source repository.
 
 ## Mission 014 release validation and new dates
@@ -187,10 +187,20 @@ upstream target leakage or add independent animals. Perich remains audit-only.
 
 The [dataset eligibility screen](../datasets/mission_016_eligibility.md) and
 [frozen protocol](mission_016_protocol.json) were committed before model runs.
-Acquire the three checksum-pinned targets, then reproduce the fixed same-subject
-experiments and verified reports using the existing Python 3.11 environment:
+The historical renderer deliberately requires the exact original experiment
+revision and a clean source state; current-revision results must not be relabeled
+as historical. Reproduce it in a separate clone, with no processed outputs copied.
+Copy the later-added renderer outside that clone before selecting the frozen
+commit. Run all four experiments before rendering so their recorded source states
+remain clean. Use the isolated release-verification environment or a dedicated
+researcher environment for this historical checkout:
 
 ```sh
+cp tools/report_mission_016.py /tmp/cerebro-report-mission016.py
+git clone --no-hardlinks . ../cerebro-016-reproduction
+cd ../cerebro-016-reproduction
+git checkout --detach 5a7376a694825005500cd357694fa8e27e2ce31e
+python -m pip install -e '.[dev,classical,deep]'
 python -m cerebro.dataset configs/link_20200127.json
 python -m cerebro.dataset configs/link_20200130.json
 python -m cerebro.dataset configs/link_20200206.json
@@ -200,16 +210,20 @@ python -m cerebro.longitudinal --config configs/longitudinal_16_20200206.json --
 python -m cerebro.longitudinal --config configs/longitudinal_16_20200211.json --output data/processed/longitudinal_16_20200211
 python -m cerebro.longitudinal --config configs/longitudinal_16_20200222.json --output data/processed/longitudinal_16_20200222
 python -m cerebro.representation_transfer --config configs/representation_16_20200206.json --output data/processed/representation_16_20200206
-python tools/report_mission_016.py
-python -m pytest
+python /tmp/cerebro-report-mission016.py
 ```
 
-The report command verifies stored numeric-array digests and the committed
+Afterward return to the release clone and reinstall its editable package before
+running the remaining workflows. The report command verifies stored numeric-array digests and the committed
 protocol hash before generating [Mission 016 results](../../reports/mission_016.md)
 and three figures. Raw assets, arrays, and checkpoints remain Git-ignored. The
 trial-level full reports are versioned under `reports/longitudinal_16_*.json`
 and `reports/representation_16_20200206.json`. This is one Monkey N task and
 contact-coordinate transfer, not independent-subject or online validation.
+
+## Mission 019 native cross-animal condition classification
+
+Install `.[classical,brochier]` in the release clone. Acquire the same six native files listed in Mission 020 below, then run `python -m tools.run_brochier_transfer`. It preserves the fixed four grip-by-load labels, chronological first-five-per-class target calibration, source/target subject distinction and native source hashes. This is condition classification, not continuous movement regression. The [frozen protocol](mission_019_protocol.md) and [results](../../reports/mission_019_brochier_transfer.md) remain the interpretation references.
 
 ## Mission 017 evidence screen and adaptation diagnosis
 

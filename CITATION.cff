@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite this software and the original dataset publications and versions used in your analysis."
+title: "CEREBRO: Adaptive Neural Intelligence Research Platform"
+type: software
+authors:
+  - name: "CEREBRO contributors"
+version: 1.0.0
+repository-code: "https://github.com/adithyakupad/cerebro"
+url: "https://github.com/adithyakupad/cerebro"
+license: MIT
+abstract: "Reproducible computational neuroengineering workflows for authentic neural recordings, population analysis, offline decoding, session adaptation, representation controls and scientific visualization. General subject invariance and foundation-model transfer remain unvalidated."
