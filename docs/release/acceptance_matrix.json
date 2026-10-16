@@ -255,7 +255,8 @@
       "counts": "Each run: 223 software tests passed; 16 data tests collected but not executed",
       "initial_failure": "Two first runs failed because optional neo was imported during collection; fixed by lazy import"
     },
-    "numeric_reproducibility": "PASS: post-fix rerun transfer report SHA-256 83a9716f15f6622dcf337d1aeddb12b93580757a7c61c8c0601d8153d4b2e75e identical",
-    "software_without_optional_neo": "PASS: 223 software tests with neo import deliberately blocked; 16 data cases deselected"
+    "numeric_reproducibility": "PASS: after license-manifest provenance update, transfer report SHA-256 76ffe7f6730150983ca70b6396424b86725d238d80cdc588ed670d5f7c716f01; both direction scores unchanged",
+    "software_without_optional_neo": "PASS: 223 software tests with neo import deliberately blocked; 16 data cases deselected",
+    "license_provenance": "Root and bundled license/readme files checksum-pinned in docs/datasets/mission_019_brochier_assets.json; conflicting terms remain unresolved"
   }
 }
