@@ -74,3 +74,7 @@ The first Mission 019 public CI runs failed during test collection because the o
 ## Mission 023 research candidate addendum
 
 [M023 acceptance](../research/m023_acceptance.md) separates executed software checks from failed scientific promotion gates. Both development studies executed on authentic LINK recordings; no new-session model outcomes were consumed despite native eligibility. The [research candidate notes](m023_research_candidate.md) propose a bounded negative-case-study publication, not a new release tag or evidence of practical independent adaptation. v1.0.0 and draft PR2 remain preserved; M023 is a separate research review.
+
+## Mission 024 research-release candidate
+
+See [v1.1 qualification](qualification_024.md) for executed software, authentic-data, fresh-environment and independent-review evidence. Earlier acceptance rows remain historical. No mitigation/reliability primary is promoted; original scientific limitations and all33 requirements remain preserved. Both stacked PRs remain draft until explicit owner approval; no v1.1 tag or release exists as part of this qualification.

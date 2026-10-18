@@ -113,3 +113,7 @@ The [manuscript](../../reports/m023_manuscript.md), [acceptance matrix](m023_acc
 | Reproducibility and software |274 local tests including22 data cases;1348 new saved-array entries reproduced; raw-count checkpoints, independent FA likelihood reconstruction, wheel and presentation checks. | **PASS within executed scope**; public CI verified separately at the research PR head. |
 
 The original33 statuses remain14 COMPLETE,8 PARTIAL,5 UNVALIDATED,4 BLOCKED,2 MISSING. No broad adaptive-neural-intelligence, foundation-model, clinical, subject-invariance or physiology conclusion is upgraded. Eligible unscored recordings are preserved for a separately approved future protocol, not outcome-driven method retries.
+
+## Mission 024 integration qualification
+
+The [v1.1 consolidated study](v1_1_manuscript.md) and [release acceptance](../release/qualification_024.md) integrate M022/M023 without changing original33-requirement statuses or historical results. Fresh authentic-data reconstruction, package verification and independent review qualify software/reproducibility separately from failed scientific promotion gates. Eligible later LINK dates remain unscored. Merge/tag/release await explicit owner approval.
