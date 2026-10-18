@@ -99,3 +99,17 @@ This addendum starts from the subsequently published v1.0.0 commit `b780e5cc53f2
 | Software and reproducibility | Existing ridge/scaling infrastructure reused; [verification evidence](m022_validation.json) covers split/allocation/shrinkage/coefficient/decomposition/gate/report tests, source hashes and numerical rerun. | Verified within stated checks; no new model family or dependency. |
 
 The original 33-requirement statuses remain **14 COMPLETE, 8 PARTIAL, 5 UNVALIDATED, 4 BLOCKED, 2 MISSING**. Development mechanistic evidence does not establish reliable cross-session benefit, biological subject generalization or neural foundation-model validity. Trials, subset resamples and optimization seeds are not independent biological subjects.
+
+## Mission 023 reliability and observed dynamics
+
+The [manuscript](../../reports/m023_manuscript.md), [acceptance matrix](m023_acceptance.md) and [validation record](m023_validation.json) add two bounded development studies while preserving M022 as draft PR2. The frozen protocol was committed before outcomes; no release tag or main merge was changed.
+
+| Requirement | New evidence | Scientific status |
+|---|---|---|
+| Calibration-only adaptation reliability |369 allocations, whole-session folds, fixed information budgets; primary combined risk MSE1.09375e-5 versus label-only7.20229e-6 flexion⁴. Combined BA0.675 equals permutation control and trails label-only0.7625. | **BOUNDED NEGATIVE**: no reliability candidate passes promotion; no independently validated harm avoidance. |
+| Interpretable observed dynamics |60 model/session evaluations; PCA6 AR forecast gains42.36% versus persistence,3.59% versus mean,2.40% versus shuffled training. Multi-step, dimensionality, local/scaling, geometry and behavior controls executed. | **PARTIAL development evidence**: statistical temporal structure; fixed practical gate fails. Original M3 generalization requirement remains UNVALIDATED. |
+| Added dynamics risk information | Coverage+label risk MSE7.23305e-6 versus dynamics-augmented7.31302e-6 flexion⁴. | **INCONCLUSIVE / no primary added benefit**. No physiological inference. |
+| Native independent cohort | Exact Feb24/Feb25/Jun26 hashes,375 trials/session,96-contact joins and synchronized sampled coverage verified. | **Eligible within one subject; outcomes unscored** because both development gates fail. Not a data-access blocker. |
+| Reproducibility and software |274 local tests including22 data cases;1348 new saved-array entries reproduced; raw-count checkpoints, independent FA likelihood reconstruction, wheel and presentation checks. | **PASS within executed scope**; public CI verified separately at the research PR head. |
+
+The original33 statuses remain14 COMPLETE,8 PARTIAL,5 UNVALIDATED,4 BLOCKED,2 MISSING. No broad adaptive-neural-intelligence, foundation-model, clinical, subject-invariance or physiology conclusion is upgraded. Eligible unscored recordings are preserved for a separately approved future protocol, not outcome-driven method retries.
