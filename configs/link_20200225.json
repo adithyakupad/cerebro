@@ -1,0 +1,12 @@
+{
+  "dandiset_id": "001201",
+  "version": "0.251023.2336",
+  "asset_id": "15299ea6-cffb-46e8-9175-a822e4f52f1d",
+  "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200225_ecephys.nwb",
+  "size_bytes": 43342520,
+  "sha256": "ceb39e4827a7b5291bf8a2d220cb0b8f6e3063dea8365f689a3e2512f906da8c",
+  "license": "CC-BY-4.0",
+  "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/15299ea6-cffb-46e8-9175-a822e4f52f1d/",
+  "download_url": "https://api.dandiarchive.org/api/assets/15299ea6-cffb-46e8-9175-a822e4f52f1d/download/",
+  "local_path": "data/raw/link/sub-Monkey-N_ses-20200225_ecephys.nwb"
+}

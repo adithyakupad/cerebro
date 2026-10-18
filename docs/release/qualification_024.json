@@ -1,0 +1,79 @@
+{
+  "mission": 24,
+  "publication_status": "AWAITING_EXPLICIT_OWNER_APPROVAL",
+  "scientific_baseline": "99ef1831ba009e53bac05d97e49c3da22da5e455",
+  "integration_source_revision": "7b26f92",
+  "environment": {
+    "conda": "cerebro",
+    "python": "3.11.16"
+  },
+  "full_tests": {
+    "passed": 277,
+    "failed": 0,
+    "data_executed": 22,
+    "software": 255,
+    "warnings": 20,
+    "seconds": 82.34,
+    "log_sha256": "5450d03511ea6e22bc079e19395f6419f74f439000cc0b0b7245f371ff294a22"
+  },
+  "dependency_check": "PASS",
+  "compilation": "PASS",
+  "wheel": {
+    "name": "cerebro-1.1.0-py3-none-any.whl",
+    "bytes": 139123,
+    "sha256": "28aa82febc335d2df7a29a6817d4af3df86ce1501084c8f906b6e1517dd0cb39",
+    "entries": 38,
+    "raw_or_checkpoints": false
+  },
+  "historical_checkpoints": {
+    "files_verified": 405,
+    "array_digests_verified": 755,
+    "predictions_replayed": 229,
+    "exact": 227
+  },
+  "preservation_and_scan": {
+    "historical_files_checked": 212,
+    "changed": [],
+    "raw_or_checkpoints": [],
+    "large_files": [],
+    "credential_signature_matches": [],
+    "scope": "Tracked current snapshot; signature scan not a guarantee of absence"
+  },
+  "independent_review": {
+    "blocking_findings": 0,
+    "scoped_tests_passed": 24,
+    "clarifications_resolved": [
+      "Exact B-only dynamics feature access",
+      "Comparison versus overall gate fields"
+    ],
+    "scientific_source_changes": false
+  },
+  "fresh_verification": "docs/development/m024_fresh_install.json",
+  "untouched_session_model_outcomes_scored": false,
+  "scientific_promotions": {
+    "M022": null,
+    "M023_reliability": null,
+    "M023_temporal": false
+  },
+  "original_33_requirements": {
+    "COMPLETE": 14,
+    "PARTIAL": 8,
+    "UNVALIDATED": 5,
+    "BLOCKED": 4,
+    "MISSING": 2
+  },
+  "not_tested": [
+    "GPU performance",
+    "Native presentation application interaction",
+    "Later-session outcomes intentionally withheld"
+  ],
+  "public_ci": "Final PR head and check URL verified live at owner-approval boundary; data cases collected, not executed in CI",
+  "merge_sequence": [
+    "Normal merge commit PR2 preserving branch",
+    "Retarget PR3 to main; inspect diff/tree and CI",
+    "Merge PR3 only if reviewed content unchanged",
+    "Verify main SHA and approved tree before annotated v1.1.0 and release"
+  ],
+  "proposed_notes": "docs/release/v1.1.0.md",
+  "release_blockers_identified": []
+}

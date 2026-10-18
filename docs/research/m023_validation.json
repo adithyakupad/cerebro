@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "release_commit": "b780e5cc53f246f4b305d413c4bd1afb962ff42c",
+  "m022_head": "222486826cc4562669370b6f0486477b79bb740a",
+  "protocol_commit": "a2861a2",
+  "reliability_preexecution_clarification_commit": "ca5a0ad",
+  "environment": {
+    "conda": "cerebro",
+    "python": "3.11.16",
+    "versions": {
+      "numpy": "2.4.6",
+      "pynwb": "4.2.0",
+      "scikit-learn": "1.9.1"
+    },
+    "threads": 1
+  },
+  "full_test_suite": {
+    "passed": 274,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 63.85,
+    "software_cases": 252,
+    "data_cases_executed": 22,
+    "warnings": 20,
+    "warning_type": "Pre-existing HDMF Device.manufacturer deprecation"
+  },
+  "m023_scoped_tests": {
+    "software": 11,
+    "data": 5,
+    "initial_test_fixture_failure": "Risk single-output restored vector was incorrectly indexed as a matrix; fixed shape handling, no tolerance/value assertion removed",
+    "latest_data_report_regeneration": "PASS after final renderer punctuation correction"
+  },
+  "numerical_reproduction": {
+    "A": {
+      "arrays": 325,
+      "elements": 12834,
+      "all_array_hashes_equal": true,
+      "all_feature_and_outcome_rows_equal": true,
+      "all_risk_evaluation_values_equal": true,
+      "all369_M022_direct_trial_outcomes": "Exact replays asserted during both A runs"
+    },
+    "B": {
+      "shared_arrays": 1023,
+      "elements": 198396,
+      "all_shared_hashes_equal": true,
+      "all_pertrial_metrics_equal": true,
+      "temporal_gate_equal": true
+    }
+  },
+  "checkpoint_restoration": {
+    "historical_files_verified": 405,
+    "historical_array_digests": 755,
+    "historical_CPU_predictions_replayed": 229,
+    "historical_exact": 227,
+    "historical_tolerance": {
+      "rtol": 1e-07,
+      "atol": 1e-09
+    },
+    "new_risk_checkpoints": "Saved training scaler/coef/intercept restored all fold/model/budget risk predictions in data test",
+    "new_population_rawcount_max_abs_error": 1.6653345369377348e-15,
+    "latent_reconstruction_subspace_rotation_max_error": 1.2434497875801753e-14,
+    "FA_independent_Cholesky_likelihood_replay": {
+      "comparison": "Independent covariance Cholesky reconstruction of saved FA Gaussian observation likelihoods; no model fitting",
+      "model_session_comparisons": 30,
+      "whole_trial_scores": 900,
+      "maximum_absolute_error": 8.526512829121202e-14,
+      "maximum_relative_error": 5.100501107791721e-16
+    }
+  },
+  "dependency_and_packaging": {
+    "pip_check": "PASS: No broken requirements found",
+    "compileall": "PASS: src/tests",
+    "wheel": "cerebro-1.0.0-py3-none-any.whl",
+    "wheel_bytes": 138739,
+    "wheel_sha256": "4195c97ce4fe2a4d8bde016c116a472a80f34ac6da8f94c9a429c0248557bd4a",
+    "wheel_entries": 38,
+    "both_new_modules_present": true,
+    "raw_recordings_and_checkpoints_in_wheel": false,
+    "new_dependencies": []
+  },
+  "presentation": {
+    "slides": 10,
+    "editable_native_charts": 2,
+    "published_sha256": "c70b5747962a9c69d38d0f21e21536c2cff6ba57a340ff5399b1ab6e7813a814",
+    "original_finalizer_receipt_matches_file": true,
+    "package_layout_fonts_chart_import_checks": "PASS",
+    "all10_individual_previews_inspected": true,
+    "reproduction_command_completed": true,
+    "reproduced_final_sha256": "0b1e56a4e0acd3683310a19aff113552cc9011a31da32ec83e6b295605f17bb7",
+    "byte_identity_required": false,
+    "reproduction_fixes": [
+      "Output path outside private validation directory",
+      "Unique receipt name derived from requested final filename"
+    ],
+    "native_PowerPoint_or_Google_Slides_application_test": "NOT TESTED"
+  },
+  "independent_review": {
+    "separate_reviewer": "M022 audit, frozen protocol audit, actual A/B code review, final manuscript/results review",
+    "blocking_findings": 0,
+    "resolved": [
+      "Forbidden M022 posthoc quantities explicitly excluded from features",
+      "Independent risk controls and undefined-class promotion behavior frozen clearly",
+      "Bootstrap lineage renamed within_selected_trial_indices",
+      "Decoded forecast and subspace rotation invariance added",
+      "Generated Markdown punctuation corrected"
+    ],
+    "reviewer_executed_scoped_tests": 11,
+    "reviewer_recomputed_primary_results": true
+  },
+  "native_eligibility": {
+    "dates": [
+      "20200224",
+      "20200225",
+      "20200626"
+    ],
+    "asset_hashes_and_coverage": "PASS; detailed pinned manifests and audit",
+    "biological_subjects": 1,
+    "candidate_sessions": 3,
+    "model_outcomes_scored": false
+  },
+  "scientific_decisions": {
+    "A_selected_method": null,
+    "B_temporal_gate_passed": false,
+    "independent_validation": "NOT EXECUTED: both development gates failed; native data available, no outcome-based replacement"
+  },
+  "limitations": [
+    "One animal and3 inspected development target dates",
+    "Nonchronological development session folds",
+    "Overlapping allocation rows not independent sessions",
+    "Conditional CI holds trained risk models fixed",
+    "2700 recorded FA likelihood runtime warnings; all900 means independently match Cholesky within8.53e-14",
+    "No prospective mitigation efficacy, physiology, subject invariance, foundation-model, GPU or biological closed-loop claim"
+  ],
+  "public_CI": "Verified separately against the published PR head in final report; CI runs software cases and collects data cases only"
+}

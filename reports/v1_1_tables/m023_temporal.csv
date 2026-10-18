@@ -1,0 +1,4 @@
+control,mean_date_relative_improvement,paired_mse_standardized_count2,conditional_95_low,conditional_95_high,comparison_passed,primary_passed
+neural_persistence,0.4236424241101992,-1.0795530156614481,-1.1335209056444726,-1.031258182172043,True,False
+training_mean,0.0359433297412319,-0.058541810564948095,-0.06988740303883705,-0.04581219167141442,False,False
+permuted_training_ar,0.02397987516043561,-0.03852840819611229,-0.04573392924116056,-0.030474013812980427,False,False

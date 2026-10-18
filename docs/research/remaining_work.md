@@ -1,5 +1,11 @@
 # Remaining work for full-scope CEREBRO
 
+## Mission 023 current-state addendum
+
+[Two frozen development studies](../../reports/m023_manuscript.md) are complete. Calibration-only reliability fails its constant/label-only/shift and all-date gate; source PCA6 temporal forecasts miss the5% criterion versus training-mean/permuted controls. Neither result justifies new-session outcome consumption. Feb24/Feb25/Jun26 now pass native eligibility, so a future independently justified hypothesis is **not blocked by LINK access**. Do not reuse inspected dates or tune new methods against these preserved outcomes under an untouched-test label.
+
+Remaining gates are scientific, not a missing architecture: independent practical harm prediction/adaptation efficacy, broader biological replication, physiological discrimination beyond task/acquisition effects, valid target/coverage provenance for still-blocked corpora, and actual hardware evidence before online claims. Preserve all original33 requirements and the negative controls. Current deliverables include an external-review manuscript, ten-slide deck, technical interview evidence and reproducibility records. No additional model development or release is authorized by this addendum.
+
 ## Mission 022 current-state addendum
 
 v1.0.0 is published at `b780e5cc53f246f4b305d413c4bd1afb962ff42c`. The historical release gates below describe their earlier execution states. [M022](../../reports/m022_calibration_mechanisms.md) supplies new development evidence for calibration allocation sensitivity and finite-sample prediction dispersion, with mixed regularization/scaling effects. No prespecified candidate passes the owner-confirmed 5%/all-date promotion rule; no mitigation is promoted.

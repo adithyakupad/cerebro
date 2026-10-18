@@ -393,5 +393,33 @@
       "No physiological drift or stable neuron identity inferred",
       "No general neural foundation-model validity established"
     ]
+  },
+  "mission_023_evidence": {
+    "protocol": "docs/research/m023_protocol.md",
+    "protocol_commit": "a2861a2",
+    "clarification_commit": "ca5a0ad",
+    "manuscript": "reports/m023_manuscript.md",
+    "reports": {
+      "reliability": {
+        "path": "reports/m023_reliability.json",
+        "sha256": "cdd210adb55220916ee6b808fcb209b24de3d0645b2996b333073e09aa1788f8"
+      },
+      "dynamics": {
+        "path": "reports/m023_dynamics.json",
+        "sha256": "46e2d1c7b691ebe59d709b3f705e99d0fde41061a48d7302a95e0355ea9029b3"
+      }
+    },
+    "native_eligibility": "docs/datasets/m023_native_eligibility.json",
+    "validation": "docs/research/m023_validation.json",
+    "acceptance": "docs/research/m023_acceptance.md",
+    "biological_subjects": 1,
+    "source_sessions": 1,
+    "development_target_sessions": 3,
+    "unscored_eligible_target_sessions": 3,
+    "reliability_status": "BOUNDED NEGATIVE: no candidate promoted",
+    "temporal_status": "Statistical development structure supported; practical promotion gate failed",
+    "independent_outcome_status": "NOT EXECUTED under frozen null rules, not unavailable data",
+    "original_33_statuses_changed": false,
+    "presentation": "reports/m023_research_presentation.pptx"
   }
 }

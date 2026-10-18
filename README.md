@@ -1,6 +1,10 @@
 # CEREBRO
 
-**Adaptive Neural Intelligence Research Platform — version 1.0.0.**
+**Adaptive Neural Intelligence Research Platform — version 1.1.0.**
+
+The v1.1.0 research candidate awaits owner approval for merge and publication.
+The [GitHub releases page](https://github.com/adithyakupad/cerebro/releases)
+records published versions; v1.0.0 remains immutable.
 
 CEREBRO studies representations of real neural population activity for behavioral
 prediction, population analysis, cross-session comparison and calibration-efficient
@@ -25,13 +29,27 @@ See the [architecture](docs/architecture.md), [integrated technical report](docs
 [release qualification](docs/release/qualification_021.md).
 Software functionality, executed experiments and scientific conclusions are separate.
 
+## Post-v1.0 research
+
+The [consolidated manuscript](docs/research/v1_1_manuscript.md) integrates
+calibration sampling, estimation dispersion, calibration-only harm prediction
+and controlled population forecasts on authentic LINK recordings. Neither
+research stream met its frozen practical promotion gate. The three later
+eligible sessions remain unscored; negative findings are preserved.
+
+The [external-review guide](docs/research/v1_1_reproduction.md) links exact inputs,
+reproducible tables, figures, configuration archive, statistical appendix and
+the research presentation. These experiments use one macaque and inspected
+development dates; they establish neither physiological drift nor independently
+validated adaptation superiority. The original 33-requirement scope is retained.
+
 ## Install
 
 Python **3.11** and Conda are required. Use an existing `cerebro` environment if
 available; create it only when absent:
 
 ```sh
-git clone --branch codex/research-platform https://github.com/adithyakupad/cerebro.git
+git clone --branch research/m023-reliability-dynamics https://github.com/adithyakupad/cerebro.git
 cd cerebro
 # Only if the environment does not already exist:
 conda env create -f environment.yml
@@ -42,8 +60,8 @@ python -c "import cerebro; print(cerebro.__file__)"
 python -m pytest -m 'not data' -q
 ```
 
-Research development is on `codex/research-platform`. After the owner approves
-publication, `git checkout v1.0.0` selects the approved release revision; the
+The command selects the reviewed post-v1.0 candidate branch. Once approved and
+published, `git checkout v1.1.0` selects the immutable release revision; the
 [GitHub releases page](https://github.com/adithyakupad/cerebro/releases) is the publication record.
 [Installation details](docs/installation.md) explain optional extras, CPU/GPU scope,
 wheel installation and tests. `requirements-research.txt` records historical direct
@@ -141,6 +159,7 @@ Public CI executes software tests and only collects data-dependent cases. Local
 full-data execution and exact reproduction evidence are distinguished in the
 [qualification report](docs/release/qualification_021.md). Missing data never become
 synthetic neuroscience evidence. Historical Mission 014–020 records remain preserved.
+Post-v1.0 verification is recorded in the [v1.1.0 qualification](docs/release/qualification_024.md).
 
 Cite this software using [CITATION.cff](CITATION.cff), and cite each underlying
 dataset separately. Follow [AGENTS.md](AGENTS.md), the explicit scientific coding

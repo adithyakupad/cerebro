@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "scope": "Fresh public checkout and fresh isolated Conda environment; unchanged frozen development workflows only. No new-session model outcomes.",
+  "public_source": "https://github.com/adithyakupad/cerebro.git",
+  "verified_source_commit": "99ef1831ba009e53bac05d97e49c3da22da5e455",
+  "temporary_checkout": "/tmp/cerebro-m024-qualification",
+  "temporary_conda_prefix": "/tmp/cerebro-m024-conda",
+  "environment": {
+    "python": "3.11.17 (main, Oct  1 2026, 20:09:52) [Clang 20.1.8 ]",
+    "versions": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "pynwb": "4.2.0",
+      "matplotlib": "3.11.2",
+      "torch": "2.14.1",
+      "neo": "0.14.5",
+      "pytest": "8.4.2",
+      "cerebro": "1.0.0"
+    },
+    "public_download": {
+      "path": "/tmp/cerebro-m024-qualification/data/raw/m024_public_download/sub-Monkey-N_ses-20200127_ecephys.nwb",
+      "sha256": "1b4429c0223a7f33d33dd3ad798efa972590cd0e4ec6eae29e45199f83ec5a6b",
+      "size_bytes": 45005026,
+      "manifest": "configs/link_20200127.json",
+      "source": "official DANDI public asset endpoint",
+      "exit_code": 0
+    }
+  },
+  "creation_commands": [
+    "git clone --no-checkout https://github.com/adithyakupad/cerebro.git /tmp/cerebro-m024-qualification",
+    "git -C /tmp/cerebro-m024-qualification checkout --detach 99ef1831ba009e53bac05d97e49c3da22da5e455",
+    "conda create --prefix /tmp/cerebro-m024-conda python=3.11 pip -y",
+    "/tmp/cerebro-m024-conda/bin/python -m pip install -e '.[dev,classical,deep,brochier]'"
+  ],
+  "creation_exit_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_only_inputs": [
+    {
+      "manifest": "configs/link_20200127.json",
+      "source": "/Users/adithyaupad/Developer/cerebro/data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb",
+      "clone_path": "/tmp/cerebro-m024-qualification/data/raw/link/sub-Monkey-N_ses-20200127_ecephys.nwb",
+      "sha256": "1b4429c0223a7f33d33dd3ad798efa972590cd0e4ec6eae29e45199f83ec5a6b",
+      "size_bytes": 45005026
+    },
+    {
+      "manifest": "configs/link_20200130.json",
+      "source": "/Users/adithyaupad/Developer/cerebro/data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb",
+      "clone_path": "/tmp/cerebro-m024-qualification/data/raw/link/sub-Monkey-N_ses-20200130_ecephys.nwb",
+      "sha256": "be9ac1d4aedf5e0d7226ff4e6d1e7baea7fe22aa2b834a74081821a6ff313c4f",
+      "size_bytes": 43863496
+    },
+    {
+      "manifest": "configs/link_20200204.json",
+      "source": "/Users/adithyaupad/Developer/cerebro/data/raw/link/sub-Monkey-N_ses-20200204_ecephys.nwb",
+      "clone_path": "/tmp/cerebro-m024-qualification/data/raw/link/sub-Monkey-N_ses-20200204_ecephys.nwb",
+      "sha256": "8a6efc3460fc5904e43db957638470ec4913f83630d83ffa2a20de0c7a63e601",
+      "size_bytes": 43052898
+    },
+    {
+      "manifest": "configs/link_20200205.json",
+      "source": "/Users/adithyaupad/Developer/cerebro/data/raw/link/sub-Monkey-N_ses-20200205_ecephys.nwb",
+      "clone_path": "/tmp/cerebro-m024-qualification/data/raw/link/sub-Monkey-N_ses-20200205_ecephys.nwb",
+      "sha256": "a32df2043cf9d34a08bb1e0a43455049368fdb601d828930929c1b3d3dbcd0e5",
+      "size_bytes": 43262978
+    }
+  ],
+  "processed_inputs_copied_or_linked": false,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "MPLBACKEND": "Agg",
+    "MPLCONFIGDIR": "/tmp/cerebro-m024-mpl"
+  },
+  "stages": [
+    {
+      "stage": "imports",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-c",
+        "import cerebro, numpy, pynwb, sklearn, torch, neo, sys; print(sys.version); print(cerebro.__file__); print(\"GPU MPS available\", torch.backends.mps.is_available())"
+      ],
+      "exit_code": 0,
+      "seconds": 24.25,
+      "log": "/tmp/cerebro-m024-imports.log"
+    },
+    {
+      "stage": "pipcheck",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 0.13,
+      "log": "/tmp/cerebro-m024-pipcheck.log"
+    },
+    {
+      "stage": "software_tests",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "pytest",
+        "-m",
+        "not data",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 19.323,
+      "log": "/tmp/cerebro-m024-software_tests.log"
+    },
+    {
+      "stage": "data_collection",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "pytest",
+        "--collect-only",
+        "-m",
+        "data",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 2.259,
+      "log": "/tmp/cerebro-m024-data_collection.log"
+    },
+    {
+      "stage": "m022_reproduction",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "cerebro.calibration_mechanisms",
+        "--output",
+        "data/processed/m022_calibration_verified"
+      ],
+      "exit_code": 0,
+      "seconds": 17.139,
+      "log": "/tmp/cerebro-m024-m022_reproduction.log"
+    },
+    {
+      "stage": "m023_reliability",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "cerebro.reliability",
+        "--output",
+        "data/processed/m023_reliability"
+      ],
+      "exit_code": 0,
+      "seconds": 18.741,
+      "log": "/tmp/cerebro-m024-m023_reliability.log"
+    },
+    {
+      "stage": "m023_reliability_repeat",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "cerebro.reliability",
+        "--output",
+        "data/processed/m023_reliability_verified"
+      ],
+      "exit_code": 0,
+      "seconds": 20.026,
+      "log": "/tmp/cerebro-m024-m023_reliability_repeat.log"
+    },
+    {
+      "stage": "m023_dynamics",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "cerebro.research_dynamics",
+        "--output",
+        "data/processed/m023_dynamics"
+      ],
+      "exit_code": 0,
+      "seconds": 49.03,
+      "log": "/tmp/cerebro-m024-m023_dynamics.log"
+    },
+    {
+      "stage": "render_reliability",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "tools/report_m023.py"
+      ],
+      "exit_code": 0,
+      "seconds": 1.656,
+      "log": "/tmp/cerebro-m024-render_reliability.log"
+    },
+    {
+      "stage": "render_dynamics",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "tools/m023_dynamics_report.py"
+      ],
+      "exit_code": 0,
+      "seconds": 0.385,
+      "log": "/tmp/cerebro-m024-render_dynamics.log"
+    },
+    {
+      "stage": "data_tests",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "pytest",
+        "-m",
+        "data",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 7.14,
+      "log": "/tmp/cerebro-m024-data_tests.log"
+    },
+    {
+      "stage": "wheel",
+      "command": [
+        "/tmp/cerebro-m024-conda/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        ".",
+        "--no-deps",
+        "--wheel-dir",
+        "/tmp/cerebro-m024-wheels"
+      ],
+      "exit_code": 1,
+      "seconds": 7.847,
+      "log": "/tmp/cerebro-m024-wheel.log"
+    }
+  ],
+  "numerical_reproduction": {
+    "comparisons": [
+      {
+        "directory": "m022_calibration_verified",
+        "shared_arrays": 823,
+        "elements": 23414161,
+        "all_exact": true,
+        "differences": []
+      },
+      {
+        "directory": "m023_reliability_verified",
+        "shared_arrays": 325,
+        "elements": 12834,
+        "all_exact": true,
+        "differences": []
+      },
+      {
+        "directory": "m023_dynamics",
+        "shared_arrays": 1023,
+        "elements": 198396,
+        "all_exact": true,
+        "differences": []
+      }
+    ],
+    "reliability_repetition_exact": true,
+    "reliability_repeat_arrays": 325,
+    "reliability_report_scientific_fields_exact": {
+      "evaluation": true
+    },
+    "dynamics_report_scientific_fields_exact": {
+      "temporal_gate": true,
+      "sessions": true
+    },
+    "figures": {
+      "m023_reliability.pdf": {
+        "generated_bytes": 33352,
+        "sha256": "3fe54ab91133ed1b795cc5755e0ee9daedf459a40af1e091508b690ccf342256",
+        "identical_to_historical": true
+      },
+      "m023_dynamics_comparison.pdf": {
+        "generated_bytes": 26958,
+        "sha256": "f3baea866dcb65f7ac9b23785a32f63f648779e780179d904761a447ae9dc530",
+        "identical_to_historical": true
+      }
+    }
+  },
+  "software_tests": {
+    "passed": 252,
+    "failed": 0,
+    "data_deselected": 22
+  },
+  "fresh_data_tests": {
+    "passed": 4,
+    "skipped": 18,
+    "failed": 0,
+    "reason": "Only four LINK source/development recordings and freshly reconstructed M022/M023 experiments present; historical datasets/checkpoints and unscored future dates deliberately absent."
+  },
+  "hardware": {
+    "execution": "CPU",
+    "mps_available": false,
+    "gpu_performance": "NOT TESTED",
+    "biological_online_control": "NOT TESTED"
+  },
+  "wheel_retry": {
+    "initial_exit": 1,
+    "reason": "Sandbox network could not acquire declared setuptools build dependency",
+    "authorized_network_retry_exit": 0,
+    "command": "python -m pip wheel . --no-deps --wheel-dir /tmp/cerebro-m024-wheels"
+  },
+  "final_candidate_recheck": {
+    "status": "PASS",
+    "commit": "7b26f92ce6734972fbad2c8e1543a50e089d2401",
+    "synchronization": "Fetched exact commit from local repository into disposable public clone; no scientific source changes from99ef183",
+    "version": "1.1.0",
+    "editable_reinstall_exit": 0,
+    "pip_check_exit": 0,
+    "wheel": {
+      "filename": "cerebro-1.1.0-py3-none-any.whl",
+      "sha256": "3e03fa1a628497c18d14ddcb34fd3ceda6258ecd51bb46e3635b6c7883edec6d",
+      "version": "1.1.0",
+      "members": [
+        "cerebro/__init__.py",
+        "cerebro/benchmark.py",
+        "cerebro/benchmark_figures.py",
+        "cerebro/calibration_mechanisms.py",
+        "cerebro/characterize.py",
+        "cerebro/characterize_figures.py",
+        "cerebro/cross_subject.py",
+        "cerebro/dataset.py",
+        "cerebro/dynamics.py",
+        "cerebro/evaluation.py",
+        "cerebro/event_aligned.py",
+        "cerebro/event_audit.py",
+        "cerebro/event_figures.py",
+        "cerebro/explorer.py",
+        "cerebro/extended_figures.py",
+        "cerebro/falcon.py",
+        "cerebro/hardware_check.py",
+        "cerebro/kalman.py",
+        "cerebro/link.py",
+        "cerebro/longitudinal.py",
+        "cerebro/maze_feasibility.py",
+        "cerebro/nwb_audit.py",
+        "cerebro/population.py",
+        "cerebro/registry.py",
+        "cerebro/reliability.py",
+        "cerebro/representation_benchmark.py",
+        "cerebro/representation_transfer.py",
+        "cerebro/research_dynamics.py",
+        "cerebro/sense.py",
+        "cerebro/sense_inspect.py",
+        "cerebro/sequence_benchmark.py",
+        "cerebro/sequence_models.py",
+        "cerebro/subject_identity.py",
+        "cerebro-1.1.0.dist-info/licenses/LICENSE",
+        "cerebro-1.1.0.dist-info/METADATA",
+        "cerebro-1.1.0.dist-info/WHEEL",
+        "cerebro-1.1.0.dist-info/top_level.txt",
+        "cerebro-1.1.0.dist-info/RECORD"
+      ],
+      "forbidden_artifacts": []
+    },
+    "software_on_committed_report_context": {
+      "passed": 255,
+      "data_deselected": 22,
+      "seconds": 6.33
+    },
+    "full_suite_on_regenerated_report_context": {
+      "passed": 259,
+      "skipped": 18,
+      "failed": 0,
+      "reason_for_skips": "Declared historical inputs absent; no data downloads implicit in tests"
+    },
+    "context_failure_and_resolution": {
+      "initial_full_suite": {
+        "passed": 258,
+        "skipped": 18,
+        "failed": 1
+      },
+      "failure": "Review manifest intentionally pins bytes of historical JSON; regenerating reports changes runtime/Git metadata even when every scientific array remains exact.",
+      "resolution": "Verified software suite with committed reports, then restored regenerated reports and rebuilt review manifest using documented build_review_package.py command before full suite. No assertions, values or thresholds changed."
+    },
+    "commands": [
+      "python -m pip install -e '.[dev,classical,deep,brochier]'",
+      "python -m pip wheel . --no-deps --wheel-dir /tmp/cerebro-m024-final-wheels",
+      "python -m pytest -m 'not data' -q (committed report context)",
+      "python tools/build_review_package.py (regenerated report context)",
+      "python -m pytest -q (regenerated report context)"
+    ],
+    "model_refits_on_final_recheck": false
+  },
+  "installed_packages": [
+    "attrs==26.1.0",
+    "-e git+https://github.com/adithyakupad/cerebro.git@99ef1831ba009e53bac05d97e49c3da22da5e455#egg=cerebro",
+    "cloudpickle==3.1.2",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "filelock==4.2.2",
+    "fonttools==4.67.0",
+    "fsspec==2026.9.0",
+    "h5py==3.16.0",
+    "hdmf==6.2.0",
+    "iniconfig==2.3.1",
+    "Jinja2==3.1.6",
+    "joblib==1.6.0",
+    "jsonschema==4.26.0",
+    "jsonschema-specifications==2025.9.1",
+    "kiwisolver==1.5.1",
+    "MarkupSafe==3.0.4",
+    "matplotlib==3.11.2",
+    "mpmath==1.3.0",
+    "narwhals==2.27.1",
+    "neo==0.14.5",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.3",
+    "pandas==3.0.6",
+    "pillow==13.0.0",
+    "platformdirs==4.13.4",
+    "pluggy==1.7.0",
+    "Pygments==2.21.0",
+    "pynwb==4.2.0",
+    "pyparsing==3.3.3",
+    "pytest==8.4.2",
+    "python-dateutil==2.9.0.post0",
+    "quantities==0.16.4",
+    "referencing==0.37.0",
+    "rpds-py==2026.9.1",
+    "ruamel.yaml==0.19.1",
+    "scikit-learn==1.9.1",
+    "scipy==1.17.1",
+    "six==1.17.0",
+    "sympy==1.14.0",
+    "threadpoolctl==3.7.0",
+    "torch==2.14.1",
+    "typing_extensions==4.16.0"
+  ],
+  "initial_wheel": {
+    "filename": "cerebro-1.0.0-py3-none-any.whl",
+    "sha256": "46b1fba9be6208377024d1fcc4fde436c87a035188d1854befe360df1b7a0806",
+    "members": [
+      "cerebro/__init__.py",
+      "cerebro/benchmark.py",
+      "cerebro/benchmark_figures.py",
+      "cerebro/calibration_mechanisms.py",
+      "cerebro/characterize.py",
+      "cerebro/characterize_figures.py",
+      "cerebro/cross_subject.py",
+      "cerebro/dataset.py",
+      "cerebro/dynamics.py",
+      "cerebro/evaluation.py",
+      "cerebro/event_aligned.py",
+      "cerebro/event_audit.py",
+      "cerebro/event_figures.py",
+      "cerebro/explorer.py",
+      "cerebro/extended_figures.py",
+      "cerebro/falcon.py",
+      "cerebro/hardware_check.py",
+      "cerebro/kalman.py",
+      "cerebro/link.py",
+      "cerebro/longitudinal.py",
+      "cerebro/maze_feasibility.py",
+      "cerebro/nwb_audit.py",
+      "cerebro/population.py",
+      "cerebro/registry.py",
+      "cerebro/reliability.py",
+      "cerebro/representation_benchmark.py",
+      "cerebro/representation_transfer.py",
+      "cerebro/research_dynamics.py",
+      "cerebro/sense.py",
+      "cerebro/sense_inspect.py",
+      "cerebro/sequence_benchmark.py",
+      "cerebro/sequence_models.py",
+      "cerebro/subject_identity.py",
+      "cerebro-1.0.0.dist-info/licenses/LICENSE",
+      "cerebro-1.0.0.dist-info/METADATA",
+      "cerebro-1.0.0.dist-info/WHEEL",
+      "cerebro-1.0.0.dist-info/top_level.txt",
+      "cerebro-1.0.0.dist-info/RECORD"
+    ],
+    "forbidden_artifacts": []
+  },
+  "log_digests": {
+    "cerebro-m024-render_m022.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cerebro-m024-m023_reliability_repeat.log": "90b82a0c81672f29195b248952a3912aea02d8ba93587ff67c82d33c13cdb2ee",
+    "cerebro-m024-data_tests.log": "258f4e3040817c4169f2c93b868c38cccce08abc9f9f5dce0aa18ed0ce9b8197",
+    "cerebro-m024-public-download.log": "824810ad605244b7864803ff71591364ee89f237302f56726fba12e9735743af",
+    "cerebro-m024-m022_reproduction.log": "6609e6ead57ccea45278dea1a05776e9f09ba4ff1dc38f3a31914819fa9b8d02",
+    "cerebro-m024-final-reproduced-suite.log": "393fd743648a10dc3eeea4de8c0540e43917ff59e96c09eb03435431d2095a7a",
+    "cerebro-m024-final-wheel.log": "9ce780bbcf4de0c2da9120638f4f7e1f4da30a3377769538d7341ae1fe408e49",
+    "cerebro-m024-wheel.log": "823253e1860a8332b336059377977b3efe8b9244da1f50817a51903b618d9f36",
+    "cerebro-m024-final-tests.log": "9330177f3720ed7ff4a8341d92f3784608419bdc2ebdcbbcf6067e1d2b999d7c",
+    "cerebro-m024-wheel-network.log": "0ae03e814ae9559e80308185ddd6f11fa9700f7ddf7692270053a589f64c865f",
+    "cerebro-m024-final-install.log": "3a92d648f2bc03041cb6c60c0e6eac76cac0490a8b3d271186c3d3c5ef40517f",
+    "cerebro-m024-render_dynamics.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cerebro-m024-final-comparison.log": "6379355302d09b75840522482aa3a7bebfe78e204696f6ec119e8a6dcb193cd4",
+    "cerebro-m024-conda-create.log": "d6a8984536fd195c8a5e8cfdd8f05f900c1e74b290b94595739400452c44fa88",
+    "cerebro-m024-software_tests.log": "7d365ef65cf429aa658da2320c34013d981b438ac26ba4b562e1718cfeb60a0c",
+    "cerebro-m024-pipcheck.log": "44c9df13eb9ea18fc61025e3ef073515dac8c8eb68a6c60a4ae4298866e56b4b",
+    "cerebro-m024-m023_dynamics.log": "580b63532c959cbb2cbf22d335b92428db3b23e28cbf470cfc30cae009967c91",
+    "cerebro-m024-imports.log": "31462a426bc268dfe0851c6a5c7d3e2cf3defcadf13e0af17d68ca5b4af01c73",
+    "cerebro-m024-install.log": "9af1cf910d133bd3277138c4a0987f7e3065e697efdb0f1e5ff9410a720b2467",
+    "cerebro-m024-final-software.log": "bf297d248cc71f80d62208361df25c2d4f83bbc233fc1c3ba11a71fef41f77bc",
+    "cerebro-m024-m023_reliability.log": "90b82a0c81672f29195b248952a3912aea02d8ba93587ff67c82d33c13cdb2ee",
+    "cerebro-m024-render_reliability.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cerebro-m024-data_collection.log": "d30dd14b203dead545095a05c449e2d2b8c3db7d8713b00722e6a2cfe726585b"
+  }
+}
