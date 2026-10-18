@@ -5,7 +5,7 @@ import pytest
 
 from cerebro.calibration_mechanisms import (
     allocate, coefficient_dispersion, development_split, ensemble_diagnostics,
-    error_components, paired_session_interval, promotion_results, shrink,
+    error_components, paired_session_interval, promotion_results, shrink, source_split,
 )
 
 
@@ -60,6 +60,13 @@ def test_shrink_endpoints_and_validation():
         shrink(frozen, direct, 1.1)
 
 
+def test_source_partition_fails_closed():
+    assert len(source_split(trials(), 10, 7)) == 10
+    for training, inner in ((13, 7), (10, 10), (10, 0)):
+        with pytest.raises(ValueError):
+            source_split(trials(), training, inner)
+
+
 def test_equal_trial_bias_variance_and_offset_identity():
     rows = trials(2)
     rows[1]['position'] = np.zeros((6, 2))
@@ -101,3 +108,23 @@ def test_null_gate_preserves_no_promotion():
     decision = promotion_results([session] * 3, config)
     assert decision['selected_method'] is None
     assert len(decision['candidate_decisions']) == 7
+
+
+def test_promotion_first_passing_priority_and_single_date_failure():
+    names = ['direct_1', 'direct_100']
+    for weight in (.1, .25, .5):
+        names.extend([f'direct_shrink_{weight:g}', f'residual_shrink_{weight:g}'])
+    sessions = []
+    for index in range(3):
+        models = {name: {'subset_trial_mse': [np.full(10, .8).tolist()]} for name in names}
+        models['direct_1']['subset_trial_mse'] = [np.full(10, 1.2).tolist()]
+        sessions.append({'groups': [{'budget': 15, 'policy': 'chronological', 'models': models}],
+                         'frozen_trial_mse': np.ones(10).tolist()})
+    config = {'shrinkage_weights': [.1, .25, .5], 'primary_budget': 15,
+              'bootstrap_draws': 100, 'bootstrap_block_trials': 5,
+              'random_seed': 22, 'practical_relative_improvement': .05}
+    assert promotion_results(sessions, config)['selected_method'] == 'direct_shrink_0.1'
+    sessions[0]['groups'][0]['models']['direct_shrink_0.1']['subset_trial_mse'] = [np.full(10, 1.01).tolist()]
+    result = promotion_results(sessions, config)
+    assert not result['candidate_decisions'][0]['passed']
+    assert result['selected_method'] == 'residual_shrink_0.1'

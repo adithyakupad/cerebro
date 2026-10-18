@@ -55,6 +55,12 @@ def development_split(recording, permitted, pool_size):
     return pool, evaluation
 
 
+def source_split(trials, training_number, inner_number):
+    if not 1 < inner_number < training_number <= len(trials):
+        raise ValueError('Source must contain the exact fitting and selection partitions')
+    return trials[:training_number]
+
+
 def shrink(frozen, recalibrated, weight):
     if frozen.shape != recalibrated.shape or not 0 <= weight <= 1:
         raise ValueError('Shrinkage requires matching arrays and weight in [0, 1]')
@@ -187,8 +193,12 @@ def run(config_path, output):
     source_manifest = json.loads(Path(config['source_manifest']).read_text())
     source = load_link(source_manifest)
     _, source_stop = validate_chronology(source)
-    source_trials = source['trials'][:config['source_training_trials']]
     inner_number = config['source_inner_training_trials']
+    source_trials = source_split(source['trials'], config['source_training_trials'], inner_number)
+    development_manifests = [json.loads(Path(path).read_text()) for path in config['development_manifests']]
+    asset_ids = [manifest['asset_id'] for manifest in development_manifests]
+    if len(set(asset_ids)) != len(asset_ids) or source_manifest['asset_id'] in asset_ids:
+        raise ValueError('Source and development assets must be distinct')
     inner_trials = source_trials[:inner_number]
     selection_trials = source_trials[inner_number:]
     inner_counts = flatten(inner_trials, 'counts')
@@ -205,13 +215,18 @@ def run(config_path, output):
     source_position = flatten(source_trials, 'position')
     source_scaler = StandardScaler().fit(source_counts)
     source_decoder = fit_decoder(source_scaler.transform(source_counts), source_position, alpha=alpha)
-    arrays = {'source_coef': source_decoder.coef_, 'source_intercept': source_decoder.intercept_}
+    arrays = {'source_coef': source_decoder.coef_, 'source_intercept': source_decoder.intercept_,
+              'source_scaler_mean': source_scaler.mean_, 'source_scaler_scale': source_scaler.scale_}
     sessions = []
     allocations = []
+    session_identities = set()
     source_anchors = condition_anchors(source_trials, source_counts, 2)
     for session_index, manifest_path in enumerate(config['development_manifests']):
         manifest = json.loads(Path(manifest_path).read_text())
         target = load_link(manifest)
+        if target['session_id'] in session_identities:
+            raise ValueError('Development sessions must be distinct')
+        session_identities.add(target['session_id'])
         pool, evaluation = development_split(target, config['permitted_trial_rows'], config['allocation_pool_trials'])
         accessible = dict(target)
         accessible['trials'] = pool + evaluation
@@ -252,7 +267,12 @@ def run(config_path, output):
             'source_mean_trial_mse': trial_losses(evaluation, source_mean).tolist(),
             'marginal_normalization_trial_mse': trial_losses(evaluation, marginal).tolist(),
             'permuted_contact_trial_mse': trial_losses(evaluation, permuted).tolist(),
-            'matched_command_patterns': [{'command': list(key), 'cosine': cosine} for key, cosine in zip(shared, tuning_cosines)],
+            'target_column_order': order.tolist(), 'permuted_source_columns': permutation.tolist(),
+            'matched_command_patterns': [{
+                'command': list(key), 'cosine': cosine,
+                'source_repetitions': sum(tuple(trial['target']) == key for trial in source_trials),
+                'target_pool_repetitions': sum(tuple(trial['target']) == key for trial in pool),
+            } for key, cosine in zip(shared, tuning_cosines)],
             'groups': [],
         }
         arrays[session_id + '_evaluation_timestamps'] = flatten(evaluation, 'timestamps')
@@ -316,6 +336,7 @@ def run(config_path, output):
         'protocol_sha256': hashlib.sha256(protocol_path.read_bytes()).hexdigest(),
         'config_sha256': hashlib.sha256(config_path.read_bytes()).hexdigest(),
         'source_manifest': source_manifest, 'source_trial_ids': [trial['trial_id'] for trial in source_trials],
+        'source_channel_keys': [list(key) for key in source['channel_keys']],
         'allocations': allocations,
     }
     save_immutable(output / 'split_manifest.json', lineage)
