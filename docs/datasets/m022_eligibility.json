@@ -1,0 +1,47 @@
+{
+  "dandiset": "001201",
+  "version": "0.251023.2336",
+  "license": "CC-BY-4.0",
+  "doi": "10.48324/dandi.001201/0.251023.2336",
+  "attribution": "Temmar and colleagues, LINK dataset",
+  "subject": "Monkey N",
+  "task": "CO",
+  "selection": "First three CO dates after 20200222, date/metadata selected before outcomes. Feb28 and Mar02/10/13/17/18/19/20 are RD.",
+  "source": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/?page_size=1000",
+  "author_documentation": "https://chesteklab.github.io/LINK_dataset/",
+  "access_history": "No matching local NWBs, source/report/config references or commit-message mentions found by independent metadata-only audit. External human exposure cannot be certified.",
+  "native_eligibility": "NOT TESTED: not downloaded; no coverage, clocks, target compatibility or contact correspondence assumed from older sessions",
+  "model_evaluation": "NOT EXECUTED: prespecified development promotion gate failed",
+  "candidates": [
+    {
+      "session": "20200224",
+      "asset_id": "ed7d5522-a1f8-4725-948d-8f05c884a22f",
+      "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200224_ecephys.nwb",
+      "size_bytes": 39063352,
+      "published_sha256": "b5e0a6923bd90e77baf7689e29f6c68ce6a164a710a01153cd5af9c739199795",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/ed7d5522-a1f8-4725-948d-8f05c884a22f/",
+      "native_downloaded": false,
+      "decoder_outcomes_inspected": false
+    },
+    {
+      "session": "20200225",
+      "asset_id": "15299ea6-cffb-46e8-9175-a822e4f52f1d",
+      "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200225_ecephys.nwb",
+      "size_bytes": 43342520,
+      "published_sha256": "ceb39e4827a7b5291bf8a2d220cb0b8f6e3063dea8365f689a3e2512f906da8c",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/15299ea6-cffb-46e8-9175-a822e4f52f1d/",
+      "native_downloaded": false,
+      "decoder_outcomes_inspected": false
+    },
+    {
+      "session": "20200626",
+      "asset_id": "88039197-6170-4d06-ba3e-f58b68c6eb7f",
+      "asset_path": "sub-Monkey-N/sub-Monkey-N_ses-20200626_ecephys.nwb",
+      "size_bytes": 44042920,
+      "published_sha256": "b61d30b8aa541361ff6509bf5f185f843e0ac04832a8fe2ba141ffee7c3e0634",
+      "metadata_url": "https://api.dandiarchive.org/api/dandisets/001201/versions/0.251023.2336/assets/88039197-6170-4d06-ba3e-f58b68c6eb7f/",
+      "native_downloaded": false,
+      "decoder_outcomes_inspected": false
+    }
+  ]
+}

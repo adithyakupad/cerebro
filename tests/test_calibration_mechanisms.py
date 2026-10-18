@@ -2,6 +2,9 @@
 
 import numpy as np
 import pytest
+import json
+from pathlib import Path
+import runpy
 
 from cerebro.calibration_mechanisms import (
     allocate, coefficient_dispersion, development_split, ensemble_diagnostics,
@@ -128,3 +131,47 @@ def test_promotion_first_passing_priority_and_single_date_failure():
     result = promotion_results(sessions, config)
     assert not result['candidate_decisions'][0]['passed']
     assert result['selected_method'] == 'residual_shrink_0.1'
+
+
+def test_report_rejects_incompatible_scientific_narrative(tmp_path):
+    report = {'config': json.loads(Path('configs/m022_calibration.json').read_text()),
+              'sessions': [{'session': date} for date in ('20200130', '20200204', '20200205')],
+              'source_training_bins': 21701, 'selected_source_alpha': 1000,
+              'promotion': {'selected_method': 'different_outcome'}}
+    path = tmp_path / 'results.json'
+    path.write_text(json.dumps(report))
+    render = runpy.run_path('tools/report_m022.py')['render']
+    with pytest.raises(ValueError, match='only renders'):
+        render(path, tmp_path)
+
+
+@pytest.mark.data
+def test_real_m022_lineage_decompositions_and_report_reproduction(tmp_path):
+    results_path = Path('data/processed/m022_calibration_verified/results.json')
+    if not results_path.exists():
+        pytest.skip('Requires explicitly executed M022 development experiment')
+    from cerebro.benchmark import array_digest
+    from cerebro.dataset import verify_asset
+
+    report = json.loads(results_path.read_text())
+    arrays = np.load(results_path.parent / 'arrays.npz')
+    for name, entry in report['arrays'].items():
+        assert list(arrays[name].shape) == entry['shape']
+        assert array_digest(arrays[name]) == entry['sha256']
+    verify_asset(report['lineage']['source_manifest']['local_path'], report['lineage']['source_manifest'])
+    assert len(report['lineage']['allocations']) == 369
+    for session in report['sessions']:
+        verify_asset(session['manifest']['local_path'], session['manifest'])
+        assert len(session['pool_trial_ids']) == 45
+        assert len(session['evaluation_trial_ids']) == 30
+        assert not set(session['pool_trial_ids']) & set(session['evaluation_trial_ids'])
+        for group in session['groups']:
+            for model in group['models'].values():
+                assert abs(model['bias_variance_identity_error']) < 1e-12
+                total = model['mean_subset_offset_mse'] + model['mean_subset_centered_mse']
+                assert total == pytest.approx(model['mean_subset_mse'], abs=1e-12)
+    render = runpy.run_path('tools/report_m022.py')['render']
+    regenerated = render(results_path, tmp_path)
+    published = json.loads(Path('reports/m022_calibration_mechanisms.json').read_text())
+    assert regenerated == published
+    assert (tmp_path / 'figures/m022_mechanism_comparison.pdf').read_bytes() == Path('reports/figures/m022_mechanism_comparison.pdf').read_bytes()

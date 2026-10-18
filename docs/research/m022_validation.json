@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "release_commit": "b780e5cc53f246f4b305d413c4bd1afb962ff42c",
+  "protocol_commit": "56b0a1c",
+  "initial_execution_code_revision": "36383a146be22f443ca2e5aaa8d114e2cc941863",
+  "verified_execution_code_revision": "8741285c46bbd54bbf9d5b51237894af9818275a",
+  "environment": {
+    "conda_environment": "cerebro",
+    "python": "3.11.16",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "versions": {
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.6",
+      "pynwb": "4.2.0",
+      "scikit-learn": "1.9.1"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "executed_checks": {
+    "full_suite": {
+      "command": "conda run -n cerebro python -m pytest -q",
+      "passed": 258,
+      "failed": 0,
+      "skipped": 0,
+      "data_cases_executed": 17,
+      "software_cases": 241,
+      "warnings": 20,
+      "warning_kind": "Existing HDMF Device.manufacturer deprecation",
+      "seconds": 52.2
+    },
+    "m022_tests": {
+      "software_cases": 12,
+      "authentic_data_cases": 1,
+      "includes": [
+        "whole trial allocation",
+        "permitted split safety",
+        "shrinkage endpoints",
+        "common-frame coefficient stability",
+        "equal-trial decomposition",
+        "moving-block reproducibility",
+        "promotion null/first-pass/one-date-failure",
+        "scientific renderer guard",
+        "data hashes and report/PDF reproduction"
+      ]
+    },
+    "dependency_check": "python -m pip check: No broken requirements found",
+    "real_asset_sha256_and_size": "Four pinned LINK assets verified on both experiment runs and data test; no downloads or source mutation",
+    "source_restoration_against_historical_mission_016": {
+      "source_coef": {
+        "exact": true,
+        "maximum_absolute_difference": 0.0
+      },
+      "source_intercept": {
+        "exact": true,
+        "maximum_absolute_difference": 0.0
+      },
+      "source_scaler_mean": {
+        "exact": true,
+        "maximum_absolute_difference": 0.0
+      },
+      "source_scaler_scale": {
+        "exact": true,
+        "maximum_absolute_difference": 0.0
+      }
+    },
+    "experiment_repetition": {
+      "initial_directory": "data/processed/m022_calibration",
+      "verified_directory": "data/processed/m022_calibration_verified",
+      "shared_arrays": 821,
+      "shared_elements": 23413969,
+      "all_shared_array_hashes_equal": true,
+      "all_group_scientific_values_equal": true,
+      "promotion_decisions_equal": true,
+      "new_verified_arrays": [
+        "source_scaler_mean",
+        "source_scaler_scale"
+      ]
+    },
+    "verified_array_manifest_entries": 823,
+    "maximum_empirical_bias_variance_identity_error": 1.474514954580286e-17,
+    "report_regeneration": "Machine JSON equality and byte-identical PDF tested from saved real-data results",
+    "historical_artifacts": "No pre-M022 report, result, config, source model or release tag modified; completion/remaining-work addenda only"
+  },
+  "independent_review": {
+    "reviewer": "Separate Codex agent, read-only code review then independent outcome/report review",
+    "critical_or_blocking_findings": 0,
+    "resolved_findings": [
+      "P2 source partition and distinct asset/session fail-closed guards",
+      "P2 stored source scaler and contact/permutation lineage",
+      "P2 condition repetition counts",
+      "P2 positive/priority/single-date rejection promotion tests",
+      "P2 narrative renderer rejects incompatible protocol/outcomes"
+    ],
+    "reviewer_executed_models_or_tests": false,
+    "review_conclusion": "No target evaluation leakage, new model family, arithmetic or blocking scientific defect found; numerical claims matched saved results"
+  },
+  "independent_validation": "NOT EXECUTED: prespecified development promotion gate failed; new sessions remain unscored",
+  "not_tested": [
+    "Native eligibility or model outcomes for Feb24/Feb25/Jun26 candidates",
+    "New animal generalization",
+    "Physiological neural drift",
+    "GPU performance or online biological control"
+  ],
+  "publication": "Research branch/draft PR only; current remote CI is verified separately in final report"
+}

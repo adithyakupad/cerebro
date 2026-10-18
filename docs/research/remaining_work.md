@@ -1,5 +1,13 @@
 # Remaining work for full-scope CEREBRO
 
+## Mission 022 current-state addendum
+
+v1.0.0 is published at `b780e5cc53f246f4b305d413c4bd1afb962ff42c`. The historical release gates below describe their earlier execution states. [M022](../../reports/m022_calibration_mechanisms.md) supplies new development evidence for calibration allocation sensitivity and finite-sample prediction dispersion, with mixed regularization/scaling effects. No prespecified candidate passes the owner-confirmed 5%/all-date promotion rule; no mitigation is promoted.
+
+The first later CO metadata candidates, Feb 24/Feb 25/Jun 26, remain unscored and require native eligibility checks before any future separately approved protocol. Independent mitigation validation was **not executed because the development gate failed**, rather than being blocked by proven lack of accessible recordings. Do not recycle the inspected development dates or Mission 016 evaluation dates as untouched tests, tune a new candidate against them without explicit developmental labeling, or promote balanced allocation without accounting for all 45 commanded-target labels.
+
+Remaining scientific gates retain the original scope: independently justified practical adaptation benefit; subject-general representation evidence; valid raw-target/coverage provenance where absent; sufficient biological replication and hardware evidence for any broader claims. No model-family rebuild is indicated by this study. Human review of the mechanism/estimand and a separately frozen future study must precede additional outcomes. Original requirements and historical results below are unchanged.
+
 This plan follows the [requirement audit](full_scope_audit.md) at `dd335c291e324cf460f26409e0431e6f2c4983ad`. It does not authorize experiments, model changes, PR merge or a tag. Existing working baselines are retained. A negative result satisfies a correctly executed experiment; it is never an implementation defect.
 
 Relative effort is qualitative: small = protocol/document decision, medium = bounded new analysis, high = new data or multi-session study, very high = hardware/online work. A blocked item has no credible schedule until its external dependency is met.

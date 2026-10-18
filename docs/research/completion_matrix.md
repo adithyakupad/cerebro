@@ -86,3 +86,16 @@ The [integrated technical report](mission_020_technical_report.md) consolidates 
 ## Mission 021 software qualification
 
 The [v1.0 qualification report](../release/qualification_021.md) verifies the implemented platform using a public clone, fresh Conda installation, authentic-data workflow reproduction, independent reviews and explicitly separated CI/data tests. The original 33 statuses above remain unchanged: software delivery does not turn inconclusive transfer hypotheses or external-data gaps into scientific successes. Under the owner's Mission 021 criteria, valid negative results and disclosed unavailable-data limits can accompany a software release. Final publication still requires explicit owner approval; neither this matrix nor the package version constitutes a merge, tag or public release.
+
+## Mission 022 calibration mechanisms
+
+This addendum starts from the subsequently published v1.0.0 commit `b780e5cc53f246f4b305d413c4bd1afb962ff42c`; the historical qualification text above remains an execution-time record. The release tag and prior scientific artifacts are preserved.
+
+| Requirement | New evidence | Status and limitation |
+|---|---|---|
+| Low-budget adaptation mechanism | [Frozen protocol](m022_protocol.md), committed before outcomes; 369 whole-trial allocations on Jan 30/Feb 4/Feb 5 previously inspected development partitions. Finite-subset prediction dispersion declines from 5 to 30 labels; balanced 15-trial allocation lowers direct-ridge MSE by 12.17%, 8.70%, 1.36% relative to chronological allocation. | **PARTIAL**: bounded statistical contributors, extra command-metadata access disclosed; not physiological causation. |
+| Practical adaptation mitigation | Seven prespecified chronological-15 candidates tested against both frozen and direct controls, with 5% practical threshold and all-date/conditional block-interval requirements. [All outcomes](../../reports/m022_calibration_mechanisms.md) preserved. | **UNVALIDATED practical benefit**: no candidate passes; a valid negative finding, no software defect. |
+| Untouched independent sessions | [Metadata-only inventory](../datasets/m022_eligibility.json) identifies Feb 24/Feb 25/Jun 26 CO candidates, one Monkey N. | **NOT EXECUTED** by failed-promotion null rule; native eligibility unverified, no new decoder outcomes inspected. This is distinct from unavailable data. |
+| Software and reproducibility | Existing ridge/scaling infrastructure reused; [verification evidence](m022_validation.json) covers split/allocation/shrinkage/coefficient/decomposition/gate/report tests, source hashes and numerical rerun. | Verified within stated checks; no new model family or dependency. |
+
+The original 33-requirement statuses remain **14 COMPLETE, 8 PARTIAL, 5 UNVALIDATED, 4 BLOCKED, 2 MISSING**. Development mechanistic evidence does not establish reliable cross-session benefit, biological subject generalization or neural foundation-model validity. Trials, subset resamples and optimization seeds are not independent biological subjects.

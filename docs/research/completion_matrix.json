@@ -370,5 +370,28 @@
     "original_scientific_scope_and_statuses_preserved": true,
     "historical_scientific_release_gates_retained_as_history": true,
     "interpretation": "Valid negative/inconclusive experiments and disclosed unavailable data are nonblocking under the explicit Mission021 release definition. Merge/tag/publication require separate owner approval."
+  },
+  "mission_022_evidence": {
+    "protocol": "docs/research/m022_protocol.md",
+    "protocol_commit": "56b0a1c",
+    "experiment_code_revision": "8741285c46bbd54bbf9d5b51237894af9818275a",
+    "report": "reports/m022_calibration_mechanisms.md",
+    "machine_report": "reports/m022_calibration_mechanisms.json",
+    "machine_report_sha256": "7ff0d757c1d6411366d0cdf351217de432ce9a9ea924d9d5ad0408c767564b01",
+    "validation": "docs/research/m022_validation.json",
+    "status": "PARTIAL: statistical development contributors supported; practical mitigation not established",
+    "independent_validation": "NOT EXECUTED: frozen promotion gate failed; later metadata candidates remain unscored and native eligibility unverified",
+    "original_33_statuses_changed": false,
+    "subject_count": 1,
+    "development_dates": 3,
+    "calibration_allocations": 369,
+    "promoted_method": null,
+    "scientific_limitations": [
+      "Inspected development dates; not untouched validation",
+      "Trials and calibration subsets are not independent animals",
+      "Allocation policies receive different command metadata access",
+      "No physiological drift or stable neuron identity inferred",
+      "No general neural foundation-model validity established"
+    ]
   }
 }
