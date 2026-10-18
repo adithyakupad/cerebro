@@ -1,9 +1,9 @@
 # Installation and reproduction
 
-Use Python 3.11. Clone the public repository and select the research release candidate; after approved publication select `v1.0.0` instead. All commands run from the clone root.
+Use Python 3.11. Clone the public v1.1.0 research candidate; after approved publication select `v1.1.0` instead. Package version metadata alone does not mean the release has been published. All commands run from the clone root.
 
 ```sh
-git clone --branch codex/research-platform https://github.com/adithyakupad/cerebro.git
+git clone --branch research/m023-reliability-dynamics https://github.com/adithyakupad/cerebro.git
 cd cerebro
 conda env create -f environment.yml
 conda activate cerebro
@@ -26,6 +26,8 @@ The release qualification records actual versions. `requirements-research.txt` i
 ## Representative reproduction
 
 The [README quick start](../README.md) acquires checksum-pinned MC_Maze Small and produces authentic neural counts and event figures. The [workflow guide](research/workflows.md) contains all recorded analyses, target-specific commands and native Brochier acquisition. Acquisition commands verify public source metadata and bytes; network access is required only for acquisition. Data go into ignored `data/raw/`; derived arrays and trusted checkpoints go into ignored `data/processed/`. Paths are repository relative and need no manual editing.
+
+For the integrated post-v1.0 studies, use the [external-review reproduction guide](research/v1_1_reproduction.md). It reconstructs M022 inputs and the fixed M023 experiments without scoring the later LINK cohort. Historical output comparisons should run in a disposable clone; the checked-in original reports remain an execution-time record.
 
 Run `python -m pytest -q` only after acquiring required sources and generating experiment outputs for data-dependent cases. Public CI runs `-m 'not data'` and collects `-m data`; collected cases are not authentic-data validation. Use a disposable clone when regenerating historical reports, since commands intentionally replace their output reports and figures. Reproduction comparisons must consider numeric arrays and timing/split identities, rather than assuming version or archive-byte changes imply changed science.
 

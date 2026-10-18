@@ -4,7 +4,7 @@ title: "CEREBRO: Adaptive Neural Intelligence Research Platform"
 type: software
 authors:
   - name: "CEREBRO contributors"
-version: 1.0.0
+version: 1.1.0
 repository-code: "https://github.com/adithyakupad/cerebro"
 url: "https://github.com/adithyakupad/cerebro"
 license: MIT
