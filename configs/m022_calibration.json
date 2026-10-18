@@ -1,0 +1,19 @@
+{
+  "release_commit": "b780e5cc53f246f4b305d413c4bd1afb962ff42c",
+  "source_manifest": "configs/link_20200127.json",
+  "source_training_trials": 300,
+  "source_inner_training_trials": 225,
+  "source_alpha_grid": [1.0, 10.0, 100.0, 1000.0],
+  "development_manifests": ["configs/link_20200130.json", "configs/link_20200204.json", "configs/link_20200205.json"],
+  "permitted_trial_rows": 75,
+  "allocation_pool_trials": 45,
+  "budgets": [5, 15, 30],
+  "primary_budget": 15,
+  "subset_draws": 20,
+  "alpha_multipliers": [0.01, 1.0, 100.0],
+  "shrinkage_weights": [0.1, 0.25, 0.5],
+  "bootstrap_draws": 1000,
+  "bootstrap_block_trials": 5,
+  "random_seed": 22022,
+  "practical_relative_improvement": 0.05
+}
