@@ -117,7 +117,8 @@ def inspect(manifest_path, *, bin_width=0.02, max_gap=0.002,
             xy = series.physical_data[mask]
             ax.plot(xy[:, 0], xy[:, 1], label=name)
     ax.set(xlabel="x (m)", ylabel="y (m)", title="Native hand / cursor trajectory")
-    ax.set_aspect("equal", adjustable="datalim"); ax.legend()
+    ax.set_aspect("equal", adjustable="datalim")
+    ax.legend()
     figures.append(save(fig, "sense_01_trajectory"))
     fig, axes = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
     axes[0].plot(counts.centers[selected], population[selected])
@@ -148,8 +149,9 @@ def inspect(manifest_path, *, bin_width=0.02, max_gap=0.002,
             "valid_bins": int(aligned[name][1].sum()),
         }
     expected_counts = np.array([
-        sum(np.sum((s >= a) & (s < b)) for a, b in zip(counts.left, counts.right))
-        for s in units.spike_times
+        sum(np.sum((spikes >= left) & (spikes < right))
+            for left, right in zip(counts.left, counts.right))
+        for spikes in units.spike_times
     ])
     conserved = bool(counts.valid.all() and np.array_equal(counts.values.sum(axis=0), expected_counts))
     if not conserved:
@@ -157,8 +159,8 @@ def inspect(manifest_path, *, bin_width=0.02, max_gap=0.002,
     outside_observation = 0
     for spikes, obs in zip(units.spike_times, units.obs_intervals):
         observed = np.zeros(len(spikes), dtype=bool)
-        for a, b in obs:
-            observed |= (spikes >= a) & (spikes < b)
+        for observation_start, observation_stop in obs:
+            observed |= (spikes >= observation_start) & (spikes < observation_stop)
         outside_observation += int((~observed).sum())
     report = {
         "provenance": manifest, "inspected_at": datetime.now(timezone.utc).isoformat(),

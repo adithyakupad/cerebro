@@ -149,25 +149,34 @@ def bin_spikes(spike_times, trial_intervals, unit_ids, trial_ids,
         raise ValueError("Observation interval dimensions differ from units")
     if len(set(unit_ids)) != len(unit_ids) or len(set(trial_ids)) != len(trial_ids):
         raise ValueError("IDs must be unique")
-    left, right, labels, tails = [], [], [], []
+    left = []
+    right = []
+    labels = []
+    tails = []
     for (start, stop), trial_id in zip(trials, trial_ids):
-        number = int(np.floor((stop - start) / bin_width + 1e-10))
-        edges = np.round(start + np.arange(number + 1) * bin_width, 12)
+        duration = stop - start
+        num_bins = int(np.floor(duration / bin_width + 1e-10))
+        edge_offsets = np.arange(num_bins + 1) * bin_width
+        edges = np.round(start + edge_offsets, 12)
         edges[0] = start
         if abs(edges[-1] - stop) <= 1e-12:
             edges[-1] = stop
         if edges[-1] > stop:
             edges = edges[:-1]
-        left.extend(edges[:-1]); right.extend(edges[1:])
+        left.extend(edges[:-1])
+        right.extend(edges[1:])
         labels.extend([trial_id] * (len(edges) - 1))
         tails.append(stop - edges[-1])
-    left, right = np.asarray(left), np.asarray(right)
+    left = np.asarray(left)
+    right = np.asarray(right)
     values = np.empty((len(left), len(unit_ids)), dtype=np.int64)
     valid = np.zeros(values.shape, dtype=bool)
     for column, (spikes, intervals) in enumerate(zip(spike_times, observation_intervals)):
         spikes = validate_timestamps(spikes, strict=False)
         intervals = validate_intervals(intervals)
-        counts = np.searchsorted(spikes, right, side="left") - np.searchsorted(spikes, left, side="left")
+        stop_indices = np.searchsorted(spikes, right, side="left")
+        start_indices = np.searchsorted(spikes, left, side="left")
+        counts = stop_indices - start_indices
         for start, stop in intervals:
             valid[:, column] |= (left >= start) & (right <= stop)
         values[:, column] = np.where(valid[:, column], counts, -1)
@@ -191,9 +200,12 @@ def align_behavior(series, counts, *, max_gap=0.002):
     valid = np.zeros(len(counts.left), dtype=bool)
     for i, (left, right) in enumerate(zip(counts.left, counts.right)):
         start, stop = np.searchsorted(times, [left, right], side="left")
-        t, samples = times[start:stop], data[start:stop]
-        if (len(t) == 0 or t[0] - left > max_gap or right - t[-1] > max_gap
-                or np.any(np.diff(t) > max_gap) or not np.all(np.isfinite(samples))):
+        sample_times = times[start:stop]
+        samples = data[start:stop]
+        if (len(sample_times) == 0 or sample_times[0] - left > max_gap
+                or right - sample_times[-1] > max_gap
+                or np.any(np.diff(sample_times) > max_gap)
+                or not np.all(np.isfinite(samples))):
             continue
         aligned[i] = samples.mean(axis=0)
         valid[i] = True

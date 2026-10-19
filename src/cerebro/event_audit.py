@@ -19,7 +19,8 @@ def condition_keys(trials):
     """Retain task variant and active target; reject incompatible geometry."""
     if any(field not in trials for field in (*CONDITION_FIELDS, *GEOMETRY_FIELDS)):
         raise ValueError("Required condition identifiers or geometry are missing")
-    keys, geometry = [], {}
+    keys = []
+    geometry = {}
     for _, row in trials.iterrows():
         values = [row[field] for field in CONDITION_FIELDS]
         if any(not np.isfinite(v) or int(v) != v for v in values):
@@ -48,8 +49,9 @@ def window_reason(recording, row, event, pre, post, max_gap=.002):
     if "hand_vel" not in recording.behavior:
         return "missing_hand_velocity"
     series = recording.behavior["hand_vel"]
-    a, b = np.searchsorted(series.timestamps, [start, stop], side="left")
-    times, data = series.timestamps[a:b], series.raw_data[a:b]
+    start_index, stop_index = np.searchsorted(series.timestamps, [start, stop], side="left")
+    times = series.timestamps[start_index:stop_index]
+    data = series.raw_data[start_index:stop_index]
     if (len(times) == 0 or times[0] - start > max_gap or stop - times[-1] > max_gap
             or np.any(np.diff(times) > max_gap) or not np.all(np.isfinite(data))):
         return "behavior_coverage"
@@ -79,8 +81,10 @@ def audit(recording, *, pre=-.4, post=1.0):
     events = {}
     for field in EVENT_FIELDS:
         values = train[field].to_numpy() if field in train else np.full(len(train), np.nan)
-        reasons = [window_reason(recording, row, value, pre, post)
-                   for (_, row), value in zip(train.iterrows(), values)]
+        reasons = []
+        for (_, row), event_time in zip(train.iterrows(), values):
+            reason = window_reason(recording, row, event_time, pre, post)
+            reasons.append(reason)
         events[field] = {
             "source_description": recording.metadata["trial_descriptions"].get(field),
             "finite_events": int(np.isfinite(values).sum()),
