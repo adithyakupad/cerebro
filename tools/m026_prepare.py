@@ -27,6 +27,7 @@ def main():
     started = time.perf_counter()
     recording = load_recording(manifest['local_path'])
     data = prepare(recording, read_json(config['preprocessing']))
+    data['counts'] = data['counts'].astype(float)
     keys = condition_keys(recording.trials.loc[data['trial_ids']])
     evaluation = np.isin(data['trial_ids'], original['splits']['source_validation'])
     with np.load(Path(config['m025_directory']) / 'predictions.npz', allow_pickle=False) as old:
