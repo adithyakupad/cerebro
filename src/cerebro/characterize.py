@@ -63,9 +63,10 @@ def summarize(counts):
     durations = counts.right - counts.left
     per_unit = []
     for unit_index, unit_id in enumerate(counts.unit_ids):
+        unit_identifier = int(unit_id)
         unit_counts = counts.values[:, unit_index]
         unit_statistics = count_statistics(unit_counts, durations)
-        per_unit.append(dict(unit_id=int(unit_id), **unit_statistics))
+        per_unit.append(dict(unit_id=unit_identifier, **unit_statistics))
     population = np.where(counts.valid.all(axis=1), counts.values.sum(axis=1), -1)
     observed = counts.values[counts.valid]
     histogram = np.unique(observed, return_counts=True)

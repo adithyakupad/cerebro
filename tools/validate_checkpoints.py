@@ -48,8 +48,8 @@ def supervised(checkpoint, counts):
     with torch.no_grad():
         normalized_prediction = model(features(counts, normalization)).numpy()
     target_scale = normalization['target_scale'].numpy()
-    target_mean = normalization['target_mean'].numpy()
     scaled_prediction = normalized_prediction * target_scale
+    target_mean = normalization['target_mean'].numpy()
     restored_prediction = scaled_prediction + target_mean
     return restored_prediction
 
