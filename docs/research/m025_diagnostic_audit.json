@@ -1,0 +1,227 @@
+{
+  "base_revision": "554103b13e8946c6a0d72127c541cdc466822dc0",
+  "branch": "codex/m025-decoder-diagnostics",
+  "checkpoint_validation": {
+    "array_digests_verified": 755,
+    "exact": 227,
+    "files_verified": 405,
+    "nonexact_within_tolerance": [
+      {
+        "artifact": "classical_05/fa_ridge",
+        "dependency": "self-contained parameters",
+        "exact": false,
+        "maximum_absolute_error": 4.163336342344337e-17,
+        "passed": true
+      },
+      {
+        "artifact": "classical_05/pca_ridge",
+        "dependency": "self-contained parameters",
+        "exact": false,
+        "maximum_absolute_error": 1.3877787807814457e-16,
+        "passed": true
+      }
+    ],
+    "predictions_replayed": 229,
+    "tolerance": {
+      "atol": 1e-09,
+      "rtol": 1e-07
+    },
+    "training_executed": false
+  },
+  "date": "2026-10-19",
+  "dimensions": {
+    "counts": [
+      100,
+      70,
+      107
+    ],
+    "inner_fitting_trials": 60,
+    "inner_validation_trials": 15,
+    "previously_inspected_evaluation_trials": 25,
+    "training_trials": 75,
+    "velocity_m_s": [
+      100,
+      70,
+      2
+    ]
+  },
+  "exploratory_existing_outcome_reanalysis": {
+    "all_deep_fits_selected_epoch_cap": true,
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 25,
+    "cnn_minus_kalman_mse_m2_s2": -0.00026221380023646007,
+    "cnn_relative_reduction": 0.00837365339067897,
+    "cnn_trial_wins": 13,
+    "independent_biological_subjects": 1,
+    "limitations": [
+      "Already inspected validation; exploratory comparison",
+      "Trial resampling conditional on one curated recording",
+      "Seed losses averaged within trial, not ensemble predictions or independent biological samples",
+      "No multiple-comparison correction or superiority claim"
+    ],
+    "new_holdout_outcomes_accessed": false,
+    "paired_trial_bootstrap_interval_95": [
+      -0.0020200141068121217,
+      0.0016323320249513138
+    ],
+    "recording_sessions": 1
+  },
+  "historical_classical_mse_m2_s2": {
+    "fa_ridge": 0.03734294338331662,
+    "go_time_template": 0.03748736283195477,
+    "kalman": 0.03131414545153484,
+    "linear": 0.03545680554342694,
+    "mean": 0.03832481625668137,
+    "pca_ridge": 0.036225690300699366,
+    "ridge": 0.03542143782686373
+  },
+  "historical_dataset": {
+    "asset_id": "7821971e-c6a4-4568-8773-1bfa205c13f8",
+    "asset_path": "sub-Jenkins/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+    "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze_Small: macaque primary motor and dorsal premotor cortex spiking activity during delayed reaching (Version 0.220113.0408) [Data set]. DANDI archive. https://doi.org/10.48324/dandi.000140/0.220113.0408",
+    "dandiset": "000140",
+    "download_url": "https://api.dandiarchive.org/api/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/download/",
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "local_path": "data/raw/mc_maze_small/sub-Jenkins_ses-small_desc-train_behavior+ecephys.nwb",
+    "metadata_url": "https://api.dandiarchive.org/api/dandisets/000140/versions/0.220113.0408/assets/7821971e-c6a4-4568-8773-1bfa205c13f8/",
+    "sha256": "dcaf3a524e2b2f65f163ee3b07789b8474bdfc6ca66098bc542ab93dff489884",
+    "size_bytes": 29207528,
+    "source_url": "https://dandiarchive.org/dandiset/000140/0.220113.0408",
+    "version": "0.220113.0408"
+  },
+  "historical_deep_mse_m2_s2": {
+    "gru": 0.03667213335474737,
+    "lstm": 0.03663704361856831,
+    "mlp": 0.03737998655157077,
+    "state_space": 0.03458228287474533,
+    "temporal_cnn": 0.03105193165129838,
+    "transformer": 0.03594737841486607
+  },
+  "historical_tracked_changes": [],
+  "independent_recording_candidate": {
+    "asset_id": "26e85f09-39b7-480f-b337-278a8f034007",
+    "asset_path": "sub-Jenkins/sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb",
+    "citation": "Churchland, Mark; Kaufman, Matthew (2022) MC_Maze, version 0.220113.0400, DANDI. https://doi.org/10.48324/dandi.000128/0.220113.0400",
+    "dandiset": "000128",
+    "download_url": "https://api.dandiarchive.org/api/assets/26e85f09-39b7-480f-b337-278a8f034007/download/",
+    "license": [
+      "spdx:CC-BY-4.0"
+    ],
+    "local_path": "data/raw/mc_maze/sub-Jenkins_ses-full_desc-train_behavior+ecephys.nwb",
+    "metadata_url": "https://api.dandiarchive.org/api/dandisets/000128/versions/0.220113.0400/assets/26e85f09-39b7-480f-b337-278a8f034007/",
+    "sha256": "a27f84f9c31f077011062fd99a6ced199fdf19e656151f056c3c6244a408a3c4",
+    "size_bytes": 690612247,
+    "source_url": "https://dandiarchive.org/dandiset/000128/0.220113.0400",
+    "version": "0.220113.0400"
+  },
+  "mission": 25,
+  "proposed_primary_experiment": {
+    "approved": false,
+    "development_promotion_relative_mse_reduction": 0.05,
+    "frozen_protocol_committed": false,
+    "history_ridge_control_bins": 5,
+    "hypothesis": "Existing causal CNN is limited by the historical optimization cap",
+    "independent_validation_executed": false,
+    "maximum_epochs": [
+      20,
+      200
+    ],
+    "metric": "equal-trial physical velocity MSE",
+    "new_model_families": false,
+    "prospective_practical_reduction_vs_both_matched_20cap_and_kalman": 0.05,
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "public_state": {
+    "main_ci": "https://github.com/adithyakupad/cerebro/actions/runs/39171826466",
+    "main_ci_conclusion": "success",
+    "new_pr_created": false,
+    "pr_2": "MERGED",
+    "pr_3": "MERGED",
+    "pr_4": "OPEN_DRAFT_UNMERGED",
+    "release": "https://github.com/adithyakupad/cerebro/releases/tag/v1.0.0"
+  },
+  "schema_version": 1,
+  "source_sha256": {
+    "configs/classical_05.json": "4f88bbf2c3a362c4b4a648414c65b06767e45c217a6e17c60463a7f4f3c88415",
+    "configs/mc_maze.json": "84e2db4f32263ea431aa57eb233dccbe2b1e6758047fe0d4f39c6ab215dd1a93",
+    "configs/mc_maze_small.json": "36c536c0afa3f4d7623aa74ed0bbf72d9ef781d1ed620dc1c9959efc60b18779",
+    "configs/sequence_06.json": "39462aad2b34bc1c35d490db759e45a9a4e7b91d9144bed2d21f3f40da2851fb",
+    "docs/research/m022_protocol.md": "3a6767fe168a4a7a2276f5349c5880fcb561e52f599d2dae9826e02c5a9eabeb",
+    "docs/research/m023_protocol.md": "1248e503011757472df65db985c640f9c9c3982e893af82f8c0b5fac6cbabc35",
+    "reports/classical_05.json": "583ff96b62e62c239fa9df0618ab8ee7905cc105fbd60f8eaa87550a548739dd",
+    "reports/sequence_06.json": "eaf8334ea367b5f616cd00419263dd0c0b911b449a6f5fec2bda7dca07568847",
+    "src/cerebro/benchmark.py": "bed2a1f3e09ce3927225a0c55bb7892a8473dbab19744d1cdccd34552e457b1f",
+    "src/cerebro/kalman.py": "bb5dd081ceb52434cfa5dc5dd730d701ef8a21f03eb69da5701f4239f3e8285a",
+    "src/cerebro/reliability.py": "6e1d3ef7cbf60147baef7bfe5b442022bb604060893f5ccd26a7675b393f2ff8",
+    "src/cerebro/sequence_benchmark.py": "4af06be7a4119a8706fb6057d8200d7a76164aee4658e47a5a0f97ac7e836b5a",
+    "src/cerebro/sequence_models.py": "09190941ecf9d61596268a7adde4532f82a42bb16e432e14a291242af98fc067"
+  },
+  "status": "PROPOSED_EXPERIMENT_AWAITING_HUMAN_APPROVAL",
+  "tests": {
+    "pip_check": "PASS",
+    "reviewer_relevant": {
+      "includes_authentic_small_preparation": true,
+      "overlaps_software_suite": true,
+      "passed": 49
+    },
+    "software": {
+      "command": "conda run -n cerebro python -m pytest -q -m 'not data'",
+      "data_deselected": 22,
+      "passed": 255
+    }
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pynwb": "4.2.0",
+    "pytest": "8.4.2",
+    "scikit-learn": "1.9.1",
+    "torch": "2.14.1"
+  },
+  "warm_cpu_timing": {
+    "input_shape": [
+      1,
+      70,
+      107
+    ],
+    "limitations": "Warm CPU offline full-trial inference only. Not streaming latency, training time, GPU performance or end-to-end hardware latency. Deep input normalization precomputed; classical restoration includes its normalizer and parameter validation. Timing excludes checkpoint loading and data I/O; unequal implementation overhead prohibits architectural speed claims.",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "processor": "arm",
+    "repeats": 30,
+    "results": [
+      {
+        "median_ms_per_trial": 0.0130625,
+        "model": "mean",
+        "p95_ms_per_trial": 0.015416849999999996
+      },
+      {
+        "median_ms_per_trial": 0.017083,
+        "model": "ridge",
+        "p95_ms_per_trial": 0.018625
+      },
+      {
+        "median_ms_per_trial": 1.7779585,
+        "model": "kalman",
+        "p95_ms_per_trial": 1.86847705
+      },
+      {
+        "median_ms_per_trial": 0.048667,
+        "model": "temporal_cnn",
+        "p95_ms_per_trial": 0.054983
+      },
+      {
+        "median_ms_per_trial": 0.1359375,
+        "model": "transformer",
+        "p95_ms_per_trial": 0.15687295
+      }
+    ],
+    "threads": 1,
+    "torch_version": "2.14.1",
+    "warmups": 3
+  }
+}
