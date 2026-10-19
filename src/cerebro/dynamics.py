@@ -44,7 +44,8 @@ def run(root='data/processed/classical_05', output='data/processed/dynamics_10')
     bin_width = report['config']['bin_width_seconds']
     validate_bin_clock(arrays['bin_right_seconds'], bin_width)
     counts = arrays['counts']
-    normalized = (counts - arrays['scaler_mean']) / arrays['scaler_scale']
+    centered_counts = counts - arrays['scaler_mean']
+    normalized = centered_counts / arrays['scaler_scale']
     centered = normalized - arrays['pca_mean']
     latents = centered @ arrays['pca_components'].T
     train_mask = np.isin(arrays['trial_ids'], report['splits']['source_training'])
@@ -58,7 +59,8 @@ def run(root='data/processed/classical_05', output='data/processed/dynamics_10')
     generator = np.random.default_rng(10)
     shuffled = latents[train_mask].copy()
     for index in range(len(shuffled)):
-        shuffled[index] = shuffled[index, generator.permutation(shuffled.shape[1])]
+        bin_order = generator.permutation(shuffled.shape[1])
+        shuffled[index] = shuffled[index, bin_order]
     null_previous, null_following = transition_rows(shuffled)
     null_model = fit_decoder(null_previous, null_following, alpha=1.)
     predictions['within_trial_permutation_training_control'] = null_model.predict(validation_previous)
@@ -66,8 +68,9 @@ def run(root='data/processed/classical_05', output='data/processed/dynamics_10')
     shape = latents[validation_mask, 1:].shape
     for name, prediction in predictions.items():
         errors = prediction - validation_following
-        squared_errors = (errors ** 2).reshape(shape)
-        losses = squared_errors.mean(axis=(1, 2))
+        squared_errors = errors ** 2
+        trial_squared_errors = squared_errors.reshape(shape)
+        losses = trial_squared_errors.mean(axis=(1, 2))
         metrics[name] = {'mean_trial_mse_latent2': float(losses.mean()), 'per_trial_mse_latent2': losses.tolist()}
     eigenvalues = np.linalg.eigvals(model.coef_)
     result = {

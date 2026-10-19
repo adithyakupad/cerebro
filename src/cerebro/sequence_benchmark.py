@@ -17,14 +17,19 @@ from cerebro.sequence_models import make_sequence_model
 
 def normalized_tensors(counts, velocity, fitting_trials):
     feature_count = counts.shape[-1]
-    fitting_features = counts[fitting_trials].reshape(-1, feature_count)
-    scaler = StandardScaler().fit(fitting_features)
-    normalized_counts = (counts - scaler.mean_) / scaler.scale_
-    fitting_targets = velocity[fitting_trials].reshape(-1, velocity.shape[-1])
+    selected_counts = counts[fitting_trials]
+    fitting_features = selected_counts.reshape(-1, feature_count)
+    scaler = StandardScaler()
+    scaler.fit(fitting_features)
+    centered_counts = counts - scaler.mean_
+    normalized_counts = centered_counts / scaler.scale_
+    selected_velocity = velocity[fitting_trials]
+    fitting_targets = selected_velocity.reshape(-1, velocity.shape[-1])
     target_mean = fitting_targets.mean(axis=0)
     target_scale = fitting_targets.std(axis=0)
     target_scale = np.where(target_scale > 0, target_scale, 1.)
-    normalized_velocity = (velocity - target_mean) / target_scale
+    centered_velocity = velocity - target_mean
+    normalized_velocity = centered_velocity / target_scale
     features = torch.tensor(normalized_counts, dtype=torch.float32)
     targets = torch.tensor(normalized_velocity, dtype=torch.float32)
     parameters = {
