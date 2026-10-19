@@ -117,3 +117,17 @@ The original33 statuses remain14 COMPLETE,8 PARTIAL,5 UNVALIDATED,4 BLOCKED,2 MI
 ## Mission 024 integration qualification
 
 The [v1.1 consolidated study](v1_1_manuscript.md) and [release acceptance](../release/qualification_024.md) integrate M022/M023 without changing original33-requirement statuses or historical results. Fresh authentic-data reconstruction, package verification and independent review qualify software/reproducibility separately from failed scientific promotion gates. Eligible later LINK dates remain unscored. Merge/tag/release await explicit owner approval.
+
+## Mission 025 bounded decoder optimization
+
+The [frozen protocol](m025_protocol.md), [eligibility audit](m025_evaluation_eligibility.md),
+[scientific report](../../reports/m025_optimization.md) and
+[reproduction guide](m025_reproduction.md) add a controlled CNN optimization-budget
+study. The original 33 requirement rows and historical results remain unchanged.
+
+| Evidence domain | Executed evidence | Status and limits |
+| --- | --- | --- |
+| Within-session velocity reconstruction | Unchanged CNN, 20 versus 200 maximum updates, three fixed seeds, physical-MSE epoch selection; Small inner promotion improves 18.6012%. On the separately recorded standard session, CNN200 MSE is 0.01279167 (m/s)² versus CNN20 0.02660536 and tuned Kalman 0.03021089. | **PASS, bounded practical gate**: 51.9207% / 57.6588% reductions; paired and ordered-block intervals exclude zero. This is a session-specific training-recipe replication, not frozen-decoder transfer. |
+| Eligibility and provenance | DANDI 000128 version 0.220113.0400, asset 26e85f09-39b7-480f-b337-278a8f034007; Jenkins Sep 25, 2009, versus Small Sep 28; 1,721/574 original train/validation identities, no exclusions. | One animal, two recordings, separately fitted unit sets. Standard outcomes were performance-unscored in maintained records; earlier whole-file raw access is disclosed. Not a never-opened reserve or independent subject. |
+| Verification and limitations | 289 software tests and 22 authentic-data tests; exact saved prediction restoration, historical artifact hashes, independent stored-output review. Pre-scoring float32 validation failure and reviewed recovery are preserved explicitly. | **PASS within executed checks**; causal structure does not imply bitwise float32 prefix invariance, prospective event detection or online BCI. Trial uncertainty is conditional on fixed fits. |
+| Longitudinal adaptation, subject invariance and foundation-model validity | No new transfer, new-subject or self-supervised experiment. Earlier negative results and LINK unscored reserves remain preserved. | Original limitations and statuses unchanged. No full-scope scientific completion claim follows from this result. |

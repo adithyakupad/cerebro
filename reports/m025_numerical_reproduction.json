@@ -1,0 +1,22 @@
+{
+  "fixture": "Synthetic Poisson counts with training feature means; no native evaluation values",
+  "seed": 2525,
+  "shape": [
+    574,
+    70,
+    137
+  ],
+  "checkpoint_sha256": "243daa73d6ac747474a16463f9f9d25406bd794d23f6a6fd32408edaaec28ad1",
+  "torch_version": "2.14.1",
+  "results": {
+    "torch.float32": {
+      "cross_length_maximum_difference": 1.2516975402832031e-06,
+      "same_shape_future_maximum_difference": 1.944601535797119e-06
+    },
+    "torch.float64": {
+      "cross_length_maximum_difference": 0.0,
+      "same_shape_future_maximum_difference": 0.0
+    }
+  },
+  "limitations": "Float32 discrepancies are diagnostics, not biological evidence or a demand for bitwise invariance across kernels/platforms."
+}

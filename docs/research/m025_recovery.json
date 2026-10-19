@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "recovery_scope": "One explicit pre-scoring continuation; no model, partition, threshold or production precision changes",
+  "development_report_sha256": "b36f68fe6754206ad4e2c00e5dff29b02e1d94510f03a2b484098d597ed27585",
+  "protocol_sha256": "f0b5950ca7977e0f0781f6f9b1e60bd224b7078dfe6267bdcc5e6bbe7c1a6fee",
+  "original_runner_sha256": "c3c99d6b25109c14d795bc1fbcece54d0a25524ee1b2ac8f63233ea098e417b6",
+  "reviewed_source_sha256": {
+    "optimization_study.py": "09d56e2dd40bdb2bbffa37e07e9b4de6be78873e0eec119285349b474d746ac3",
+    "optimization_validation.py": "7561413072f3491e970e701afb34d4c7fd878c9d583c9d70bb29d74f7af2e1b9"
+  },
+  "preserved_artifact_sha256": {
+    "final_started.json": "3f8c1f2ec63b9d8ff951140a002f41b2ca5b301000b3010b4e230da3234cf341",
+    "split_manifest.json": "c49e0bf48b2537afbddfd2ee57e9c531da23f0bcdb382479e9d600adcbc0bbe7",
+    "controls.npz": "f762848577a971c57a2040e475c20c2cf38b02ee0cf744bee5ca9a2f61d729e2",
+    "cnn_20_seed_0.pt": "4053aa37e954b39901089704c67bff8412bed2bd1ef1f2fdf17be98b1e3539b9",
+    "cnn_200_seed_0.pt": "243daa73d6ac747474a16463f9f9d25406bd794d23f6a6fd32408edaaec28ad1"
+  },
+  "original_failure_log_sha256": "1c7120f7eb58b734169addf9b715b6060d4d748d6c77d509b01be7719010aea9",
+  "failed_attempt_elapsed_seconds_estimated_from_file_timestamps": 1107.5822393894196,
+  "no_final_losses_computed_or_inspected": true,
+  "verification_only_precision": "float64 copy; production float32 unchanged",
+  "review": "Independent methodology review and22synthetic study tests; default source guard rejects unreviewed changes",
+  "preserved_seed0_checkpoints_reused": true,
+  "source_only_inner_curves_recomputed": true,
+  "original_marker_deleted": false,
+  "gates_changed": false
+}

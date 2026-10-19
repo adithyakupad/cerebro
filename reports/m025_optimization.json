@@ -1,0 +1,15 @@
+{
+  "status": "PRACTICAL_IMPROVEMENT_IN_ONE_ADDITIONAL_SESSION",
+  "stage_report_sha256": {
+    "reports/m025_development.json": "b36f68fe6754206ad4e2c00e5dff29b02e1d94510f03a2b484098d597ed27585",
+    "reports/m025_final.json": "0a28f3547cb49a018389e6097a495c725f515af0bee23345cba9ed188a60f308"
+  },
+  "figure_sha256": "c4ef4c8fff823c4dfac87a08f8417c452d42094f7e77588cad32f9c3fcfef156",
+  "report_generator_sha256": "35a5aea5debd6f796248237cda7335d7f3b2bf8dd2abf0e1001ba111e2c5ec2d",
+  "independent_biological_subjects": 1,
+  "additional_evaluation_sessions": 1,
+  "development_gate_passed": true,
+  "final_practical_gate_passed": true,
+  "software_tests_passed": 289,
+  "data_tests_passed": 22
+}

@@ -40,6 +40,8 @@ def train_epoch(model, optimizer, features, targets, gradient_clip):
     model.train()
     optimizer.zero_grad()
     prediction = model(features)
+    if prediction.shape != targets.shape:
+        raise ValueError('Predictions and targets must have matching shapes')
     differences = prediction - targets
     loss = torch.mean(differences ** 2)
     if not torch.isfinite(loss):
