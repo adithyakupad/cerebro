@@ -25,4 +25,13 @@ Audit all `train_epoch` callers and the separate `_train_supervised` path before
 
 The SENSE inspector serializes native NWB object representations in the electrode CSV. Their memory addresses differ between processes. Four PNGs, 31 saved arrays, scientific report fields and the other two CSVs reproduced exactly; the electrode CSV matches only after stripping object-address text. Serialization behavior was not changed. A future portable-metadata change needs its own contract and regression test.
 
-Historical source guards hash entire modules, not only model topology. This branch leaves seven hash-bound package files plus the pinned Brochier population and M017 diagnostic generators unchanged. Refactoring these later requires a separately designed versioned provenance contract, archival source replay and explicit review; replacing hashes in historical reports or disabling guards is not an acceptable shortcut.
+Historical source guards hash entire modules, not only model topology. This branch leaves eight hash-bound package files plus the pinned Brochier population and M017 diagnostic generators unchanged. Refactoring these later requires a separately designed versioned provenance contract, archival source replay and explicit review; replacing hashes in historical reports or disabling guards is not an acceptable shortcut.
+
+
+## Additional pre-existing historical identity provenance blocker
+
+The default `configs/subject_identity_13.json` points to `data/processed/cross_subject_12/results.json`. Its producer `cross_subject.py` hash is `d762673870a18120b193b6be3af9f4b16aec52bfc1a32b8cc5eec3692e9a7692`; the baseline file at d506ff4 hashes to `6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81`. The FALCON adapter hash matches. Therefore the historical consumer rejects this exact local input with `Frozen decoder preparation code differs from current source` even before refactoring. Existing synthetic tests generate mutually matching source/report fixtures and do not establish compatibility of this historical default path.
+
+The refactor leaves `cross_subject.py` byte-identical to baseline, preserves this guard and does not overwrite the historical report. This limitation is outside the two initially identified defects and must not be described as a passing historical workflow.
+
+Independent resolution: recover and verify the exact original producer source snapshot, or generate a separately named, lineage-verified producer/identity chain in scratch using a reviewed compatible revision. Compare every original trial assignment, normalization, prediction and decision before accepting a successor artifact. Never replace the old report hash just to satisfy the guard. Add a historical-artifact compatibility test that checks the default input's producer binding before any fitting. This is a provenance/reproduction task, not evidence of a changed scientific result or permission to rerun untouched evaluations.

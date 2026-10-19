@@ -2,7 +2,7 @@
 
 Baseline HEAD: `d506ff408b62a7d79b14c59987f20c1d7b46fef4`, initially clean, package1.1.0. Review branch: `codex/readability-refactor`, based on the existing stacked research branch rather than rewriting either PR. No publication/merge/tag approval was supplied by this task.
 
-Scope: all81 maintained Python files in `src/`, `tools/` and `tests/`. [The inventory](inventory.json) lists every changed and unchanged file with before/after SHA256, module purpose, functions and rationale. [Baseline protection](baseline.json) records201 research/configuration/release documents and413 local checkpoint/array files. These counts do not claim every raw dataset was downloaded anew.
+Scope: all81 maintained Python files in `src/`, `tools/` and `tests/`;15 changed and66 retained. [The inventory](inventory.json) lists every changed and unchanged file with before/after SHA256, module purpose, functions and rationale. [Baseline protection](baseline.json) records201 research/configuration/release documents and413 local checkpoint/array files. These counts do not claim every raw dataset was downloaded anew.
 
 ## Inputs, outputs and invariants by subsystem
 
@@ -72,7 +72,7 @@ sampled_means = sampled_losses.mean(axis=1)
 
 ## Source-lineage constraints discovered and retained
 
-The v1.1 review manifest requires six source files byte-identical to the reviewed candidate. The historical checkpoint validator also hashes the entire `representation_benchmark.py` as its architecture identity. Initial readability edits to that module triggered its guard; they were reverted completely, after which checkpoint replay passed. No historical hash or guard was modified. `tools/brochier_population.py` and `tools/diagnose_mission_017.py` are also explicitly tied to historical reports and remain unchanged.
+The v1.1 review manifest requires six source files byte-identical to the reviewed candidate. The historical checkpoint validator also hashes the entire `representation_benchmark.py` as its architecture identity. The identity workflow additionally binds `cross_subject.py` to the producer fingerprint in its input report; that module is preserved too. Its existing local historical report already has a mismatched producer fingerprint at the baseline revision (see the separate proposals), so no compatible default-workflow success is claimed. Initial readability edits to `representation_benchmark.py` triggered the checkpoint guard; they were reverted completely, after which checkpoint replay passed. No historical hash or guard was modified. `tools/brochier_population.py` and `tools/diagnose_mission_017.py` are also explicitly tied to historical reports and remain unchanged.
 
 Thus this is a repository-wide assessment with selective refactoring, not a claim that every dense expression was rewritten. These provenance-bound files retain opportunities for clearer expressions. Their future refactoring depends on a separately reviewed archival/versioned provenance contract; byte identity cannot coexist with source edits. Numerical equivalence alone must not be represented as unchanged source provenance.
 

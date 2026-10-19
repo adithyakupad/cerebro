@@ -97,8 +97,8 @@
     },
     {
       "path": "src/cerebro/cross_subject.py",
-      "status": "CHANGED",
-      "assessment": "Named local ID projections; separated estimator initialization/fit and calibration feature scaling.",
+      "status": "UNCHANGED",
+      "assessment": "Historical identity workflow binds producer source hash. Preserve baseline bytes rather than add another provenance identity change; existing local historical report already has a baseline mismatch, documented separately.",
       "purpose": "Lossy anonymous population-moment transfer between public FALCON subjects.",
       "functions": [
         "anonymous_features",
@@ -111,7 +111,7 @@
         "main"
       ],
       "before_sha256": "6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81",
-      "after_sha256": "2ef4ae362deeb62d25b8134140c10eb1bafb62e04f9226126ec0adae1ace2e63"
+      "after_sha256": "6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81"
     },
     {
       "path": "src/cerebro/dataset.py",
@@ -1259,8 +1259,8 @@
   ],
   "counts": {
     "total": 81,
-    "changed": 16,
-    "unchanged": 65
+    "changed": 15,
+    "unchanged": 66
   },
   "public_signature_differences": []
 }

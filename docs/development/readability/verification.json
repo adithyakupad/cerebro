@@ -2,7 +2,7 @@
   "baseline_head": "d506ff408b62a7d79b14c59987f20c1d7b46fef4",
   "original_branch": "research/m023-reliability-dynamics",
   "refactor_branch": "codex/readability-refactor",
-  "validated_source_commit": "d8fa74ca1d6a7af4fc714e0148d5de10849d575a",
+  "validated_source_commit": "775e678b13a5c7f1a83229d429be534254eb4597",
   "environment": {
     "conda": "cerebro",
     "python": "3.11.16",
@@ -24,8 +24,8 @@
     "data_cases": 22,
     "software_cases": 255,
     "warnings": 20,
-    "seconds": 136.08,
-    "log_sha256": "b7889793e6e0cb4c70d7d9701c0f7fe0e9adbbea6f3a2ab5b2f6846124d800cb"
+    "seconds": 120.93,
+    "log_sha256": "043755f6e03c3886f024a5fce395ef5e30ca9d1ab2dd6925d22edde01bf6c670"
   },
   "scoped_tests": [
     {
@@ -137,8 +137,8 @@
   },
   "inventory_counts": {
     "total": 81,
-    "changed": 16,
-    "unchanged": 65
+    "changed": 15,
+    "unchanged": 66
   },
   "public_signature_differences": [],
   "lint": {
@@ -323,8 +323,8 @@
   "whitespace": "PASS git diff --check",
   "packaging": {
     "filename": "cerebro-1.1.0-py3-none-any.whl",
-    "bytes": 139613,
-    "sha256": "fc248c0f29123732a171835381dd0a8ff5d10d80c493ea1027d3000920443d0d",
+    "bytes": 139592,
+    "sha256": "8be50f0cc07176b5b6fa1c7e74fec6f72d32a3997768c27ec77744349bf4c4bd",
     "members": 38,
     "raw_arrays_checkpoints_cache_included": false
   },
@@ -397,7 +397,8 @@
     "unresolved_refactor_defects": [],
     "resolved": [
       "Restored entire Representation07 source after strict architecture hash rejection",
-      "Preserved unit-ID conversion/error order and scale-before-offset conversion order"
+      "Preserved unit-ID conversion/error order and scale-before-offset conversion order",
+      "Preserved cross-subject producer baseline source identity; confirmed existing cached-report mismatch separately, no guard bypass"
     ],
     "known_correctness_bugs_fixed": false
   },
@@ -410,12 +411,24 @@
     "Standalone static type checker"
   ],
   "publication": "Local review-ready branch; no push/PR/merge/tag/release performed",
-  "provenance_constraints": "Seven hash-bound package modules plus two pinned historical generator tools remain unchanged; no historical hash/test weakened.",
+  "provenance_constraints": "Eight hash-bound package modules plus two pinned historical generator tools remain unchanged; no historical hash/test weakened. Cached historical identity input already mismatches baseline producer source; recorded separately.",
   "preexisting_limitations": [
     "Electrode CSV native object-address nondeterminism",
     "78 files fail optional canonical Ruff formatting in both baseline and refactor",
-    "Two known correctness issues intentionally preserved"
+    "Two known correctness issues intentionally preserved",
+    "Cached historical identity report producer fingerprint mismatches even original baseline; default historical artifact consumer correctly rejects it before fitting"
   ],
   "replay_values_sha256": "e5a2f1c2a081b621774bd36534a18a36aa8bd8f7b75c0b2cccfaf8dae88f4a29",
-  "documented_checkpoint_observer": "PASS: extracted command executed; all229 arrays exact"
+  "documented_checkpoint_observer": "PASS: extracted command executed; all229 arrays exact",
+  "preexisting_compatibility_blockers": {
+    "cached_historical_identity_input": {
+      "status": "PREEXISTING_PROVENANCE_BLOCKER",
+      "error": "Frozen decoder preparation code differs from current source",
+      "fitting_executed": false
+    },
+    "baseline_and_refactor_rejection_identical": true,
+    "fix_applied": false,
+    "expected_producer_sha256": "d762673870a18120b193b6be3af9f4b16aec52bfc1a32b8cc5eec3692e9a7692",
+    "baseline_and_refactor_producer_sha256": "6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81"
+  }
 }
