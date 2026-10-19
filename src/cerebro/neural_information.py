@@ -189,6 +189,9 @@ def run(config_path='configs/m026_neural_information.json'):
     started = time.perf_counter()
     protected = preserve_original(config)
     arrays, groups, original, lineage = checked_inputs(config)
+    for name, expected in original['files'].items():
+        if digest(Path(config['m025_directory']) / name) != expected:
+            raise ValueError('Original M025 artifact checksum differs: ' + name)
     counts = arrays['counts'].astype(float)
     target = arrays['velocity']
     keys = arrays['conditions']
@@ -248,7 +251,9 @@ def replay(config_path='configs/m026_neural_information.json'):
     for name, expected in report['protected_m025_sha256'].items():
         if digest(name) != expected:
             raise ValueError('Historical checksum changed: ' + name)
-    arrays, groups, _, _ = checked_inputs(config)
+    arrays, groups, _, lineage = checked_inputs(config)
+    if lineage != report['lineage']:
+        raise ValueError('Replay input lineage differs from recorded experiment')
     with np.load(output / 'predictions.npz', allow_pickle=False) as archive:
         saved = dict(archive)
     for name, values in saved.items():

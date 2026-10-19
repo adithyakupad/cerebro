@@ -242,3 +242,17 @@ def test_authentic_m026_cache_identity_and_groups_without_acquisition():
     assert set(groups['inner_training']).isdisjoint(groups['inner_validation'])
     assert lineage['m025_evaluation_arrays_exact']
     assert lineage['asset'] == original['asset']
+
+
+def test_replay_rejects_cache_lineage_changed_after_experiment(tmp_path, monkeypatch):
+    import cerebro.neural_information as study
+    output = tmp_path / 'run'
+    output.mkdir()
+    report = {'protected_m025_sha256': {}, 'lineage': {'cache_sha256': 'recorded'}}
+    (output / 'results.json').write_text(json.dumps(report))
+    config = {'output': str(output)}
+    config_path = tmp_path / 'config.json'
+    config_path.write_text(json.dumps(config))
+    monkeypatch.setattr(study, 'checked_inputs', lambda *args: ({}, {}, {}, {'cache_sha256': 'changed'}))
+    with pytest.raises(ValueError, match='Replay input lineage differs'):
+        study.replay(config_path)
