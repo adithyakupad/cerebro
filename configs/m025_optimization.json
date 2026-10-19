@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "protocol": "docs/research/m025_protocol.md",
+  "development_manifest": "configs/mc_maze_small.json",
+  "development_arrays": "data/processed/classical_05/arrays.npz",
+  "development_report": "reports/classical_05.json",
+  "final_manifest": "configs/mc_maze.json",
+  "seeds": [0, 1, 2],
+  "epoch_caps": [20, 200],
+  "hidden": 32,
+  "learning_rate": 0.001,
+  "gradient_clip": 1.0,
+  "ridge_alphas": [1, 10, 100, 1000],
+  "history_bins": 5,
+  "score_start_bin": 4,
+  "promotion_reduction": 0.05,
+  "practical_reduction": 0.05,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 25,
+  "block_trials": 5,
+  "maximum_stage_seconds": 86400
+}
