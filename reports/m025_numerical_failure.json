@@ -1,0 +1,11 @@
+{
+  "fixture": "synthetic Poisson( training feature means ), 574x70x137; saved fitted checkpoint only; no native evaluation values",
+  "float32_same_shape_future_max_difference": 1.944601535797119e-06,
+  "float32_cross_length_max_difference": 1.2516975402832031e-06,
+  "float64_same_shape_future_max_difference": 0.0,
+  "float64_cross_length_max_difference": 0.0,
+  "float64_rtol": 1e-12,
+  "float64_atol": 1e-12,
+  "production_dtype_unchanged": "float32",
+  "torch_version": "2.14.1"
+}

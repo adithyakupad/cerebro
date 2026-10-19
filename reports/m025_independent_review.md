@@ -37,3 +37,28 @@ performance-unscored Sep25recording, not never-opened raw data or new subjects.
 The historical eager-loading exposure and lack of private/unlogged-use proof
 are disclosed in docs/research/m025_evaluation_eligibility.md. Finite target and
 spike-conservation execution guards remain mandatory.
+
+## Disclosed pre-scoring numerical failure and recovery review
+
+The final attempt stopped in the validation check, before any final metric/report,
+after saving seed0 CNN20/CNN200 and classical parameters. Float32 cross-length
+roundoff exceeded the new runner's1e-6 assertion. Synthetic diagnosis reproduced
+the discrepancy; double-precision structural prefix/future checks passed. No
+final behavioral labels were used for this diagnosis. See m025_numerical_failure.json
+and m025_failed_attempt.txt; the failure is preserved, not hidden.
+
+An independent reviewer approved a validation-only correction: production float32
+parameters/predictions remain unchanged; a copied double model must pass prefix
+and same-shape future perturbation at1e-12, including rejection of an acausal fixture.
+This does not assert bitwise production-float32 future invariance.
+
+Recovery regression tests verify checkpoint-byte/prediction preservation without
+refitting saved models, matching selected epochs/normalization, rejection of
+unauthorized method-source changes and authentication of every preserved artifact
+and reviewed source hash. 22 study tests passed; the complete software subset
+then passed289tests. Original development/source/protocol lineage remains immutable.
+Only the exact reviewed runner hash may bridge the validation correction; all
+other method hashes still must match. The original marker and partial artifacts
+are preserved and a second exclusive recovery journal is mandatory. This is a
+reviewed continuation before the first loss calculation, not another final outcome
+selection or an alternate dataset. No thresholds, architecture, splits or seeds change.

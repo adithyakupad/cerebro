@@ -19,6 +19,7 @@ from cerebro.benchmark import array_digest, prepare, save_immutable, trial_metri
 from cerebro.dataset import verify_asset
 from cerebro.event_audit import condition_keys
 from cerebro.optimization_controls import predict_controls, train_controls
+from cerebro.optimization_validation import validate_causality
 from cerebro.sense import load_recording
 from cerebro.sequence_benchmark import normalized_tensors, train_epoch
 from cerebro.sequence_models import make_sequence_model
@@ -72,14 +73,39 @@ def check_committed_protocol(config_path, config):
             raise ValueError('Protocol/config must be committed before training')
 
 
-def authorize_final(development, eligibility, config):
+def recovery_evidence(development, config, output):
+    path = 'docs/research/m025_recovery.json'
+    evidence = read_json(path)
+    committed = subprocess.check_output(['git', 'show', 'HEAD:' + path])
+    if hashlib.sha256(committed).hexdigest() != digest(path):
+        raise ValueError('Recovery evidence must be committed')
+    if evidence['development_report_sha256'] != digest('reports/m025_development.json'):
+        raise ValueError('Recovery development lineage differs')
+    if evidence['protocol_sha256'] != digest(config['protocol']):
+        raise ValueError('Recovery scientific protocol differs')
+    for name, expected in evidence['preserved_artifact_sha256'].items():
+        if digest(output / name) != expected:
+            raise ValueError('Preserved failed-attempt artifact changed: ' + name)
+    old_hash = development['source_sha256']['optimization_study.py']
+    if evidence['original_runner_sha256'] != old_hash:
+        raise ValueError('Recovery original source differs')
+    for name, expected in evidence['reviewed_source_sha256'].items():
+        if digest(Path('src/cerebro') / name) != expected:
+            raise ValueError('Reviewed recovery source differs: ' + name)
+    return evidence
+
+
+def authorize_final(development, eligibility, config, recovery=None):
     if development != read_json('reports/m025_development.json'):
         raise ValueError('Cached development differs from published gate evidence')
     if development['config'] != config or development['protocol_sha256'] != digest(config['protocol']):
         raise ValueError('Development protocol/config differs from frozen final recipe')
     for name, expected in development['source_sha256'].items():
-        if digest(Path('src/cerebro') / name) != expected:
-            raise ValueError('Implementation changed since development: ' + name)
+        actual = digest(Path('src/cerebro') / name)
+        if actual != expected:
+            approved_validation_repair = recovery is not None and name == 'optimization_study.py'
+            if not approved_validation_repair or recovery['reviewed_source_sha256'][name] != actual:
+                raise ValueError('Implementation changed since development: ' + name)
     inner = development['inner_loss_by_cap']
     values = np.asarray([inner['20'], inner['200']], dtype=float)
     if not np.isfinite(values).all() or values[0] <= 0 or values[1] < 0:
@@ -97,7 +123,7 @@ def authorize_final(development, eligibility, config):
             raise ValueError('Gate evidence must be committed before final access')
 
 
-def cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, config, output):
+def cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, config, output, recover=False):
     inner_features, inner_targets, inner_parameters = normalized_tensors(counts, velocity, fitting)
     full_features, full_targets, full_parameters = normalized_tensors(counts, velocity, training)
     rows = []
@@ -128,13 +154,27 @@ def cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, c
             selected = min(candidates, key=lambda row: row['inner_physical_mse'])
             torch.manual_seed(seed)
             fitted = make_sequence_model('temporal_cnn', counts.shape[-1], config['hidden'], 2)
-            optimizer = torch.optim.Adam(fitted.parameters(), lr=config['learning_rate'])
-            fit_started = time.perf_counter()
-            for _ in range(selected['epoch']):
-                if time.perf_counter() > deadline:
-                    raise RuntimeError('CPU-day budget exceeded during refitting')
-                train_epoch(fitted, optimizer, full_features[training], full_targets[training], config['gradient_clip'])
-            fit_seconds = time.perf_counter() - fit_started
+            name = 'cnn_' + str(cap) + '_seed_' + str(seed)
+            checkpoint_path = output / (name + '.pt')
+            reused_checkpoint = checkpoint_path.exists()
+            if reused_checkpoint:
+                if not recover:
+                    raise ValueError('Existing checkpoint requires explicit recovery')
+                saved = torch.load(checkpoint_path, weights_only=True, map_location='cpu')
+                if saved['selected_epoch'] != selected['epoch'] or saved['seed'] != seed or saved['cap'] != cap:
+                    raise ValueError('Recovered epoch selection differs; no replacement permitted')
+                for key, value in full_parameters.items():
+                    np.testing.assert_array_equal(saved['normalization'][key].numpy(), value)
+                fitted.load_state_dict(saved['state_dict'])
+                fit_seconds = 0.
+            else:
+                optimizer = torch.optim.Adam(fitted.parameters(), lr=config['learning_rate'])
+                fit_started = time.perf_counter()
+                for _ in range(selected['epoch']):
+                    if time.perf_counter() > deadline:
+                        raise RuntimeError('CPU-day budget exceeded during refitting')
+                    train_epoch(fitted, optimizer, full_features[training], full_targets[training], config['gradient_clip'])
+                fit_seconds = time.perf_counter() - fit_started
             fitted.eval()
             inference_started = time.perf_counter()
             with torch.no_grad():
@@ -142,25 +182,22 @@ def cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, c
             inference_seconds = time.perf_counter() - inference_started
             prediction = normalized_prediction * full_parameters['target_scale']
             prediction = prediction + full_parameters['target_mean']
-            name = 'cnn_' + str(cap) + '_seed_' + str(seed)
             predictions[name] = prediction
             checkpoint = {'kind': 'temporal_cnn', 'input_units': counts.shape[-1], 'hidden': config['hidden'],
                           'output_coordinates': 2, 'seed': seed, 'cap': cap, 'selected_epoch': selected['epoch'],
                           'state_dict': copy.deepcopy(fitted.state_dict()),
                           'normalization': {key: torch.tensor(value) for key, value in full_parameters.items()}}
-            checkpoint_path = output / (name + '.pt')
-            torch.save(checkpoint, checkpoint_path)
+            if not reused_checkpoint:
+                torch.save(checkpoint, checkpoint_path)
             restored = restore_cnn(checkpoint_path, counts[evaluating])
             np.testing.assert_array_equal(restored, prediction)
-            with torch.no_grad():
-                prefix = fitted(full_features[evaluating, :35])
-                complete = fitted(full_features[evaluating])[:, :35]
-            torch.testing.assert_close(prefix, complete, rtol=1e-6, atol=1e-6)
+            causality = validate_causality(fitted, full_features[evaluating])
             rows.append({'name': name, 'seed': seed, 'cap': cap, 'selected_epoch': selected['epoch'],
                          'inner_selected_mse': selected['inner_physical_mse'], 'history': candidates,
                          'fit_seconds': fit_seconds, 'evaluation_forward_seconds': inference_seconds,
                          'checkpoint_sha256': digest(checkpoint_path), 'restoration_exact': True,
-                         'prefix_causality_passed': True})
+                         'prefix_causality_passed': causality['passed'], 'causality_validation': causality,
+                         'checkpoint_reused': reused_checkpoint})
     return rows, predictions
 
 
@@ -196,7 +233,7 @@ def condition_permutation(manifest, evaluation_ids, seed):
     return indices, singleton_trials
 
 
-def load_stage(stage, config, output):
+def load_stage(stage, config, output, recover=False):
     if stage == 'development':
         historical = read_json(config['development_report'])
         manifest = read_json(config['development_manifest'])
@@ -212,10 +249,11 @@ def load_stage(stage, config, output):
     else:
         development = read_json('data/processed/m025_development/results.json')
         eligibility = read_json('docs/research/m025_evaluation_eligibility.json')
-        authorize_final(development, eligibility, config)
+        recovery = recovery_evidence(development, config, output) if recover else None
+        authorize_final(development, eligibility, config, recovery)
         manifest = read_json(config['final_manifest'])
         verify_asset(Path(manifest['local_path']), manifest)
-        marker = output / 'final_started.json'
+        marker = output / ('recovery_started.json' if recover else 'final_started.json')
         with marker.open('x') as stream:
             json.dump({'asset_sha256': manifest['sha256'], 'protocol_sha256': digest(config['protocol'])}, stream)
         recording = load_recording(manifest['local_path'])
@@ -238,7 +276,7 @@ def load_stage(stage, config, output):
     return data, splits, manifest
 
 
-def run(stage, config_path='configs/m025_optimization.json'):
+def run(stage, config_path='configs/m025_optimization.json', recover=False):
     config = read_json(config_path)
     check_committed_protocol(config_path, config)
     diagnostic = read_json('docs/research/m025_diagnostic_audit.json')
@@ -252,7 +290,9 @@ def run(stage, config_path='configs/m025_optimization.json'):
     started = time.perf_counter()
     torch.set_num_threads(1)
     torch.use_deterministic_algorithms(True)
-    data, splits, manifest = load_stage(stage, config, output)
+    if recover and stage != 'final':
+        raise ValueError('Recovery applies only to the interrupted final stage')
+    data, splits, manifest = load_stage(stage, config, output, recover)
     counts = data['counts'].astype(float)
     velocity = data['velocity']
     ids = data['trial_ids']
@@ -270,9 +310,15 @@ def run(stage, config_path='configs/m025_optimization.json'):
                               counts[masks['source_validation']], None, config['ridge_alphas'],
                               selected_alphas=selected_controls['selected_alphas'])
     control_seconds = time.perf_counter() - control_started
-    np.savez_compressed(output / 'controls.npz', **controls['parameters'])
+    controls_path = output / 'controls.npz'
+    if recover:
+        with np.load(controls_path, allow_pickle=False) as saved:
+            for name, value in controls['parameters'].items():
+                np.testing.assert_array_equal(saved[name], value)
+    else:
+        np.savez_compressed(controls_path, **controls['parameters'])
     cnn_rows, predictions = cnn_experiment(counts, velocity, masks['inner_training'], masks['inner_validation'],
-                                          masks['source_training'], masks['source_validation'], config, output)
+                                          masks['source_training'], masks['source_validation'], config, output, recover)
     predictions.update(controls['predictions'])
     evaluation_counts = counts[masks['source_validation']]
     target = velocity[masks['source_validation']]
@@ -326,9 +372,11 @@ def run(stage, config_path='configs/m025_optimization.json'):
     if elapsed > config['maximum_stage_seconds']:
         raise RuntimeError('Prespecified CPU-day budget exceeded; preserve partial files, no automatic retry')
     source_hashes = {}
-    for name in ('optimization_study.py', 'optimization_controls.py', 'sequence_models.py', 'sequence_benchmark.py', 'kalman.py', 'benchmark.py', 'sense.py'):
+    for name in ('optimization_study.py', 'optimization_controls.py', 'optimization_validation.py', 'sequence_models.py', 'sequence_benchmark.py', 'kalman.py', 'benchmark.py', 'sense.py'):
         source_hashes[name] = digest(Path('src/cerebro') / name)
     report = {'stage': stage, 'config': config, 'protocol_sha256': digest(config['protocol']),
+              'explicit_pre_scoring_recovery': recover,
+              'recovery_evidence_sha256': digest('docs/research/m025_recovery.json') if recover else None,
               'git_revision': subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip(),
               'source_sha256': source_hashes, 'asset': manifest, 'splits': splits, 'exclusions': data['exclusions'],
               'counts_shape': list(counts.shape), 'target_shape': list(velocity.shape), 'cnn': cnn_rows,
@@ -422,12 +470,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--stage', choices=['development', 'final'], default='development')
     parser.add_argument('--replay', action='store_true')
+    parser.add_argument('--recover-final', action='store_true', help='Reviewed pre-scoring recovery; preserves original marker and checkpoints')
     arguments = parser.parse_args()
     if arguments.replay:
         torch.set_num_threads(1)
         result = replay(arguments.stage)
     else:
-        result = run(arguments.stage)
+        result = run(arguments.stage, recover=arguments.recover_final)
     print(json.dumps({'stage': arguments.stage, 'replay': arguments.replay, 'result': result.get('development_gate_passed', result)}, default=str))
 
 

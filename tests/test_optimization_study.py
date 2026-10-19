@@ -157,8 +157,8 @@ def test_authorization_rejects_stale_ignored_development_cache(monkeypatch):
 def test_shared_inner_trajectory_preserves_short_cap_predictions(tmp_path):
     torch.set_num_threads(1)
     generator = np.random.default_rng(25)
-    counts = generator.poisson(2, size=(5, 8, 2)).astype(float)
-    velocity = generator.normal(size=(5, 8, 2))
+    counts = generator.poisson(2, size=(5, 40, 2)).astype(float)
+    velocity = generator.normal(size=(5, 40, 2))
     fitting = np.asarray([True, True, False, False, False])
     selecting = np.asarray([False, False, True, False, False])
     training = fitting | selecting
@@ -183,3 +183,102 @@ def test_shared_inner_trajectory_preserves_short_cap_predictions(tmp_path):
         assert short_epoch['inner_physical_mse'] == shared_epoch['inner_physical_mse']
     restored = study.restore_cnn(shared_path / (name + '.pt'), counts[evaluating])
     np.testing.assert_array_equal(restored, shared_predictions[name])
+
+
+def test_explicit_checkpoint_recovery_preserves_predictions_and_avoids_refitting(tmp_path, monkeypatch):
+    torch.set_num_threads(1)
+    generator = np.random.default_rng(25)
+    counts = generator.poisson(2, size=(5, 40, 2)).astype(float)
+    velocity = generator.normal(size=(5, 40, 2))
+    fitting = np.asarray([True, True, False, False, False])
+    selecting = np.asarray([False, False, True, False, False])
+    training = fitting | selecting
+    evaluating = ~training
+    config = {'score_start_bin': 4, 'seeds': [2], 'hidden': 3,
+              'learning_rate': .001, 'gradient_clip': 1., 'epoch_caps': [2, 4],
+              'maximum_stage_seconds': 100}
+    original_rows, original_predictions = study.cnn_experiment(
+        counts, velocity, fitting, selecting, training, evaluating, config, tmp_path)
+    preserved = {path.name: path.read_bytes() for path in tmp_path.glob('*.pt')}
+    calls = []
+    original_train = study.train_epoch
+
+    def training_call(*args):
+        calls.append(1)
+        return original_train(*args)
+
+    monkeypatch.setattr(study, 'train_epoch', training_call)
+    recovered_rows, recovered_predictions = study.cnn_experiment(
+        counts, velocity, fitting, selecting, training, evaluating, config, tmp_path, recover=True)
+    assert len(calls) == 4  # Only the training-partition inner trajectory is reconstructed.
+    assert all(row['checkpoint_reused'] for row in recovered_rows)
+    assert [row['selected_epoch'] for row in original_rows] == [row['selected_epoch'] for row in recovered_rows]
+    for name, prediction in original_predictions.items():
+        np.testing.assert_array_equal(prediction, recovered_predictions[name])
+    assert preserved == {path.name: path.read_bytes() for path in tmp_path.glob('*.pt')}
+    with pytest.raises(ValueError, match='explicit recovery'):
+        study.cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, config, tmp_path)
+    checkpoint = tmp_path / 'cnn_2_seed_2.pt'
+    changed = torch.load(checkpoint, weights_only=True)
+    changed['selected_epoch'] += 1
+    torch.save(changed, checkpoint)
+    with pytest.raises(ValueError, match='epoch selection differs'):
+        study.cnn_experiment(counts, velocity, fitting, selecting, training, evaluating, config, tmp_path, recover=True)
+
+
+def test_recovery_allows_only_exact_reviewed_runner_change(monkeypatch):
+    config, development, eligibility = final_fixture(monkeypatch)
+    original_hash = study.digest('unchanged')
+    reviewed_hash = 'reviewed validation-only change'
+
+    def digest(path):
+        if str(path) == 'src/cerebro/optimization_study.py':
+            return reviewed_hash
+        return original_hash
+
+    monkeypatch.setattr(study, 'digest', digest)
+    with pytest.raises(ValueError, match='Implementation changed'):
+        study.authorize_final(development, eligibility, config)
+    evidence = {'reviewed_source_sha256': {'optimization_study.py': reviewed_hash}}
+    study.authorize_final(development, eligibility, config, evidence)
+    evidence['reviewed_source_sha256']['optimization_study.py'] = 'another revision'
+    with pytest.raises(ValueError, match='Implementation changed'):
+        study.authorize_final(development, eligibility, config, evidence)
+    evidence['reviewed_source_sha256']['optimization_study.py'] = reviewed_hash
+    development['source_sha256']['optimization_controls.py'] = 'unauthorized scientific change'
+    with pytest.raises(ValueError, match='Implementation changed'):
+        study.authorize_final(development, eligibility, config, evidence)
+
+
+def test_recovery_manifest_authenticates_protocol_sources_and_failed_attempt(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    paths = ['docs/research/m025_recovery.json', 'reports/m025_development.json',
+             'protocol.md', 'src/cerebro/optimization_study.py',
+             'src/cerebro/optimization_validation.py', 'failed/final_started.json', 'failed/checkpoint.pt']
+    for name in paths:
+        path = tmp_path / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(name)
+    development = {'source_sha256': {'optimization_study.py': 'original source'}}
+    config = {'protocol': 'protocol.md'}
+    evidence = {
+        'development_report_sha256': study.digest('reports/m025_development.json'),
+        'protocol_sha256': study.digest('protocol.md'),
+        'preserved_artifact_sha256': {'final_started.json': study.digest('failed/final_started.json'),
+                                     'checkpoint.pt': study.digest('failed/checkpoint.pt')},
+        'original_runner_sha256': 'original source',
+        'reviewed_source_sha256': {'optimization_study.py': study.digest('src/cerebro/optimization_study.py'),
+                                   'optimization_validation.py': study.digest('src/cerebro/optimization_validation.py')},
+    }
+    manifest_path = tmp_path / paths[0]
+    manifest_path.write_text(json.dumps(evidence))
+    committed = manifest_path.read_bytes()
+    monkeypatch.setattr(study.subprocess, 'check_output', lambda command: committed)
+    assert study.recovery_evidence(development, config, tmp_path / 'failed') == evidence
+    for name in paths:
+        path = tmp_path / name
+        original = path.read_bytes()
+        path.write_bytes(original + b' changed')
+        with pytest.raises((ValueError, json.JSONDecodeError)):
+            study.recovery_evidence(development, config, tmp_path / 'failed')
+        path.write_bytes(original)
