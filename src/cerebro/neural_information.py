@@ -87,13 +87,17 @@ def fit_seed(counts, velocity, keys, groups, mode, seed, config, output):
         selection_loss = float(losses(velocity[selecting], physical_prediction).mean())
         history.append({'epoch': epoch + 1, 'training_standardized_mse': training_loss,
                         'inner_physical_mse': selection_loss, 'seconds': time.perf_counter() - started})
+        if (epoch + 1) % 50 == 0:
+            print(json.dumps({'control': mode, 'seed': seed, 'phase': 'inner', 'epoch': epoch + 1}), flush=True)
     selected = min(history, key=lambda row: row['inner_physical_mse'])
     torch.manual_seed(seed)
     fitted = make_sequence_model('temporal_cnn', counts.shape[2], config['hidden'], 2)
     optimizer = torch.optim.Adam(fitted.parameters(), lr=config['learning_rate'])
     fit_started = time.perf_counter()
-    for _ in range(selected['epoch']):
+    for epoch in range(selected['epoch']):
         train_epoch(fitted, optimizer, full_features[training], full_targets[training], config['gradient_clip'])
+        if (epoch + 1) % 50 == 0:
+            print(json.dumps({'control': mode, 'seed': seed, 'phase': 'refit', 'epoch': epoch + 1}), flush=True)
     fit_seconds = time.perf_counter() - fit_started
     fitted.eval()
     inference_started = time.perf_counter()
