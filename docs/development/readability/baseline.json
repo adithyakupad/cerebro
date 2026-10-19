@@ -1949,5 +1949,6 @@
     "pytest": false,
     "torch": false
   },
-  "tools_available_note": "Python module availability was queried from orchestration Python, not Conda cerebro; installed /opt/anaconda3/bin/ruff 0.15.1 was separately verified and used. No new tool installed."
+  "tools_available_note": "Python module availability was queried from orchestration Python, not Conda cerebro; installed /opt/anaconda3/bin/ruff 0.15.1 was separately verified and used. No new tool installed.",
+  "original_branch": "research/m023-reliability-dynamics"
 }

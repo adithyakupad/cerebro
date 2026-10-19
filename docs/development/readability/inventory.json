@@ -1,0 +1,1266 @@
+{
+  "baseline_head": "d506ff408b62a7d79b14c59987f20c1d7b46fef4",
+  "refactor_branch": "codex/readability-refactor",
+  "scope": "All tracked Python in src/tools/tests; generated/untracked raw artifacts excluded",
+  "files": [
+    {
+      "path": "src/cerebro/__init__.py",
+      "status": "UNCHANGED",
+      "assessment": "Package docstring only; no logic to refactor.",
+      "purpose": "CEREBRO: foundations for adaptive neural intelligence research.",
+      "functions": [],
+      "before_sha256": "39454bcacb39873d7b0e0878760a9a7ddaf27d74ece1a8a5e6df6cd3c6b9db7b",
+      "after_sha256": "39454bcacb39873d7b0e0878760a9a7ddaf27d74ece1a8a5e6df6cd3c6b9db7b"
+    },
+    {
+      "path": "src/cerebro/benchmark.py",
+      "status": "CHANGED",
+      "assessment": "Named inner/source split masks, counts/features/targets; staged reconstruction errors and FA posterior solve.",
+      "purpose": "Trial-disjoint exploratory PCA/FA and offline velocity decoder benchmark.",
+      "functions": [
+        "array_digest",
+        "gaussian_log_likelihood",
+        "prepare",
+        "split_manifest",
+        "save_immutable",
+        "trial_metrics",
+        "restore_prediction",
+        "run",
+        "main"
+      ],
+      "before_sha256": "bed2a1f3e09ce3927225a0c55bb7892a8473dbab19744d1cdccd34552e457b1f",
+      "after_sha256": "b2a0b837af646ec3b66967977134136f9e990921c3d203e1975129a7c92bbb8e"
+    },
+    {
+      "path": "src/cerebro/benchmark_figures.py",
+      "status": "UNCHANGED",
+      "assessment": "Report verification, grouping and axes already follow saved-array transformation order.",
+      "purpose": "Render stored authentic-data benchmark outputs without fitting models.",
+      "functions": [
+        "checked_arrays",
+        "render",
+        "main"
+      ],
+      "before_sha256": "eb8f85084802788cd8c8b3d7186127ca99b76574b555c8feed13adc1dc1ff778",
+      "after_sha256": "eb8f85084802788cd8c8b3d7186127ca99b76574b555c8feed13adc1dc1ff778"
+    },
+    {
+      "path": "src/cerebro/calibration_mechanisms.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Frozen M022 development diagnostics; no previously evaluated target rows.",
+      "functions": [
+        "allocate",
+        "development_split",
+        "source_split",
+        "shrink",
+        "coefficient_dispersion",
+        "error_components",
+        "ensemble_diagnostics",
+        "paired_session_interval",
+        "_model_predictions",
+        "run",
+        "promotion_results",
+        "main"
+      ],
+      "before_sha256": "6fe71ada7a92cf48a57595ab4699de159a46f2ea94e36908a3f6c78def7b11c3",
+      "after_sha256": "6fe71ada7a92cf48a57595ab4699de159a46f2ea94e36908a3f6c78def7b11c3"
+    },
+    {
+      "path": "src/cerebro/characterize.py",
+      "status": "CHANGED",
+      "assessment": "Separated observed counts/exposure and per-unit transformations; made nested trial/unit totals explicit.",
+      "purpose": "Descriptive count statistics on identical trials, with matched exposure.",
+      "functions": [
+        "count_statistics",
+        "summarize",
+        "matched_intervals",
+        "metadata_audit",
+        "analyze",
+        "write_report",
+        "main"
+      ],
+      "before_sha256": "51b01a0eaad250de3153eccc9f16052dd90d258e8a98ff44d967c0b6b3c3a8c1",
+      "after_sha256": "8881f6e848401568180c172b9bf670c1d2256942c922343a9aefc34ce394d1b1"
+    },
+    {
+      "path": "src/cerebro/characterize_figures.py",
+      "status": "CHANGED",
+      "assessment": "Exposed empirical cumulative counts/fractions; preserved axes/data and rendered bytes.",
+      "purpose": "Render the saved empirical report without recomputing or fitting statistics.",
+      "functions": [
+        "render",
+        "main"
+      ],
+      "before_sha256": "f35223b37d95a299fe2496eca362674ca7a1d205cf26eba211d4c1fa7ef8dc48",
+      "after_sha256": "b96e3009c78722a1d535c2f880462230005f1824c7e750f53522e5a555ed9938"
+    },
+    {
+      "path": "src/cerebro/cross_subject.py",
+      "status": "CHANGED",
+      "assessment": "Named local ID projections; separated estimator initialization/fit and calibration feature scaling.",
+      "purpose": "Lossy anonymous population-moment transfer between public FALCON subjects.",
+      "functions": [
+        "anonymous_features",
+        "prepare_trials",
+        "flatten",
+        "trial_losses",
+        "_checkpoint_prediction",
+        "run",
+        "write_artifacts",
+        "main"
+      ],
+      "before_sha256": "6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81",
+      "after_sha256": "2ef4ae362deeb62d25b8134140c10eb1bafb62e04f9226126ec0adae1ace2e63"
+    },
+    {
+      "path": "src/cerebro/dataset.py",
+      "status": "UNCHANGED",
+      "assessment": "Download and checksum flow already direct with explicit verification/failure paths.",
+      "purpose": "Acquire a pinned public asset and verify it before scientific use.",
+      "functions": [
+        "verify_asset",
+        "download_asset",
+        "main"
+      ],
+      "before_sha256": "4451cdf7f79b303c4c8355d9177627794e24ad62ad4847d54da2067229751dde",
+      "after_sha256": "4451cdf7f79b303c4c8355d9177627794e24ad62ad4847d54da2067229751dde"
+    },
+    {
+      "path": "src/cerebro/dynamics.py",
+      "status": "CHANGED",
+      "assessment": "Exposed centering, one permutation call per trial and reshaped squared errors.",
+      "purpose": "Training-only latent AR(1), evaluated as an offline one-step forecast.",
+      "functions": [
+        "transition_rows",
+        "validate_bin_clock",
+        "run",
+        "main"
+      ],
+      "before_sha256": "1252a15af3c95adbcba803062114a6438ea0bf61338d524453c3df9a145ed5b7",
+      "after_sha256": "727c5f95e8446851f36fcf962e6b165591d8e16b9cac54e1d4ec44311146a807"
+    },
+    {
+      "path": "src/cerebro/evaluation.py",
+      "status": "CHANGED",
+      "assessment": "Exposed trial-block reshaping, sampled losses and paired-change means without extra RNG calls.",
+      "purpose": "Trial-level uncertainty from stored empirical losses, without model selection.",
+      "functions": [
+        "loss_summary",
+        "read_bound_report",
+        "grouped_losses",
+        "run",
+        "main"
+      ],
+      "before_sha256": "86c197749f83124ec0d4030bd889ecbd6b9f86a9ff0b5488181f6818dd8fab29",
+      "after_sha256": "37f14acb6a83d26613d0937934f408349b3d81ae7ec08bb21894440d38d8cbca"
+    },
+    {
+      "path": "src/cerebro/event_aligned.py",
+      "status": "CHANGED",
+      "assessment": "Separate state/list updates, condition means/residuals, covariance and rate/band stages.",
+      "purpose": "Training-only peri-event summaries; unsupported residual inference is withheld.",
+      "functions": [
+        "validate_publication_protocol",
+        "relative_grid",
+        "align_training",
+        "condition_residuals",
+        "covariance_correlation",
+        "trial_bootstrap",
+        "correlation_summary",
+        "analyze_events",
+        "write_experiment",
+        "main"
+      ],
+      "before_sha256": "3f0b5745ca7f86a8380a22837e661d3e432cc1c2891afcec205eda71c617651d",
+      "after_sha256": "8989504ae79078e6ad776ab5d13673de9b2da59c015f5b9fa831319d6a0fa8e7"
+    },
+    {
+      "path": "src/cerebro/event_audit.py",
+      "status": "CHANGED",
+      "assessment": "Named native window indices and procedural exclusion collection.",
+      "purpose": "Training-only feasibility audit before choosing event-aligned analyses.",
+      "functions": [
+        "condition_keys",
+        "window_reason",
+        "distribution",
+        "audit",
+        "write_audit",
+        "main"
+      ],
+      "before_sha256": "a0caa70b8786081f47f91fadfde0dd8a905470d530c0f4f63e5f25053399cda6",
+      "after_sha256": "ac7aaadc3c148f2c61ce3bed4c19513c6e0fdbf2f1c55353bda5b76d55ebc227"
+    },
+    {
+      "path": "src/cerebro/event_figures.py",
+      "status": "CHANGED",
+      "assessment": "Explicit bin-center units and separate plotting/control statements.",
+      "purpose": "Render event-aligned empirical tensors and their feasibility limitations.",
+      "functions": [
+        "matched_event_latencies",
+        "render",
+        "main"
+      ],
+      "before_sha256": "b78ea4f13204f65614714134729c3dc29fc8ba428d0f2851b482a3c7defb1650",
+      "after_sha256": "d578b900973fb5212080a6372410d106b4eff354762bc836cbae3f72ff109cae"
+    },
+    {
+      "path": "src/cerebro/explorer.py",
+      "status": "UNCHANGED",
+      "assessment": "Python verification/serialization already direct; embedded JavaScript/UI is not a Python style expansion.",
+      "purpose": "Generate a local, offline explorer of provenance-verified research outputs.",
+      "functions": [
+        "verified_arrays",
+        "explorer_data",
+        "additional_results",
+        "generate",
+        "main"
+      ],
+      "before_sha256": "946de24f6f1e5f30277f4e3dc6a563a6d37da0aa7a78315576c25bc48a9a2084",
+      "after_sha256": "946de24f6f1e5f30277f4e3dc6a563a6d37da0aa7a78315576c25bc48a9a2084"
+    },
+    {
+      "path": "src/cerebro/extended_figures.py",
+      "status": "UNCHANGED",
+      "assessment": "Verified-summary grouping and rendering already sequential; preserve attribution and limitations.",
+      "purpose": "Render verified stored representation and longitudinal experiments; never fit.",
+      "functions": [
+        "verified_results",
+        "save_figure",
+        "publish_report",
+        "render_representation",
+        "render_longitudinal",
+        "render_transfer",
+        "main"
+      ],
+      "before_sha256": "8095a84a653e22dd83a3869f6e23680fd276fe1d02802b65ba6da75e6df979ee",
+      "after_sha256": "8095a84a653e22dd83a3869f6e23680fd276fe1d02802b65ba6da75e6df979ee"
+    },
+    {
+      "path": "src/cerebro/falcon.py",
+      "status": "UNCHANGED",
+      "assessment": "Native coverage, sample-clock and behavioral metadata flow already explicit.",
+      "purpose": "Read published FALCON calibration samples using recorded neural coverage.",
+      "functions": [
+        "load_falcon"
+      ],
+      "before_sha256": "520a2f6481e454b12e0b4f1dd5f7d2544625d14ae787af4f3f1b52e6c42e68eb",
+      "after_sha256": "520a2f6481e454b12e0b4f1dd5f7d2544625d14ae787af4f3f1b52e6c42e68eb"
+    },
+    {
+      "path": "src/cerebro/hardware_check.py",
+      "status": "UNCHANGED",
+      "assessment": "Backend enumeration, optimizer update and restoration checks already explicit.",
+      "purpose": "Software backend checks with dimensionless synthetic fixtures, not neural data.",
+      "functions": [
+        "backend_availability",
+        "check_model",
+        "run",
+        "main"
+      ],
+      "before_sha256": "0ea3f9ad29258a452acfb92ec3f65a7caee03aff5e93fb63116421a1750eb5b7",
+      "after_sha256": "0ea3f9ad29258a452acfb92ec3f65a7caee03aff5e93fb63116421a1750eb5b7"
+    },
+    {
+      "path": "src/cerebro/kalman.py",
+      "status": "UNCHANGED",
+      "assessment": "State initialization, gain solves and Joseph covariance update already sequential; retain tested math.",
+      "purpose": "Supervised linear Gaussian velocity filter with trial-local transitions.",
+      "functions": [
+        "_sequence",
+        "_regularized_covariance",
+        "_fit_affine",
+        "fit_kalman",
+        "_validate_model",
+        "predict_kalman"
+      ],
+      "before_sha256": "bb5dd081ceb52434cfa5dc5dd730d701ef8a21f03eb69da5701f4239f3e8285a",
+      "after_sha256": "bb5dd081ceb52434cfa5dc5dd730d701ef8a21f03eb69da5701f4239f3e8285a"
+    },
+    {
+      "path": "src/cerebro/link.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Load observed LINK trial samples with explicit source channel coordinates.",
+      "functions": [
+        "align_channel_keys",
+        "validate_crossing_counts",
+        "load_link"
+      ],
+      "before_sha256": "12e9fdde9d903f37baa0c13d8819bcedadd8cac6ac7eda7a0a78b78e9c25827c",
+      "after_sha256": "12e9fdde9d903f37baa0c13d8819bcedadd8cac6ac7eda7a0a78b78e9c25827c"
+    },
+    {
+      "path": "src/cerebro/longitudinal.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Chronological LINK channel transfer and disclosed calibration comparisons.",
+      "functions": [
+        "validate_chronology",
+        "flatten",
+        "trial_losses",
+        "block_interval",
+        "condition_anchors",
+        "run",
+        "main"
+      ],
+      "before_sha256": "798be1a8d4dd93061626365750052d3b3b68ab98b3eb1143fc2d4d5c880cb1c4",
+      "after_sha256": "798be1a8d4dd93061626365750052d3b3b68ab98b3eb1143fc2d4d5c880cb1c4"
+    },
+    {
+      "path": "src/cerebro/maze_feasibility.py",
+      "status": "UNCHANGED",
+      "assessment": "Short command wrapper with clear recorded-data/coverage flow.",
+      "purpose": "Audit standard MC_Maze repetitions using original compatible conditions.",
+      "functions": [
+        "run",
+        "main"
+      ],
+      "before_sha256": "9fbd891eac77596452e50496cadfcbd5956e78c8bdd7ff072dc1bd98f361e2f7",
+      "after_sha256": "9fbd891eac77596452e50496cadfcbd5956e78c8bdd7ff072dc1bd98f361e2f7"
+    },
+    {
+      "path": "src/cerebro/nwb_audit.py",
+      "status": "UNCHANGED",
+      "assessment": "NWB metadata/schema traversal already procedural; no benefit from stylistic churn.",
+      "purpose": "Inspect a checksum-verified NWB without inferring missing recording coverage.",
+      "functions": [
+        "audit_recording",
+        "main"
+      ],
+      "before_sha256": "23aaebe5e8904c8ea8fd1a318a1069e7862435119adbb22e62956d5b2ed053af",
+      "after_sha256": "23aaebe5e8904c8ea8fd1a318a1069e7862435119adbb22e62956d5b2ed053af"
+    },
+    {
+      "path": "src/cerebro/population.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Training-only classical estimators and descriptive population comparisons.",
+      "functions": [
+        "_observations",
+        "fit_population",
+        "reconstruction",
+        "principal_angles",
+        "covariance_similarity",
+        "fit_decoder"
+      ],
+      "before_sha256": "5481b9c4264864f7f375c475b10fdc77c272cc29ff8b4c3a9e51b10d065dac54",
+      "after_sha256": "5481b9c4264864f7f375c475b10fdc77c272cc29ff8b4c3a9e51b10d065dac54"
+    },
+    {
+      "path": "src/cerebro/registry.py",
+      "status": "UNCHANGED",
+      "assessment": "Portable-path checks and artifact traversal already simple with trust-boundary validation.",
+      "purpose": "Build portable local data, experiment and checkpoint registries.",
+      "functions": [
+        "file_digest",
+        "build_registry",
+        "main"
+      ],
+      "before_sha256": "6ee0dfdd5300172c64c7aca04d84a47e65e513a96cc7cb9a34267ebd5f29e6ca",
+      "after_sha256": "6ee0dfdd5300172c64c7aca04d84a47e65e513a96cc7cb9a34267ebd5f29e6ca"
+    },
+    {
+      "path": "src/cerebro/reliability.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Calibration-only M023 risk features and entire-session-held-out prediction.",
+      "functions": [
+        "calibration_features",
+        "balanced_accuracy",
+        "session_folds",
+        "fit_risk",
+        "predict_risk",
+        "conditional_risk_interval",
+        "evaluate_risk",
+        "run"
+      ],
+      "before_sha256": "6e1d3ef7cbf60147baef7bfe5b442022bb604060893f5ccd26a7675b393f2ff8",
+      "after_sha256": "6e1d3ef7cbf60147baef7bfe5b442022bb604060893f5ccd26a7675b393f2ff8"
+    },
+    {
+      "path": "src/cerebro/representation_benchmark.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Within-session causal GRU pretraining and label-budget controls.\n\nThis experiment does not establish foundation-model, subject-transfer, or\ncross-session capabilities. Validation trials are report-only.",
+      "functions": [
+        "RepresentationGRU",
+        "VelocityGRU",
+        "standardize_counts",
+        "feature_mask",
+        "self_supervised_loss",
+        "nested_budget_ids",
+        "_train_pretraining",
+        "_train_supervised",
+        "_evaluate_row",
+        "_save_restore_pretraining",
+        "run",
+        "main"
+      ],
+      "before_sha256": "9d885389d5b0d94a50537f11467608db3fbfa42373dd810a1cbcc56878bd1be0",
+      "after_sha256": "9d885389d5b0d94a50537f11467608db3fbfa42373dd810a1cbcc56878bd1be0"
+    },
+    {
+      "path": "src/cerebro/representation_transfer.py",
+      "status": "CHANGED",
+      "assessment": "Exposed probe fitting, prediction reshape, source-fitted target scaling and physical-unit restoration.",
+      "purpose": "Observed-session LINK representation transfer with fixed one-factor settings.",
+      "functions": [
+        "prepare_sessions",
+        "source_standardization",
+        "_encoded",
+        "_metrics",
+        "session_identity_probe",
+        "_frozen_probe",
+        "run",
+        "main"
+      ],
+      "before_sha256": "43b1553cb2ba838fdb3b9105f469b2dbe18b5dc7557347718cdae9b41875ed68",
+      "after_sha256": "b3f98e88bb34c7a68675dea76fc674da072a4144a8cb9772fd2ede9ad1bd2e9e"
+    },
+    {
+      "path": "src/cerebro/research_dynamics.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Trial-local, training-only PCA/FA observation models and latent AR diagnostics.",
+      "functions": [
+        "trial_transitions",
+        "fitted_source",
+        "reconstructed",
+        "iterate_transition",
+        "projection_errors",
+        "_metric",
+        "evaluate",
+        "rotation_error",
+        "phase_trajectories",
+        "matched_conditions",
+        "parameter_arrays",
+        "restore_forecast",
+        "temporal_gate",
+        "run",
+        "main"
+      ],
+      "before_sha256": "f38eb6a4679ba05b82780dd9a960bccda4f3247b11bdf18782f5c4b005e46850",
+      "after_sha256": "f38eb6a4679ba05b82780dd9a960bccda4f3247b11bdf18782f5c4b005e46850"
+    },
+    {
+      "path": "src/cerebro/sense.py",
+      "status": "CHANGED",
+      "assessment": "Named complete-bin offsets, spike search boundaries and behavior sample times; preserved vectorized counting.",
+      "purpose": "NWB observations and trial-local spike counts; no models or interpolation.",
+      "functions": [
+        "validate_timestamps",
+        "validate_intervals",
+        "Behavior",
+        "Recording",
+        "load_recording",
+        "Counts",
+        "bin_spikes",
+        "align_behavior"
+      ],
+      "before_sha256": "8518bf6f47c0aaba178e7fa0022df0683b7da8a839ee445ed40b67e5312c5b1a",
+      "after_sha256": "28f4a5023bb04e7de7a1ae565b45d49090bc239b9c5f3d438185eb33be06792b"
+    },
+    {
+      "path": "src/cerebro/sense_inspect.py",
+      "status": "CHANGED",
+      "assessment": "Named spike/interval conservation variables; separated plotting statements.",
+      "purpose": "Inspect a verified MC_Maze asset and write arrays, checks, and four figures.",
+      "functions": [
+        "inspect",
+        "main"
+      ],
+      "before_sha256": "506d3ba732afd380b8e32cba0e2da76ca161da9cc3185787c7c840b44c1c9d52",
+      "after_sha256": "07715b423e6cc274951bf8bdb3c110016941f8290d892ca678edc8f24f2dcea8"
+    },
+    {
+      "path": "src/cerebro/sequence_benchmark.py",
+      "status": "CHANGED",
+      "assessment": "Separated selected/flattened inputs, train-only scaler fitting and target normalization; training behavior unchanged.",
+      "purpose": "Common trial-disjoint CPU sequence benchmark; source test data untouched.",
+      "functions": [
+        "normalized_tensors",
+        "train_epoch",
+        "run",
+        "main"
+      ],
+      "before_sha256": "4af06be7a4119a8706fb6057d8200d7a76164aee4658e47a5a0f97ac7e836b5a",
+      "after_sha256": "48b2afd4450e8cbf13995d728bbd49b2ef2b056a1bf52b2d19329526668ad9d0"
+    },
+    {
+      "path": "src/cerebro/sequence_models.py",
+      "status": "UNCHANGED",
+      "assessment": "Causal CNN/Transformer and recurrence variables already explicit; preserve architecture/state names.",
+      "purpose": "Small causal sequence baselines; software behavior is not scientific validation.",
+      "functions": [
+        "_validate_input",
+        "BinMLP",
+        "RecurrentBaseline",
+        "CausalTemporalCNN",
+        "CausalTransformer",
+        "DiagonalStateSpace",
+        "make_sequence_model"
+      ],
+      "before_sha256": "09190941ecf9d61596268a7adde4532f82a42bb16e432e14a291242af98fc067",
+      "after_sha256": "09190941ecf9d61596268a7adde4532f82a42bb16e432e14a291242af98fc067"
+    },
+    {
+      "path": "src/cerebro/subject_identity.py",
+      "status": "CHANGED",
+      "assessment": "Exposed evaluation normalization and affine checkpoint scores.",
+      "purpose": "Separate subject-discriminability diagnostic on anonymous neural moments.",
+      "functions": [
+        "select_trial_rows",
+        "fit_identity",
+        "restored_predictions",
+        "run",
+        "write_report",
+        "main"
+      ],
+      "before_sha256": "46e6b76d6fba66ffb12941e13aed845cbdb0505e32e8f23c80b366fddee255e0",
+      "after_sha256": "a711a555d77b4686863060b5534ca66b0223052ec77cd6cf530e66e1abd77c0d"
+    },
+    {
+      "path": "tests/test_benchmark.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Leakage and immutable split checks use fixtures, not neural claims.",
+      "functions": [
+        "test_split_manifest_disjoint_and_deterministic",
+        "test_trial_metrics_and_degenerate_target",
+        "test_real_preparation_preserves_source_split_and_heldin_units",
+        "test_gaussian_likelihood_identity_covariance",
+        "test_restored_decoder_and_baselines"
+      ],
+      "before_sha256": "e3374f3f5891e141a396a2fad665b3fc113837d8e6140b70bdf5231deda27bd1",
+      "after_sha256": "e3374f3f5891e141a396a2fad665b3fc113837d8e6140b70bdf5231deda27bd1"
+    },
+    {
+      "path": "tests/test_brochier_audit.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Check native trial parsing and sampled-block coverage decisions.",
+      "functions": [
+        "test_trial_metadata_preserves_ids_codes_and_native_ticks",
+        "test_coverage_rejects_windows_crossing_recording_gaps",
+        "test_sorting_counts_are_version_specific"
+      ],
+      "before_sha256": "acf4cc816cbfebf371f90da99e03299102fb286829986c65675ca8cfaa908895",
+      "after_sha256": "acf4cc816cbfebf371f90da99e03299102fb286829986c65675ca8cfaa908895"
+    },
+    {
+      "path": "tests/test_brochier_fetch.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Check selective publisher-ZIP recovery without network or neural fixtures.",
+      "functions": [
+        "test_extract_member_checks_original_bytes_and_checksum"
+      ],
+      "before_sha256": "2122fa1f3e001b1ff35691a76bdcf320e4ad3fc93e4927628a2265a51b473d21",
+      "after_sha256": "2122fa1f3e001b1ff35691a76bdcf320e4ad3fc93e4927628a2265a51b473d21"
+    },
+    {
+      "path": "tests/test_brochier_native_data.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Local real-data regression, skipped when publisher assets are not present.",
+      "functions": [
+        "test_brochier_source_counts_clocks_and_report_reproduce"
+      ],
+      "before_sha256": "15310607c3211c2c94dd100eff5861e1bf37c5813e5fca68ac8e7f2539c88a59",
+      "after_sha256": "15310607c3211c2c94dd100eff5861e1bf37c5813e5fca68ac8e7f2539c88a59"
+    },
+    {
+      "path": "tests/test_brochier_population.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Small synthetic checks for the frozen population measurements.",
+      "functions": [
+        "test_native_tick_bins_are_half_open_and_conserve_window_spikes",
+        "test_fano_excludes_low_mean_cells_and_uses_sample_variance",
+        "test_residuals_match_condition_and_event_time_without_cross_trial_leakage",
+        "test_shared_variance_reference_and_undefined_edges",
+        "test_whole_trial_bootstrap_is_seed_reproducible",
+        "test_published_report_is_tied_to_protocol_code_and_source_manifest"
+      ],
+      "before_sha256": "d3fb5971d9a0aa901a34a9122897223a329086f193ff6c4f13af91101cce5f12",
+      "after_sha256": "d3fb5971d9a0aa901a34a9122897223a329086f193ff6c4f13af91101cce5f12"
+    },
+    {
+      "path": "tests/test_brochier_transfer.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Small synthetic checks of the frozen native-data analysis mechanics.",
+      "functions": [
+        "test_binning_preserves_half_open_boundaries_and_unit_axis",
+        "test_multiple_source_sua_ids_are_not_collapsed",
+        "test_chronological_target_calibration_is_class_stratified",
+        "test_trial_conditional_bootstrap_is_reproducible"
+      ],
+      "before_sha256": "bbb6f00389293a4adee7d2749c1e16e60e3fd711a3b4e15ebda3225d21410924",
+      "after_sha256": "bbb6f00389293a4adee7d2749c1e16e60e3fd711a3b4e15ebda3225d21410924"
+    },
+    {
+      "path": "tests/test_calibration_mechanisms.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Synthetic fixtures verify software identities, not biological findings.",
+      "functions": [
+        "trials",
+        "test_allocation_budget_no_replacement_and_reproducibility",
+        "test_balanced_exhausts_unequal_strata",
+        "test_split_isolates_permitted_rows_before_validation",
+        "test_shrink_endpoints_and_validation",
+        "test_source_partition_fails_closed",
+        "test_equal_trial_bias_variance_and_offset_identity",
+        "test_common_coefficient_frame_and_interval_reproducibility",
+        "test_null_gate_preserves_no_promotion",
+        "test_promotion_first_passing_priority_and_single_date_failure",
+        "test_report_rejects_incompatible_scientific_narrative",
+        "test_real_m022_lineage_decompositions_and_report_reproduction"
+      ],
+      "before_sha256": "309a119a464a934ab7d1cbde2e03b13e4d2c9b379dd0f304e193695f910aaa8b",
+      "after_sha256": "309a119a464a934ab7d1cbde2e03b13e4d2c9b379dd0f304e193695f910aaa8b"
+    },
+    {
+      "path": "tests/test_characterize.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Known synthetic counts test arithmetic; genuine data tests reproducibility.",
+      "functions": [
+        "test_known_sparse_statistics_and_rates",
+        "test_fano_zero_mean_single_bin_and_missing",
+        "test_invalid_statistical_inputs",
+        "synthetic_recording",
+        "test_matched_grid_and_short_trial_policy",
+        "test_conservation_boundaries_trial_sensitivity_and_silent_unit",
+        "test_metadata_candidates_do_not_modify_raw_links",
+        "test_real_report_is_reproducible_and_matched_rates_equal"
+      ],
+      "before_sha256": "a8cbeb9eeb39328036755a5155bde6476790bb1615e7d443be59cbd2d697e8ee",
+      "after_sha256": "a8cbeb9eeb39328036755a5155bde6476790bb1615e7d443be59cbd2d697e8ee"
+    },
+    {
+      "path": "tests/test_cross_subject.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "recordings_fixture",
+        "config_fixture",
+        "test_anonymous_features_are_unit_permutation_invariant",
+        "test_missing_coverage_and_masks_preserve_original_indices",
+        "test_overlapping_trial_bins_rejected_and_losses_trial_weighted",
+        "test_missing_observation_intervals_rejected_in_actual_nwb_adapter",
+        "test_run_restore_reproducibility_and_heldout_mutation",
+        "test_missing_trial_does_not_shift_chronological_split_boundaries",
+        "test_cross_subject_same_identity_or_muscle_mismatch_rejected",
+        "test_public_artifacts_render_actual_report_values"
+      ],
+      "before_sha256": "3c4a1277068d81ad6848cfd55064655a968dc8338873c99c4a25c425aed42274",
+      "after_sha256": "3c4a1277068d81ad6848cfd55064655a968dc8338873c99c4a25c425aed42274"
+    },
+    {
+      "path": "tests/test_dynamics.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_transitions_never_cross_trial_boundaries",
+        "test_dynamics_rejects_wrong_width_or_irregular_trial_clock"
+      ],
+      "before_sha256": "88c5410e8293f4b50224ecf9dc83141281e9b85ec87087eca8f0c0eb89aaef48",
+      "after_sha256": "88c5410e8293f4b50224ecf9dc83141281e9b85ec87087eca8f0c0eb89aaef48"
+    },
+    {
+      "path": "tests/test_evaluation.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Synthetic losses validate resampling; they make no neural findings.",
+      "functions": [
+        "test_constant_trial_summary_and_seed_aggregation",
+        "test_resampling_deterministic_and_paired_negative",
+        "test_invalid_trial_inputs",
+        "test_duplicate_seed_rejected",
+        "test_report_array_binding_rejects_tampering",
+        "test_invalid_resampling_settings"
+      ],
+      "before_sha256": "71fcb6a3eaa04a3f7f014fb31302721c2ccc2414f7f9da492317bc74278722fd",
+      "after_sha256": "71fcb6a3eaa04a3f7f014fb31302721c2ccc2414f7f9da492317bc74278722fd"
+    },
+    {
+      "path": "tests/test_event_aligned.py",
+      "status": "CHANGED",
+      "assessment": "Separated two assertions on one line; AST and assertions unchanged.",
+      "purpose": "Synthetic timing fixtures test software; real recordings support findings.",
+      "functions": [
+        "fixture_recording",
+        "protocol",
+        "test_publication_protocol_rejects_mislabeled_parameters",
+        "test_event_latency_join_preserves_trial_identity",
+        "test_event_alignment_identity_half_open_bins_and_rates",
+        "test_bad_grid",
+        "test_missing_event_and_trial_boundary_exclusions",
+        "test_neural_coverage_and_behavior_gaps",
+        "test_condition_grouping_rejects_mixed_variants_and_geometry",
+        "test_validation_trials_cannot_affect_aligned_summary",
+        "test_condition_time_residuals_and_low_repetition_exclusion",
+        "test_correlations_constant_missing_and_one_observation",
+        "test_whole_trial_stratified_bootstrap_reproducible",
+        "test_real_event_report_and_tensor_reproducibility"
+      ],
+      "before_sha256": "94b7e9a245df4da55ec079e0c9c24ff938e44c59152fcbe834ad2e72e3c844fb",
+      "after_sha256": "155c2626f53d2583cca5b7e62d6350426c4dbb211f5287fd9c85fd830aaa7758"
+    },
+    {
+      "path": "tests/test_explorer.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Synthetic reports test the explorer, not neuroscience findings.",
+      "functions": [
+        "fixture_run",
+        "test_generation_escapes_embedded_source_and_preserves_dimensions",
+        "test_tampered_arrays_rejected",
+        "test_sequence_lineage_mismatch_rejected",
+        "test_verified_sequence_predictions_and_trial_identity",
+        "test_real_local_explorer_generation",
+        "test_additional_longitudinal_integrity_and_native_units"
+      ],
+      "before_sha256": "c4a481ac992b63f0641e01e170d3469b2d7986889cc0090814e8bde5428570cd",
+      "after_sha256": "c4a481ac992b63f0641e01e170d3469b2d7986889cc0090814e8bde5428570cd"
+    },
+    {
+      "path": "tests/test_extended_figures.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Rendering consumes verified stored results without rerunning scientific fits.",
+      "functions": [
+        "test_array_integrity_rejects_tampering",
+        "test_real_stored_render",
+        "test_real_transfer_render"
+      ],
+      "before_sha256": "1b8b930bbadf13fe27326fc6c35a522b7f1948c86a5e28c8868a165854824aef",
+      "after_sha256": "1b8b930bbadf13fe27326fc6c35a522b7f1948c86a5e28c8868a165854824aef"
+    },
+    {
+      "path": "tests/test_falcon.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Recorded coverage and native target semantics for authentic calibration data.",
+      "functions": [
+        "test_real_calibration_coverage",
+        "test_non_native_bin_width_fails_before_reading",
+        "test_challenge_split_not_supported"
+      ],
+      "before_sha256": "2cd1255707d0441a14b1d46246c7ac29617905fdd7593f871adba530ba6781db",
+      "after_sha256": "2cd1255707d0441a14b1d46246c7ac29617905fdd7593f871adba530ba6781db"
+    },
+    {
+      "path": "tests/test_hardware_check.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_cpu_roundtrips_and_failure_report_survives"
+      ],
+      "before_sha256": "85bfcabb152f926aa1eae4a9023c8a675641e9f3937deacb0671f7906f9c939f",
+      "after_sha256": "85bfcabb152f926aa1eae4a9023c8a675641e9f3937deacb0671f7906f9c939f"
+    },
+    {
+      "path": "tests/test_installation.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Verify the installed package without adding src to the import path.",
+      "functions": [
+        "test_import_uses_source_package",
+        "test_installed_metadata",
+        "test_import_outside_repository",
+        "test_editable_install"
+      ],
+      "before_sha256": "061ee459ec99d854ba9acced91c874c3a6d3792c4cb603616fc8c5c213d292d0",
+      "after_sha256": "061ee459ec99d854ba9acced91c874c3a6d3792c4cb603616fc8c5c213d292d0"
+    },
+    {
+      "path": "tests/test_kalman.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "fixture",
+        "test_controlled_observation_and_filter",
+        "test_transition_fit_excludes_trial_boundaries",
+        "test_prefix_causality_and_trial_reset",
+        "test_parameter_npz_roundtrip",
+        "test_state_space_gain_matches_observation_space_solve",
+        "test_constant_states_remain_finite",
+        "test_invalid_data_and_parameters",
+        "test_missing_and_shape_invalid_restored_parameters"
+      ],
+      "before_sha256": "510fcf98b9fa8066da87ddb50420acbe22bc4d64f1e9172caf74bf32c39691b1",
+      "after_sha256": "510fcf98b9fa8066da87ddb50420acbe22bc4d64f1e9172caf74bf32c39691b1"
+    },
+    {
+      "path": "tests/test_link.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Validate native LINK sample references and explicit contact correspondence.",
+      "functions": [
+        "test_channel_mapping_uses_keys",
+        "test_crossings_reject_invalid_values",
+        "test_crossings_reject_int64_overflow",
+        "test_crossings_preserve_exact_int64_boundary_and_native_counts",
+        "test_native_real_link_pair",
+        "test_native_mission_016_link_candidate"
+      ],
+      "before_sha256": "76b3aa2a28d1123f56763ee76e1b9d79aea4304bb54a60b76c18dc65bbef3b15",
+      "after_sha256": "76b3aa2a28d1123f56763ee76e1b9d79aea4304bb54a60b76c18dc65bbef3b15"
+    },
+    {
+      "path": "tests/test_longitudinal.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Boundary-preserving longitudinal metrics and calibration checks.",
+      "functions": [
+        "test_variable_length_trials_metrics_preserve_identity",
+        "test_block_bootstrap_is_reproducible_and_constant",
+        "test_condition_anchors_use_trials_not_bins_as_repetitions",
+        "test_chronology_rejects_duplicate_overlap_and_reordered_trials",
+        "test_calibration_mean_uses_only_the_named_label_prefix"
+      ],
+      "before_sha256": "4361231105ab933fd558a7d531bacdff0a8f22c4fe732f9513c4998c92203170",
+      "after_sha256": "4361231105ab933fd558a7d531bacdff0a8f22c4fe732f9513c4998c92203170"
+    },
+    {
+      "path": "tests/test_m023_data.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Explicitly acquired data checks; public CI collects but does not run these.",
+      "functions": [
+        "test_new_native_eligibility_without_model_outcomes",
+        "test_m023_risk_checkpoint_lineage_and_report_reproduction",
+        "test_m023_population_parameter_integrity_and_manuscript_values"
+      ],
+      "before_sha256": "a4a04d9b76629dc9ad543e77a35229b3e676d3e67e03503330a3e5ceaf3a1c23",
+      "after_sha256": "a4a04d9b76629dc9ad543e77a35229b3e676d3e67e03503330a3e5ceaf3a1c23"
+    },
+    {
+      "path": "tests/test_m024_tables.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Integration tables expose preserved outcomes without another experiment.",
+      "functions": [
+        "test_integration_tables_match_committed_inputs_and_are_deterministic"
+      ],
+      "before_sha256": "c00180134c96d8a8ee88c3aa26bad65687802ec9e32642c4571a00e15677e870",
+      "after_sha256": "c00180134c96d8a8ee88c3aa26bad65687802ec9e32642c4571a00e15677e870"
+    },
+    {
+      "path": "tests/test_mission_016_report.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Check the versioned Mission 016 claims against their stored trial results.",
+      "functions": [
+        "file_sha256",
+        "test_mission_016_primary_results_and_provenance",
+        "test_mission_016_representation_controls_preserved"
+      ],
+      "before_sha256": "0b241ba20ef0215cdac5ac030f5b60b2462b8d98c3af0a702ec41bbf9768699d",
+      "after_sha256": "0b241ba20ef0215cdac5ac030f5b60b2462b8d98c3af0a702ec41bbf9768699d"
+    },
+    {
+      "path": "tests/test_mission_017_diagnostics.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Check descriptive diagnostics and their versioned provenance.",
+      "functions": [
+        "test_group_statistics_preserves_trials_and_units",
+        "test_group_statistics_rejects_empty_group",
+        "test_versioned_diagnostic_matches_inputs"
+      ],
+      "before_sha256": "a0e1f96a0aa251dcb6ab68028840c3db293976a39f04ef63751c351dcdd3faa2",
+      "after_sha256": "a0e1f96a0aa251dcb6ab68028840c3db293976a39f04ef63751c351dcdd3faa2"
+    },
+    {
+      "path": "tests/test_nwb_audit.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Real-asset audits validate provenance without manufacturing coverage.",
+      "functions": [
+        "test_pinned_real_recording_audit",
+        "test_audit_rejects_unverified_asset"
+      ],
+      "before_sha256": "03711b7255daa0e52f874f9ed1ca2be21fc2fd1913dec7ccbaa97d30f37eaa88",
+      "after_sha256": "03711b7255daa0e52f874f9ed1ca2be21fc2fd1913dec7ccbaa97d30f37eaa88"
+    },
+    {
+      "path": "tests/test_population.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_training_mean_and_reconstruction",
+        "test_full_pca_reconstructs",
+        "test_population_rejects_invalid_observations",
+        "test_population_dimension_validation",
+        "test_reconstruction_validation",
+        "test_angles_rotation_and_orthogonality",
+        "test_angles_reject_rank_or_space_mismatch",
+        "test_covariance_cosine_and_degeneracy",
+        "test_linear_decoder_prediction",
+        "test_decoder_rejects_invalid_penalty",
+        "test_decoder_rejects_mismatched_rows_and_nonfinite_targets"
+      ],
+      "before_sha256": "c7ac3745db00ede428dba41a1a6bf28ea83e1814834b0d83a8e9c2390e5e3dde",
+      "after_sha256": "c7ac3745db00ede428dba41a1a6bf28ea83e1814834b0d83a8e9c2390e5e3dde"
+    },
+    {
+      "path": "tests/test_registry.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_registry_validates_identity_and_uses_portable_paths"
+      ],
+      "before_sha256": "dfb275728a13c9543b4af78ffef716c516a11f36b0c16d2d3b6a4ce1799c478a",
+      "after_sha256": "dfb275728a13c9543b4af78ffef716c516a11f36b0c16d2d3b6a4ce1799c478a"
+    },
+    {
+      "path": "tests/test_reliability.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Prospective-access and session isolation tests using synthetic fixtures.",
+      "functions": [
+        "fixture_trials",
+        "test_calibration_features_only_budget_resampling_and_reproduction",
+        "test_session_folds_and_training_only_feature_scaler",
+        "test_single_class_balanced_accuracy_is_undefined",
+        "test_shared_trial_uncertainty_reproduces_and_identical_control_zero",
+        "test_whole_session_risk_evaluation_reproducible_and_null_safe"
+      ],
+      "before_sha256": "23939f21e6468f3f6c662673f5d21d6ab5207ee98574c354f18e63d7576ed222",
+      "after_sha256": "23939f21e6468f3f6c662673f5d21d6ab5207ee98574c354f18e63d7576ed222"
+    },
+    {
+      "path": "tests/test_representation_benchmark.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_masked_loss_ignores_unmasked_entries_and_next_trial_boundaries",
+        "test_masks_and_nested_budgets_are_seeded",
+        "test_scaler_uses_only_source_training",
+        "test_gru_causal_prefix_and_independent_trials",
+        "test_invalid_mask_and_training_data",
+        "write_fixture",
+        "test_run_reproducibility_restore_and_training_provenance",
+        "test_validation_targets_cannot_change_training"
+      ],
+      "before_sha256": "5fa5a7fdf1cf69f896144b5e7604c545dc40a0b5a367b80185839a4ef6a6a5a9",
+      "after_sha256": "5fa5a7fdf1cf69f896144b5e7604c545dc40a0b5a367b80185839a4ef6a6a5a9"
+    },
+    {
+      "path": "tests/test_representation_transfer.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "fixture_recordings",
+        "fixture_config",
+        "test_prepare_preserves_clock_channel_mapping_and_chronology",
+        "test_prepare_rejects_overlapping_trials_and_missing_samples",
+        "test_source_scaler_invariant_to_target_counts",
+        "test_native_clock_jitter_is_disclosed_without_resampling",
+        "test_causal_hidden_state_prefix",
+        "test_runner_restore_reproducibility_and_target_mutation",
+        "test_source_reserved_trial_mutation_cannot_change_fits",
+        "test_identity_probe_uses_trial_means_and_fixed_source_labels",
+        "test_outer_evaluation_cannot_change_any_fitted_checkpoint"
+      ],
+      "before_sha256": "4d7217f1f82e37d23cd4666db26dcbb535b00b6f492eeb6999df7518ebb90ac9",
+      "after_sha256": "4d7217f1f82e37d23cd4666db26dcbb535b00b6f492eeb6999df7518ebb90ac9"
+    },
+    {
+      "path": "tests/test_research_dynamics.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Synthetic fixtures test arithmetic and split boundaries, not neural findings.",
+      "functions": [
+        "trials_fixture",
+        "test_transitions_never_bridge_trials",
+        "test_train_only_parameters_and_calibration_feature",
+        "test_forecasts_rotation_and_reproduction",
+        "test_condition_control_excludes_unsupported_commands",
+        "test_temporal_gate_requires_all_fixed_controls"
+      ],
+      "before_sha256": "7faa2972246cc2f0125503ec7bd6f64d5c86513394096e5cd977fb5936bddcfe",
+      "after_sha256": "7faa2972246cc2f0125503ec7bd6f64d5c86513394096e5cd977fb5936bddcfe"
+    },
+    {
+      "path": "tests/test_review_package.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Release review evidence must be portable, deterministic and data-free.",
+      "functions": [
+        "test_review_configuration_archive_is_deterministic_and_data_free",
+        "test_review_manifest_preserves_frozen_science_and_matches_files"
+      ],
+      "before_sha256": "8e22e41786ecd45ec794377c8214fbe68dd0074769fab923ab5f88a8eedaeadb",
+      "after_sha256": "8e22e41786ecd45ec794377c8214fbe68dd0074769fab923ab5f88a8eedaeadb"
+    },
+    {
+      "path": "tests/test_sense.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Synthetic observations validate software, not neuroscience claims.",
+      "functions": [
+        "make_counts",
+        "test_invalid_timestamps",
+        "test_timestamp_units_and_spike_duplicates",
+        "test_invalid_trials",
+        "test_half_open_binning_and_dimensions",
+        "test_trial_boundaries_gaps_and_short_trial",
+        "test_empty_units_and_missing_observation_are_distinct",
+        "test_invalid_bin_width",
+        "test_invalid_feature_dimensions",
+        "behavior",
+        "test_alignment_physical_units_and_no_extrapolation",
+        "test_alignment_internal_gap_nan_and_trial_isolation",
+        "test_empty_behavior",
+        "test_provenance_rejects_corruption",
+        "test_download_checks_pinned_identity_and_preserves_existing",
+        "test_decimal_grid_at_nonzero_trial_start",
+        "write_fixture",
+        "test_nwb_reader_preserves_data_and_metadata",
+        "test_reader_rejects_missing_data",
+        "test_local_real_recording"
+      ],
+      "before_sha256": "709a5f77e7ec9a207a4b2ccd72847d80696a7e8bb36e4edce52e6654a0ddba54",
+      "after_sha256": "709a5f77e7ec9a207a4b2ccd72847d80696a7e8bb36e4edce52e6654a0ddba54"
+    },
+    {
+      "path": "tests/test_sequence_benchmark.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": "Reject unsafe optimization settings before mutating a model.",
+      "functions": [
+        "test_invalid_gradient_clip_preserves_parameters"
+      ],
+      "before_sha256": "e7b59eef6b26e0431752b7c44c9151107486d4a3fbb393e5c3d03f471c1fefdd",
+      "after_sha256": "e7b59eef6b26e0431752b7c44c9151107486d4a3fbb393e5c3d03f471c1fefdd"
+    },
+    {
+      "path": "tests/test_sequence_models.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "test_shapes_gradients_and_finite_output",
+        "test_prefix_invariance",
+        "test_trials_are_independent_and_state_resets",
+        "test_seed_determinism",
+        "test_diagonal_recurrence_is_stable_and_matches_rule",
+        "test_missing_and_invalid_inputs",
+        "test_factory_rejects_invalid_dimensions_and_unknown_kind"
+      ],
+      "before_sha256": "3bd4a41f5c328cbaef1c78514c7ee4d81e45c4cfdce78aa28bf8c06bf8eedebb",
+      "after_sha256": "3bd4a41f5c328cbaef1c78514c7ee4d81e45c4cfdce78aa28bf8c06bf8eedebb"
+    },
+    {
+      "path": "tests/test_subject_identity.py",
+      "status": "UNCHANGED",
+      "assessment": "Compact controlled fixtures/assertions already readable; preserve test cases, failure expectations and tolerances.",
+      "purpose": null,
+      "functions": [
+        "setup_diagnostic",
+        "test_reproducibility_numeric_restore_and_balanced_counts",
+        "test_evaluation_feature_mutation_cannot_change_fitted_parameters",
+        "test_anonymous_unit_permutation_preserves_diagnostic_predictions",
+        "test_missing_manifest_trial_and_overlap_are_rejected",
+        "test_consistent_report_and_split_tampering_rejected"
+      ],
+      "before_sha256": "1e015e55f7d475d0e1cb2b192e62cb98910d2a33b098ee251c8953ea55d3593b",
+      "after_sha256": "1e015e55f7d475d0e1cb2b192e62cb98910d2a33b098ee251c8953ea55d3593b"
+    },
+    {
+      "path": "tools/audit_brochier.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Audit native Brochier clocks, sampled coverage and trial events without fitting.",
+      "functions": [
+        "read_trials",
+        "read_sorting_counts",
+        "sampled_intervals",
+        "covered",
+        "audit_session",
+        "main"
+      ],
+      "before_sha256": "3dae968ea1e644b88ca8ffe8a2dcd13c893b5814923f8c9991f4425d924dd27b",
+      "after_sha256": "3dae968ea1e644b88ca8ffe8a2dcd13c893b5814923f8c9991f4425d924dd27b"
+    },
+    {
+      "path": "tools/brochier_population.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Frozen, descriptive Brochier event-aligned population analysis.",
+      "functions": [
+        "validate_config",
+        "file_sha256",
+        "window_counts",
+        "load_session",
+        "fano_by_condition",
+        "signal_participation",
+        "pair_summary",
+        "shared_variance_ratio",
+        "scalar_statistics",
+        "bootstrap_statistics",
+        "permutation_reference",
+        "half_session_shared_ratios",
+        "trajectory_coordinates",
+        "finite_correlation_pairs",
+        "plot_figures",
+        "analyze_session",
+        "json_session",
+        "main"
+      ],
+      "before_sha256": "8a968626bc84ac4c4fef7df30b5d8e68152bd3de1e48fd3b04eaa0a5a2c00367",
+      "after_sha256": "8a968626bc84ac4c4fef7df30b5d8e68152bd3de1e48fd3b04eaa0a5a2c00367"
+    },
+    {
+      "path": "tools/build_review_package.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Build a deterministic configuration archive and v1.1 research evidence index.",
+      "functions": [
+        "entry",
+        "build"
+      ],
+      "before_sha256": "d4cfbe9a76eaec9b2bf22d5baffb988df28af22dc20a6779c4eb359bb884b87c",
+      "after_sha256": "d4cfbe9a76eaec9b2bf22d5baffb988df28af22dc20a6779c4eb359bb884b87c"
+    },
+    {
+      "path": "tools/diagnose_mission_017.py",
+      "status": "UNCHANGED",
+      "assessment": "Historical source-hash/architecture contract: retain byte identity and provenance checks; remaining clarity opportunities deferred, not claimed refactored.",
+      "purpose": "Describe source-only LINK calibration coverage without fitting a new model.",
+      "functions": [
+        "digest",
+        "group_statistics",
+        "main"
+      ],
+      "before_sha256": "580ec138c1004c71b224f9dd803c6920b70f962d64fba1d5baabbc52f3692d98",
+      "after_sha256": "580ec138c1004c71b224f9dd803c6920b70f962d64fba1d5baabbc52f3692d98"
+    },
+    {
+      "path": "tools/fetch_brochier.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Recover checksum-pinned Brochier members from the publisher's ZIP by byte range.",
+      "functions": [
+        "read_archive_range",
+        "extract_member",
+        "main"
+      ],
+      "before_sha256": "5d21f28bdd3dfc0c36103b81d1557acb8a025f4166ccba0952ab8693698f6ca0",
+      "after_sha256": "5d21f28bdd3dfc0c36103b81d1557acb8a025f4166ccba0952ab8693698f6ca0"
+    },
+    {
+      "path": "tools/m023_dynamics_report.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Regenerate the M023 dynamics report and figures from committed metrics.",
+      "functions": [
+        "main"
+      ],
+      "before_sha256": "4f43d71646922f6c70eb2b8ca9b07bf7a6cf254a7a304be06d88bc2c415c0020",
+      "after_sha256": "4f43d71646922f6c70eb2b8ca9b07bf7a6cf254a7a304be06d88bc2c415c0020"
+    },
+    {
+      "path": "tools/m024_tables.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Reproduce integration tables from immutable public results; no fitting or raw data.",
+      "functions": [
+        "integration_tables",
+        "main"
+      ],
+      "before_sha256": "243696db85a8d020c0ccae3beac83b23e1c59bfeb433e0e72c45d404eedbcf77",
+      "after_sha256": "243696db85a8d020c0ccae3beac83b23e1c59bfeb433e0e72c45d404eedbcf77"
+    },
+    {
+      "path": "tools/report_m022.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Render M022 frozen development outcomes without fitting any models.",
+      "functions": [
+        "group_for",
+        "render"
+      ],
+      "before_sha256": "e9cae454b72e29db94c1eac6853d7a9d84a0cb68f8e71532f93b965243659188",
+      "after_sha256": "e9cae454b72e29db94c1eac6853d7a9d84a0cb68f8e71532f93b965243659188"
+    },
+    {
+      "path": "tools/report_m023.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Render the frozen M023 reliability study; no model fitting or new outcomes.",
+      "functions": [
+        "render"
+      ],
+      "before_sha256": "15c4aa2731afc706706c08f67d83bdb195bac0895d0bb2faf7c3dca9e9397a70",
+      "after_sha256": "15c4aa2731afc706706c08f67d83bdb195bac0895d0bb2faf7c3dca9e9397a70"
+    },
+    {
+      "path": "tools/report_mission_016.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Verify stored Mission 016 experiments and render their fixed reports.",
+      "functions": [
+        "digest",
+        "main"
+      ],
+      "before_sha256": "c3b417819c62adec2301ade71df087c0c1209938ad14b78af65486602550a60b",
+      "after_sha256": "c3b417819c62adec2301ade71df087c0c1209938ad14b78af65486602550a60b"
+    },
+    {
+      "path": "tools/run_brochier_transfer.py",
+      "status": "UNCHANGED",
+      "assessment": "Existing CLI/data-verification/report transformations are direct; long scientific prose/literal schema fields are not readability defects requiring rewrites.",
+      "purpose": "Run the prospectively frozen Brochier four-condition transfer case study.",
+      "functions": [
+        "single_unit_indices",
+        "count_trial_spikes",
+        "trial_rows",
+        "split_calibration",
+        "fit_predict",
+        "score",
+        "bootstrap_contrast",
+        "evaluate_direction",
+        "main"
+      ],
+      "before_sha256": "337cb902a2e8e20e4c0648b38470b34c04f4459d00154c3cb89dee707167cf32",
+      "after_sha256": "337cb902a2e8e20e4c0648b38470b34c04f4459d00154c3cb89dee707167cf32"
+    },
+    {
+      "path": "tools/validate_checkpoints.py",
+      "status": "CHANGED",
+      "assessment": "Exposed count cast/center/scale and physical target affine restoration; guards/tolerances unchanged.",
+      "purpose": "Audit recorded artifact integrity and replay historical CPU predictions without fitting.",
+      "functions": [
+        "read_json",
+        "archive",
+        "features",
+        "encoder",
+        "supervised",
+        "main"
+      ],
+      "before_sha256": "5adebaf0b0c7324b653a557352534e06a361b9db82a2eecdaa8ce9700d6dd590",
+      "after_sha256": "6ee9628e0b088b8b9977113d97e9233737396b010c4b3706a0414a8860ade3ad"
+    }
+  ],
+  "counts": {
+    "total": 81,
+    "changed": 16,
+    "unchanged": 65
+  },
+  "public_signature_differences": []
+}
