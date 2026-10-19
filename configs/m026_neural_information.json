@@ -1,0 +1,19 @@
+{
+  "protocol": "docs/research/m026_protocol.md",
+  "m025_report": "reports/m025_final.json",
+  "m025_directory": "data/processed/m025_final",
+  "manifest": "configs/mc_maze.json",
+  "preprocessing": "configs/classical_05.json",
+  "output": "data/processed/m026",
+  "seeds": [0, 1, 2],
+  "models": ["zero", "clock", "permuted"],
+  "maximum_epochs": 200,
+  "hidden": 32,
+  "learning_rate": 0.001,
+  "gradient_clip": 1.0,
+  "score_start_bin": 4,
+  "donor_seed": 25,
+  "bootstrap_seed": 26,
+  "bootstrap_draws": 10000,
+  "descriptive_reduction": 0.05
+}
