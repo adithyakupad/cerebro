@@ -27,7 +27,9 @@ def features(counts, normalization):
     scale = np.asarray(normalization['feature_scale'])
     assert np.isfinite(counts).all() and (counts >= 0).all()
     assert np.isfinite(mean).all() and np.isfinite(scale).all() and (scale > 0).all()
-    normalized = (counts.astype(float) - mean) / scale
+    float_counts = counts.astype(float)
+    centered_counts = float_counts - mean
+    normalized = centered_counts / scale
     return torch.tensor(normalized, dtype=torch.float32)
 
 
@@ -45,7 +47,11 @@ def supervised(checkpoint, counts):
     normalization = checkpoint['normalization']
     with torch.no_grad():
         normalized_prediction = model(features(counts, normalization)).numpy()
-    return normalized_prediction * normalization['target_scale'].numpy() + normalization['target_mean'].numpy()
+    target_scale = normalization['target_scale'].numpy()
+    target_mean = normalization['target_mean'].numpy()
+    scaled_prediction = normalized_prediction * target_scale
+    restored_prediction = scaled_prediction + target_mean
+    return restored_prediction
 
 
 def main():

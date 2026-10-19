@@ -41,7 +41,9 @@ def render(results_path="reports/event_04_results.json", audit_path="reports/eve
     validate_publication_protocol(protocol)
     width = protocol["bin_width_seconds"]
     edges = arrays["relative_edges_seconds"]
-    time_ms = (edges[:-1] + edges[1:]) / 2 * 1000
+    paired_edges = edges[:-1] + edges[1:]
+    bin_centers_seconds = paired_edges / 2
+    time_ms = bin_centers_seconds * 1000
     source = results["provenance"]
     header = (f"MC_Maze Small / Jenkins | DANDI {source['dandiset']} v{source['version']}\n"
               f"asset {source['asset_id']} | 75 training trials | 20 ms bins\n"
@@ -78,11 +80,13 @@ def render(results_path="reports/event_04_results.json", audit_path="reports/eve
     axes[0].plot(time_ms, arrays["population_rates_hz"].mean(axis=0), label="Pooled training trials")
     axes[0].fill_between(time_ms, bands[0], bands[1], alpha=.2, label="Whole-trial bootstrap percentile band")
     axes[0].set(xlabel="From go cue (ms)", ylabel="Population spikes/s", title="Pooled event profile: mixed conditions")
-    axes[0].legend(fontsize=8); event_line(axes[0])
+    axes[0].legend(fontsize=8)
+    event_line(axes[0])
     image = axes[1].imshow(arrays["mean_unit_rates_hz"].T, aspect="auto", origin="lower",
                            extent=[edges[0] * 1000, edges[-1] * 1000, -.5, len(arrays["unit_ids"]) - .5])
     axes[1].set(xlabel="From go cue (ms)", ylabel="Unit row (source order)", title="Mean rates, no smoothing or normalization")
-    fig.colorbar(image, ax=axes[1], label="Mean spikes/s"); event_line(axes[1])
+    fig.colorbar(image, ax=axes[1], label="Mean spikes/s")
+    event_line(axes[1])
     save(fig, "population")
 
     fig, ax = plt.subplots(figsize=(11, 8))
@@ -93,7 +97,8 @@ def render(results_path="reports/event_04_results.json", audit_path="reports/eve
            xlabel="From go cue (ms)", ylabel="Maze / type / variant / active target",
            title="Descriptive compatible-condition means: 3 trials each, weak precision")
     ax.tick_params(axis="y", labelsize=8)
-    event_line(ax); fig.colorbar(image, ax=ax, label="Mean population spikes/s")
+    event_line(ax)
+    fig.colorbar(image, ax=ax, label="Mean population spikes/s")
     save(fig, "conditions")
 
     fig, axes = plt.subplots(2, 1, figsize=(11, 7))
@@ -109,11 +114,13 @@ def render(results_path="reports/event_04_results.json", audit_path="reports/eve
     axes[1].set(xlabel="From go cue (ms)", ylabel="Residual population spikes / bin", title="In-sample deviations; zero-sum by construction")
     axes[1].axhline(0, color="gray", linewidth=1)
     for ax in axes:
-        event_line(ax); ax.legend(fontsize=8)
+        event_line(ax)
+        ax.legend(fontsize=8)
     save(fig, "residuals")
 
     fig, axes = plt.subplots(1, 3, figsize=(13, 5))
-    cmap = plt.get_cmap("coolwarm").copy(); cmap.set_bad("#dddddd")
+    cmap = plt.get_cmap("coolwarm").copy()
+    cmap.set_bad("#dddddd")
     for ax, matrix, title in [(axes[0], arrays["signal_like_correlation"], "Mean-response correlation\n21 conditions, noisy means"),
                                (axes[1], arrays["mixed_total_correlation"], "Mixed-condition total correlation\n75 trials, +300 to +320 ms")]:
         image = ax.imshow(matrix, vmin=-1, vmax=1, cmap=cmap, origin="lower")
@@ -135,8 +142,10 @@ def render(results_path="reports/event_04_results.json", audit_path="reports/eve
         ax.fill_between(time_ms, bands[0], bands[1], alpha=.2)
         ax.set(xlabel="From indicated event (ms)", title=label)
         event_line(ax)
-    for ax in axes[0]: ax.set_ylabel("Population spikes/s")
-    for ax in axes[1]: ax.set_ylabel("Norm of bin-mean velocity (m/s)")
+    for ax in axes[0]:
+        ax.set_ylabel("Population spikes/s")
+    for ax in axes[1]:
+        ax.set_ylabel("Norm of bin-mean velocity (m/s)")
     save(fig, "timing")
 
     fig, axes = plt.subplots(1, 2, figsize=(11, 5))

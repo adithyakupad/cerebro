@@ -37,7 +37,9 @@ def render(report_path="reports/signal_characterization.json", figures_dir="repo
     def cdf(ax, values, label, color):
         values = np.sort([v for v in values if v is not None])
         if len(values):
-            ax.step(values, np.arange(1, len(values) + 1) / len(values), where="post", label=label, color=color)
+            cumulative_counts = np.arange(1, len(values) + 1)
+            cumulative_fraction = cumulative_counts / len(values)
+            ax.step(values, cumulative_fraction, where="post", label=label, color=color)
 
     fig, axes = plt.subplots(2, 2, figsize=(11, 8))
     x = np.arange(3)
