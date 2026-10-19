@@ -53,7 +53,8 @@ def fit_identity(training_rows, training_labels, config):
 def restored_predictions(path, rows):
     with np.load(path, allow_pickle=False) as archive:
         normalized_rows = (rows - archive['feature_mean']) / archive['feature_scale']
-        scores = normalized_rows @ archive['coefficients'].T + archive['intercept']
+        linear_scores = normalized_rows @ archive['coefficients'].T
+        scores = linear_scores + archive['intercept']
         classes = archive['classes']
         predictions = classes[(scores[:, 0] > 0).astype(int)]
     return predictions
@@ -131,7 +132,8 @@ def run(config_path, output):
     evaluation_rows = np.concatenate([source_evaluation, target_evaluation], axis=0)
     evaluation_labels = np.concatenate([np.zeros(len(source_evaluation), dtype=int), np.ones(len(target_evaluation), dtype=int)])
     scaler, classifier = fit_identity(training_rows, training_labels, config)
-    predictions = classifier.predict(scaler.transform(evaluation_rows))
+    normalized_evaluation = scaler.transform(evaluation_rows)
+    predictions = classifier.predict(normalized_evaluation)
     confusion = confusion_matrix(evaluation_labels, predictions, labels=[0, 1])
     class_counts = confusion.sum(axis=1)
     class_accuracies = np.diag(confusion) / class_counts

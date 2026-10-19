@@ -184,8 +184,13 @@ def run(config_path, output):
     for split in (inner_training, inner_selection, source_evaluation, calibration, target_evaluation):
         if not split:
             raise ValueError('Coverage exclusions leave a required chronological split empty')
-    identities = lambda trials: [trial['trial_id'] for trial in trials]
-    source_rows = lambda trials: [trial['original_trial_row'] for trial in trials]
+
+    def identities(trials):
+        return [trial['trial_id'] for trial in trials]
+
+    def source_rows(trials):
+        return [trial['original_trial_row'] for trial in trials]
+
     splits = {
         'source_subject': source['subject_id'], 'target_subject': target['subject_id'],
         'source_asset_sha256': source_manifest['sha256'], 'target_asset_sha256': target_manifest['sha256'],
@@ -210,7 +215,8 @@ def run(config_path, output):
     inner_targets = flatten(inner_training, 'targets')
     alpha_scores = []
     for alpha in alphas:
-        model = Ridge(alpha=alpha).fit(inner_features, inner_targets)
+        model = Ridge(alpha=alpha)
+        model.fit(inner_features, inner_targets)
         prediction = model.predict(selection_features)
         losses = trial_losses(inner_selection, prediction)
         alpha_scores.append({'alpha': float(alpha), 'mean_trial_selection_mse': float(losses.mean())})
@@ -219,7 +225,8 @@ def run(config_path, output):
     training_targets = flatten(training, 'targets')
     scaler = StandardScaler().fit(training_features)
     normalized_training = scaler.transform(training_features)
-    source_model = Ridge(alpha=selected_alpha).fit(normalized_training, training_targets)
+    source_model = Ridge(alpha=selected_alpha)
+    source_model.fit(normalized_training, training_targets)
     source_mean = training_targets.mean(axis=0)
     mean_model = copy.copy(source_model)
     mean_model.coef_ = np.zeros_like(source_model.coef_)
@@ -263,7 +270,8 @@ def run(config_path, output):
         labeled_trials = [trial for trial in calibration if trial['original_trial_row'] < budget]
         if not labeled_trials:
             raise ValueError('Coverage exclusions leave a requested label budget empty')
-        label_features = scaler.transform(flatten(labeled_trials, 'features'))
+        calibration_features = flatten(labeled_trials, 'features')
+        label_features = scaler.transform(calibration_features)
         label_targets = flatten(labeled_trials, 'targets')
         frozen_training_prediction = source_model.predict(label_features)
         residual_targets = label_targets - frozen_training_prediction
@@ -276,7 +284,8 @@ def run(config_path, output):
                 model.coef_ = np.zeros_like(source_model.coef_)
                 model.intercept_ = label_targets.mean(axis=0)
             else:
-                model = Ridge(alpha=selected_alpha).fit(label_features, fitted_targets)
+                model = Ridge(alpha=selected_alpha)
+                model.fit(label_features, fitted_targets)
             identifier = name + '_budget_' + str(budget)
             path = output / (identifier + '.npz')
             prediction = _checkpoint_prediction(path, model, scaler, target_features, base)
