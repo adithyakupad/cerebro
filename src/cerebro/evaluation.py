@@ -28,8 +28,10 @@ def loss_summary(losses, trial_ids, reference=None, *, block_length=1, draws=100
     block_count = int(np.ceil(len(identities) / block_length))
     starts = generator.integers(len(identities) - block_length + 1, size=(draws, block_count))
     blocks = starts[:, :, None] + np.arange(block_length)
-    indices = blocks.reshape(draws, -1)[:, :len(identities)]
-    sampled_means = trial_means[indices].mean(axis=1)
+    block_indices = blocks.reshape(draws, -1)
+    indices = block_indices[:, :len(identities)]
+    sampled_losses = trial_means[indices]
+    sampled_means = sampled_losses.mean(axis=1)
     interval = np.quantile(sampled_means, [.025, .975])
     result = {
         "mean_trial_loss": float(trial_means.mean()), "percentile_interval": interval.tolist(),
@@ -44,7 +46,8 @@ def loss_summary(losses, trial_ids, reference=None, *, block_length=1, draws=100
         if reference_values.shape != trial_means.shape or not np.isfinite(reference_values).all():
             raise ValueError("Paired reference requires matching finite trial losses")
         paired_changes = trial_means - reference_values
-        sampled_changes = paired_changes[indices].mean(axis=1)
+        sampled_trial_changes = paired_changes[indices]
+        sampled_changes = sampled_trial_changes.mean(axis=1)
         result["paired_mean_change"] = float(paired_changes.mean())
         result["paired_percentile_interval"] = np.quantile(sampled_changes, [.025, .975]).tolist()
     return result

@@ -1,0 +1,434 @@
+{
+  "baseline_head": "d506ff408b62a7d79b14c59987f20c1d7b46fef4",
+  "original_branch": "research/m023-reliability-dynamics",
+  "refactor_branch": "codex/readability-refactor",
+  "validated_source_commit": "775e678b13a5c7f1a83229d429be534254eb4597",
+  "environment": {
+    "conda": "cerebro",
+    "python": "3.11.16",
+    "numerical_threads": 1,
+    "new_dependencies": []
+  },
+  "baseline_tests": {
+    "passed": 277,
+    "failed": 0,
+    "data_cases": 22,
+    "warnings": 20,
+    "seconds": 163.57,
+    "log_sha256": "8f6eec360f49a9cfce499ad3b996f78cc232764f92a82e9c82d00b3feb53663b"
+  },
+  "final_tests": {
+    "passed": 277,
+    "failed": 0,
+    "skipped": 0,
+    "data_cases": 22,
+    "software_cases": 255,
+    "warnings": 20,
+    "seconds": 120.93,
+    "log_sha256": "043755f6e03c3886f024a5fce395ef5e30ca9d1ab2dd6925d22edde01bf6c670"
+  },
+  "scoped_tests": [
+    {
+      "scope": "ingestion/alignment",
+      "passed": 88,
+      "warnings": 20,
+      "seconds": 90.26
+    },
+    {
+      "scope": "models",
+      "passed": 90,
+      "warnings": 2,
+      "seconds": 7.34
+    },
+    {
+      "scope": "transfer/evaluation",
+      "passed": 62,
+      "seconds": 25.34
+    },
+    {
+      "scope": "reporting",
+      "passed": 42,
+      "warnings": 8,
+      "seconds": 42.32
+    },
+    {
+      "scope": "independent model review",
+      "passed": 20,
+      "warnings": 2,
+      "seconds": 8.43
+    }
+  ],
+  "test_count_note": "Scoped cases overlap; do not sum them or call them new independent scientific samples.",
+  "checkpoint_validation": {
+    "files": 405,
+    "reported_array_digests": 755,
+    "CPU_predictions": 229,
+    "exact_to_historical_expected": 227,
+    "remaining_within_unchanged_tolerance": 2,
+    "tolerance": {
+      "rtol": 1e-07,
+      "atol": 1e-09
+    },
+    "actual_before_after_predictions": {
+      "entries": 229,
+      "dtype_shape_bytes_identical": true,
+      "manifest_sha256": "980e8a9713506409fd669f4cefc9450291baa206e766d5865a1b373771533043"
+    }
+  },
+  "differential_probes": [
+    {
+      "scope": "genuine SENSE/event analysis and audit",
+      "arrays": 54,
+      "values": 8354225,
+      "summary_and_arrays_exact": true,
+      "before_sha256": "16d78beaa4d537663f11aa3e7c428cf1d825369c77664c40838c58586211face",
+      "after_sha256": "16d78beaa4d537663f11aa3e7c428cf1d825369c77664c40838c58586211face"
+    },
+    {
+      "scope": "genuine inspector",
+      "arrays": 31,
+      "PNGs_exact": 4,
+      "CSVs_exact": 2,
+      "scientific_fields_exact": true,
+      "electrode_CSV": "Pre-existing native object addresses differ; otherwise exact after address normalization"
+    },
+    {
+      "scope": "full genuine count characterization and event/count figures",
+      "full_analysis_exact": true,
+      "PNG_files_byte_exact": 12,
+      "before_sha256": "a366b66dc9ee2a0bd859e4f2dbde41c6deb9691456b553a0fb37a4ea4fc9decd",
+      "after_sha256": "a366b66dc9ee2a0bd859e4f2dbde41c6deb9691456b553a0fb37a4ea4fc9decd"
+    },
+    {
+      "scope": "synthetic classical, AR, sequence, SSL and transfer fixed runners",
+      "array_digests": 72,
+      "metrics_histories_Torch_RNG_exact": true,
+      "before_sha256": "a0c824494a02488f543c75a8cf719a74d931686f80975ceddcff8cd8e4be8da6",
+      "final_sha256": "a0c824494a02488f543c75a8cf719a74d931686f80975ceddcff8cd8e4be8da6"
+    },
+    {
+      "scope": "synthetic population/calibration/resampling/risk replay",
+      "arrays": 182,
+      "values": 2534,
+      "dtype_shape_bytes_and_metrics_exact": true,
+      "before_metrics_sha256": "2db5c9f949172d474e8e33d205ee44000b18ed76b9f41a6373e16790d8c9ad38",
+      "after_metrics_sha256": "2db5c9f949172d474e8e33d205ee44000b18ed76b9f41a6373e16790d8c9ad38"
+    },
+    {
+      "scope": "synthetic cross-subject and identity complete runners",
+      "arrays": 92,
+      "values": 3736,
+      "dtype_shape_bytes_and_metrics_exact": true
+    },
+    {
+      "scope": "independent authentic classical restoration",
+      "methods": 7,
+      "prediction_values": 24500,
+      "bytes_exact": true
+    }
+  ],
+  "scope_note": "Probes overlap and some cover unchanged code as controls. Synthetic outcomes are software fixtures, not empirical neural findings. Source-hash/Git fields in newly generated reports are not called unchanged.",
+  "protection": {
+    "research_files_checked": 201,
+    "changed": [],
+    "checkpoint_array_files_checked": 413,
+    "changed_checkpoints": [],
+    "all_frozen_protocols_configs_reports_release_artifacts_preserved": true
+  },
+  "inventory_counts": {
+    "total": 81,
+    "changed": 15,
+    "unchanged": 66
+  },
+  "public_signature_differences": [],
+  "lint": {
+    "tool": "existing Ruff0.15.1",
+    "selection": "F,E701,E702,E101,E111,E114,E117,W291,W292,W293 --preview",
+    "passed": true,
+    "no_tool_installed": true
+  },
+  "format_check": {
+    "baseline": {
+      "exit_code": 1,
+      "files_flagged": [
+        "src/cerebro/benchmark.py",
+        "src/cerebro/benchmark_figures.py",
+        "src/cerebro/calibration_mechanisms.py",
+        "src/cerebro/characterize.py",
+        "src/cerebro/characterize_figures.py",
+        "src/cerebro/cross_subject.py",
+        "src/cerebro/dataset.py",
+        "src/cerebro/dynamics.py",
+        "src/cerebro/evaluation.py",
+        "src/cerebro/event_aligned.py",
+        "src/cerebro/event_audit.py",
+        "src/cerebro/event_figures.py",
+        "src/cerebro/explorer.py",
+        "src/cerebro/extended_figures.py",
+        "src/cerebro/falcon.py",
+        "src/cerebro/hardware_check.py",
+        "src/cerebro/kalman.py",
+        "src/cerebro/link.py",
+        "src/cerebro/longitudinal.py",
+        "src/cerebro/maze_feasibility.py",
+        "src/cerebro/nwb_audit.py",
+        "src/cerebro/registry.py",
+        "src/cerebro/reliability.py",
+        "src/cerebro/representation_benchmark.py",
+        "src/cerebro/representation_transfer.py",
+        "src/cerebro/research_dynamics.py",
+        "src/cerebro/sense.py",
+        "src/cerebro/sense_inspect.py",
+        "src/cerebro/sequence_benchmark.py",
+        "src/cerebro/sequence_models.py",
+        "src/cerebro/subject_identity.py",
+        "tests/test_benchmark.py",
+        "tests/test_brochier_audit.py",
+        "tests/test_brochier_fetch.py",
+        "tests/test_brochier_native_data.py",
+        "tests/test_brochier_population.py",
+        "tests/test_brochier_transfer.py",
+        "tests/test_calibration_mechanisms.py",
+        "tests/test_characterize.py",
+        "tests/test_cross_subject.py",
+        "tests/test_dynamics.py",
+        "tests/test_evaluation.py",
+        "tests/test_event_aligned.py",
+        "tests/test_explorer.py",
+        "tests/test_extended_figures.py",
+        "tests/test_falcon.py",
+        "tests/test_hardware_check.py",
+        "tests/test_installation.py",
+        "tests/test_kalman.py",
+        "tests/test_link.py",
+        "tests/test_longitudinal.py",
+        "tests/test_m023_data.py",
+        "tests/test_m024_tables.py",
+        "tests/test_mission_016_report.py",
+        "tests/test_mission_017_diagnostics.py",
+        "tests/test_nwb_audit.py",
+        "tests/test_registry.py",
+        "tests/test_reliability.py",
+        "tests/test_representation_benchmark.py",
+        "tests/test_representation_transfer.py",
+        "tests/test_research_dynamics.py",
+        "tests/test_review_package.py",
+        "tests/test_sense.py",
+        "tests/test_sequence_benchmark.py",
+        "tests/test_sequence_models.py",
+        "tests/test_subject_identity.py",
+        "tools/audit_brochier.py",
+        "tools/brochier_population.py",
+        "tools/build_review_package.py",
+        "tools/diagnose_mission_017.py",
+        "tools/fetch_brochier.py",
+        "tools/m023_dynamics_report.py",
+        "tools/m024_tables.py",
+        "tools/report_m022.py",
+        "tools/report_m023.py",
+        "tools/report_mission_016.py",
+        "tools/run_brochier_transfer.py",
+        "tools/validate_checkpoints.py"
+      ],
+      "count": 78
+    },
+    "refactor": {
+      "exit_code": 1,
+      "files_flagged": [
+        "src/cerebro/benchmark.py",
+        "src/cerebro/benchmark_figures.py",
+        "src/cerebro/calibration_mechanisms.py",
+        "src/cerebro/characterize.py",
+        "src/cerebro/characterize_figures.py",
+        "src/cerebro/cross_subject.py",
+        "src/cerebro/dataset.py",
+        "src/cerebro/dynamics.py",
+        "src/cerebro/evaluation.py",
+        "src/cerebro/event_aligned.py",
+        "src/cerebro/event_audit.py",
+        "src/cerebro/event_figures.py",
+        "src/cerebro/explorer.py",
+        "src/cerebro/extended_figures.py",
+        "src/cerebro/falcon.py",
+        "src/cerebro/hardware_check.py",
+        "src/cerebro/kalman.py",
+        "src/cerebro/link.py",
+        "src/cerebro/longitudinal.py",
+        "src/cerebro/maze_feasibility.py",
+        "src/cerebro/nwb_audit.py",
+        "src/cerebro/registry.py",
+        "src/cerebro/reliability.py",
+        "src/cerebro/representation_benchmark.py",
+        "src/cerebro/representation_transfer.py",
+        "src/cerebro/research_dynamics.py",
+        "src/cerebro/sense.py",
+        "src/cerebro/sense_inspect.py",
+        "src/cerebro/sequence_benchmark.py",
+        "src/cerebro/sequence_models.py",
+        "src/cerebro/subject_identity.py",
+        "tests/test_benchmark.py",
+        "tests/test_brochier_audit.py",
+        "tests/test_brochier_fetch.py",
+        "tests/test_brochier_native_data.py",
+        "tests/test_brochier_population.py",
+        "tests/test_brochier_transfer.py",
+        "tests/test_calibration_mechanisms.py",
+        "tests/test_characterize.py",
+        "tests/test_cross_subject.py",
+        "tests/test_dynamics.py",
+        "tests/test_evaluation.py",
+        "tests/test_event_aligned.py",
+        "tests/test_explorer.py",
+        "tests/test_extended_figures.py",
+        "tests/test_falcon.py",
+        "tests/test_hardware_check.py",
+        "tests/test_installation.py",
+        "tests/test_kalman.py",
+        "tests/test_link.py",
+        "tests/test_longitudinal.py",
+        "tests/test_m023_data.py",
+        "tests/test_m024_tables.py",
+        "tests/test_mission_016_report.py",
+        "tests/test_mission_017_diagnostics.py",
+        "tests/test_nwb_audit.py",
+        "tests/test_registry.py",
+        "tests/test_reliability.py",
+        "tests/test_representation_benchmark.py",
+        "tests/test_representation_transfer.py",
+        "tests/test_research_dynamics.py",
+        "tests/test_review_package.py",
+        "tests/test_sense.py",
+        "tests/test_sequence_benchmark.py",
+        "tests/test_sequence_models.py",
+        "tests/test_subject_identity.py",
+        "tools/audit_brochier.py",
+        "tools/brochier_population.py",
+        "tools/build_review_package.py",
+        "tools/diagnose_mission_017.py",
+        "tools/fetch_brochier.py",
+        "tools/m023_dynamics_report.py",
+        "tools/m024_tables.py",
+        "tools/report_m022.py",
+        "tools/report_m023.py",
+        "tools/report_mission_016.py",
+        "tools/run_brochier_transfer.py",
+        "tools/validate_checkpoints.py"
+      ],
+      "count": 78
+    },
+    "newly_flagged": []
+  },
+  "compilation": "PASS src/tests/tools",
+  "pip_check": "PASS no broken requirements",
+  "whitespace": "PASS git diff --check",
+  "packaging": {
+    "filename": "cerebro-1.1.0-py3-none-any.whl",
+    "bytes": 139592,
+    "sha256": "8be50f0cc07176b5b6fa1c7e74fec6f72d32a3997768c27ec77744349bf4c4bd",
+    "members": 38,
+    "raw_arrays_checkpoints_cache_included": false
+  },
+  "performance": {
+    "binning_eight_alternating_pairs": {
+      "timings_seconds": {
+        "before": [
+          0.5509507081005722,
+          0.5187351671047509,
+          0.6142926660832018,
+          0.5085926249157637,
+          0.5189567080233246,
+          0.5175477920565754,
+          0.515846542082727,
+          0.5164203338790685
+        ],
+        "after": [
+          0.5197671249043196,
+          0.5137574579566717,
+          0.5187868750654161,
+          0.5190674590412527,
+          0.51191550004296,
+          0.5117133751045913,
+          0.5134592500980943,
+          0.5190990830305964
+        ]
+      },
+      "median_seconds": {
+        "before": 0.5181414795806631,
+        "after": 0.5162721665110439
+      },
+      "after_to_before_ratio": 0.9963922728766434
+    },
+    "scope": "After other test/fit work completed; one local CPU fixture, not a comprehensive performance guarantee",
+    "normalization_memory_smoke": {
+      "shape": [
+        100,
+        70,
+        182
+      ],
+      "before_peak_bytes": 28144467,
+      "after_peak_bytes": 28414274,
+      "relative_increase": 0.009586502384287376,
+      "output_tensors_exact": true
+    }
+  },
+  "known_issues": {
+    "permuted_risk_control": {
+      "configured_alpha": 17.0,
+      "calls_with_configured_alpha": 72,
+      "calls_with_default_alpha": 3,
+      "fix_applied": false
+    },
+    "training_broadcast": {
+      "prediction_shape": [
+        4,
+        2
+      ],
+      "target_shape": [
+        4,
+        1
+      ],
+      "loss": 0.17477816343307495,
+      "parameters_changed": true,
+      "fix_applied": false
+    }
+  },
+  "independent_review": {
+    "subsystems": "Ingestion, model/evaluation, rendering/checkpoint review across separate agents and lead",
+    "unresolved_refactor_defects": [],
+    "resolved": [
+      "Restored entire Representation07 source after strict architecture hash rejection",
+      "Preserved unit-ID conversion/error order and scale-before-offset conversion order",
+      "Preserved cross-subject producer baseline source identity; confirmed existing cached-report mismatch separately, no guard bypass"
+    ],
+    "known_correctness_bugs_fixed": false
+  },
+  "not_executed": [
+    "GPU validation",
+    "Fresh isolated environment installation for this refactor",
+    "Remote CI on unpublished branch",
+    "Untouched LINK model outcomes",
+    "Exhaustive performance qualification",
+    "Standalone static type checker"
+  ],
+  "publication": "Local review-ready branch; no push/PR/merge/tag/release performed",
+  "provenance_constraints": "Eight hash-bound package modules plus two pinned historical generator tools remain unchanged; no historical hash/test weakened. Cached historical identity input already mismatches baseline producer source; recorded separately.",
+  "preexisting_limitations": [
+    "Electrode CSV native object-address nondeterminism",
+    "78 files fail optional canonical Ruff formatting in both baseline and refactor",
+    "Two known correctness issues intentionally preserved",
+    "Cached historical identity report producer fingerprint mismatches even original baseline; default historical artifact consumer correctly rejects it before fitting"
+  ],
+  "replay_values_sha256": "e5a2f1c2a081b621774bd36534a18a36aa8bd8f7b75c0b2cccfaf8dae88f4a29",
+  "documented_checkpoint_observer": "PASS: extracted command executed; all229 arrays exact",
+  "preexisting_compatibility_blockers": {
+    "cached_historical_identity_input": {
+      "status": "PREEXISTING_PROVENANCE_BLOCKER",
+      "error": "Frozen decoder preparation code differs from current source",
+      "fitting_executed": false
+    },
+    "baseline_and_refactor_rejection_identical": true,
+    "fix_applied": false,
+    "expected_producer_sha256": "d762673870a18120b193b6be3af9f4b16aec52bfc1a32b8cc5eec3692e9a7692",
+    "baseline_and_refactor_producer_sha256": "6a56c8329422308e0430d1357fc8eea39d72bae93c5affc9990bc5ff48593e81"
+  }
+}

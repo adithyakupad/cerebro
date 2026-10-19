@@ -45,7 +45,14 @@ def align_training(recording, event_field, protocol):
     relative = relative_grid(pre, post, width)
     train = recording.trials[recording.trials["split"] == "train"]
     keys = condition_keys(train)
-    counts, velocities, accepted, exclusions, labels, events, starts, stops = [], [], [], [], [], [], [], []
+    counts = []
+    velocities = []
+    accepted = []
+    exclusions = []
+    labels = []
+    events = []
+    starts = []
+    stops = []
     for (_, row), trial_id, key in zip(train.iterrows(), train.index, keys):
         event = row.get(event_field, np.nan)
         reason = window_reason(recording, row, event, pre, post, protocol["behavior_max_gap_seconds"])
@@ -68,9 +75,13 @@ def align_training(recording, event_field, protocol):
         independent = np.array([np.sum((s >= start) & (s < stop)) for s in recording.units.spike_times])
         if not np.array_equal(binned.values.sum(axis=0), independent):
             raise ValueError("Aligned spike conservation failed")
-        counts.append(binned.values); velocities.append(velocity)
-        accepted.append(int(trial_id)); labels.append(key); events.append(float(event))
-        starts.append(binned.left); stops.append(binned.right)
+        counts.append(binned.values)
+        velocities.append(velocity)
+        accepted.append(int(trial_id))
+        labels.append(key)
+        events.append(float(event))
+        starts.append(binned.left)
+        stops.append(binned.right)
     if not counts:
         raise ValueError("No training trials have complete event coverage")
     if recording.behavior["hand_vel"].unit != "m/s":
@@ -91,19 +102,25 @@ def condition_residuals(counts, keys, minimum=3):
         raise ValueError("Trials × event bins × units and paired condition labels required")
     if not np.all(np.isfinite(counts)):
         raise ValueError("Condition summaries require complete finite counts")
-    means, included_keys, indices = [], [], []
+    means = []
+    included_keys = []
+    indices = []
     expected = np.full(counts.shape, np.nan)
     for key in sorted(set(keys)):
         group = np.flatnonzero(keys == key)
         if len(group) < minimum:
             continue
         mean = counts[group].mean(axis=0)
-        means.append(mean); included_keys.append(key); indices.extend(group.tolist())
+        means.append(mean)
+        included_keys.append(key)
+        indices.extend(group.tolist())
         expected[group] = mean
     indices = np.array(sorted(indices), dtype=int)
     shape = (0, *counts.shape[1:])
-    return (np.stack(means) if means else np.empty(shape), np.array(included_keys, dtype=str),
-            indices, counts[indices] - expected[indices])
+    condition_means = np.stack(means) if means else np.empty(shape)
+    condition_labels = np.array(included_keys, dtype=str)
+    residuals = counts[indices] - expected[indices]
+    return condition_means, condition_labels, indices, residuals
 
 
 def covariance_correlation(samples):
@@ -111,11 +128,12 @@ def covariance_correlation(samples):
     samples = np.asarray(samples, dtype=float)
     if samples.ndim != 2 or not np.all(np.isfinite(samples)):
         raise ValueError("Finite observations × units required; no pairwise missing-data deletion")
-    n, units = samples.shape
-    if n < 2:
-        return np.full((units, units), np.nan), np.full((units, units), np.nan)
+    num_samples, num_units = samples.shape
+    if num_samples < 2:
+        return np.full((num_units, num_units), np.nan), np.full((num_units, num_units), np.nan)
     centered = samples - samples.mean(axis=0)
-    covariance = centered.T @ centered / (n - 1)
+    cross_products = centered.T @ centered
+    covariance = cross_products / (num_samples - 1)
     scale = np.sqrt(np.maximum(np.diag(covariance), 0))
     denominator = scale[:, None] * scale[None, :]
     correlation = np.full(covariance.shape, np.nan)
@@ -161,13 +179,16 @@ def analyze_events(recording, protocol):
     population = counts.sum(axis=2) / width
     speed = np.linalg.norm(primary["hand_velocity"], axis=2)
     selected_units = np.arange(min(4, counts.shape[2]))  # fixed file order, no response-based selection
-    paired_change = population[:, response].mean(axis=1) - population[:, baseline].mean(axis=1)
-    bootstrap_values = np.column_stack([population, speed,
-                                       (counts[:, :, selected_units] / width).reshape(len(counts), -1),
-                                       paired_change])
+    response_rates = population[:, response].mean(axis=1)
+    baseline_rates = population[:, baseline].mean(axis=1)
+    paired_change = response_rates - baseline_rates
+    selected_unit_rates = counts[:, :, selected_units] / width
+    flat_unit_rates = selected_unit_rates.reshape(len(counts), -1)
+    bootstrap_values = np.column_stack([population, speed, flat_unit_rates, paired_change])
     bands = trial_bootstrap(bootstrap_values, keys, protocol["bootstrap_draws"], protocol["bootstrap_seed"])
     time_bins = counts.shape[1]
-    population_bands, speed_bands = bands[:, :time_bins], bands[:, time_bins:2 * time_bins]
+    population_bands = bands[:, :time_bins]
+    speed_bands = bands[:, time_bins:2 * time_bins]
     unit_bands = bands[:, 2 * time_bins:-1].reshape(2, time_bins, len(selected_units))
     secondary_population = secondary["counts"].sum(axis=2) / width
     secondary_speed = np.linalg.norm(secondary["hand_velocity"], axis=2)

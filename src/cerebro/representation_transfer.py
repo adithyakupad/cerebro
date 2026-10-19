@@ -82,7 +82,8 @@ def source_standardization(source_counts, target_counts):
     normalized_source, parameters = standardize_counts(source_counts, source_mask)
     if not np.all(np.isfinite(target_counts)) or np.any(target_counts < 0):
         raise ValueError('Target counts must be finite and nonnegative')
-    normalized_target = (target_counts - parameters['feature_mean']) / parameters['feature_scale']
+    centered_target = target_counts - parameters['feature_mean']
+    normalized_target = centered_target / parameters['feature_scale']
     return normalized_source, normalized_target, parameters
 
 
@@ -119,10 +120,12 @@ def _frozen_probe(encoder, source_latent, source_labels, evaluation_features, co
     hidden = encoder.encoder.hidden_size
     label_features = source_latent.reshape(-1, hidden)
     label_targets = source_labels.reshape(-1, 2)
-    probe = Ridge(alpha=config['ridge_alpha']).fit(label_features, label_targets)
+    probe = Ridge(alpha=config['ridge_alpha'])
+    probe.fit(label_features, label_targets)
     evaluation_latent = _encoded(encoder, evaluation_features)
     flat_evaluation = evaluation_latent.reshape(-1, hidden)
-    prediction = probe.predict(flat_evaluation).reshape(evaluation_features.shape[:2] + (2,))
+    flat_prediction = probe.predict(flat_evaluation)
+    prediction = flat_prediction.reshape(evaluation_features.shape[:2] + (2,))
     checkpoint = {
         'state_dict': copy.deepcopy(encoder.state_dict()), 'input_units': encoder.encoder.input_size,
         'hidden': hidden, 'ridge_coefficients': torch.tensor(probe.coef_),
@@ -133,7 +136,8 @@ def _frozen_probe(encoder, source_latent, source_labels, evaluation_features, co
     restored = torch.load(path, weights_only=True)
     replica = RepresentationGRU(restored['input_units'], restored['hidden'])
     replica.load_state_dict(restored['state_dict'])
-    restored_latent = _encoded(replica, evaluation_features).reshape(-1, hidden)
+    restored_latent = _encoded(replica, evaluation_features)
+    restored_latent = restored_latent.reshape(-1, hidden)
     restored_prediction = restored_latent @ restored['ridge_coefficients'].numpy().T
     restored_prediction = restored_prediction + restored['ridge_intercept'].numpy()
     restored_prediction = restored_prediction.reshape(prediction.shape)
@@ -204,11 +208,13 @@ def run(config_path, output):
         source_position = np.concatenate([session['position'][:probe_number] for session in sessions[:2]], axis=0)
         normalized_source, normalized_target, parameters = source_standardization(source_counts, target['counts'])
         source_features = torch.tensor(normalized_source, dtype=torch.float32)
-        normalized_probe = (probe_counts - parameters['feature_mean']) / parameters['feature_scale']
+        centered_probe = probe_counts - parameters['feature_mean']
+        normalized_probe = centered_probe / parameters['feature_scale']
         source_probe_features = torch.tensor(normalized_probe, dtype=torch.float32)
         reserved_number = config['source_reserved_trials']
         reserved_counts = np.concatenate([session['counts'][-reserved_number:] for session in sessions[:2]], axis=0)
-        normalized_reserved = (reserved_counts - parameters['feature_mean']) / parameters['feature_scale']
+        centered_reserved = reserved_counts - parameters['feature_mean']
+        normalized_reserved = centered_reserved / parameters['feature_scale']
         reserved_features = torch.tensor(normalized_reserved, dtype=torch.float32)
         training_session_labels = np.repeat([0, 1], probe_number)
         evaluation_session_labels = np.repeat([0, 1], reserved_number)
@@ -330,7 +336,8 @@ def run(config_path, output):
                     supervised.eval()
                     with torch.no_grad():
                         normalized_prediction = supervised(evaluation_features).numpy()
-                    prediction = normalized_prediction * target_parameters['target_scale'] + target_parameters['target_mean']
+                    prediction = normalized_prediction * target_parameters['target_scale']
+                    prediction = prediction + target_parameters['target_mean']
                     identifier = prefix + '_' + encoder_name + '_supervised_budget_' + str(budget)
                     checkpoint_path = output / (identifier + '.pt')
                     checkpoint = {

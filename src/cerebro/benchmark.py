@@ -185,7 +185,9 @@ def restore_prediction(parameters, kind, counts):
             weighted_components = components / noise_variance
             posterior_precision = np.eye(len(components)) + weighted_components @ components.T
             projected = centered @ weighted_components.T
-            features = np.linalg.solve(posterior_precision, projected.reshape(-1, len(components)).T).T
+            projected_rows = projected.reshape(-1, len(components))
+            posterior_coordinates = np.linalg.solve(posterior_precision, projected_rows.T)
+            features = posterior_coordinates.T
             features = features.reshape(counts.shape[:2] + (len(components),))
     prediction = features @ parameters[kind + '_coef'].T
     prediction = prediction + parameters[kind + '_intercept']
@@ -204,117 +206,127 @@ def run(manifest_path, config_path, output):
     save_immutable(output / 'split_manifest.json', splits)
     counts = data['counts'].astype(float)
     target = data['velocity']
-    ids = data['trial_ids']
-    inner_train = np.isin(ids, splits['inner_training'])
-    inner_val = np.isin(ids, splits['inner_validation'])
-    source_train = data['splits'] == 'train'
-    source_val = data['splits'] == 'val'
-    features_number = counts.shape[-1]
+    trial_ids = data['trial_ids']
+    inner_training_mask = np.isin(trial_ids, splits['inner_training'])
+    inner_validation_mask = np.isin(trial_ids, splits['inner_validation'])
+    source_training_mask = data['splits'] == 'train'
+    source_validation_mask = data['splits'] == 'val'
+    num_units = counts.shape[-1]
     scaler = StandardScaler()
-    inner_x = counts[inner_train].reshape(-1, features_number)
-    inner_z = scaler.fit_transform(inner_x)
-    inner_validation_x = counts[inner_val].reshape(-1, features_number)
-    inner_validation_z = scaler.transform(inner_validation_x)
+    inner_training_counts = counts[inner_training_mask].reshape(-1, num_units)
+    inner_training_features = scaler.fit_transform(inner_training_counts)
+    inner_validation_counts = counts[inner_validation_mask].reshape(-1, num_units)
+    inner_validation_features = scaler.transform(inner_validation_counts)
     geometry = {}
     selected_dimensions = {}
     for kind in ('pca', 'fa'):
         scores = []
         for dimension in config['dimensions']:
-            model = fit_population(inner_z, dimension, kind=kind, seed=config['seed'])
+            model = fit_population(
+                inner_training_features, dimension, kind=kind, seed=config['seed'],
+            )
             if kind == 'pca':
-                recovered = reconstruction(model, inner_validation_z)
-                score = float(np.mean((inner_validation_z - recovered) ** 2))
+                recovered = reconstruction(model, inner_validation_features)
+                reconstruction_errors = inner_validation_features - recovered
+                squared_errors = reconstruction_errors ** 2
+                score = float(np.mean(squared_errors))
             else:
-                score = -gaussian_log_likelihood(model, inner_validation_z)
+                score = -gaussian_log_likelihood(model, inner_validation_features)
             scores.append({'dimension': dimension, 'inner_validation_loss': score})
         selected = min(scores, key=lambda entry: entry['inner_validation_loss'])['dimension']
         selected_dimensions[kind] = selected
         geometry[kind] = {'candidates': scores, 'selected_dimension': selected}
-    inner_y = target[inner_train].reshape(-1, target.shape[-1])
-    inner_validation_y = target[inner_val].reshape(-1, target.shape[-1])
+    inner_training_targets = target[inner_training_mask].reshape(-1, target.shape[-1])
+    inner_validation_targets = target[inner_validation_mask].reshape(-1, target.shape[-1])
     alpha_scores = []
     for alpha in config['ridge_alphas']:
-        decoder = fit_decoder(inner_z, inner_y, alpha=alpha)
-        prediction = decoder.predict(inner_validation_z)
-        loss = float(np.mean((inner_validation_y - prediction) ** 2))
+        decoder = fit_decoder(inner_training_features, inner_training_targets, alpha=alpha)
+        prediction = decoder.predict(inner_validation_features)
+        prediction_errors = inner_validation_targets - prediction
+        squared_errors = prediction_errors ** 2
+        loss = float(np.mean(squared_errors))
         alpha_scores.append({'alpha': alpha, 'inner_validation_mse_m2_s2': loss})
     selected_alpha = min(alpha_scores, key=lambda entry: entry['inner_validation_mse_m2_s2'])['alpha']
     kalman_candidates = []
     for alpha in config['ridge_alphas']:
+        training_shape = (len(counts[inner_training_mask]), counts.shape[1], num_units)
         model = fit_kalman(
-            inner_z.reshape(len(counts[inner_train]), counts.shape[1], features_number),
-            target[inner_train], ridge_alpha=alpha,
+            inner_training_features.reshape(training_shape),
+            target[inner_training_mask], ridge_alpha=alpha,
         )
+        validation_shape = (len(counts[inner_validation_mask]), counts.shape[1], num_units)
         kalman_prediction = predict_kalman(
-            model, inner_validation_z.reshape(len(counts[inner_val]), counts.shape[1], features_number),
+            model, inner_validation_features.reshape(validation_shape),
         )
-        kalman_loss = float(np.mean((target[inner_val] - kalman_prediction) ** 2))
+        kalman_errors = target[inner_validation_mask] - kalman_prediction
+        squared_errors = kalman_errors ** 2
+        kalman_loss = float(np.mean(squared_errors))
         kalman_candidates.append({'alpha': alpha, 'inner_validation_mse_m2_s2': kalman_loss})
     kalman_alpha = min(kalman_candidates, key=lambda entry: entry['inner_validation_mse_m2_s2'])['alpha']
     scaler = StandardScaler()
-    training_x = counts[source_train].reshape(-1, features_number)
-    training_z = scaler.fit_transform(training_x)
-    validation_x = counts[source_val].reshape(-1, features_number)
-    validation_z = scaler.transform(validation_x)
-    training_y = target[source_train].reshape(-1, target.shape[-1])
-    validation_y = target[source_val]
+    training_counts = counts[source_training_mask].reshape(-1, num_units)
+    training_features = scaler.fit_transform(training_counts)
+    validation_counts = counts[source_validation_mask].reshape(-1, num_units)
+    validation_features = scaler.transform(validation_counts)
+    training_targets = target[source_training_mask].reshape(-1, target.shape[-1])
+    validation_targets = target[source_validation_mask]
     predictions = {}
-    training_mean = training_y.mean(axis=0)
-    predictions['mean'] = np.broadcast_to(training_mean, validation_y.shape).copy()
-    temporal_mean = target[source_train].mean(axis=0)
-    predictions['go_time_template'] = np.broadcast_to(temporal_mean, validation_y.shape).copy()
+    training_mean = training_targets.mean(axis=0)
+    predictions['mean'] = np.broadcast_to(training_mean, validation_targets.shape).copy()
+    temporal_mean = target[source_training_mask].mean(axis=0)
+    predictions['go_time_template'] = np.broadcast_to(temporal_mean, validation_targets.shape).copy()
     decoder_parameters = {}
     for name, alpha in [('linear', None), ('ridge', selected_alpha)]:
-        decoder = fit_decoder(training_z, training_y, alpha=alpha)
-        predicted_flat = decoder.predict(validation_z)
-        predictions[name] = predicted_flat.reshape(validation_y.shape)
+        decoder = fit_decoder(training_features, training_targets, alpha=alpha)
+        predicted_flat = decoder.predict(validation_features)
+        predictions[name] = predicted_flat.reshape(validation_targets.shape)
         decoder_parameters[name + '_coef'] = decoder.coef_
         decoder_parameters[name + '_intercept'] = decoder.intercept_
     fitted_arrays = {
         'scaler_mean': scaler.mean_, 'scaler_scale': scaler.scale_,
-        'trial_ids': ids, 'unit_ids': data['unit_ids'], 'counts': data['counts'],
+        'trial_ids': trial_ids, 'unit_ids': data['unit_ids'], 'counts': data['counts'],
         'velocity_m_s': target, 'bin_right_seconds': data['right_seconds'],
         'mean_baseline': training_mean, 'time_template_baseline': temporal_mean,
         **decoder_parameters,
     }
     kalman_model = fit_kalman(
-        training_z.reshape(np.sum(source_train), counts.shape[1], features_number),
-        target[source_train], ridge_alpha=kalman_alpha,
+        training_features.reshape(np.sum(source_training_mask), counts.shape[1], num_units),
+        target[source_training_mask], ridge_alpha=kalman_alpha,
     )
     predictions['kalman'] = predict_kalman(
-        kalman_model, validation_z.reshape(len(validation_y), counts.shape[1], features_number),
+        kalman_model, validation_features.reshape(len(validation_targets), counts.shape[1], num_units),
     )
     for name, value in kalman_model.items():
         fitted_arrays['kalman_' + name] = value
     for kind in ('pca', 'fa'):
         dimension = selected_dimensions[kind]
-        model = fit_population(training_z, dimension, kind=kind, seed=config['seed'])
-        training_latents = model.transform(training_z)
-        validation_latents = model.transform(validation_z)
-        decoder = fit_decoder(training_latents, training_y, alpha=selected_alpha)
+        model = fit_population(training_features, dimension, kind=kind, seed=config['seed'])
+        training_latents = model.transform(training_features)
+        validation_latents = model.transform(validation_features)
+        decoder = fit_decoder(training_latents, training_targets, alpha=selected_alpha)
         predicted_flat = decoder.predict(validation_latents)
-        predictions[kind + '_ridge'] = predicted_flat.reshape(validation_y.shape)
+        predictions[kind + '_ridge'] = predicted_flat.reshape(validation_targets.shape)
         fitted_arrays[kind + '_ridge_coef'] = decoder.coef_
         fitted_arrays[kind + '_ridge_intercept'] = decoder.intercept_
         fitted_arrays[kind + '_components'] = model.components_
         fitted_arrays[kind + '_mean'] = model.mean_
         fitted_arrays[kind + '_validation_latents'] = validation_latents.reshape(
-            len(validation_y), counts.shape[1], dimension,
+            len(validation_targets), counts.shape[1], dimension,
         )
         if kind == 'pca':
             geometry[kind]['training_explained_variance_ratio'] = model.explained_variance_ratio_.tolist()
         else:
-            geometry[kind]['source_validation_log_likelihood'] = gaussian_log_likelihood(model, validation_z)
+            geometry[kind]['source_validation_log_likelihood'] = gaussian_log_likelihood(model, validation_features)
             fitted_arrays['fa_noise_variance'] = model.noise_variance_
     metrics = {}
     generator = np.random.default_rng(config['seed'])
-    trial_number = len(validation_y)
+    trial_number = len(validation_targets)
     resample_indices = generator.integers(trial_number, size=(config['bootstrap_draws'], trial_number))
     for name, prediction in predictions.items():
-        restored_prediction = restore_prediction(fitted_arrays, name, counts[source_val])
+        restored_prediction = restore_prediction(fitted_arrays, name, counts[source_validation_mask])
         if not np.allclose(restored_prediction, prediction, rtol=1e-10, atol=1e-10):
             raise ValueError('Numerical checkpoint restoration changed predictions')
-        trial_mse, r_squared = trial_metrics(validation_y, prediction)
+        trial_mse, r_squared = trial_metrics(validation_targets, prediction)
         bootstrap_means = trial_mse[resample_indices].mean(axis=1)
         interval = np.quantile(bootstrap_means, [.025, .975])
         metrics[name] = {
@@ -338,7 +350,7 @@ def run(manifest_path, config_path, output):
         'information_policy': 'Offline contemporaneous bins; outputs available only at bin right edge. Go-time template has recorded go-cue timing. No smoothing or lag search.',
         'selection_policy': f"{len(splits['inner_training'])}/{len(splits['inner_validation'])} inner training/validation source trials; refit on all source train after selection; source val used only for final exploratory reporting. Published test file untouched.",
         'geometry': geometry, 'ridge_selection': alpha_scores, 'selected_ridge_alpha': selected_alpha,
-        'metrics': metrics, 'evaluation_trial_ids': ids[source_val].tolist(),
+        'metrics': metrics, 'evaluation_trial_ids': trial_ids[source_validation_mask].tolist(),
         'kalman_selection': kalman_candidates, 'selected_kalman_alpha': kalman_alpha,
         'kalman_covariance_floor': 1e-5,
         'uncertainty': 'Whole-trial percentile bootstrap; assumes independent trials from this curated session. No claim of calibrated population uncertainty or model significance.',

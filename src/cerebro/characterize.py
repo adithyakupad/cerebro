@@ -33,7 +33,8 @@ def count_statistics(values, durations):
             or not np.all(np.isfinite(durations)) or np.any(durations <= 0)):
         raise ValueError("Counts must be integers >= -1 and durations positive seconds")
     observed = values >= 0
-    samples, exposure = values[observed], durations[observed]
+    samples = values[observed]
+    exposure = durations[observed]
     n = len(samples)
     if n == 0:
         return {"observed_bins": 0, "spikes": 0, "exposure_seconds": 0.0,
@@ -60,8 +61,12 @@ def count_statistics(values, durations):
 
 def summarize(counts):
     durations = counts.right - counts.left
-    per_unit = [dict(unit_id=int(unit_id), **count_statistics(counts.values[:, j], durations))
-                for j, unit_id in enumerate(counts.unit_ids)]
+    per_unit = []
+    for unit_index, unit_id in enumerate(counts.unit_ids):
+        unit_identifier = int(unit_id)
+        unit_counts = counts.values[:, unit_index]
+        unit_statistics = count_statistics(unit_counts, durations)
+        per_unit.append(dict(unit_id=unit_identifier, **unit_statistics))
     population = np.where(counts.valid.all(axis=1), counts.values.sum(axis=1), -1)
     observed = counts.values[counts.valid]
     histogram = np.unique(observed, return_counts=True)
@@ -134,10 +139,15 @@ def analyze(recording, widths=WIDTHS):
     trials, units = recording.trials, recording.units
     source = trials[["start_time", "stop_time"]].to_numpy()
     common, quantum = matched_intervals(source, widths)
-    raw_per_trial = np.array([
-        [np.searchsorted(s, stop, side="left") - np.searchsorted(s, start, side="left")
-         for s in units.spike_times] for start, stop in source
-    ], dtype=np.int64)
+    trial_spike_totals = []
+    for start, stop in source:
+        unit_spike_totals = []
+        for spike_times in units.spike_times:
+            stop_index = np.searchsorted(spike_times, stop, side="left")
+            start_index = np.searchsorted(spike_times, start, side="left")
+            unit_spike_totals.append(stop_index - start_index)
+        trial_spike_totals.append(unit_spike_totals)
+    raw_per_trial = np.array(trial_spike_totals, dtype=np.int64)
     results = {}
     matched_unit_totals = []
     for width in widths:
