@@ -1,0 +1,49 @@
+{
+  "scientific_source_revision": "8d459de448fbe771ea5a21ea9f4cf79558346160",
+  "baseline_main": "554103b13e8946c6a0d72127c541cdc466822dc0",
+  "tests": {
+    "full_suite": "311 passed, 20 existing HDMF deprecation warnings in 62.08 seconds",
+    "software": 289,
+    "authentic_data": 22,
+    "full_log_sha256": "2d642a29f53e0af948381fe0e03f9a86d0ccd56e365cb524fe91bf765cb90004"
+  },
+  "replay": {
+    "models_per_stage": 11,
+    "array_digests_per_stage": 40,
+    "predictions_exact": true,
+    "historical_files": 405,
+    "historical_array_digests": 755,
+    "historical_predictions": 229,
+    "historical_predictions_exact": 227,
+    "remaining_two": "Within existing rtol 1e-7 / atol 1e-9",
+    "final_replay_log_sha256": "f8d36043ddbd4b7438e507a8991475a56908dadc71b33dfbc1f6eeb610160412",
+    "historical_validation_log_sha256": "f939e597501b4acd42f5ac4fb5ab72d2e11909c8bdf537d3d8b67c2a55a63c02"
+  },
+  "prior_tracked_paths_verified": 326,
+  "prior_changed_paths": [
+    "docs/research/completion_matrix.md",
+    "src/cerebro/sequence_benchmark.py",
+    "tests/test_sequence_benchmark.py"
+  ],
+  "prior_changes": "Only completion-matrix addendum and isolated shape-check source/test; all other baseline tracked files unchanged, including historical reports, protocols and figures.",
+  "packaging": {
+    "wheel": "cerebro-1.1.0-py3-none-any.whl",
+    "sha256": "8b0bda425772364afcb0199e974027a68dd0417433ff964dbc9cb5b34922a877",
+    "entries": 41,
+    "raw_recordings_or_weights_bundled": false,
+    "pip_check": "No broken requirements found",
+    "new_python_ruff": "All checks passed"
+  },
+  "report_reproduction": {
+    "synthesis_markdown_json_and_primary_training_pdfs": "Byte-identical across two runs",
+    "primary_pdf_sha256": "c4ef4c8fff823c4dfac87a08f8417c452d42094f7e77588cad32f9c3fcfef156",
+    "training_pdf_sha256": "8d17ed600117c9e6ee253e0c88bedd0f2faec065d91a3bed14c26138eee0d2f0"
+  },
+  "independent_review": "Saved losses, seed means, selection minima, paired/block uncertainty, split identities, sensitivity masks and recovery hashes independently recomputed; no new fitting.",
+  "not_executed": [
+    "Fresh Conda creation or clean-clone retraining in M025",
+    "GPU performance",
+    "Streaming or biological closed-loop control"
+  ],
+  "public_ci": "Verify at published PR head; not part of the local full-suite count."
+}

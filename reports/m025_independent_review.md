@@ -62,3 +62,26 @@ other method hashes still must match. The original marker and partial artifacts
 are preserved and a second exclusive recovery journal is mandatory. This is a
 reviewed continuation before the first loss calculation, not another final outcome
 selection or an alternate dataset. No thresholds, architecture, splits or seeds change.
+
+## Completed final stored-output review
+
+An independent reviewer recomputed all saved model/trial losses, seed means,
+selection minima and shared trajectories, 10,000-draw paired and ordered-block
+intervals, sensitivity results, source/protocol hashes and cache/report equality.
+The original start marker, split manifest, classical parameters and both reused
+seed-0 checkpoint bytes match the recovery manifest. No new fitting or final
+method selection was performed in this review.
+
+Exact partitions are 1,721 training trials (1,377/344 inner) and 574 evaluation
+trials in the saved validation order. CNN200 reductions are 51.9207% versus CNN20
+and 57.6588% versus Kalman; all primary paired and block intervals are negative.
+The secondary history-ridge reduction is 42.0342%. The frozen practical gate
+passes. Standard's condition permutation changes 445/574 trials; Small's changes
+zero and remains uninformative. Replacing features by training means slightly
+improves Kalman but worsens CNN200; this sensitivity does not authorize retuning.
+
+The final report's within-stage `development_relative_reduction` field describes
+standard's inner selection, not the original Small promotion gate (18.6012%).
+Evidence supports session-specific recipe replication in one animal, not decoder
+transfer or a physiological cause. Raw standard data were previously opened;
+performance was previously unscored in the maintained records.
