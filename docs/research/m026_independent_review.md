@@ -7,7 +7,7 @@ existing M025 evidence. Protocol commit `014e06a`; implementation `deecf12`;
 additional guards `bb89524`; progress logging and native condition inventory
 `b8ebe5f`. This reviewer did not select controls from new validation outcomes,
 fit models, or execute a new experiment. **Pre-fit review: PASS for the bounded
-retrospective diagnostic claim. Final-output review: PENDING.**
+retrospective diagnostic claim. Final-output numerical review: PASS.**
 
 ## Direct checks completed
 
@@ -81,19 +81,63 @@ The trained task templates/clock CNN are finite estimators, not upper bounds on
 all task information. A real-neural advantage over them remains bounded by
 model/representation adequacy and one previously inspected session.
 
-## Pending final-output review
+## Completed independent final-output review
 
-Before claiming M026 completion, independently inspect saved results and:
+An independent saved-output audit used separately written numerical calculations,
+without model fitting or additional model scoring. Its machine receipt is
+`m026_independent_audit.json`. All **296,880 scalar/structure checks passed**,
+with **zero numerical difference** for independently recomputed metrics,
+seed-loss averages, all ten 10,000-draw paired/ordered-block-five contrasts,
+and every condition/speed/direction stratum's means, counts and trial identities.
+The audit verified nine checkpoint hashes, 27 saved-array hashes, twelve donor
+partition maps, fourteen protected M025 files, the native asset checksum,
+cache/protocol lineage and committed source hashes. It verified all selected
+epochs against stored inner-validation histories. Checkpoint forward replay is
+a separate lead-agent check, not claimed as executed by this audit.
 
-1. Recompute equal-trial metrics, seed averaging, primary paired intervals and
-   ordered-block sensitivity from saved arrays.
-2. Verify donor maps, singleton counts, condition-template fallback and scored
-   trial identities; reproduce condition/speed/direction strata as practical.
-3. Verify all checkpoint restoration and output hashes, retained M025 hashes,
-   immutable start markers, report/figure lineage and actual test receipts.
-4. Confirm conclusions distinguish neural dependence, task information,
-   distribution-shift sensitivity and retrospective uncertainty; preserve every
-   result, including any failed descriptive gate.
+The two frozen descriptive contrasts reproduce:
 
-No new fitting, additional held-out cohort, GPU/live-BCI operation or across-session
-biological generalization was checked by this pre-fit review.
+| Real CNN200 minus comparator | Absolute MSE difference [(m/s)²] | Relative reduction | Paired 95% interval | Ordered-block-five interval |
+| --- | ---: | ---: | --- | --- |
+| Clock CNN | −0.0259629681862 | 66.9932% | [−0.0269513634051, −0.0249941135796] | [−0.0269123215676, −0.0250432791306] |
+| Permuted training and evaluation | −0.0142484553862 | 52.6938% | [−0.0155225173036, −0.0130218957642] | [−0.0154311728555, −0.0131242889797] |
+| Condition-by-time template, secondary | −0.00224323872846 | 14.9202% | [−0.00359131789176, −0.000965832602937] | [−0.00351911436350, −0.00100572618144] |
+
+Both prespecified primary descriptive thresholds pass. They do not restore
+untouched-evaluation status or supply biological replication.
+
+**Task structure is strong, and the incremental neural advantage is
+heterogeneous.** The condition-by-time template reduces MSE 61.4281% relative
+to the mean baseline, with zero unseen-condition fallbacks. Neural CNN200 has
+lower mean loss than that template but wins only **233/574 trials** and
+**53/108 condition means**. Median paired neural-minus-template trial difference
+is **+0.00215160772008 (m/s)²**; median trial errors are 0.0112994448665 for neural
+CNN and 0.00881535447496 for the template. These descriptive distribution
+summaries were independently checked, not substituted for the frozen mean-loss
+estimand. No claim of uniform or majority-trial neural superiority is justified.
+
+The lowest-speed stratum contains 27,697 bins across all574trials. Its clock
+CNN MSE is 0.000269112616 versus neural CNN 0.00150688442 (m/s)²: the aggregate
+neural advantage is not a universal speed-stratum advantage. At 0.25–0.5m/s,
+the condition template also beats neural CNN (0.0292664563 versus0.0328753386).
+These strata weight each participating trial equally; their means cannot be
+summed as though they were independent samples. No sample meets the prespecified
+stationary threshold; all four directional groups contain574trials.
+
+The same permuted-trained network performs better on real evaluation inputs
+(0.0186028708539) than independently permuted inputs (0.0270401233342).
+This explicitly limits interpretation: changing neural–behavior pairing at
+inference alters the joint observation–target distribution. The difference
+cannot isolate a physiological mechanism or quantify complete neural-information
+removal. Whole neural trajectories and condition-related neural signals remain
+in both cases; one fixed donor map does not characterize surrogate variability.
+The matched null is a useful prespecified pairing diagnostic, not a proof of
+conditional independence. Convergent real-input/template/clock comparisons
+support a bounded predictive association in this recording, with substantial
+task predictability and unresolved estimator/task-representation limitations.
+
+No blocker was found in final numerical consistency or these narrow conclusions.
+Figure regeneration, full test receipts, packaging, public CI and checkpoint
+forward restoration remain separately recorded release-engineering checks.
+No additional held-out cohort, GPU/live-BCI operation, across-session biological
+generalization or physiological causation was tested by this review.

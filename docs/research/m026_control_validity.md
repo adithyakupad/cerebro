@@ -49,3 +49,9 @@ The suite trains input controls only at cap200. It does not estimate a complete
 optimization-budget × information interaction or partition the M02520→200 gain
 into additive neural/task/optimization effects. Trial intervals condition on the
 observed task mix and fixed surrogate; they do not resample task-condition clusters.
+
+Absence of an explicit trial-ID feature does not exclude neural proxies for slow
+recording state or repeated trajectory templates. The original interleaved split
+tests held-out trials in this recording, not new conditions or chronological
+deployment. Any implicit time/condition association is part of the predictive
+result and must not be interpreted as an identified physiological cause.

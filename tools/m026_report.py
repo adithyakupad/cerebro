@@ -47,7 +47,7 @@ def main():
     figure.savefig(figure_path, metadata={'CreationDate': None, 'ModDate': None})
     figure.savefig(figure_path.with_suffix('.png'), dpi=160)
     plt.close(figure)
-    sensitivity, axes = plt.subplots(1, 2, figsize=(12, 4), constrained_layout=True)
+    sensitivity, axes = plt.subplots(1, 2, figsize=(12, 5), constrained_layout=True)
     for name in ('neural_200', 'clock', 'permuted', 'condition_template'):
         for axis, dimension in zip(axes, ('speed_m_s', 'direction')):
             groups = summary['stratification'][name][dimension]
@@ -58,26 +58,58 @@ def main():
             axis.set(xticks=np.arange(len(groups)), xticklabels=strata_labels, ylabel='Within-stratum equal-trial MSE [(m/s)²]', title=dimension)
             axis.tick_params(axis='x', labelrotation=25)
             axis.legend(fontsize=8)
-    sensitivity.suptitle('M026 descriptive target strata | no model selection | one session, fixed target-defined bins')
+    sensitivity.suptitle('M026 retrospective target strata | no model selection | one session\nDANDI 000128 v0.220113.0400 | Jenkins Sep25 2009 | 20 ms; go −400:+1000 ms; bins 5–70')
     sensitivity.savefig('reports/figures/m026_error_strata.pdf', metadata={'CreationDate': None, 'ModDate': None})
     plt.close(sensitivity)
-    learning, axes = plt.subplots(1, 3, figsize=(13, 4), constrained_layout=True)
+    learning, axes = plt.subplots(1, 3, figsize=(13, 5), constrained_layout=True)
     for axis, mode in zip(axes, ('zero', 'clock', 'permuted')):
         for row in report['models']:
             if row['mode'] == mode:
                 epochs = [entry['epoch'] for entry in row['history']]
                 errors = [entry['inner_physical_mse'] for entry in row['history']]
-                axis.plot(epochs, errors, label='seed ' + str(row['seed']))
+                line = axis.plot(epochs, errors, label='seed ' + str(row['seed']))
+                selected_epoch = row['selected_epoch']
+                selected_error = errors[selected_epoch - 1]
+                axis.scatter([selected_epoch], [selected_error], color=line[0].get_color(), s=25)
         axis.set(title=mode, xlabel='Full-batch optimizer updates', ylabel='Inner physical MSE [(m/s)²]')
         axis.legend()
-    learning.suptitle('M026 training-only epoch selection | identical fixed cap200, architecture and optimizer')
+    learning.suptitle('M026 inner-validation selection | dots = selected epochs | fixed cap200, architecture and optimizer\nDANDI 000128 v0.220113.0400 | Jenkins Sep25 2009 | 20 ms; go −400:+1000 ms; bins 5–70')
     learning.savefig('reports/figures/m026_training_curves.pdf', metadata={'CreationDate': None, 'ModDate': None})
     plt.close(learning)
+    neural_trial_loss = np.asarray(metrics['neural_200']['trial_mse_m2_s2'])
+    template_trial_loss = np.asarray(metrics['condition_template']['trial_mse_m2_s2'])
+    paired_template_difference = neural_trial_loss - template_trial_loss
+    trial_wins = int(np.sum(paired_template_difference < 0))
+    condition_rows = summary['stratification']['neural_200']['conditions']
+    template_rows = summary['stratification']['condition_template']['conditions']
+    condition_wins = sum(row['equal_trial_mse'] < template_rows[key]['equal_trial_mse'] for key, row in condition_rows.items())
+    task_reduction = 1 - metrics['condition_template']['mse_m2_s2'] / metrics['mean']['mse_m2_s2']
+    heterogeneity = {'neural_vs_template_trial_wins': trial_wins, 'trials': len(neural_trial_loss),
+                     'neural_vs_template_condition_wins': condition_wins, 'conditions': len(condition_rows),
+                     'median_paired_difference_m2_s2': float(np.median(paired_template_difference)),
+                     'condition_template_relative_reduction_vs_mean': float(task_reduction)}
+    distribution, axis = plt.subplots(figsize=(9, 5), constrained_layout=True)
+    for name in ('condition_template', 'permuted_real', 'permuted'):
+        reference = np.asarray(metrics[name]['trial_mse_m2_s2'])
+        differences = np.sort(neural_trial_loss - reference)
+        cumulative = np.arange(1, len(differences) + 1) / len(differences)
+        axis.step(differences, cumulative, where='post', label=name)
+    axis.axvline(0, color='black', linewidth=1)
+    axis.axhline(.5, color='0.6', linestyle='--', linewidth=1)
+    axis.set(xlabel='Real CNN200 − control trial MSE [(m/s)²]', ylabel='Empirical cumulative fraction of trials',
+             title='M026 retrospective heterogeneity | 574 trials, fixed fits\nDANDI 000128 v0.220113.0400 | Jenkins Sep25 2009 | 20 ms; score bins 5–70')
+    axis.legend()
+    distribution.savefig('reports/figures/m026_trial_error_distribution.pdf', metadata={'CreationDate': None, 'ModDate': None})
+    plt.close(distribution)
     lines = ['# M026: neural information and decoder validity', '',
              '**Retrospective diagnostic analysis.** The standard validation outcomes were already inspected in M025. These comparisons are not a second independent confirmation.', '',
              '## Question and design', '',
              'We tested whether the M025 CNN gain can be explained by task-phase predictability or persists against trained controls that disrupt trial-specific neural–behavior pairing. No CNN architecture, historical output, trial partition, loss or optimizer was changed.', '',
              'The frozen [protocol](../docs/research/m026_protocol.md) ranks alternatives before training. The [control validity matrix](../docs/research/m026_control_validity.md) documents removed/preserved information, task clocks, distribution shifts and limitations. All control seeds 0/1/2 receive at most 200 updates; epoch selection uses only 1377/344 inner fitting/validation trials, then refits 1721 original training trials. Both coordinates and all 70 bins enter training loss; common primary scoring uses 574 trials × 66 bins × 2 coordinates, equal-trial physical MSE. These are separately fitted models of one animal and one recording.', '',
+             '## Scientific finding', '',
+             f'Both task structure and neural pairing contribute to prediction under these controls. The condition×time template reduces mean MSE by {100 * task_reduction:.2f}% versus the training-mean baseline; real CNN200 reduces it a further {100 * summary["contrasts"]["condition_template"]["relative_reduction"]:.2f}% relative to that template. Task phase alone is a much weaker predictor.',
+             f'The neural advantage is heterogeneous: {trial_wins}/{len(neural_trial_loss)} trial wins and {condition_wins}/{len(condition_rows)} condition-mean wins versus the task template. Median paired difference is {np.median(paired_template_difference):.8f} (m/s)², so a typical trial favors the template even though aggregate mean MSE favors the neural model. The neural model reduces larger errors in a subset; no uniform per-trial benefit is demonstrated.',
+             'The permuted-trained CNN scores better on original neural inputs than on matched permuted inputs. This illustrates sensitivity to pairing and the intervention’s joint input/target distribution; it does not isolate a physiological cause. The stronger condition template and original-input inference are retained, not hidden behind the weaker matched-null headline.', '',
              '## Measurements', '', '| Model / information | MSE [(m/s)²] | Seed-specific MSE |', '| --- | ---: | --- |']
     for name, label in zip(order, labels):
         row = metrics[name]
@@ -104,14 +136,20 @@ def main():
                   '4. **Generalization:** none of these retrospective same-session controls demonstrates outside-task/recording prediction, cross-subject invariance, decoder transfer or online BCI. No future-behavior forecast is evaluated.', '',
                   '## Integrity, uncertainty and limitations', '',
                   'All comparisons retain exact M025 evaluation targets/IDs and complete-coverage bins. Data are genuine intracortical spikes and supplied hand velocity in physical m/s; no synthetic observation replaces an empirical claim. Source is DANDI 000128 v0.220113.0400, asset 26e85f09-39b7-480f-b337-278a8f034007, SHA256 a27f84f9c31f077011062fd99a6ced199fdf19e656151f056c3c6244a408a3c4. [Churchland and Kaufman (2022), CC-BY-4.0](https://doi.org/10.48324/dandi.000128/0.220113.0400). Raw recordings and checkpoints are not redistributed.',
+                  'No explicit trial ID enters the CNN, but activity may encode slow recording state or repeated trajectory templates. Interleaved same-session validation does not rule out these implicit temporal/task associations. Held-out conditions and chronological out-of-distribution deployment were not tested.',
                   'Paired 10,000-draw intervals resample whole trials with seed 26; block 5 is a temporal-dependence sensitivity. Uncertainty conditions on fixed fits in one session. It excludes independent-session/subject variation and repeated surrogate-generation variability. Optimization seeds are not biological replicates; no multiplicity-adjusted confirmatory p-value is claimed.',
                   'The CNN has a five-bin causal receptive field but reconstructs contemporaneous velocity at bin right. Offline pre-cue windows depend on a later recorded go cue. Task selection and native upstream velocity estimation remain potential structure; causal neural input does not imply prospective task initialization or a physiologically causal target. Ridge training masks differ from CNN/Kalman, although evaluation masks agree; see original audit.',
                   'Only cap200 input controls were trained. A full cap×input factorial was not run; these contrasts cannot quantitatively apportion the 20→200 improvement into additive neural, task and optimization components. Task-condition clusters and alternative donor maps are not resampled by the conditional trial intervals.',
                   'Partial feature replacement from M025 is a distribution-shift sensitivity, not a no-neural baseline. A permuted neural population still contains abundant condition/time information and donor dynamics. Task templates are particular estimators, not all-task-information ceilings. No positive control result establishes a physiological mechanism, general subject invariance, adaptive decoder superiority or foundation-model validity.', '',
+                  '## Research figures', '',
+                  '- [Neural-information comparison](figures/m026_neural_information.pdf)',
+                  '- [Speed and direction strata](figures/m026_error_strata.pdf)',
+                  '- [Training and selection curves](figures/m026_training_curves.pdf)',
+                  '- [Trial-error heterogeneity](figures/m026_trial_error_distribution.pdf)', '',
                   '## Reproduction and review', '',
-                  'Use the existing Conda cerebro Python 3.11 environment and declared dev,classical,deep extras. Parent M025 artifacts are local inputs, with exact original hashes authenticated; regenerate M025 from its public guide in a separate clone if absent. The corrected M025 numerical verification/recovery remains unchanged.', '',
+                  'Use the existing Conda cerebro Python 3.11 environment and declared dev,classical,deep extras. Parent M025 artifacts are local inputs, with exact original hashes authenticated; regenerate M025 using its [public reproduction guide](../docs/research/m025_reproduction.md) in a separate clone if absent. The corrected M025 numerical verification/recovery remains unchanged.', '',
                   '```sh', 'conda run -n cerebro python tools/m026_prepare.py', 'conda run -n cerebro python -m cerebro.neural_information', 'conda run -n cerebro python -m cerebro.neural_information --replay', 'conda run -n cerebro python tools/m026_report.py', 'conda run -n cerebro python -m pytest -q', '```', '',
-                  'Preparation refuses to overwrite its cache; fitting uses an exclusive start marker and refuses an implicit rerun. Execute fresh reproduction in a separate clone and archive canonical reports. Reproduction of published outcomes is not a new independent test. Replay restores every new checkpoint, verifies array digests and original M025 file hashes without fitting. Independent review and executed validation are recorded separately in m026_validation.json / m026_independent_review.md.', '',
+                  'Preparation refuses to overwrite its cache; fitting uses an exclusive start marker and refuses an implicit rerun. Execute fresh reproduction in a separate clone and archive canonical reports. Reproduction of published outcomes is not a new independent test. Replay restores every new checkpoint, verifies array digests and original M025 file hashes without fitting. Independent review and executed validation are recorded in the [validation record](../docs/research/m026_validation.json) and [independent review](../docs/research/m026_independent_review.md).', '',
                   '## Application evidence', '',
                   'A. Demonstrated earlier: frozen CNN optimization-and-selection recipe reduced MSE 51.92% versus 20 updates and 57.66% versus tuned Kalman in a separately fitted recording of the same animal.',
                   'B. Incremental neural evidence: report the fixed real-versus-control contrasts above explicitly as retrospective; promotion thresholds do not establish new independent confirmation.',
@@ -122,7 +160,12 @@ def main():
     text = text.replace('CNN200-cap20 reference', 'CNN20 reference')
     Path('reports/m026_neural_information.md').write_text(text)
     manifest = {'results_sha256': digest('reports/m026_neural_information.json'), 'report_sha256': digest('reports/m026_neural_information.md'),
-                'primary_figure_sha256': digest(figure_path), 'generator_sha256': digest(__file__)}
+                'primary_figure_sha256': digest(figure_path), 'generator_sha256': digest(__file__),
+                'post_run_descriptive_heterogeneity': heterogeneity}
+    figure_hashes = {}
+    for path in sorted(Path('reports/figures').glob('m026_*')):
+        figure_hashes[str(path)] = digest(path)
+    manifest['figure_sha256'] = figure_hashes
     Path('reports/m026_artifacts.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(json.dumps(manifest))
 
