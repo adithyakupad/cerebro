@@ -44,3 +44,8 @@ information and may preserve fine uncontrolled covariates. One fixed surrogate
 per partition is not an exhaustive randomization distribution. Convergent results
 can support incremental predictive association beyond these controls, while leaving
 other task predictors, physiological causes and outside-session performance open.
+
+The suite trains input controls only at cap200. It does not estimate a complete
+optimization-budget × information interaction or partition the M02520→200 gain
+into additive neural/task/optimization effects. Trial intervals condition on the
+observed task mix and fixed surrogate; they do not resample task-condition clusters.
