@@ -1,0 +1,102 @@
+{
+  "status": "PASS_LOCAL_APPLICABLE_CHECKS",
+  "evidence_status": "RETROSPECTIVE_SINGLE_SESSION_DIAGNOSTIC",
+  "fit_source_revision": "7649d033afce696176f5634fec6858d62e382db3",
+  "m025_base": "552e50bcd44004895fa75eea7d9345b15e89fc2c",
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "torch": "2.14.1",
+      "pynwb": "4.2.0",
+      "matplotlib": "3.11.2",
+      "pytest": "8.4.2"
+    },
+    "parent_tracked_files_unchanged": 359
+  },
+  "tests": {
+    "total_passed": 357,
+    "authentic_data_passed": 23,
+    "software_passed": 334,
+    "failed": 0,
+    "warnings": 20,
+    "seconds": 121.0,
+    "warning_description": "Existing HDMF Device.manufacturer deprecation warnings",
+    "command": "conda run -n cerebro python -m pytest -q",
+    "reporting_after_final_caption_changes": "1 passed; byte-identical rendering test"
+  },
+  "checkpoint_replay": {
+    "m026_models_exact": 9,
+    "m026_array_digests": 27,
+    "m025_models_exact": 11,
+    "m025_file_hashes": 8,
+    "m025_protected_files": 14
+  },
+  "historical_validator": {
+    "files_verified": 405,
+    "array_digests_verified": 755,
+    "predictions_replayed": 229,
+    "exact": 227,
+    "existing_tolerance_comparisons": 2
+  },
+  "independent_audit": {
+    "receipt": "docs/research/m026_independent_audit.json",
+    "checks_passed": 296880,
+    "maximum_numeric_difference": 0.0
+  },
+  "report_reproduction": {
+    "status": "PASS",
+    "byte_identical_artifacts": 8,
+    "sha256": {
+      "reports/m026_neural_information.json": "62fb37df6b513deca38d8eead1c49223c7947fadc1fa480f0fe359f7c2501c4b",
+      "reports/m026_neural_information.md": "366aeabd1b9f875f185c1374a302f929bcfa4ef66948397c3c386b0697cc1dfc",
+      "reports/m026_artifacts.json": "c952b98819d7ed582b781f2c538a1408781f457e38c5405cbab795d3c4d0b7af",
+      "reports/figures/m026_error_strata.pdf": "aab17f3254cdd4a168f0de673ad3ae2c7fed586567b5cb062ad0218d5ab65572",
+      "reports/figures/m026_neural_information.pdf": "f04aa57b217957b85012ff233a1ef40bf0f381e8c4da4dafb76505198c217cc3",
+      "reports/figures/m026_neural_information.png": "27969ddd2190f4a6f1fa493068b9913d584feae954334a4240c1d45486c99773",
+      "reports/figures/m026_training_curves.pdf": "3ecdd8914e476837d433e743762be74407d6170b76f5a7e7bd77c0e105731eee",
+      "reports/figures/m026_trial_error_distribution.pdf": "9e9171f0bbf9f126d837221c9412093a0d5b9e9a4672258d9d111fbf0b352862"
+    }
+  },
+  "wheel": {
+    "name": "cerebro-1.1.0-py3-none-any.whl",
+    "sha256": "663748bc587d4cfcba12616823a1e1156a262e586577507f28b1db1a46d5a8c1",
+    "entries": 43,
+    "new_scientific_modules_match_working_tree": true,
+    "raw_data_or_checkpoints_included": false
+  },
+  "other_checks": {
+    "dependency_check": "No broken requirements found",
+    "ruff_changed_python": "PASS",
+    "git_diff_check": "PASS",
+    "all_359_files_from_m025_base_byte_unchanged": true
+  },
+  "execution": {
+    "new_control_fits": 9,
+    "maximum_epochs": 200,
+    "fit_and_summary_seconds": 3011.8479636248667,
+    "native_preparation_seconds": 1531.4169519159477,
+    "pre_fit_recovery": "Initial preparation interrupted before any fitting to preserve M025 float64 cache digest convention; corrected cast, tested and committed, then preparation completed. No historical result changed."
+  },
+  "public_ci": "Verify at published draft PR head; public CI executes software tests and only collects data tests.",
+  "not_executed": [
+    "Independent session/subject/task evaluation",
+    "Second end-to-end training reproduction in a fresh clone",
+    "Fresh Conda environment creation",
+    "GPU benchmark",
+    "Streaming latency or biological closed-loop BCI",
+    "Full epoch-cap by input-control factorial",
+    "Repeated surrogate generation"
+  ],
+  "local_evidence_log_hashes": {
+    "final-tests_log_sha256": "1d7cbea1d45e3530ee6109bfdd2eea2750c3560fb3221be1b17e60db760927fa",
+    "replay_log_sha256": "3a90255a125699bed7df9af2034f9648441f9a6a978e820a8131d34c70e86762",
+    "original-replay_log_sha256": "5ff2a016520aa8e0f3467c2148a8e62c232d6662789dc6bc50e14956042d485d",
+    "historical-validation_log_sha256": "f939e597501b4acd42f5ac4fb5ab72d2e11909c8bdf537d3d8b67c2a55a63c02",
+    "current-wheel_log_sha256": "bfdfac818d2522bc31350eea9eb84c1083e4d989442baac1e4862642a524b51a",
+    "prepare-verified_log_sha256": "863d9e99602601a2c321b616effb6609332730cbee38471f5a49a86004f43d3a",
+    "experiment_log_sha256": "9b35f71c583325baa3e60a9eca7d0f02b53f241147295846d1f78bbd1ede7fa9"
+  }
+}

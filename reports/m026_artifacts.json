@@ -1,0 +1,21 @@
+{
+  "results_sha256": "62fb37df6b513deca38d8eead1c49223c7947fadc1fa480f0fe359f7c2501c4b",
+  "report_sha256": "366aeabd1b9f875f185c1374a302f929bcfa4ef66948397c3c386b0697cc1dfc",
+  "primary_figure_sha256": "f04aa57b217957b85012ff233a1ef40bf0f381e8c4da4dafb76505198c217cc3",
+  "generator_sha256": "89b530d26fde6b0a89f074eb026702b91bdd6d11715255833912677ee6c6b31a",
+  "post_run_descriptive_heterogeneity": {
+    "neural_vs_template_trial_wins": 233,
+    "trials": 574,
+    "neural_vs_template_condition_wins": 53,
+    "conditions": 108,
+    "median_paired_difference_m2_s2": 0.002151607720075952,
+    "condition_template_relative_reduction_vs_mean": 0.6142813332889179
+  },
+  "figure_sha256": {
+    "reports/figures/m026_error_strata.pdf": "aab17f3254cdd4a168f0de673ad3ae2c7fed586567b5cb062ad0218d5ab65572",
+    "reports/figures/m026_neural_information.pdf": "f04aa57b217957b85012ff233a1ef40bf0f381e8c4da4dafb76505198c217cc3",
+    "reports/figures/m026_neural_information.png": "27969ddd2190f4a6f1fa493068b9913d584feae954334a4240c1d45486c99773",
+    "reports/figures/m026_training_curves.pdf": "3ecdd8914e476837d433e743762be74407d6170b76f5a7e7bd77c0e105731eee",
+    "reports/figures/m026_trial_error_distribution.pdf": "9e9171f0bbf9f126d837221c9412093a0d5b9e9a4672258d9d111fbf0b352862"
+  }
+}

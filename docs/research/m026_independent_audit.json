@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "audit_kind": "independent_saved_output_recomputation_no_fitting",
+  "report_sha256": "62fb37df6b513deca38d8eead1c49223c7947fadc1fa480f0fe359f7c2501c4b",
+  "audit_script_sha256": "887812692139c2cd9ac2f8e584e58e82a76e3ac2bb9be45f2fb4db5b7c57434d",
+  "scalar_or_structure_checks": 296880,
+  "maximum_absolute_numeric_difference": 0.0,
+  "checkpoint_hashes_verified": 9,
+  "donor_partition_mappings_verified": 12,
+  "prediction_array_hashes_verified": 27,
+  "families_recomputed": 11,
+  "contrasts_recomputed": 10,
+  "bootstrap_draws_per_contrast": 10000,
+  "block_sizes": [
+    1,
+    5
+  ],
+  "m025_protected_files_verified": 14,
+  "data_asset_sha256_verified": "a27f84f9c31f077011062fd99a6ced199fdf19e656151f056c3c6244a408a3c4",
+  "evaluation_trials": 574,
+  "biological_subjects": 1,
+  "sessions": 1,
+  "interpretation": "Retrospective trial-conditional diagnostics; no independent biological replication."
+}
